@@ -5,28 +5,16 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 from pykrx import stock
 
 import scanner
 
 
-def cleanValue(value):
-    if isinstance(value, np.integer):
-        return int(value)
-    if isinstance(value, np.floating):
-        return None if np.isnan(value) else float(value)
-    if isinstance(value, pd.Timestamp):
-        return value.strftime("%Y-%m-%d")
-    return value
-
-
 def getSnapshotDays() -> list[pd.Timestamp]:
     days = []
     for path in sorted(scanner.SNAPSHOT_DIR.glob("*.csv.gz")):
-        date_text = path.name.removesuffix(".csv.gz")
-        days.append(pd.Timestamp(date_text))
+        days.append(pd.Timestamp(path.name.removesuffix(".csv.gz")))
     return days
 
 
@@ -37,33 +25,28 @@ def buildHistory(from_date: str, to_date: str | None = None) -> dict:
         raise RuntimeError("저장된 스냅샷이 없습니다.")
 
     history = scanner.loadHistory(business_days)
-    benchmark = scanner.fetchBenchmark(config, business_days)
-    indicators = scanner.addIndicators(history, benchmark, config)
+    market_indices = scanner.fetchMarketIndices(config, business_days)
+    indicators = scanner.addIndicators(history, market_indices, config)
 
     start_date = pd.Timestamp(from_date)
     end_date = pd.Timestamp(to_date) if to_date else indicators["date"].max()
-    selected = indicators[(indicators["date"] >= start_date) & (indicators["date"] <= end_date) & indicators["new_signal"]].copy()
+    available_dates = sorted(indicators["date"].drop_duplicates())
+    previous_dates = [date for date in available_dates if date < start_date]
+    signal_dates = ([previous_dates[-1]] if previous_dates else []) + [date for date in available_dates if start_date <= date <= end_date]
+    finalized = scanner.finalizeSignals(indicators, config, signal_dates)
+    selected = finalized[(finalized["date"] >= start_date) & (finalized["date"] <= end_date) & finalized["new_signal"]].copy()
+    selected = scanner.calculateRiskFields(selected, config)
 
     ticker_names = {ticker: stock.get_market_ticker_name(ticker) for ticker in selected["ticker"].unique()}
     selected["name"] = selected["ticker"].map(ticker_names)
-    columns = ["date", "ticker", "name", "market", "close", "volume", "avg_volume20", "volume_ratio", "prev_55_high", "sma20", "sma60", "sma120", "relative_strength60_pp", "atr14", "atr50"]
-
-    signals = []
-    for row in selected[columns].sort_values(["date", "market", "ticker"]).to_dict(orient="records"):
-        signals.append({key: cleanValue(value) for key, value in row.items()})
+    columns = ["date", "ticker", "name", "market", "close", "market_cap", "rs_score", "sma50", "sma150", "sma200", "high52", "base_high", "base_low", "base_depth_pct", "volume", "avg_volume20", "volume_ratio", "stop_price", "stop_distance_pct", "three_r_target", "max_position_pct_for_risk"]
+    signals = [scanner.cleanRecord(row) for row in selected[columns].sort_values(["date", "market", "ticker"]).to_dict(orient="records")]
 
     by_date = {}
     for signal in signals:
         by_date.setdefault(signal["date"], []).append(signal)
 
-    return {
-        "from_date": start_date.strftime("%Y-%m-%d"),
-        "to_date": end_date.strftime("%Y-%m-%d"),
-        "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
-        "signal_count": len(signals),
-        "by_date": by_date,
-        "signals": signals
-    }
+    return {"rule_version": config["rule_version"], "from_date": start_date.strftime("%Y-%m-%d"), "to_date": end_date.strftime("%Y-%m-%d"), "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"), "signal_count": len(signals), "by_date": by_date, "signals": signals, "manual_checks": ["주도 섹터/섹터 RS", "인더스트리 액션", "기관 수급", "EPS 성장 및 실적"]}
 
 
 def main() -> None:
@@ -79,7 +62,7 @@ def main() -> None:
     with output_path.open("w", encoding="utf-8") as file:
         json.dump(result, file, ensure_ascii=False, indent=2, allow_nan=False)
 
-    print(json.dumps({"from_date": result["from_date"], "to_date": result["to_date"], "signal_count": result["signal_count"]}, ensure_ascii=False))
+    print(json.dumps({"rule_version": result["rule_version"], "from_date": result["from_date"], "to_date": result["to_date"], "signal_count": result["signal_count"]}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
