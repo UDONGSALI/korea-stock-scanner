@@ -1,0 +1,15 @@
+{
+  "rule_version": "kangto_core_v2",
+  "from_date": "2026-08-17",
+  "to_date": "2026-08-27",
+  "generated_at": "2026-08-28T08:03:34+09:00",
+  "signal_count": 0,
+  "by_date": {},
+  "signals": [],
+  "manual_checks": [
+    "주도 섹터/섹터 RS",
+    "인더스트리 액션",
+    "기관 수급",
+    "EPS 성장 및 실적"
+  ]
+}
