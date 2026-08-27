@@ -1,0 +1,14 @@
+{
+  "markets": ["KOSPI", "KOSDAQ"],
+  "history_days": 180,
+  "benchmark_index": "1001",
+  "min_avg_volume_20": 100000,
+  "volume_ratio_min": 1.0,
+  "breakout_days": 55,
+  "relative_strength_days": 60,
+  "relative_strength_min_pct_point": 10.0,
+  "atr_short": 14,
+  "atr_long": 50,
+  "sma_periods": [20, 60, 120],
+  "only_new_signal": true
+}
