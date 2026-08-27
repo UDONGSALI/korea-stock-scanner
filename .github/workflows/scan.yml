@@ -2,10 +2,6 @@ name: Daily KRX Scan
 
 on:
   workflow_dispatch:
-  push:
-    branches: ["main"]
-    paths:
-      - ".github/workflows/scan.yml"
   schedule:
     - cron: "37 18 * * 1-5"
       timezone: "Asia/Seoul"
