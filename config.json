@@ -1,14 +1,15 @@
 {
+  "rule_version": "kangto_core_v2",
   "markets": ["KOSPI", "KOSDAQ"],
-  "history_days": 180,
-  "benchmark_index": "1001",
-  "min_avg_volume_20": 100000,
-  "volume_ratio_min": 1.0,
-  "breakout_days": 55,
-  "relative_strength_days": 60,
-  "relative_strength_min_pct_point": 10.0,
-  "atr_short": 14,
-  "atr_long": 50,
-  "sma_periods": [20, 60, 120],
-  "only_new_signal": true
+  "history_days": 320,
+  "market_indices": {"KOSPI": "1001", "KOSDAQ": "2001"},
+  "market_ma_days": {"KOSPI": 60, "KOSDAQ": 120},
+  "min_market_cap": 200000000000,
+  "rs_min_score": 70,
+  "rs_periods": {"20": 0.25, "60": 0.25, "120": 0.25, "240": 0.25},
+  "high52_days": 252,
+  "mtt": {"sma200_rising_lookback": 20, "min_above_52w_low_pct": 30, "max_below_52w_high_pct": 25},
+  "base": {"days": 15, "max_depth_pct": 20},
+  "breakout_volume_ratio_min": 1.0,
+  "risk": {"max_account_risk_pct": 2.0, "reward_multiple": 3.0}
 }
