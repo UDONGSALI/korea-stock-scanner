@@ -1,0 +1,37 @@
+{
+  "rule_version": "kangto_core_v2",
+  "scan_date": "2026-08-27",
+  "generated_at": "2026-08-28T01:04:49+09:00",
+  "signal_count": 0,
+  "signals": [],
+  "rules": {
+    "market_filter": {
+      "KOSPI": 60,
+      "KOSDAQ": 120
+    },
+    "min_market_cap": 200000000000,
+    "rs_min_score": 70,
+    "rs_periods": {
+      "20": 0.25,
+      "60": 0.25,
+      "120": 0.25,
+      "240": 0.25
+    },
+    "trend": "MTT + weekly trend proxy (SMA50 > SMA150)",
+    "base": {
+      "days": 15,
+      "max_depth_pct": 20
+    },
+    "breakout_volume_ratio_min": 1.0,
+    "risk": {
+      "max_account_risk_pct": 2.0,
+      "reward_multiple": 3.0
+    }
+  },
+  "manual_checks": [
+    "주도 섹터/섹터 RS",
+    "인더스트리 액션",
+    "기관 수급",
+    "EPS 성장 및 실적"
+  ]
+}
