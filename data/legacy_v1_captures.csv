@@ -1,0 +1,5 @@
+capture_date,ticker,name,capture_close,source,rule_version
+2026-08-18,079190,케스피온,1966,krx_confirmed,legacy_v1
+2026-08-20,950220,네오이뮨텍,2195,krx_confirmed,legacy_v1
+2026-08-24,004410,서울식품,1259,krx_confirmed,legacy_v1
+2026-08-26,417310,코람코더원리츠,11030,krx_confirmed,legacy_v1
