@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import os
 import time
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -30,7 +29,7 @@ def ensureDirectories() -> None:
 
 def getBusinessDays(history_days: int) -> list[pd.Timestamp]:
     end_date = datetime.now()
-    start_date = end_date - timedelta(days=max(history_days * 2, 260))
+    start_date = end_date - timedelta(days=max(history_days * 2, 520))
     business_days = stock.get_previous_business_days(fromdate=start_date.strftime("%Y%m%d"), todate=end_date.strftime("%Y%m%d"))
     return business_days[-history_days:]
 
@@ -82,107 +81,216 @@ def loadHistory(business_days: list[pd.Timestamp]) -> pd.DataFrame:
     return history
 
 
-def fetchBenchmark(config: dict, business_days: list[pd.Timestamp]) -> pd.Series:
+def fetchMarketIndices(config: dict, business_days: list[pd.Timestamp]) -> dict[str, pd.DataFrame]:
     from_date = business_days[0].strftime("%Y%m%d")
     to_date = business_days[-1].strftime("%Y%m%d")
-    frame = stock.get_index_ohlcv(from_date, to_date, config["benchmark_index"])
-    if frame.empty:
-        raise RuntimeError("벤치마크 지수 데이터를 가져오지 못했습니다.")
-    benchmark = frame["종가"].astype(float).rename("benchmark_close")
-    benchmark.index = pd.to_datetime(benchmark.index)
-    return benchmark
+    indices = {}
+
+    for market, index_code in config["market_indices"].items():
+        frame = stock.get_index_ohlcv(from_date, to_date, index_code)
+        if frame.empty:
+            raise RuntimeError(f"{market} 지수 데이터를 가져오지 못했습니다.")
+        frame = frame[["종가"]].rename(columns={"종가": "close"}).astype(float)
+        frame.index = pd.to_datetime(frame.index)
+        indices[market] = frame
+
+    return indices
 
 
-def addIndicators(history: pd.DataFrame, benchmark: pd.Series, config: dict) -> pd.DataFrame:
+def buildMarketMaps(config: dict, market_indices: dict[str, pd.DataFrame]) -> tuple[dict, dict]:
+    market_ok_map = {}
+    benchmark_return_maps = {period: {} for period in config["rs_periods"]}
+
+    for market, frame in market_indices.items():
+        close = frame["close"]
+        ma_days = config["market_ma_days"][market]
+        market_ok_map[market] = close > close.rolling(ma_days).mean()
+
+        for period_text in config["rs_periods"]:
+            period = int(period_text)
+            benchmark_return_maps[period_text][market] = close.pct_change(period)
+
+    return market_ok_map, benchmark_return_maps
+
+
+def addIndicators(history: pd.DataFrame, market_indices: dict[str, pd.DataFrame], config: dict) -> pd.DataFrame:
+    market_ok_map, benchmark_return_maps = buildMarketMaps(config, market_indices)
     output = []
-    benchmark_return = benchmark.pct_change(config["relative_strength_days"])
 
     for _, frame in history.groupby("ticker", sort=False):
         frame = frame.copy().sort_values("date")
+        market = str(frame["market"].iloc[-1])
         high = frame["high"].astype(float)
         low = frame["low"].astype(float)
         close = frame["close"].astype(float)
         volume = frame["volume"].astype(float)
 
-        frame["sma20"] = close.rolling(20).mean()
-        frame["sma60"] = close.rolling(60).mean()
-        frame["sma120"] = close.rolling(120).mean()
-        frame["prev_55_high"] = high.shift(1).rolling(config["breakout_days"]).max()
+        frame["sma50"] = close.rolling(50).mean()
+        frame["sma150"] = close.rolling(150).mean()
+        frame["sma200"] = close.rolling(200).mean()
+        frame["sma200_rising"] = frame["sma200"] > frame["sma200"].shift(config["mtt"]["sma200_rising_lookback"])
+        frame["high52"] = high.rolling(config["high52_days"]).max()
+        frame["low52"] = low.rolling(config["high52_days"]).min()
+        frame["prev_high52"] = high.shift(1).rolling(config["high52_days"]).max()
+        frame["distance_from_high52_pct"] = (close / frame["high52"] - 1) * 100
+        frame["rise_from_low52_pct"] = (close / frame["low52"] - 1) * 100
+
+        base_days = config["base"]["days"]
+        frame["base_high"] = high.shift(1).rolling(base_days).max()
+        frame["base_low"] = low.shift(1).rolling(base_days).min()
+        frame["base_depth_pct"] = (frame["base_high"] / frame["base_low"] - 1) * 100
         frame["avg_volume20"] = volume.shift(1).rolling(20).mean()
+        frame["avg_volume5_base"] = volume.shift(1).rolling(5).mean()
         frame["volume_ratio"] = volume / frame["avg_volume20"]
+        frame["base_volume_contracted"] = frame["avg_volume5_base"] <= frame["avg_volume20"]
+        frame["breakout"] = close > frame["base_high"]
+        frame["weekly_trend_proxy"] = (close > frame["sma50"]) & (frame["sma50"] > frame["sma150"])
+        frame["market_ok"] = frame["date"].map(market_ok_map[market]).fillna(False).astype(bool)
 
-        prev_close = close.shift(1)
-        true_range = pd.concat([(high - low), (high - prev_close).abs(), (low - prev_close).abs()], axis=1).max(axis=1)
-        frame["atr14"] = true_range.rolling(config["atr_short"]).mean()
-        frame["atr50"] = true_range.rolling(config["atr_long"]).mean()
+        rs_raw = pd.Series(0.0, index=frame.index)
+        rs_valid = pd.Series(True, index=frame.index)
+        for period_text, weight in config["rs_periods"].items():
+            period = int(period_text)
+            stock_return = close.pct_change(period)
+            benchmark_return = frame["date"].map(benchmark_return_maps[period_text][market])
+            relative_return = stock_return - benchmark_return
+            frame[f"rs_{period}d_relative"] = relative_return
+            rs_raw = rs_raw + relative_return.fillna(0) * float(weight)
+            rs_valid &= relative_return.notna()
 
-        frame["stock_return60"] = close.pct_change(config["relative_strength_days"])
-        frame["benchmark_return60"] = frame["date"].map(benchmark_return)
-        frame["relative_strength60_pp"] = (frame["stock_return60"] - frame["benchmark_return60"]) * 100
-
-        frame["signal"] = (
-            (frame["avg_volume20"] >= config["min_avg_volume_20"])
-            & (frame["volume_ratio"] >= config["volume_ratio_min"])
-            & (close > frame["prev_55_high"])
-            & (close > frame["sma20"])
-            & (frame["sma20"] > frame["sma60"])
-            & (frame["sma60"] > frame["sma120"])
-            & (frame["relative_strength60_pp"] >= config["relative_strength_min_pct_point"])
-            & (frame["atr14"] < frame["atr50"])
-        )
-        frame["new_signal"] = frame["signal"] & ~frame["signal"].shift(1, fill_value=False)
+        frame["rs_raw"] = rs_raw.where(rs_valid)
         output.append(frame)
 
-    return pd.concat(output, ignore_index=True)
+    indicators = pd.concat(output, ignore_index=True)
+    indicators["rs_score"] = indicators.groupby("date")["rs_raw"].rank(pct=True, method="average") * 99
+
+    mtt = config["mtt"]
+    indicators["mtt"] = (
+        (indicators["close"] > indicators["sma150"])
+        & (indicators["close"] > indicators["sma200"])
+        & (indicators["sma150"] > indicators["sma200"])
+        & indicators["sma200_rising"]
+        & (indicators["sma50"] > indicators["sma150"])
+        & (indicators["sma50"] > indicators["sma200"])
+        & (indicators["close"] > indicators["sma50"])
+        & (indicators["close"] >= indicators["low52"] * (1 + mtt["min_above_52w_low_pct"] / 100))
+        & (indicators["close"] >= indicators["high52"] * (1 - mtt["max_below_52w_high_pct"] / 100))
+    )
+
+    base = config["base"]
+    indicators["technical_signal"] = (
+        indicators["market_ok"]
+        & (indicators["rs_score"] >= config["rs_min_score"])
+        & indicators["mtt"]
+        & indicators["weekly_trend_proxy"]
+        & (indicators["base_depth_pct"] <= base["max_depth_pct"])
+        & indicators["base_volume_contracted"]
+        & indicators["breakout"]
+        & (indicators["volume_ratio"] >= config["breakout_volume_ratio_min"])
+    )
+    return indicators
 
 
-def buildResult(indicators: pd.DataFrame, config: dict) -> dict:
-    target_date = indicators["date"].max()
-    latest = indicators[indicators["date"] == target_date].copy()
-    signal_column = "new_signal" if config["only_new_signal"] else "signal"
-    selected = latest[latest[signal_column]].copy()
-
-    selected["name"] = selected["ticker"].map(stock.get_market_ticker_name)
-    columns = ["ticker", "name", "market", "close", "volume", "avg_volume20", "volume_ratio", "prev_55_high", "sma20", "sma60", "sma120", "relative_strength60_pp", "atr14", "atr50"]
-    selected = selected[columns].replace({np.nan: None})
-
-    records = []
-    for row in selected.to_dict(orient="records"):
-        cleaned = {}
-        for key, value in row.items():
-            if isinstance(value, (np.integer,)):
-                value = int(value)
-            elif isinstance(value, (np.floating,)):
-                value = float(value)
-            cleaned[key] = value
-        records.append(cleaned)
-
-    return {
-        "scan_date": target_date.strftime("%Y-%m-%d"),
-        "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
-        "markets": config["markets"],
-        "signal_count": len(records),
-        "signals": records,
-        "rules": {
-            "avg_volume20_min": config["min_avg_volume_20"],
-            "volume_ratio_min": config["volume_ratio_min"],
-            "breakout": f"close > previous {config['breakout_days']}-day high",
-            "trend": "close > SMA20 > SMA60 > SMA120",
-            "relative_strength": f"60-day stock return - KOSPI return >= {config['relative_strength_min_pct_point']}%p",
-            "volatility": "ATR14 < ATR50",
-            "new_signal_only": config["only_new_signal"]
-        }
-    }
+def fetchMarketCaps(date: pd.Timestamp, markets: list[str]) -> pd.DataFrame:
+    date_text = date.strftime("%Y%m%d")
+    frames = []
+    for market in markets:
+        frame = stock.get_market_cap(date_text, market=market)
+        if frame.empty:
+            continue
+        frame = frame.reset_index().rename(columns={"티커": "ticker", "시가총액": "market_cap"})
+        frame["market"] = market
+        frames.append(frame[["ticker", "market", "market_cap"]])
+        time.sleep(0.15)
+    if not frames:
+        return pd.DataFrame(columns=["ticker", "market", "market_cap"])
+    return pd.concat(frames, ignore_index=True)
 
 
-def updateTracking(indicators: pd.DataFrame, benchmark: pd.Series) -> list[dict]:
+def finalizeSignals(indicators: pd.DataFrame, config: dict, dates: list[pd.Timestamp]) -> pd.DataFrame:
+    target_dates = sorted(pd.to_datetime(pd.Series(dates).drop_duplicates()).tolist())
+    selected = indicators[indicators["date"].isin(target_dates)].copy()
+    selected["market_cap"] = np.nan
+
+    for date in target_dates:
+        day_mask = selected["date"] == date
+        if not selected.loc[day_mask, "technical_signal"].any():
+            continue
+        caps = fetchMarketCaps(date, config["markets"])
+        if caps.empty:
+            continue
+        cap_map = caps.set_index(["ticker", "market"])["market_cap"]
+        candidate_index = selected.index[day_mask & selected["technical_signal"]]
+        for row_index in candidate_index:
+            key = (str(selected.at[row_index, "ticker"]), str(selected.at[row_index, "market"]))
+            selected.at[row_index, "market_cap"] = cap_map.get(key, np.nan)
+
+    selected["signal"] = selected["technical_signal"] & (selected["market_cap"] >= config["min_market_cap"])
+    selected = selected.sort_values(["ticker", "date"])
+    selected["new_signal"] = selected["signal"] & ~selected.groupby("ticker")["signal"].shift(1, fill_value=False)
+    return selected.sort_values(["date", "market", "ticker"]).reset_index(drop=True)
+
+
+def calculateRiskFields(selected: pd.DataFrame, config: dict) -> pd.DataFrame:
+    selected = selected.copy()
+    selected["stop_price"] = selected["base_low"]
+    selected["risk_per_share"] = selected["close"] - selected["stop_price"]
+    selected["stop_distance_pct"] = selected["risk_per_share"] / selected["close"] * 100
+    selected["three_r_target"] = selected["close"] + selected["risk_per_share"] * config["risk"]["reward_multiple"]
+    selected["max_position_pct_for_risk"] = np.where(selected["stop_distance_pct"] > 0, np.minimum(100.0, config["risk"]["max_account_risk_pct"] / selected["stop_distance_pct"] * 100), np.nan)
+    return selected
+
+
+def cleanRecord(row: dict) -> dict:
+    cleaned = {}
+    for key, value in row.items():
+        if isinstance(value, np.integer):
+            value = int(value)
+        elif isinstance(value, np.floating):
+            value = None if np.isnan(value) else float(value)
+        elif isinstance(value, pd.Timestamp):
+            value = value.strftime("%Y-%m-%d")
+        cleaned[key] = value
+    return cleaned
+
+
+def buildResult(finalized: pd.DataFrame, config: dict) -> dict:
+    target_date = finalized["date"].max()
+    latest = finalized[finalized["date"] == target_date].copy()
+    selected = calculateRiskFields(latest[latest["new_signal"]].copy(), config)
+    ticker_names = {ticker: stock.get_market_ticker_name(ticker) for ticker in selected["ticker"].unique()}
+    selected["name"] = selected["ticker"].map(ticker_names)
+    columns = ["ticker", "name", "market", "close", "market_cap", "rs_score", "sma50", "sma150", "sma200", "high52", "low52", "base_high", "base_low", "base_depth_pct", "volume", "avg_volume20", "volume_ratio", "stop_price", "stop_distance_pct", "three_r_target", "max_position_pct_for_risk"]
+    records = [cleanRecord(row) for row in selected[columns].to_dict(orient="records")]
+    return {"rule_version": config["rule_version"], "scan_date": target_date.strftime("%Y-%m-%d"), "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"), "signal_count": len(records), "signals": records, "rules": {"market_filter": config["market_ma_days"], "min_market_cap": config["min_market_cap"], "rs_min_score": config["rs_min_score"], "rs_periods": config["rs_periods"], "trend": "MTT + weekly trend proxy (SMA50 > SMA150)", "base": config["base"], "breakout_volume_ratio_min": config["breakout_volume_ratio_min"], "risk": config["risk"]}, "manual_checks": ["주도 섹터/섹터 RS", "인더스트리 액션", "기관 수급", "EPS 성장 및 실적"]}
+
+
+def appendCaptures(result: dict) -> None:
+    if not result["signals"]:
+        return
+    if CAPTURE_PATH.exists():
+        captures = pd.read_csv(CAPTURE_PATH, dtype={"ticker": str})
+    else:
+        captures = pd.DataFrame(columns=["capture_date", "ticker", "name", "capture_close", "source", "rule_version"])
+    rows = []
+    existing = set(zip(captures.get("capture_date", pd.Series(dtype=str)).astype(str), captures.get("ticker", pd.Series(dtype=str)).astype(str)))
+    for signal in result["signals"]:
+        key = (result["scan_date"], signal["ticker"])
+        if key not in existing:
+            rows.append({"capture_date": result["scan_date"], "ticker": signal["ticker"], "name": signal["name"], "capture_close": signal["close"], "source": "kangto_core", "rule_version": result["rule_version"]})
+    if rows:
+        captures = pd.concat([captures, pd.DataFrame(rows)], ignore_index=True)
+        captures.to_csv(CAPTURE_PATH, index=False, encoding="utf-8-sig")
+
+
+def updateTracking(indicators: pd.DataFrame, market_indices: dict[str, pd.DataFrame]) -> list[dict]:
     if not CAPTURE_PATH.exists():
         return []
-
     captures = pd.read_csv(CAPTURE_PATH, dtype={"ticker": str})
-    history = indicators[["date", "ticker", "close", "sma60", "sma120"]].copy()
+    if captures.empty:
+        return []
+    history = indicators[["date", "ticker", "market", "close", "sma50", "sma150", "sma200", "rs_score", "mtt", "market_ok"]].copy()
     rows = []
-
     for capture in captures.to_dict(orient="records"):
         ticker = capture["ticker"]
         capture_date = pd.Timestamp(capture["capture_date"])
@@ -190,26 +298,13 @@ def updateTracking(indicators: pd.DataFrame, benchmark: pd.Series) -> list[dict]
         frame = history[(history["ticker"] == ticker) & (history["date"] >= capture_date)].sort_values("date")
         if frame.empty:
             continue
-
         latest = frame.iloc[-1]
+        market = str(latest["market"])
+        benchmark = market_indices[market]["close"]
         benchmark_frame = benchmark[benchmark.index >= capture_date]
-        if benchmark_frame.empty:
-            benchmark_return = None
-        else:
-            benchmark_return = (benchmark_frame.iloc[-1] / benchmark_frame.iloc[0] - 1) * 100
-
+        benchmark_return = None if benchmark_frame.empty else (benchmark_frame.iloc[-1] / benchmark_frame.iloc[0] - 1) * 100
         current_return = (latest["close"] / capture_price - 1) * 100
-        max_return = (frame["close"].max() / capture_price - 1) * 100
-        max_drawdown = (frame["close"].min() / capture_price - 1) * 100
-        rows.append({
-            "capture_date": str(capture["capture_date"]), "ticker": ticker, "name": capture["name"], "capture_close": capture_price,
-            "latest_date": latest["date"].strftime("%Y-%m-%d"), "latest_close": float(latest["close"]), "return_pct": current_return,
-            "max_return_pct": max_return, "max_drawdown_pct": max_drawdown, "trading_days": int(len(frame) - 1),
-            "close_above_sma60": bool(latest["close"] > latest["sma60"]) if pd.notna(latest["sma60"]) else None,
-            "sma60_above_sma120": bool(latest["sma60"] > latest["sma120"]) if pd.notna(latest["sma60"]) and pd.notna(latest["sma120"]) else None,
-            "benchmark_return_pct": benchmark_return,
-            "excess_return_pct_point": current_return - benchmark_return if benchmark_return is not None else None
-        })
+        rows.append({"capture_date": str(capture["capture_date"]), "ticker": ticker, "name": capture["name"], "capture_close": capture_price, "rule_version": capture.get("rule_version", "unknown"), "latest_date": latest["date"].strftime("%Y-%m-%d"), "latest_close": float(latest["close"]), "return_pct": current_return, "max_return_pct": (frame["close"].max() / capture_price - 1) * 100, "max_drawdown_pct": (frame["close"].min() / capture_price - 1) * 100, "trading_days": int(len(frame) - 1), "market_ok": bool(latest["market_ok"]), "mtt": bool(latest["mtt"]), "rs_score": None if pd.isna(latest["rs_score"]) else float(latest["rs_score"]), "benchmark_return_pct": benchmark_return, "excess_return_pct_point": current_return - benchmark_return if benchmark_return is not None else None})
     return rows
 
 
@@ -222,21 +317,19 @@ def main() -> None:
     ensureDirectories()
     config = loadConfig()
     business_days = getBusinessDays(config["history_days"])
-
     for date in business_days:
         saveSnapshot(date, config["markets"])
-
     history = loadHistory(business_days)
-    benchmark = fetchBenchmark(config, business_days)
-    indicators = addIndicators(history, benchmark, config)
-    result = buildResult(indicators, config)
-    tracking = updateTracking(indicators, benchmark)
-
-    date_path = RESULT_DIR / f"{result['scan_date']}.json"
-    saveJson(date_path, result)
+    market_indices = fetchMarketIndices(config, business_days)
+    indicators = addIndicators(history, market_indices, config)
+    finalized = finalizeSignals(indicators, config, business_days[-2:])
+    result = buildResult(finalized, config)
+    appendCaptures(result)
+    tracking = updateTracking(indicators, market_indices)
+    saveJson(RESULT_DIR / f"{result['scan_date']}.json", result)
     saveJson(DATA_DIR / "latest.json", result)
     saveJson(DATA_DIR / "tracking.json", tracking)
-    print(json.dumps({"scan_date": result["scan_date"], "signal_count": result["signal_count"]}, ensure_ascii=False))
+    print(json.dumps({"rule_version": result["rule_version"], "scan_date": result["scan_date"], "signal_count": result["signal_count"]}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
