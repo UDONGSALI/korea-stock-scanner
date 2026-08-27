@@ -178,9 +178,8 @@ def addIndicators(history: pd.DataFrame, market_indices: dict[str, pd.DataFrame]
     )
 
     base = config["base"]
-    indicators["technical_signal"] = (
-        indicators["market_ok"]
-        & (indicators["rs_score"] >= config["rs_min_score"])
+    indicators["stock_setup"] = (
+        (indicators["rs_score"] >= config["rs_min_score"])
         & indicators["mtt"]
         & indicators["weekly_trend_proxy"]
         & (indicators["base_depth_pct"] <= base["max_depth_pct"])
@@ -188,6 +187,7 @@ def addIndicators(history: pd.DataFrame, market_indices: dict[str, pd.DataFrame]
         & indicators["breakout"]
         & (indicators["volume_ratio"] >= config["breakout_volume_ratio_min"])
     )
+    indicators["technical_signal"] = indicators["stock_setup"] & indicators["market_ok"]
     return indicators
 
 
@@ -214,20 +214,23 @@ def finalizeSignals(indicators: pd.DataFrame, config: dict, dates: list[pd.Times
 
     for date in target_dates:
         day_mask = selected["date"] == date
-        if not selected.loc[day_mask, "technical_signal"].any():
+        if not selected.loc[day_mask, "stock_setup"].any():
             continue
         caps = fetchMarketCaps(date, config["markets"])
         if caps.empty:
             continue
         cap_map = caps.set_index(["ticker", "market"])["market_cap"]
-        candidate_index = selected.index[day_mask & selected["technical_signal"]]
+        candidate_index = selected.index[day_mask & selected["stock_setup"]]
         for row_index in candidate_index:
             key = (str(selected.at[row_index, "ticker"]), str(selected.at[row_index, "market"]))
             selected.at[row_index, "market_cap"] = cap_map.get(key, np.nan)
 
-    selected["signal"] = selected["technical_signal"] & (selected["market_cap"] >= config["min_market_cap"])
+    selected["eligible_setup"] = selected["stock_setup"] & (selected["market_cap"] >= config["min_market_cap"])
+    selected["signal"] = selected["eligible_setup"] & selected["market_ok"]
+    selected["countertrend_candidate"] = selected["eligible_setup"] & ~selected["market_ok"]
     selected = selected.sort_values(["ticker", "date"])
     selected["new_signal"] = selected["signal"] & ~selected.groupby("ticker")["signal"].shift(1, fill_value=False)
+    selected["new_countertrend_candidate"] = selected["countertrend_candidate"] & ~selected.groupby("ticker")["countertrend_candidate"].shift(1, fill_value=False)
     return selected.sort_values(["date", "market", "ticker"]).reset_index(drop=True)
 
 
@@ -254,15 +257,53 @@ def cleanRecord(row: dict) -> dict:
     return cleaned
 
 
+def buildCandidateRecords(selected: pd.DataFrame, config: dict, signal_type: str) -> list[dict]:
+    if selected.empty:
+        return []
+
+    selected = calculateRiskFields(selected, config)
+    ticker_names = {ticker: stock.get_market_ticker_name(ticker) for ticker in selected["ticker"].unique()}
+    selected["name"] = selected["ticker"].map(ticker_names)
+    selected["signal_type"] = signal_type
+    columns = ["ticker", "name", "market", "signal_type", "market_ok", "close", "market_cap", "rs_score", "sma50", "sma150", "sma200", "high52", "low52", "base_high", "base_low", "base_depth_pct", "volume", "avg_volume20", "volume_ratio", "stop_price", "stop_distance_pct", "three_r_target", "max_position_pct_for_risk"]
+    if signal_type == "COUNTERTREND":
+        selected["is_new"] = selected["new_countertrend_candidate"]
+        columns.insert(4, "is_new")
+    return [cleanRecord(row) for row in selected[columns].to_dict(orient="records")]
+
+
 def buildResult(finalized: pd.DataFrame, config: dict) -> dict:
     target_date = finalized["date"].max()
     latest = finalized[finalized["date"] == target_date].copy()
-    selected = calculateRiskFields(latest[latest["new_signal"]].copy(), config)
-    ticker_names = {ticker: stock.get_market_ticker_name(ticker) for ticker in selected["ticker"].unique()}
-    selected["name"] = selected["ticker"].map(ticker_names)
-    columns = ["ticker", "name", "market", "close", "market_cap", "rs_score", "sma50", "sma150", "sma200", "high52", "low52", "base_high", "base_low", "base_depth_pct", "volume", "avg_volume20", "volume_ratio", "stop_price", "stop_distance_pct", "three_r_target", "max_position_pct_for_risk"]
-    records = [cleanRecord(row) for row in selected[columns].to_dict(orient="records")]
-    return {"rule_version": config["rule_version"], "scan_date": target_date.strftime("%Y-%m-%d"), "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"), "signal_count": len(records), "signals": records, "rules": {"market_filter": config["market_ma_days"], "min_market_cap": config["min_market_cap"], "rs_min_score": config["rs_min_score"], "rs_periods": config["rs_periods"], "trend": "MTT + weekly trend proxy (SMA50 > SMA150)", "base": config["base"], "breakout_volume_ratio_min": config["breakout_volume_ratio_min"], "risk": config["risk"]}, "manual_checks": ["주도 섹터/섹터 RS", "인더스트리 액션", "기관 수급", "EPS 성장 및 실적"]}
+    buy_records = buildCandidateRecords(latest[latest["new_signal"]].copy(), config, "BUY")
+    countertrend_records = buildCandidateRecords(latest[latest["countertrend_candidate"]].copy(), config, "COUNTERTREND")
+
+    market_status = {}
+    for market in config["markets"]:
+        market_rows = latest[latest["market"] == market]
+        market_status[market] = bool(market_rows["market_ok"].iloc[0]) if not market_rows.empty else None
+
+    return {
+        "rule_version": config["rule_version"],
+        "scan_date": target_date.strftime("%Y-%m-%d"),
+        "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "market_status": market_status,
+        "signal_count": len(buy_records),
+        "signals": buy_records,
+        "countertrend_count": len(countertrend_records),
+        "countertrend_candidates": countertrend_records,
+        "rules": {
+            "market_filter": config["market_ma_days"],
+            "min_market_cap": config["min_market_cap"],
+            "rs_min_score": config["rs_min_score"],
+            "rs_periods": config["rs_periods"],
+            "trend": "MTT + weekly trend proxy (SMA50 > SMA150)",
+            "base": config["base"],
+            "breakout_volume_ratio_min": config["breakout_volume_ratio_min"],
+            "risk": config["risk"]
+        },
+        "manual_checks": ["주도 섹터/섹터 RS", "인더스트리 액션", "기관 수급", "EPS 성장 및 실적"]
+    }
 
 
 def appendCaptures(result: dict) -> None:
@@ -329,7 +370,7 @@ def main() -> None:
     saveJson(RESULT_DIR / f"{result['scan_date']}.json", result)
     saveJson(DATA_DIR / "latest.json", result)
     saveJson(DATA_DIR / "tracking.json", tracking)
-    print(json.dumps({"rule_version": result["rule_version"], "scan_date": result["scan_date"], "signal_count": result["signal_count"]}, ensure_ascii=False))
+    print(json.dumps({"rule_version": result["rule_version"], "scan_date": result["scan_date"], "signal_count": result["signal_count"], "countertrend_count": result["countertrend_count"]}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
