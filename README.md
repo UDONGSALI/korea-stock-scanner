@@ -9,6 +9,13 @@ KOSPI/KOSDAQ 전 종목을 대상으로 깡토의 공개 추세추종 원칙과 
 - KOSPI 종목: KOSPI 종가가 60일 이동평균 위
 - KOSDAQ 종목: KOSDAQ 종가가 120일 이동평균 위
 
+시장 필터는 종목 발굴 자체를 막지 않습니다.
+
+- 종목 조건 PASS + 시장 PASS: `BUY`
+- 종목 조건 PASS + 시장 FAIL: `COUNTERTREND`
+
+`COUNTERTREND`는 시장 역행 후보로 표시하지만 정식 BUY 및 `captures.csv` 자동 편입 대상은 아닙니다. 시장이 회복되고 종목 조건을 계속 만족하면 이후 `BUY`로 승격될 수 있습니다.
+
 ### 2. 거래 유니버스
 
 - 시가총액 2,000억원 이상
@@ -73,15 +80,16 @@ StockEasy의 실제 돌파 가격 계산식은 비공개이므로 15거래일 Ba
 - `종가 > SMA20 > SMA60 > SMA120`
 - 20일 평균거래량 10만주 고정 필터
 
+이전 웹 기반/구버전 포착 종목 파일은 저장소에서 삭제했습니다.
+
 ## 데이터
 
 - `data/snapshots/`: KOSPI/KOSDAQ 전 종목 일별 OHLCV 원본
-- `data/latest.json`: 최신 `kangto_core_v2` 후보
-- `data/results/`: 날짜별 후보
-- `data/captures.csv`: 현재 규칙에서 발생한 후보 자동 누적
-- `data/tracking.json`: 포착 이후 성과
-- `data/legacy_captures.csv`: 과거 웹 기반 기록
-- `data/legacy_v1_captures.csv`: 폐기된 이전 KRX 규칙 기록
+- `data/latest.json`: 최신 `BUY`와 현재 `COUNTERTREND` 후보
+- `data/results/`: 날짜별 결과
+- `data/history_signals.json`: 과거 재스캔의 BUY/시장 역행 후보
+- `data/captures.csv`: 현재 규칙의 정식 BUY만 자동 누적
+- `data/tracking.json`: 정식 BUY 포착 이후 성과
 
 ## 실행
 
