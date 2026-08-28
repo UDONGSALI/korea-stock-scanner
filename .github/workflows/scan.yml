@@ -35,6 +35,9 @@ jobs:
       - name: Enrich post-EARLY state
         run: python src/early_state.py
 
+      - name: Export EARLY tracking CSV
+        run: python src/export_early_tracking_csv.py
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
