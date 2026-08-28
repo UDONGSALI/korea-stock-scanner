@@ -42,7 +42,13 @@
       "stop_price": 98100.0,
       "stop_distance_pct": 22.69503546099291,
       "three_r_target": 213300.0,
-      "max_position_pct_for_risk": 8.8125
+      "max_position_pct_for_risk": 8.8125,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-10",
+      "first_early_close": 115900.0,
+      "gain_since_early_pct": 9.490940465918897,
+      "trading_days_since_early": 12,
+      "early_state_reason": "EARLY 이후 +9.5% / 12거래일"
     },
     {
       "date": "2026-08-27",
@@ -77,7 +83,13 @@
       "stop_price": 459500.0,
       "stop_distance_pct": 19.244288224956062,
       "three_r_target": 897500.0,
-      "max_position_pct_for_risk": 10.39269406392694
+      "max_position_pct_for_risk": 10.39269406392694,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-14",
+      "first_early_close": 516000.0,
+      "gain_since_early_pct": 10.27131782945736,
+      "trading_days_since_early": 8,
+      "early_state_reason": "EARLY 이후 +10.3% / 8거래일"
     },
     {
       "date": "2026-08-27",
@@ -112,7 +124,13 @@
       "stop_price": 70200.0,
       "stop_distance_pct": 17.894736842105264,
       "three_r_target": 131400.0,
-      "max_position_pct_for_risk": 11.176470588235293
+      "max_position_pct_for_risk": 11.176470588235293,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 75000.0,
+      "gain_since_early_pct": 13.99999999999999,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +14.0% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -147,7 +165,13 @@
       "stop_price": 29750.0,
       "stop_distance_pct": 23.02716688227684,
       "three_r_target": 65350.0,
-      "max_position_pct_for_risk": 8.685393258426966
+      "max_position_pct_for_risk": 8.685393258426966,
+      "early_state": "NORMAL",
+      "first_early_date": "2026-08-05",
+      "first_early_close": 31850.0,
+      "gain_since_early_pct": 21.350078492935644,
+      "trading_days_since_early": 15,
+      "early_state_reason": "EARLY 이후 +21.4% / 15거래일"
     },
     {
       "date": "2026-08-27",
@@ -182,7 +206,13 @@
       "stop_price": 8310.0,
       "stop_distance_pct": 21.232227488151658,
       "three_r_target": 17270.0,
-      "max_position_pct_for_risk": 9.419642857142858
+      "max_position_pct_for_risk": 9.419642857142858,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-27",
+      "first_early_close": 10550.0,
+      "gain_since_early_pct": 0.0,
+      "trading_days_since_early": 0,
+      "early_state_reason": "EARLY 이후 +0.0% / 0거래일"
     }
   ],
   "stage_counts": {
@@ -220,7 +250,13 @@
       "base_volume_contracted": true,
       "volume": 146082,
       "avg_volume20": 193096.3,
-      "volume_ratio": 0.7565240763287542
+      "volume_ratio": 0.7565240763287542,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-27",
+      "first_early_close": 127000.0,
+      "gain_since_early_pct": 0.0,
+      "trading_days_since_early": 0,
+      "early_state_reason": "EARLY 이후 +0.0% / 0거래일"
     },
     {
       "date": "2026-08-27",
@@ -251,7 +287,13 @@
       "base_volume_contracted": false,
       "volume": 414946,
       "avg_volume20": 391501.7,
-      "volume_ratio": 1.0598830094479794
+      "volume_ratio": 1.0598830094479794,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-25",
+      "first_early_close": 19400.0,
+      "gain_since_early_pct": 0.051546391752577136,
+      "trading_days_since_early": 2,
+      "early_state_reason": "EARLY 이후 +0.1% / 2거래일"
     },
     {
       "date": "2026-08-27",
@@ -282,7 +324,13 @@
       "base_volume_contracted": false,
       "volume": 862040,
       "avg_volume20": 235419.8,
-      "volume_ratio": 3.6617140954159337
+      "volume_ratio": 3.6617140954159337,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-27",
+      "first_early_close": 22450.0,
+      "gain_since_early_pct": 0.0,
+      "trading_days_since_early": 0,
+      "early_state_reason": "EARLY 이후 +0.0% / 0거래일"
     },
     {
       "date": "2026-08-27",
@@ -313,7 +361,13 @@
       "base_volume_contracted": true,
       "volume": 385830,
       "avg_volume20": 775790.85,
-      "volume_ratio": 0.49733765228089505
+      "volume_ratio": 0.49733765228089505,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-25",
+      "first_early_close": 5150.0,
+      "gain_since_early_pct": 0.3883495145631022,
+      "trading_days_since_early": 2,
+      "early_state_reason": "EARLY 이후 +0.4% / 2거래일"
     },
     {
       "date": "2026-08-27",
@@ -344,7 +398,13 @@
       "base_volume_contracted": false,
       "volume": 344778,
       "avg_volume20": 183133.4,
-      "volume_ratio": 1.8826603994683657
+      "volume_ratio": 1.8826603994683657,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-26",
+      "first_early_close": 10890.0,
+      "gain_since_early_pct": 1.0101010101010166,
+      "trading_days_since_early": 1,
+      "early_state_reason": "EARLY 이후 +1.0% / 1거래일"
     },
     {
       "date": "2026-08-27",
@@ -375,7 +435,13 @@
       "base_volume_contracted": false,
       "volume": 1009885,
       "avg_volume20": 706409.1,
-      "volume_ratio": 1.429603610712263
+      "volume_ratio": 1.429603610712263,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-26",
+      "first_early_close": 7700.0,
+      "gain_since_early_pct": 0.3896103896103842,
+      "trading_days_since_early": 1,
+      "early_state_reason": "EARLY 이후 +0.4% / 1거래일"
     },
     {
       "date": "2026-08-27",
@@ -406,7 +472,13 @@
       "base_volume_contracted": true,
       "volume": 74146,
       "avg_volume20": 116626.75,
-      "volume_ratio": 0.635754661773564
+      "volume_ratio": 0.635754661773564,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 648000.0,
+      "gain_since_early_pct": 5.246913580246915,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +5.2% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -437,7 +509,13 @@
       "base_volume_contracted": true,
       "volume": 16995,
       "avg_volume20": 11906.4,
-      "volume_ratio": 1.4273835920177385
+      "volume_ratio": 1.4273835920177385,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-11",
+      "first_early_close": 406500.0,
+      "gain_since_early_pct": 3.936039360393595,
+      "trading_days_since_early": 11,
+      "early_state_reason": "EARLY 이후 +3.9% / 11거래일"
     },
     {
       "date": "2026-08-27",
@@ -468,7 +546,13 @@
       "base_volume_contracted": false,
       "volume": 490239,
       "avg_volume20": 109285.95,
-      "volume_ratio": 4.485837383487996
+      "volume_ratio": 4.485837383487996,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-25",
+      "first_early_close": 118100.0,
+      "gain_since_early_pct": 10.245554614733287,
+      "trading_days_since_early": 2,
+      "early_state_reason": "EARLY 이후 +10.2% / 2거래일"
     },
     {
       "date": "2026-08-27",
@@ -499,7 +583,13 @@
       "base_volume_contracted": false,
       "volume": 181011,
       "avg_volume20": 204963.5,
-      "volume_ratio": 0.8831377294006006
+      "volume_ratio": 0.8831377294006006,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-20",
+      "first_early_close": 2810.0,
+      "gain_since_early_pct": 1.067615658362997,
+      "trading_days_since_early": 5,
+      "early_state_reason": "EARLY 이후 +1.1% / 5거래일"
     },
     {
       "date": "2026-08-27",
@@ -530,7 +620,13 @@
       "base_volume_contracted": false,
       "volume": 5264,
       "avg_volume20": 19963.65,
-      "volume_ratio": 0.2636792370132716
+      "volume_ratio": 0.2636792370132716,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 26700.0,
+      "gain_since_early_pct": 4.681647940074907,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +4.7% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -561,7 +657,13 @@
       "base_volume_contracted": false,
       "volume": 106991,
       "avg_volume20": 112584.35,
-      "volume_ratio": 0.9503185833555019
+      "volume_ratio": 0.9503185833555019,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-25",
+      "first_early_close": 8560.0,
+      "gain_since_early_pct": -2.453271028037385,
+      "trading_days_since_early": 2,
+      "early_state_reason": "EARLY 이후 +-2.5% / 2거래일"
     },
     {
       "date": "2026-08-27",
@@ -592,7 +694,13 @@
       "base_volume_contracted": true,
       "volume": 49858,
       "avg_volume20": 108859.15,
-      "volume_ratio": 0.4580046785226598
+      "volume_ratio": 0.4580046785226598,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-21",
+      "first_early_close": 26000.0,
+      "gain_since_early_pct": 1.1538461538461497,
+      "trading_days_since_early": 4,
+      "early_state_reason": "EARLY 이후 +1.2% / 4거래일"
     },
     {
       "date": "2026-08-27",
@@ -623,7 +731,13 @@
       "base_volume_contracted": true,
       "volume": 18653,
       "avg_volume20": 26441.9,
-      "volume_ratio": 0.7054334219553058
+      "volume_ratio": 0.7054334219553058,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-11",
+      "first_early_close": 23700.0,
+      "gain_since_early_pct": -5.27426160337553,
+      "trading_days_since_early": 11,
+      "early_state_reason": "EARLY 이후 +-5.3% / 11거래일"
     },
     {
       "date": "2026-08-27",
@@ -654,7 +768,13 @@
       "base_volume_contracted": false,
       "volume": 6429,
       "avg_volume20": 6376.0,
-      "volume_ratio": 1.0083124215809285
+      "volume_ratio": 1.0083124215809285,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-24",
+      "first_early_close": 131800.0,
+      "gain_since_early_pct": 3.034901365705611,
+      "trading_days_since_early": 3,
+      "early_state_reason": "EARLY 이후 +3.0% / 3거래일"
     },
     {
       "date": "2026-08-27",
@@ -685,7 +805,13 @@
       "base_volume_contracted": true,
       "volume": 11862,
       "avg_volume20": 46693.3,
-      "volume_ratio": 0.25404072961217133
+      "volume_ratio": 0.25404072961217133,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-12",
+      "first_early_close": 10500.0,
+      "gain_since_early_pct": -5.714285714285716,
+      "trading_days_since_early": 10,
+      "early_state_reason": "EARLY 이후 +-5.7% / 10거래일"
     },
     {
       "date": "2026-08-27",
@@ -716,7 +842,13 @@
       "base_volume_contracted": true,
       "volume": 1387,
       "avg_volume20": 11887.65,
-      "volume_ratio": 0.11667570966507258
+      "volume_ratio": 0.11667570966507258,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-25",
+      "first_early_close": 20950.0,
+      "gain_since_early_pct": 0.23866348448686736,
+      "trading_days_since_early": 2,
+      "early_state_reason": "EARLY 이후 +0.2% / 2거래일"
     },
     {
       "date": "2026-08-27",
@@ -747,7 +879,13 @@
       "base_volume_contracted": true,
       "volume": 45272,
       "avg_volume20": 72048.25,
-      "volume_ratio": 0.6283566915226949
+      "volume_ratio": 0.6283566915226949,
+      "early_state": "NORMAL",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 1219000.0,
+      "gain_since_early_pct": 21.410992616899094,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +21.4% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -778,7 +916,13 @@
       "base_volume_contracted": true,
       "volume": 30532,
       "avg_volume20": 20796.3,
-      "volume_ratio": 1.4681457759312955
+      "volume_ratio": 1.4681457759312955,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-24",
+      "first_early_close": 18180.0,
+      "gain_since_early_pct": 3.905390539053899,
+      "trading_days_since_early": 3,
+      "early_state_reason": "EARLY 이후 +3.9% / 3거래일"
     },
     {
       "date": "2026-08-27",
@@ -809,7 +953,13 @@
       "base_volume_contracted": false,
       "volume": 3162035,
       "avg_volume20": 2584989.5,
-      "volume_ratio": 1.2232293400031218
+      "volume_ratio": 1.2232293400031218,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-07",
+      "first_early_close": 27150.0,
+      "gain_since_early_pct": 3.8674033149171283,
+      "trading_days_since_early": 13,
+      "early_state_reason": "EARLY 이후 +3.9% / 13거래일"
     },
     {
       "date": "2026-08-27",
@@ -840,7 +990,13 @@
       "base_volume_contracted": false,
       "volume": 3155,
       "avg_volume20": 3532.05,
-      "volume_ratio": 0.8932489630667743
+      "volume_ratio": 0.8932489630667743,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 141700.0,
+      "gain_since_early_pct": -0.8468595624558928,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +-0.8% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -871,7 +1027,13 @@
       "base_volume_contracted": true,
       "volume": 110899,
       "avg_volume20": 303035.7,
-      "volume_ratio": 0.3659601822491541
+      "volume_ratio": 0.3659601822491541,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 14930.0,
+      "gain_since_early_pct": -2.8801071667783007,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +-2.9% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -902,7 +1064,13 @@
       "base_volume_contracted": false,
       "volume": 47437,
       "avg_volume20": 37439.45,
-      "volume_ratio": 1.2670325018129274
+      "volume_ratio": 1.2670325018129274,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-14",
+      "first_early_close": 437500.0,
+      "gain_since_early_pct": -2.400000000000002,
+      "trading_days_since_early": 8,
+      "early_state_reason": "EARLY 이후 +-2.4% / 8거래일"
     },
     {
       "date": "2026-08-27",
@@ -933,7 +1101,13 @@
       "base_volume_contracted": false,
       "volume": 67001,
       "avg_volume20": 38788.6,
-      "volume_ratio": 1.7273374135699664
+      "volume_ratio": 1.7273374135699664,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-07",
+      "first_early_close": 55600.0,
+      "gain_since_early_pct": 8.093525179856108,
+      "trading_days_since_early": 13,
+      "early_state_reason": "EARLY 이후 +8.1% / 13거래일"
     },
     {
       "date": "2026-08-27",
@@ -964,7 +1138,13 @@
       "base_volume_contracted": true,
       "volume": 6717,
       "avg_volume20": 8977.0,
-      "volume_ratio": 0.7482455163194831
+      "volume_ratio": 0.7482455163194831,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 118900.0,
+      "gain_since_early_pct": 10.092514718250634,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +10.1% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -995,7 +1175,13 @@
       "base_volume_contracted": false,
       "volume": 97659,
       "avg_volume20": 128027.1,
-      "volume_ratio": 0.7627994385563681
+      "volume_ratio": 0.7627994385563681,
+      "early_state": "LATE",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 67800.0,
+      "gain_since_early_pct": 33.628318584070804,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +33.6% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -1026,7 +1212,13 @@
       "base_volume_contracted": true,
       "volume": 199072,
       "avg_volume20": 211479.75,
-      "volume_ratio": 0.9413288979204865
+      "volume_ratio": 0.9413288979204865,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-18",
+      "first_early_close": 182000.0,
+      "gain_since_early_pct": 1.098901098901095,
+      "trading_days_since_early": 7,
+      "early_state_reason": "EARLY 이후 +1.1% / 7거래일"
     },
     {
       "date": "2026-08-27",
@@ -1057,7 +1249,13 @@
       "base_volume_contracted": true,
       "volume": 48037,
       "avg_volume20": 53225.6,
-      "volume_ratio": 0.9025168340046895
+      "volume_ratio": 0.9025168340046895,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 36950.0,
+      "gain_since_early_pct": 2.1650879566982306,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +2.2% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -1088,7 +1286,13 @@
       "base_volume_contracted": true,
       "volume": 4282,
       "avg_volume20": 8019.0,
-      "volume_ratio": 0.5339817932410525
+      "volume_ratio": 0.5339817932410525,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 52000.0,
+      "gain_since_early_pct": -1.3461538461538414,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +-1.3% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -1119,7 +1323,13 @@
       "base_volume_contracted": true,
       "volume": 29823,
       "avg_volume20": 22670.85,
-      "volume_ratio": 1.3154778051991876
+      "volume_ratio": 1.3154778051991876,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 37950.0,
+      "gain_since_early_pct": -0.9222661396574461,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +-0.9% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -1150,7 +1360,13 @@
       "base_volume_contracted": false,
       "volume": 441518,
       "avg_volume20": 510498.35,
-      "volume_ratio": 0.8648764486702063
+      "volume_ratio": 0.8648764486702063,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 39200.0,
+      "gain_since_early_pct": 7.397959183673475,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +7.4% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -1181,7 +1397,13 @@
       "base_volume_contracted": true,
       "volume": 81523,
       "avg_volume20": 110134.0,
-      "volume_ratio": 0.7402164635807289
+      "volume_ratio": 0.7402164635807289,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 4890.0,
+      "gain_since_early_pct": 4.294478527607359,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +4.3% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -1212,7 +1434,13 @@
       "base_volume_contracted": true,
       "volume": 33605,
       "avg_volume20": 47858.6,
-      "volume_ratio": 0.7021726502655741
+      "volume_ratio": 0.7021726502655741,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 39000.0,
+      "gain_since_early_pct": -0.38461538461538325,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +-0.4% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -1243,7 +1471,13 @@
       "base_volume_contracted": true,
       "volume": 9566,
       "avg_volume20": 15892.7,
-      "volume_ratio": 0.6019115694627093
+      "volume_ratio": 0.6019115694627093,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 61400.0,
+      "gain_since_early_pct": 7.654723127035834,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +7.7% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -1274,7 +1508,13 @@
       "base_volume_contracted": false,
       "volume": 1047109,
       "avg_volume20": 1656797.0,
-      "volume_ratio": 0.6320080251231744
+      "volume_ratio": 0.6320080251231744,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 21700.0,
+      "gain_since_early_pct": -1.1520737327188946,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +-1.2% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -1305,7 +1545,13 @@
       "base_volume_contracted": true,
       "volume": 79218,
       "avg_volume20": 59228.55,
-      "volume_ratio": 1.3374968659540036
+      "volume_ratio": 1.3374968659540036,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-05",
+      "first_early_close": 22200.0,
+      "gain_since_early_pct": 4.504504504504503,
+      "trading_days_since_early": 15,
+      "early_state_reason": "EARLY 이후 +4.5% / 15거래일"
     },
     {
       "date": "2026-08-27",
@@ -1336,7 +1582,13 @@
       "base_volume_contracted": true,
       "volume": 148409,
       "avg_volume20": 55086.9,
-      "volume_ratio": 2.6940887942505385
+      "volume_ratio": 2.6940887942505385,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 75000.0,
+      "gain_since_early_pct": 13.99999999999999,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +14.0% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -1367,7 +1619,13 @@
       "base_volume_contracted": true,
       "volume": 7454,
       "avg_volume20": 8876.3,
-      "volume_ratio": 0.8397643162128365
+      "volume_ratio": 0.8397643162128365,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 93000.0,
+      "gain_since_early_pct": 4.623655913978486,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +4.6% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -1398,7 +1656,13 @@
       "base_volume_contracted": false,
       "volume": 229293,
       "avg_volume20": 96698.65,
-      "volume_ratio": 2.371212007613343
+      "volume_ratio": 2.371212007613343,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-10",
+      "first_early_close": 7210.0,
+      "gain_since_early_pct": 4.438280166435504,
+      "trading_days_since_early": 12,
+      "early_state_reason": "EARLY 이후 +4.4% / 12거래일"
     },
     {
       "date": "2026-08-27",
@@ -1429,7 +1693,13 @@
       "base_volume_contracted": true,
       "volume": 125705,
       "avg_volume20": 182651.15,
-      "volume_ratio": 0.688224519801819
+      "volume_ratio": 0.688224519801819,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 96600.0,
+      "gain_since_early_pct": 1.7598343685300222,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +1.8% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -1460,7 +1730,13 @@
       "base_volume_contracted": true,
       "volume": 2320,
       "avg_volume20": 4589.75,
-      "volume_ratio": 0.5054741543657062
+      "volume_ratio": 0.5054741543657062,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-24",
+      "first_early_close": 54000.0,
+      "gain_since_early_pct": -0.37037037037036535,
+      "trading_days_since_early": 3,
+      "early_state_reason": "EARLY 이후 +-0.4% / 3거래일"
     },
     {
       "date": "2026-08-27",
@@ -1491,7 +1767,13 @@
       "base_volume_contracted": true,
       "volume": 56178,
       "avg_volume20": 65134.65,
-      "volume_ratio": 0.8624902413692251
+      "volume_ratio": 0.8624902413692251,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 25400.0,
+      "gain_since_early_pct": 1.7716535433070835,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +1.8% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -1522,7 +1804,13 @@
       "base_volume_contracted": false,
       "volume": 7409,
       "avg_volume20": 6982.55,
-      "volume_ratio": 1.0610736765221873
+      "volume_ratio": 1.0610736765221873,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-20",
+      "first_early_close": 232000.0,
+      "gain_since_early_pct": 3.87931034482758,
+      "trading_days_since_early": 5,
+      "early_state_reason": "EARLY 이후 +3.9% / 5거래일"
     },
     {
       "date": "2026-08-27",
@@ -1553,7 +1841,13 @@
       "base_volume_contracted": false,
       "volume": 3824498,
       "avg_volume20": 4925300.25,
-      "volume_ratio": 0.7765004783210933
+      "volume_ratio": 0.7765004783210933,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 5640.0,
+      "gain_since_early_pct": -0.35460992907800915,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +-0.4% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -1584,7 +1878,13 @@
       "base_volume_contracted": false,
       "volume": 104885,
       "avg_volume20": 75064.05,
-      "volume_ratio": 1.3972733951871767
+      "volume_ratio": 1.3972733951871767,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 14160.0,
+      "gain_since_early_pct": 9.675141242937846,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +9.7% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -1615,7 +1915,13 @@
       "base_volume_contracted": true,
       "volume": 16502,
       "avg_volume20": 26803.3,
-      "volume_ratio": 0.6156704584883205
+      "volume_ratio": 0.6156704584883205,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-26",
+      "first_early_close": 7890.0,
+      "gain_since_early_pct": -0.25348542458808465,
+      "trading_days_since_early": 1,
+      "early_state_reason": "EARLY 이후 +-0.3% / 1거래일"
     },
     {
       "date": "2026-08-27",
@@ -1646,7 +1952,13 @@
       "base_volume_contracted": true,
       "volume": 48748,
       "avg_volume20": 59368.2,
-      "volume_ratio": 0.821112986413602
+      "volume_ratio": 0.821112986413602,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-26",
+      "first_early_close": 13330.0,
+      "gain_since_early_pct": 0.3750937734433579,
+      "trading_days_since_early": 1,
+      "early_state_reason": "EARLY 이후 +0.4% / 1거래일"
     },
     {
       "date": "2026-08-27",
@@ -1677,7 +1989,13 @@
       "base_volume_contracted": true,
       "volume": 1899,
       "avg_volume20": 1895.0,
-      "volume_ratio": 1.0021108179419524
+      "volume_ratio": 1.0021108179419524,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-27",
+      "first_early_close": 380000.0,
+      "gain_since_early_pct": 0.0,
+      "trading_days_since_early": 0,
+      "early_state_reason": "EARLY 이후 +0.0% / 0거래일"
     },
     {
       "date": "2026-08-27",
@@ -1708,7 +2026,13 @@
       "base_volume_contracted": true,
       "volume": 78553,
       "avg_volume20": 151827.95,
-      "volume_ratio": 0.5173816810409414
+      "volume_ratio": 0.5173816810409414,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 34750.0,
+      "gain_since_early_pct": 6.187050359712232,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +6.2% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -1739,7 +2063,13 @@
       "base_volume_contracted": true,
       "volume": 91530,
       "avg_volume20": 128556.55,
-      "volume_ratio": 0.7119823921846067
+      "volume_ratio": 0.7119823921846067,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-27",
+      "first_early_close": 298500.0,
+      "gain_since_early_pct": 0.0,
+      "trading_days_since_early": 0,
+      "early_state_reason": "EARLY 이후 +0.0% / 0거래일"
     },
     {
       "date": "2026-08-27",
@@ -1770,7 +2100,13 @@
       "base_volume_contracted": true,
       "volume": 952292,
       "avg_volume20": 1091064.9,
-      "volume_ratio": 0.8728096742916027
+      "volume_ratio": 0.8728096742916027,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 107400.0,
+      "gain_since_early_pct": 1.3035381750465591,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +1.3% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -1801,7 +2137,13 @@
       "base_volume_contracted": true,
       "volume": 1657173,
       "avg_volume20": 8198586.65,
-      "volume_ratio": 0.20212910721630295
+      "volume_ratio": 0.20212910721630295,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 6660.0,
+      "gain_since_early_pct": 6.756756756756754,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +6.8% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -1832,7 +2174,13 @@
       "base_volume_contracted": true,
       "volume": 613337,
       "avg_volume20": 749790.3,
-      "volume_ratio": 0.8180113826492553
+      "volume_ratio": 0.8180113826492553,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-27",
+      "first_early_close": 5370.0,
+      "gain_since_early_pct": 0.0,
+      "trading_days_since_early": 0,
+      "early_state_reason": "EARLY 이후 +0.0% / 0거래일"
     },
     {
       "date": "2026-08-27",
@@ -1863,7 +2211,13 @@
       "base_volume_contracted": true,
       "volume": 0,
       "avg_volume20": 72364.25,
-      "volume_ratio": 0.0
+      "volume_ratio": 0.0,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 8250.0,
+      "gain_since_early_pct": 0.0,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +0.0% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -1894,7 +2248,13 @@
       "base_volume_contracted": true,
       "volume": 599192,
       "avg_volume20": 720532.2,
-      "volume_ratio": 0.8315964227552912
+      "volume_ratio": 0.8315964227552912,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 126900.0,
+      "gain_since_early_pct": 5.279747832939319,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +5.3% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -1925,7 +2285,13 @@
       "base_volume_contracted": true,
       "volume": 3751228,
       "avg_volume20": 4378578.35,
-      "volume_ratio": 0.856722821917758
+      "volume_ratio": 0.856722821917758,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-14",
+      "first_early_close": 5630.0,
+      "gain_since_early_pct": -2.6642984014209614,
+      "trading_days_since_early": 8,
+      "early_state_reason": "EARLY 이후 +-2.7% / 8거래일"
     },
     {
       "date": "2026-08-27",
@@ -1956,7 +2322,13 @@
       "base_volume_contracted": true,
       "volume": 206337,
       "avg_volume20": 404040.95,
-      "volume_ratio": 0.5106833849390761
+      "volume_ratio": 0.5106833849390761,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 133100.0,
+      "gain_since_early_pct": 6.987227648384664,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +7.0% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -1987,7 +2359,13 @@
       "base_volume_contracted": true,
       "volume": 14085,
       "avg_volume20": 15678.0,
-      "volume_ratio": 0.8983926521239954
+      "volume_ratio": 0.8983926521239954,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 43600.0,
+      "gain_since_early_pct": 1.83486238532109,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +1.8% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -2018,7 +2396,13 @@
       "base_volume_contracted": false,
       "volume": 3156,
       "avg_volume20": 4548.3,
-      "volume_ratio": 0.6938856275971241
+      "volume_ratio": 0.6938856275971241,
+      "early_state": "NORMAL",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 83600.0,
+      "gain_since_early_pct": 21.650717703349276,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +21.7% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -2049,7 +2433,13 @@
       "base_volume_contracted": false,
       "volume": 55661,
       "avg_volume20": 84281.25,
-      "volume_ratio": 0.6604197256210604
+      "volume_ratio": 0.6604197256210604,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-27",
+      "first_early_close": 7180.0,
+      "gain_since_early_pct": 0.0,
+      "trading_days_since_early": 0,
+      "early_state_reason": "EARLY 이후 +0.0% / 0거래일"
     },
     {
       "date": "2026-08-27",
@@ -2080,7 +2470,13 @@
       "base_volume_contracted": true,
       "volume": 74573,
       "avg_volume20": 129903.6,
-      "volume_ratio": 0.5740641521866984
+      "volume_ratio": 0.5740641521866984,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-12",
+      "first_early_close": 4180.0,
+      "gain_since_early_pct": -2.511961722488043,
+      "trading_days_since_early": 10,
+      "early_state_reason": "EARLY 이후 +-2.5% / 10거래일"
     },
     {
       "date": "2026-08-27",
@@ -2111,7 +2507,13 @@
       "base_volume_contracted": false,
       "volume": 91483,
       "avg_volume20": 90891.4,
-      "volume_ratio": 1.0065088666254454
+      "volume_ratio": 1.0065088666254454,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-21",
+      "first_early_close": 3160.0,
+      "gain_since_early_pct": -0.15822784810126667,
+      "trading_days_since_early": 4,
+      "early_state_reason": "EARLY 이후 +-0.2% / 4거래일"
     },
     {
       "date": "2026-08-27",
@@ -2142,7 +2544,13 @@
       "base_volume_contracted": true,
       "volume": 53381,
       "avg_volume20": 38018.15,
-      "volume_ratio": 1.4040925189679139
+      "volume_ratio": 1.4040925189679139,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-10",
+      "first_early_close": 9770.0,
+      "gain_since_early_pct": 0.9211873080859689,
+      "trading_days_since_early": 12,
+      "early_state_reason": "EARLY 이후 +0.9% / 12거래일"
     },
     {
       "date": "2026-08-27",
@@ -2173,7 +2581,13 @@
       "base_volume_contracted": true,
       "volume": 755518,
       "avg_volume20": 998391.7,
-      "volume_ratio": 0.7567350569921605
+      "volume_ratio": 0.7567350569921605,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 169500.0,
+      "gain_since_early_pct": -0.8259587020648995,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +-0.8% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -2204,7 +2618,13 @@
       "base_volume_contracted": true,
       "volume": 25486,
       "avg_volume20": 31541.35,
-      "volume_ratio": 0.8080186802403829
+      "volume_ratio": 0.8080186802403829,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 33350.0,
+      "gain_since_early_pct": 4.647676161919034,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +4.6% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -2235,7 +2655,13 @@
       "base_volume_contracted": false,
       "volume": 45729,
       "avg_volume20": 106840.85,
-      "volume_ratio": 0.42801044731486126
+      "volume_ratio": 0.42801044731486126,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-07",
+      "first_early_close": 7990.0,
+      "gain_since_early_pct": 3.504380475594493,
+      "trading_days_since_early": 13,
+      "early_state_reason": "EARLY 이후 +3.5% / 13거래일"
     },
     {
       "date": "2026-08-27",
@@ -2266,7 +2692,13 @@
       "base_volume_contracted": true,
       "volume": 167598,
       "avg_volume20": 247230.15,
-      "volume_ratio": 0.6779027557925278
+      "volume_ratio": 0.6779027557925278,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-20",
+      "first_early_close": 2485.0,
+      "gain_since_early_pct": 3.0181086519114775,
+      "trading_days_since_early": 5,
+      "early_state_reason": "EARLY 이후 +3.0% / 5거래일"
     },
     {
       "date": "2026-08-27",
@@ -2297,7 +2729,13 @@
       "base_volume_contracted": true,
       "volume": 128945,
       "avg_volume20": 113851.55,
-      "volume_ratio": 1.1325713176500452
+      "volume_ratio": 1.1325713176500452,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 3185.0,
+      "gain_since_early_pct": 2.668759811616961,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +2.7% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -2328,7 +2766,13 @@
       "base_volume_contracted": false,
       "volume": 209506,
       "avg_volume20": 166324.45,
-      "volume_ratio": 1.259622382638271
+      "volume_ratio": 1.259622382638271,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-24",
+      "first_early_close": 540000.0,
+      "gain_since_early_pct": -6.666666666666665,
+      "trading_days_since_early": 3,
+      "early_state_reason": "EARLY 이후 +-6.7% / 3거래일"
     },
     {
       "date": "2026-08-27",
@@ -2359,7 +2803,13 @@
       "base_volume_contracted": true,
       "volume": 132891,
       "avg_volume20": 263221.25,
-      "volume_ratio": 0.5048642539308661
+      "volume_ratio": 0.5048642539308661,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-24",
+      "first_early_close": 115400.0,
+      "gain_since_early_pct": 3.119584055459268,
+      "trading_days_since_early": 3,
+      "early_state_reason": "EARLY 이후 +3.1% / 3거래일"
     },
     {
       "date": "2026-08-27",
@@ -2390,7 +2840,13 @@
       "base_volume_contracted": true,
       "volume": 214718,
       "avg_volume20": 317278.5,
-      "volume_ratio": 0.6767492912378242
+      "volume_ratio": 0.6767492912378242,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 27100.0,
+      "gain_since_early_pct": 3.3210332103321027,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +3.3% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -2421,7 +2877,13 @@
       "base_volume_contracted": true,
       "volume": 51686,
       "avg_volume20": 121373.85,
-      "volume_ratio": 0.4258413159012423
+      "volume_ratio": 0.4258413159012423,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 127200.0,
+      "gain_since_early_pct": -0.4716981132075526,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +-0.5% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -2452,7 +2914,13 @@
       "base_volume_contracted": true,
       "volume": 51344,
       "avg_volume20": 40787.3,
-      "volume_ratio": 1.2588232121273042
+      "volume_ratio": 1.2588232121273042,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-27",
+      "first_early_close": 10550.0,
+      "gain_since_early_pct": 0.0,
+      "trading_days_since_early": 0,
+      "early_state_reason": "EARLY 이후 +0.0% / 0거래일"
     },
     {
       "date": "2026-08-27",
@@ -2483,7 +2951,13 @@
       "base_volume_contracted": false,
       "volume": 20766,
       "avg_volume20": 24786.7,
-      "volume_ratio": 0.8377880072780967
+      "volume_ratio": 0.8377880072780967,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 26300.0,
+      "gain_since_early_pct": 6.653992395437269,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +6.7% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -2514,7 +2988,13 @@
       "base_volume_contracted": true,
       "volume": 84996,
       "avg_volume20": 97499.95,
-      "volume_ratio": 0.8717542932073299
+      "volume_ratio": 0.8717542932073299,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 13230.0,
+      "gain_since_early_pct": 1.0582010582010692,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +1.1% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -2545,7 +3025,13 @@
       "base_volume_contracted": true,
       "volume": 29767,
       "avg_volume20": 53695.2,
-      "volume_ratio": 0.5543698505639238
+      "volume_ratio": 0.5543698505639238,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 1544000.0,
+      "gain_since_early_pct": 3.2383419689119064,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +3.2% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -2576,7 +3062,13 @@
       "base_volume_contracted": true,
       "volume": 23206,
       "avg_volume20": 55036.5,
-      "volume_ratio": 0.4216474521453944
+      "volume_ratio": 0.4216474521453944,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-11",
+      "first_early_close": 11020.0,
+      "gain_since_early_pct": -2.0871143375680634,
+      "trading_days_since_early": 11,
+      "early_state_reason": "EARLY 이후 +-2.1% / 11거래일"
     },
     {
       "date": "2026-08-27",
@@ -2607,7 +3099,13 @@
       "base_volume_contracted": true,
       "volume": 18265,
       "avg_volume20": 45193.4,
-      "volume_ratio": 0.40415193368943253
+      "volume_ratio": 0.40415193368943253,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-05",
+      "first_early_close": 12290.0,
+      "gain_since_early_pct": 6.753458096013021,
+      "trading_days_since_early": 15,
+      "early_state_reason": "EARLY 이후 +6.8% / 15거래일"
     },
     {
       "date": "2026-08-27",
@@ -2638,7 +3136,13 @@
       "base_volume_contracted": true,
       "volume": 1888,
       "avg_volume20": 3172.3,
-      "volume_ratio": 0.5951517826182895
+      "volume_ratio": 0.5951517826182895,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-27",
+      "first_early_close": 130300.0,
+      "gain_since_early_pct": 0.0,
+      "trading_days_since_early": 0,
+      "early_state_reason": "EARLY 이후 +0.0% / 0거래일"
     },
     {
       "date": "2026-08-27",
@@ -2669,7 +3173,13 @@
       "base_volume_contracted": false,
       "volume": 36331,
       "avg_volume20": 41091.65,
-      "volume_ratio": 0.8841455624196156
+      "volume_ratio": 0.8841455624196156,
+      "early_state": "NORMAL",
+      "first_early_date": "2026-08-07",
+      "first_early_close": 116900.0,
+      "gain_since_early_pct": 16.33875106928999,
+      "trading_days_since_early": 13,
+      "early_state_reason": "EARLY 이후 +16.3% / 13거래일"
     },
     {
       "date": "2026-08-27",
@@ -2700,7 +3210,13 @@
       "base_volume_contracted": true,
       "volume": 105721,
       "avg_volume20": 79209.2,
-      "volume_ratio": 1.3347060694969777
+      "volume_ratio": 1.3347060694969777,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 125300.0,
+      "gain_since_early_pct": 11.492418196328803,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +11.5% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -2731,7 +3247,13 @@
       "base_volume_contracted": true,
       "volume": 123685,
       "avg_volume20": 201458.45,
-      "volume_ratio": 0.6139479381480399
+      "volume_ratio": 0.6139479381480399,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-25",
+      "first_early_close": 22400.0,
+      "gain_since_early_pct": 2.678571428571419,
+      "trading_days_since_early": 2,
+      "early_state_reason": "EARLY 이후 +2.7% / 2거래일"
     },
     {
       "date": "2026-08-27",
@@ -2762,7 +3284,13 @@
       "base_volume_contracted": false,
       "volume": 93163,
       "avg_volume20": 83326.65,
-      "volume_ratio": 1.1180456672625145
+      "volume_ratio": 1.1180456672625145,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 15190.0,
+      "gain_since_early_pct": 7.504937458854499,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +7.5% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -2793,7 +3321,13 @@
       "base_volume_contracted": true,
       "volume": 1256958,
       "avg_volume20": 1982288.45,
-      "volume_ratio": 0.63409439731135
+      "volume_ratio": 0.63409439731135,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 33500.0,
+      "gain_since_early_pct": -1.6417910447761197,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +-1.6% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -2824,7 +3358,13 @@
       "base_volume_contracted": true,
       "volume": 116687,
       "avg_volume20": 140259.6,
-      "volume_ratio": 0.8319359245285171
+      "volume_ratio": 0.8319359245285171,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 3625.0,
+      "gain_since_early_pct": 8.000000000000007,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +8.0% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -2855,7 +3395,13 @@
       "base_volume_contracted": true,
       "volume": 86307,
       "avg_volume20": 102414.65,
-      "volume_ratio": 0.8427212317768992
+      "volume_ratio": 0.8427212317768992,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-10",
+      "first_early_close": 3700.0,
+      "gain_since_early_pct": 4.594594594594592,
+      "trading_days_since_early": 12,
+      "early_state_reason": "EARLY 이후 +4.6% / 12거래일"
     },
     {
       "date": "2026-08-27",
@@ -2886,7 +3432,13 @@
       "base_volume_contracted": false,
       "volume": 45717,
       "avg_volume20": 56185.4,
-      "volume_ratio": 0.8136811342448393
+      "volume_ratio": 0.8136811342448393,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 4220.0,
+      "gain_since_early_pct": 2.1327014218009532,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +2.1% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -2917,7 +3469,13 @@
       "base_volume_contracted": false,
       "volume": 29158,
       "avg_volume20": 61394.45,
-      "volume_ratio": 0.4749289227283574
+      "volume_ratio": 0.4749289227283574,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 3935.0,
+      "gain_since_early_pct": -0.6353240152477735,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +-0.6% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -2948,7 +3506,13 @@
       "base_volume_contracted": false,
       "volume": 431941,
       "avg_volume20": 172030.45,
-      "volume_ratio": 2.5108403773866774
+      "volume_ratio": 2.5108403773866774,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-05",
+      "first_early_close": 10750.0,
+      "gain_since_early_pct": 1.6744186046511622,
+      "trading_days_since_early": 15,
+      "early_state_reason": "EARLY 이후 +1.7% / 15거래일"
     },
     {
       "date": "2026-08-27",
@@ -2979,7 +3543,13 @@
       "base_volume_contracted": false,
       "volume": 35023,
       "avg_volume20": 31453.05,
-      "volume_ratio": 1.113500916445305
+      "volume_ratio": 1.113500916445305,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 5380.0,
+      "gain_since_early_pct": 2.0446096654274992,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +2.0% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -3010,7 +3580,13 @@
       "base_volume_contracted": false,
       "volume": 76859,
       "avg_volume20": 90376.3,
-      "volume_ratio": 0.8504331334653
+      "volume_ratio": 0.8504331334653,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-27",
+      "first_early_close": 5280.0,
+      "gain_since_early_pct": 0.0,
+      "trading_days_since_early": 0,
+      "early_state_reason": "EARLY 이후 +0.0% / 0거래일"
     },
     {
       "date": "2026-08-27",
@@ -3041,7 +3617,13 @@
       "base_volume_contracted": true,
       "volume": 41685,
       "avg_volume20": 47361.85,
-      "volume_ratio": 0.8801387614715219
+      "volume_ratio": 0.8801387614715219,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 17830.0,
+      "gain_since_early_pct": 2.5238362310712192,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +2.5% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -3072,7 +3654,13 @@
       "base_volume_contracted": true,
       "volume": 38642,
       "avg_volume20": 60763.85,
-      "volume_ratio": 0.6359373212855999
+      "volume_ratio": 0.6359373212855999,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-10",
+      "first_early_close": 32400.0,
+      "gain_since_early_pct": 0.92592592592593,
+      "trading_days_since_early": 12,
+      "early_state_reason": "EARLY 이후 +0.9% / 12거래일"
     }
   ],
   "leaders": [
@@ -3105,7 +3693,13 @@
       "base_volume_contracted": true,
       "volume": 3017,
       "avg_volume20": 3155.65,
-      "volume_ratio": 0.9560629347361083
+      "volume_ratio": 0.9560629347361083,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3136,7 +3730,13 @@
       "base_volume_contracted": true,
       "volume": 49482,
       "avg_volume20": 45715.35,
-      "volume_ratio": 1.0823935505251518
+      "volume_ratio": 1.0823935505251518,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3167,7 +3767,13 @@
       "base_volume_contracted": true,
       "volume": 52131,
       "avg_volume20": 102005.05,
-      "volume_ratio": 0.5110629326685296
+      "volume_ratio": 0.5110629326685296,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3198,7 +3804,13 @@
       "base_volume_contracted": true,
       "volume": 347852,
       "avg_volume20": 15623.6,
-      "volume_ratio": 22.26452290125195
+      "volume_ratio": 22.26452290125195,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3229,7 +3841,13 @@
       "base_volume_contracted": true,
       "volume": 1163,
       "avg_volume20": 1447.95,
-      "volume_ratio": 0.8032045305431817
+      "volume_ratio": 0.8032045305431817,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3260,7 +3878,13 @@
       "base_volume_contracted": true,
       "volume": 39744,
       "avg_volume20": 67385.4,
-      "volume_ratio": 0.5898013516280975
+      "volume_ratio": 0.5898013516280975,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3291,7 +3915,13 @@
       "base_volume_contracted": false,
       "volume": 12228,
       "avg_volume20": 11067.6,
-      "volume_ratio": 1.1048465792041635
+      "volume_ratio": 1.1048465792041635,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3322,7 +3952,13 @@
       "base_volume_contracted": true,
       "volume": 89152,
       "avg_volume20": 152901.45,
-      "volume_ratio": 0.583068375087352
+      "volume_ratio": 0.583068375087352,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3353,7 +3989,13 @@
       "base_volume_contracted": true,
       "volume": 145803,
       "avg_volume20": 296537.65,
-      "volume_ratio": 0.49168461407851577
+      "volume_ratio": 0.49168461407851577,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3384,7 +4026,13 @@
       "base_volume_contracted": true,
       "volume": 19567,
       "avg_volume20": 30676.15,
-      "volume_ratio": 0.6378570974519292
+      "volume_ratio": 0.6378570974519292,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3415,7 +4063,13 @@
       "base_volume_contracted": true,
       "volume": 41715,
       "avg_volume20": 36260.65,
-      "volume_ratio": 1.1504206350410155
+      "volume_ratio": 1.1504206350410155,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3446,7 +4100,13 @@
       "base_volume_contracted": true,
       "volume": 20029,
       "avg_volume20": 110934.45,
-      "volume_ratio": 0.18054806239179985
+      "volume_ratio": 0.18054806239179985,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3477,7 +4137,13 @@
       "base_volume_contracted": false,
       "volume": 1227194,
       "avg_volume20": 73700.15,
-      "volume_ratio": 16.65117370860168
+      "volume_ratio": 16.65117370860168,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-05",
+      "first_early_close": 30950.0,
+      "gain_since_early_pct": 13.408723747980611,
+      "trading_days_since_early": 15,
+      "early_state_reason": "EARLY 이후 +13.4% / 15거래일"
     },
     {
       "date": "2026-08-27",
@@ -3508,7 +4174,13 @@
       "base_volume_contracted": true,
       "volume": 12816,
       "avg_volume20": 38408.5,
-      "volume_ratio": 0.3336761393962274
+      "volume_ratio": 0.3336761393962274,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3539,7 +4211,13 @@
       "base_volume_contracted": true,
       "volume": 20137,
       "avg_volume20": 36287.7,
-      "volume_ratio": 0.5549263248979682
+      "volume_ratio": 0.5549263248979682,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3570,7 +4248,13 @@
       "base_volume_contracted": true,
       "volume": 52856,
       "avg_volume20": 83132.8,
-      "volume_ratio": 0.6358019939181646
+      "volume_ratio": 0.6358019939181646,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3601,7 +4285,13 @@
       "base_volume_contracted": true,
       "volume": 6206,
       "avg_volume20": 14396.35,
-      "volume_ratio": 0.4310814894053006
+      "volume_ratio": 0.4310814894053006,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3632,7 +4322,13 @@
       "base_volume_contracted": true,
       "volume": 16456,
       "avg_volume20": 44669.6,
-      "volume_ratio": 0.36839371742751226
+      "volume_ratio": 0.36839371742751226,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-10",
+      "first_early_close": 25050.0,
+      "gain_since_early_pct": 5.788423153692612,
+      "trading_days_since_early": 12,
+      "early_state_reason": "EARLY 이후 +5.8% / 12거래일"
     },
     {
       "date": "2026-08-27",
@@ -3663,7 +4359,13 @@
       "base_volume_contracted": false,
       "volume": 193112,
       "avg_volume20": 358338.8,
-      "volume_ratio": 0.5389089878070698
+      "volume_ratio": 0.5389089878070698,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3694,7 +4396,13 @@
       "base_volume_contracted": true,
       "volume": 89088,
       "avg_volume20": 234189.3,
-      "volume_ratio": 0.38041020661490516
+      "volume_ratio": 0.38041020661490516,
+      "early_state": "LATE",
+      "first_early_date": "2026-08-14",
+      "first_early_close": 29100.0,
+      "gain_since_early_pct": 43.81443298969072,
+      "trading_days_since_early": 8,
+      "early_state_reason": "EARLY 이후 +43.8% / 8거래일"
     },
     {
       "date": "2026-08-27",
@@ -3725,7 +4433,13 @@
       "base_volume_contracted": true,
       "volume": 16282,
       "avg_volume20": 38020.35,
-      "volume_ratio": 0.4282443480925347
+      "volume_ratio": 0.4282443480925347,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3756,7 +4470,13 @@
       "base_volume_contracted": true,
       "volume": 80791,
       "avg_volume20": 85182.55,
-      "volume_ratio": 0.9484454269096194
+      "volume_ratio": 0.9484454269096194,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3787,7 +4507,13 @@
       "base_volume_contracted": true,
       "volume": 219318,
       "avg_volume20": 228022.1,
-      "volume_ratio": 0.9618278228294538
+      "volume_ratio": 0.9618278228294538,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3818,7 +4544,13 @@
       "base_volume_contracted": true,
       "volume": 366096,
       "avg_volume20": 1078403.5,
-      "volume_ratio": 0.33947961036847524
+      "volume_ratio": 0.33947961036847524,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3849,7 +4581,13 @@
       "base_volume_contracted": true,
       "volume": 58351,
       "avg_volume20": 218856.95,
-      "volume_ratio": 0.26661707567431603
+      "volume_ratio": 0.26661707567431603,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3880,7 +4618,13 @@
       "base_volume_contracted": false,
       "volume": 227757,
       "avg_volume20": 375783.65,
-      "volume_ratio": 0.6060854430468169
+      "volume_ratio": 0.6060854430468169,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-10",
+      "first_early_close": 29600.0,
+      "gain_since_early_pct": 14.18918918918919,
+      "trading_days_since_early": 12,
+      "early_state_reason": "EARLY 이후 +14.2% / 12거래일"
     },
     {
       "date": "2026-08-27",
@@ -3911,7 +4655,13 @@
       "base_volume_contracted": true,
       "volume": 86128,
       "avg_volume20": 124185.9,
-      "volume_ratio": 0.6935408931287691
+      "volume_ratio": 0.6935408931287691,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3942,7 +4692,13 @@
       "base_volume_contracted": true,
       "volume": 11844,
       "avg_volume20": 36862.85,
-      "volume_ratio": 0.321299085664836
+      "volume_ratio": 0.321299085664836,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -3973,7 +4729,13 @@
       "base_volume_contracted": true,
       "volume": 1060261,
       "avg_volume20": 1586237.65,
-      "volume_ratio": 0.6684124538337619
+      "volume_ratio": 0.6684124538337619,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-25",
+      "first_early_close": 9790.0,
+      "gain_since_early_pct": 2.2471910112359605,
+      "trading_days_since_early": 2,
+      "early_state_reason": "EARLY 이후 +2.2% / 2거래일"
     },
     {
       "date": "2026-08-27",
@@ -4004,7 +4766,13 @@
       "base_volume_contracted": true,
       "volume": 123182,
       "avg_volume20": 228340.0,
-      "volume_ratio": 0.5394674608040642
+      "volume_ratio": 0.5394674608040642,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4035,7 +4803,13 @@
       "base_volume_contracted": true,
       "volume": 1716697,
       "avg_volume20": 959509.8,
-      "volume_ratio": 1.7891396210856834
+      "volume_ratio": 1.7891396210856834,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-10",
+      "first_early_close": 115900.0,
+      "gain_since_early_pct": 9.490940465918897,
+      "trading_days_since_early": 12,
+      "early_state_reason": "EARLY 이후 +9.5% / 12거래일"
     },
     {
       "date": "2026-08-27",
@@ -4066,7 +4840,13 @@
       "base_volume_contracted": true,
       "volume": 9036,
       "avg_volume20": 33140.25,
-      "volume_ratio": 0.27265937945549595
+      "volume_ratio": 0.27265937945549595,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4097,7 +4877,13 @@
       "base_volume_contracted": true,
       "volume": 85049,
       "avg_volume20": 201840.5,
-      "volume_ratio": 0.42136736680695897
+      "volume_ratio": 0.42136736680695897,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-12",
+      "first_early_close": 12160.0,
+      "gain_since_early_pct": 5.016447368421062,
+      "trading_days_since_early": 10,
+      "early_state_reason": "EARLY 이후 +5.0% / 10거래일"
     },
     {
       "date": "2026-08-27",
@@ -4128,7 +4914,13 @@
       "base_volume_contracted": true,
       "volume": 91733,
       "avg_volume20": 207021.85,
-      "volume_ratio": 0.44310781688019885
+      "volume_ratio": 0.44310781688019885,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4159,7 +4951,13 @@
       "base_volume_contracted": true,
       "volume": 3872,
       "avg_volume20": 19930.1,
-      "volume_ratio": 0.19427900512290455
+      "volume_ratio": 0.19427900512290455,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4190,7 +4988,13 @@
       "base_volume_contracted": true,
       "volume": 121599,
       "avg_volume20": 108387.05,
-      "volume_ratio": 1.1218960198658419
+      "volume_ratio": 1.1218960198658419,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-13",
+      "first_early_close": 54800.0,
+      "gain_since_early_pct": 3.2846715328467058,
+      "trading_days_since_early": 9,
+      "early_state_reason": "EARLY 이후 +3.3% / 9거래일"
     },
     {
       "date": "2026-08-27",
@@ -4221,7 +5025,13 @@
       "base_volume_contracted": true,
       "volume": 218835,
       "avg_volume20": 597374.7,
-      "volume_ratio": 0.3663278675846165
+      "volume_ratio": 0.3663278675846165,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4252,7 +5062,13 @@
       "base_volume_contracted": true,
       "volume": 8059350,
       "avg_volume20": 1539001.8,
-      "volume_ratio": 5.23673851453585
+      "volume_ratio": 5.23673851453585,
+      "early_state": "NORMAL",
+      "first_early_date": "2026-08-07",
+      "first_early_close": 39300.0,
+      "gain_since_early_pct": 25.063613231552175,
+      "trading_days_since_early": 13,
+      "early_state_reason": "EARLY 이후 +25.1% / 13거래일"
     },
     {
       "date": "2026-08-27",
@@ -4283,7 +5099,13 @@
       "base_volume_contracted": true,
       "volume": 270370,
       "avg_volume20": 224085.7,
-      "volume_ratio": 1.2065473164954301
+      "volume_ratio": 1.2065473164954301,
+      "early_state": "NORMAL",
+      "first_early_date": "2026-08-05",
+      "first_early_close": 13180.0,
+      "gain_since_early_pct": 24.43095599393019,
+      "trading_days_since_early": 15,
+      "early_state_reason": "EARLY 이후 +24.4% / 15거래일"
     },
     {
       "date": "2026-08-27",
@@ -4314,7 +5136,13 @@
       "base_volume_contracted": true,
       "volume": 113420,
       "avg_volume20": 502759.55,
-      "volume_ratio": 0.22559491908209403
+      "volume_ratio": 0.22559491908209403,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4345,7 +5173,13 @@
       "base_volume_contracted": true,
       "volume": 623066,
       "avg_volume20": 672938.3,
-      "volume_ratio": 0.9258887478985814
+      "volume_ratio": 0.9258887478985814,
+      "early_state": "NORMAL",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 38650.0,
+      "gain_since_early_pct": 26.64941785252264,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +26.6% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -4376,7 +5210,13 @@
       "base_volume_contracted": true,
       "volume": 3499569,
       "avg_volume20": 11152412.75,
-      "volume_ratio": 0.3137947884864645
+      "volume_ratio": 0.3137947884864645,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-13",
+      "first_early_close": 14370.0,
+      "gain_since_early_pct": 5.427974947807934,
+      "trading_days_since_early": 9,
+      "early_state_reason": "EARLY 이후 +5.4% / 9거래일"
     },
     {
       "date": "2026-08-27",
@@ -4407,7 +5247,13 @@
       "base_volume_contracted": true,
       "volume": 122851,
       "avg_volume20": 192362.3,
-      "volume_ratio": 0.6386438506921575
+      "volume_ratio": 0.6386438506921575,
+      "early_state": "NORMAL",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 50400.0,
+      "gain_since_early_pct": 24.20634920634921,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +24.2% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -4438,7 +5284,13 @@
       "base_volume_contracted": false,
       "volume": 4002200,
       "avg_volume20": 4728550.1,
-      "volume_ratio": 0.8463905246557503
+      "volume_ratio": 0.8463905246557503,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4469,7 +5321,13 @@
       "base_volume_contracted": true,
       "volume": 2747647,
       "avg_volume20": 3376586.7,
-      "volume_ratio": 0.8137350656507649
+      "volume_ratio": 0.8137350656507649,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 32600.0,
+      "gain_since_early_pct": 13.190184049079745,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +13.2% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -4500,7 +5358,13 @@
       "base_volume_contracted": true,
       "volume": 940535,
       "avg_volume20": 447657.65,
-      "volume_ratio": 2.1010140226577163
+      "volume_ratio": 2.1010140226577163,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-14",
+      "first_early_close": 516000.0,
+      "gain_since_early_pct": 10.27131782945736,
+      "trading_days_since_early": 8,
+      "early_state_reason": "EARLY 이후 +10.3% / 8거래일"
     },
     {
       "date": "2026-08-27",
@@ -4531,7 +5395,13 @@
       "base_volume_contracted": false,
       "volume": 233839,
       "avg_volume20": 378328.6,
-      "volume_ratio": 0.6180843848442862
+      "volume_ratio": 0.6180843848442862,
+      "early_state": "NORMAL",
+      "first_early_date": "2026-08-07",
+      "first_early_close": 54100.0,
+      "gain_since_early_pct": 18.8539741219963,
+      "trading_days_since_early": 13,
+      "early_state_reason": "EARLY 이후 +18.9% / 13거래일"
     },
     {
       "date": "2026-08-27",
@@ -4562,7 +5432,13 @@
       "base_volume_contracted": true,
       "volume": 402334,
       "avg_volume20": 354553.55,
-      "volume_ratio": 1.1347622947224756
+      "volume_ratio": 1.1347622947224756,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 125800.0,
+      "gain_since_early_pct": 8.66454689984102,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +8.7% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -4593,7 +5469,13 @@
       "base_volume_contracted": false,
       "volume": 2605809,
       "avg_volume20": 717932.5,
-      "volume_ratio": 3.6296016686805515
+      "volume_ratio": 3.6296016686805515,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4624,7 +5506,13 @@
       "base_volume_contracted": true,
       "volume": 49614,
       "avg_volume20": 36183.6,
-      "volume_ratio": 1.3711736808941068
+      "volume_ratio": 1.3711736808941068,
+      "early_state": "NORMAL",
+      "first_early_date": "2026-08-05",
+      "first_early_close": 31850.0,
+      "gain_since_early_pct": 21.350078492935644,
+      "trading_days_since_early": 15,
+      "early_state_reason": "EARLY 이후 +21.4% / 15거래일"
     },
     {
       "date": "2026-08-27",
@@ -4655,7 +5543,13 @@
       "base_volume_contracted": true,
       "volume": 32727,
       "avg_volume20": 62891.35,
-      "volume_ratio": 0.5203736284878604
+      "volume_ratio": 0.5203736284878604,
+      "early_state": "NORMAL",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 21050.0,
+      "gain_since_early_pct": 18.289786223277904,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +18.3% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -4686,7 +5580,13 @@
       "base_volume_contracted": true,
       "volume": 472317,
       "avg_volume20": 596957.3,
-      "volume_ratio": 0.7912073443108912
+      "volume_ratio": 0.7912073443108912,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4717,7 +5617,13 @@
       "base_volume_contracted": true,
       "volume": 77141,
       "avg_volume20": 180296.25,
-      "volume_ratio": 0.42785692991396107
+      "volume_ratio": 0.42785692991396107,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-13",
+      "first_early_close": 42500.0,
+      "gain_since_early_pct": 11.176470588235299,
+      "trading_days_since_early": 9,
+      "early_state_reason": "EARLY 이후 +11.2% / 9거래일"
     },
     {
       "date": "2026-08-27",
@@ -4748,7 +5654,13 @@
       "base_volume_contracted": true,
       "volume": 230730,
       "avg_volume20": 481593.95,
-      "volume_ratio": 0.4790965501123924
+      "volume_ratio": 0.4790965501123924,
+      "early_state": "LATE",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 101300.0,
+      "gain_since_early_pct": 43.928923988154,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +43.9% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -4779,7 +5691,13 @@
       "base_volume_contracted": true,
       "volume": 179446,
       "avg_volume20": 354642.5,
-      "volume_ratio": 0.5059912447041739
+      "volume_ratio": 0.5059912447041739,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4810,7 +5728,13 @@
       "base_volume_contracted": false,
       "volume": 128026,
       "avg_volume20": 162100.3,
-      "volume_ratio": 0.7897949602807645
+      "volume_ratio": 0.7897949602807645,
+      "early_state": "LATE",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 195200.0,
+      "gain_since_early_pct": 44.97950819672132,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +45.0% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -4841,7 +5765,13 @@
       "base_volume_contracted": false,
       "volume": 205072,
       "avg_volume20": 330196.2,
-      "volume_ratio": 0.62106105400365
+      "volume_ratio": 0.62106105400365,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-12",
+      "first_early_close": 397000.0,
+      "gain_since_early_pct": 9.445843828715361,
+      "trading_days_since_early": 10,
+      "early_state_reason": "EARLY 이후 +9.4% / 10거래일"
     },
     {
       "date": "2026-08-27",
@@ -4872,7 +5802,13 @@
       "base_volume_contracted": true,
       "volume": 1116790,
       "avg_volume20": 1844232.0,
-      "volume_ratio": 0.6055583028599438
+      "volume_ratio": 0.6055583028599438,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     }
   ],
   "setups": [
@@ -4905,7 +5841,13 @@
       "base_volume_contracted": true,
       "volume": 1163,
       "avg_volume20": 1447.95,
-      "volume_ratio": 0.8032045305431817
+      "volume_ratio": 0.8032045305431817,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4936,7 +5878,13 @@
       "base_volume_contracted": true,
       "volume": 41715,
       "avg_volume20": 36260.65,
-      "volume_ratio": 1.1504206350410155
+      "volume_ratio": 1.1504206350410155,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4967,7 +5915,13 @@
       "base_volume_contracted": true,
       "volume": 86128,
       "avg_volume20": 124185.9,
-      "volume_ratio": 0.6935408931287691
+      "volume_ratio": 0.6935408931287691,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -4998,7 +5952,13 @@
       "base_volume_contracted": true,
       "volume": 74146,
       "avg_volume20": 116626.75,
-      "volume_ratio": 0.635754661773564
+      "volume_ratio": 0.635754661773564,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 648000.0,
+      "gain_since_early_pct": 5.246913580246915,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +5.2% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -5029,7 +5989,13 @@
       "base_volume_contracted": true,
       "volume": 16995,
       "avg_volume20": 11906.4,
-      "volume_ratio": 1.4273835920177385
+      "volume_ratio": 1.4273835920177385,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-11",
+      "first_early_close": 406500.0,
+      "gain_since_early_pct": 3.936039360393595,
+      "trading_days_since_early": 11,
+      "early_state_reason": "EARLY 이후 +3.9% / 11거래일"
     },
     {
       "date": "2026-08-27",
@@ -5060,7 +6026,13 @@
       "base_volume_contracted": true,
       "volume": 6717,
       "avg_volume20": 8977.0,
-      "volume_ratio": 0.7482455163194831
+      "volume_ratio": 0.7482455163194831,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 118900.0,
+      "gain_since_early_pct": 10.092514718250634,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +10.1% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -5091,7 +6063,13 @@
       "base_volume_contracted": true,
       "volume": 81523,
       "avg_volume20": 110134.0,
-      "volume_ratio": 0.7402164635807289
+      "volume_ratio": 0.7402164635807289,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 4890.0,
+      "gain_since_early_pct": 4.294478527607359,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +4.3% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -5122,7 +6100,13 @@
       "base_volume_contracted": true,
       "volume": 79218,
       "avg_volume20": 59228.55,
-      "volume_ratio": 1.3374968659540036
+      "volume_ratio": 1.3374968659540036,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-05",
+      "first_early_close": 22200.0,
+      "gain_since_early_pct": 4.504504504504503,
+      "trading_days_since_early": 15,
+      "early_state_reason": "EARLY 이후 +4.5% / 15거래일"
     },
     {
       "date": "2026-08-27",
@@ -5153,7 +6137,13 @@
       "base_volume_contracted": true,
       "volume": 7454,
       "avg_volume20": 8876.3,
-      "volume_ratio": 0.8397643162128365
+      "volume_ratio": 0.8397643162128365,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-19",
+      "first_early_close": 93000.0,
+      "gain_since_early_pct": 4.623655913978486,
+      "trading_days_since_early": 6,
+      "early_state_reason": "EARLY 이후 +4.6% / 6거래일"
     },
     {
       "date": "2026-08-27",
@@ -5184,7 +6174,13 @@
       "base_volume_contracted": true,
       "volume": 2320,
       "avg_volume20": 4589.75,
-      "volume_ratio": 0.5054741543657062
+      "volume_ratio": 0.5054741543657062,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-24",
+      "first_early_close": 54000.0,
+      "gain_since_early_pct": -0.37037037037036535,
+      "trading_days_since_early": 3,
+      "early_state_reason": "EARLY 이후 +-0.4% / 3거래일"
     },
     {
       "date": "2026-08-27",
@@ -5215,7 +6211,13 @@
       "base_volume_contracted": true,
       "volume": 78553,
       "avg_volume20": 151827.95,
-      "volume_ratio": 0.5173816810409414
+      "volume_ratio": 0.5173816810409414,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 34750.0,
+      "gain_since_early_pct": 6.187050359712232,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +6.2% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -5246,7 +6248,13 @@
       "base_volume_contracted": true,
       "volume": 952292,
       "avg_volume20": 1091064.9,
-      "volume_ratio": 0.8728096742916027
+      "volume_ratio": 0.8728096742916027,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-06",
+      "first_early_close": 107400.0,
+      "gain_since_early_pct": 1.3035381750465591,
+      "trading_days_since_early": 14,
+      "early_state_reason": "EARLY 이후 +1.3% / 14거래일"
     },
     {
       "date": "2026-08-27",
@@ -5277,7 +6285,13 @@
       "base_volume_contracted": true,
       "volume": 599192,
       "avg_volume20": 720532.2,
-      "volume_ratio": 0.8315964227552912
+      "volume_ratio": 0.8315964227552912,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 126900.0,
+      "gain_since_early_pct": 5.279747832939319,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +5.3% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -5308,7 +6322,13 @@
       "base_volume_contracted": true,
       "volume": 53381,
       "avg_volume20": 38018.15,
-      "volume_ratio": 1.4040925189679139
+      "volume_ratio": 1.4040925189679139,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-10",
+      "first_early_close": 9770.0,
+      "gain_since_early_pct": 0.9211873080859689,
+      "trading_days_since_early": 12,
+      "early_state_reason": "EARLY 이후 +0.9% / 12거래일"
     },
     {
       "date": "2026-08-27",
@@ -5339,7 +6359,13 @@
       "base_volume_contracted": true,
       "volume": 25486,
       "avg_volume20": 31541.35,
-      "volume_ratio": 0.8080186802403829
+      "volume_ratio": 0.8080186802403829,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 33350.0,
+      "gain_since_early_pct": 4.647676161919034,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +4.6% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -5370,7 +6396,13 @@
       "base_volume_contracted": true,
       "volume": 167598,
       "avg_volume20": 247230.15,
-      "volume_ratio": 0.6779027557925278
+      "volume_ratio": 0.6779027557925278,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-20",
+      "first_early_close": 2485.0,
+      "gain_since_early_pct": 3.0181086519114775,
+      "trading_days_since_early": 5,
+      "early_state_reason": "EARLY 이후 +3.0% / 5거래일"
     },
     {
       "date": "2026-08-27",
@@ -5401,7 +6433,13 @@
       "base_volume_contracted": true,
       "volume": 128945,
       "avg_volume20": 113851.55,
-      "volume_ratio": 1.1325713176500452
+      "volume_ratio": 1.1325713176500452,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-03",
+      "first_early_close": 3185.0,
+      "gain_since_early_pct": 2.668759811616961,
+      "trading_days_since_early": 17,
+      "early_state_reason": "EARLY 이후 +2.7% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -5432,7 +6470,13 @@
       "base_volume_contracted": true,
       "volume": 123685,
       "avg_volume20": 201458.45,
-      "volume_ratio": 0.6139479381480399
+      "volume_ratio": 0.6139479381480399,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-25",
+      "first_early_close": 22400.0,
+      "gain_since_early_pct": 2.678571428571419,
+      "trading_days_since_early": 2,
+      "early_state_reason": "EARLY 이후 +2.7% / 2거래일"
     },
     {
       "date": "2026-08-27",
@@ -5463,7 +6507,13 @@
       "base_volume_contracted": true,
       "volume": 1116790,
       "avg_volume20": 1844232.0,
-      "volume_ratio": 0.6055583028599438
+      "volume_ratio": 0.6055583028599438,
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-08-27",
@@ -5494,7 +6544,13 @@
       "base_volume_contracted": true,
       "volume": 116687,
       "avg_volume20": 140259.6,
-      "volume_ratio": 0.8319359245285171
+      "volume_ratio": 0.8319359245285171,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-04",
+      "first_early_close": 3625.0,
+      "gain_since_early_pct": 8.000000000000007,
+      "trading_days_since_early": 16,
+      "early_state_reason": "EARLY 이후 +8.0% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -5525,7 +6581,13 @@
       "base_volume_contracted": true,
       "volume": 86307,
       "avg_volume20": 102414.65,
-      "volume_ratio": 0.8427212317768992
+      "volume_ratio": 0.8427212317768992,
+      "early_state": "FRESH",
+      "first_early_date": "2026-08-10",
+      "first_early_close": 3700.0,
+      "gain_since_early_pct": 4.594594594594592,
+      "trading_days_since_early": 12,
+      "early_state_reason": "EARLY 이후 +4.6% / 12거래일"
     }
   ],
   "rules": {
@@ -5571,6 +6633,13 @@
     "risk": {
       "max_account_risk_pct": 2.0,
       "reward_multiple": 3.0
+    },
+    "early_state": {
+      "normal_min_gain_pct": 15,
+      "late_min_gain_pct": 30,
+      "climax_gain_pct": 45,
+      "climax_acceleration_min_gain_pct": 15,
+      "climax_rs_acceleration_min": 25
     }
   },
   "manual_checks": [
