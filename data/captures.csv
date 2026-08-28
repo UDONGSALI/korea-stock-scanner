@@ -1,1 +1,6 @@
-capture_date,ticker,name,capture_close,source,rule_version
+﻿capture_date,ticker,name,capture_close,source,rule_version,market_alignment
+2026-08-27,222800,심텍,126900,kangto_core,kangto_core_v3,COUNTERTREND
+2026-08-27,006400,삼성SDI,569000,kangto_core,kangto_core_v3,COUNTERTREND
+2026-08-27,012750,에스원,85500,kangto_core,kangto_core_v3,COUNTERTREND
+2026-08-27,029460,케이씨,38650,kangto_core,kangto_core_v3,COUNTERTREND
+2026-08-27,183190,아세아시멘트,10550,kangto_core,kangto_core_v3,COUNTERTREND
