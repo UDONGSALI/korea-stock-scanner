@@ -1,0 +1,36 @@
+name: Cleanup EARLY State
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/cleanup_early_state.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Remove intraday validation data
+        run: |
+          rm -f data/snapshots/2026-08-28.csv.gz
+          rm -f data/results/2026-08-28.json
+          rm -f data/early_registry.csv
+          git checkout 023deb166f4586be9201956154cf2ec5fa164575 -- data/latest.json data/tracking.json
+
+      - name: Rebuild EARLY registry and enrich confirmed data
+        run: python src/early_state.py
+
+      - name: Commit cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "data: restore confirmed close data with EARLY state"
+          git push
