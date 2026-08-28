@@ -1,5 +1,5 @@
 {
-  "rule_version": "kangto_core_v2",
+  "rule_version": "kangto_core_v3",
   "markets": ["KOSPI", "KOSDAQ"],
   "history_days": 320,
   "market_indices": {"KOSPI": "1001", "KOSDAQ": "2001"},
@@ -8,8 +8,22 @@
   "rs_min_score": 70,
   "rs_periods": {"20": 0.25, "60": 0.25, "120": 0.25, "240": 0.25},
   "high52_days": 252,
+  "early_leader": {
+    "short_rs_min_score": 80,
+    "medium_rs_min_score": 80,
+    "rs_acceleration_lookback": 5,
+    "rs_acceleration_min": 10,
+    "max_below_52w_high_pct": 30
+  },
+  "leader": {"max_below_52w_high_pct": 25},
   "mtt": {"sma200_rising_lookback": 20, "min_above_52w_low_pct": 30, "max_below_52w_high_pct": 25},
-  "base": {"days": 15, "max_depth_pct": 20},
-  "breakout_volume_ratio_min": 1.0,
+  "base": {
+    "candidate_days": [5, 7, 10, 15, 20],
+    "max_depth_pct": 20,
+    "volume_contraction_days": 3,
+    "volume_contraction_ratio_max": 1.0
+  },
+  "setup": {"max_below_breakout_pct": 3},
+  "breakout": {"volume_ratio_min": 1.0, "max_extension_pct": 10},
   "risk": {"max_account_risk_pct": 2.0, "reward_multiple": 3.0}
 }
