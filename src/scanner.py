@@ -307,12 +307,17 @@ def calculateRiskFields(selected: pd.DataFrame, config: dict) -> pd.DataFrame:
 def cleanRecord(row: dict) -> dict:
     cleaned = {}
     for key, value in row.items():
-        if isinstance(value, np.integer):
-            value = int(value)
-        elif isinstance(value, np.floating):
-            value = None if np.isnan(value) else float(value)
-        elif isinstance(value, pd.Timestamp):
+        if isinstance(value, pd.Timestamp):
             value = value.strftime("%Y-%m-%d")
+        elif isinstance(value, (np.bool_,)):
+            value = bool(value)
+        elif isinstance(value, (np.integer,)):
+            value = int(value)
+        elif isinstance(value, (np.floating, float)):
+            value = float(value)
+            value = value if np.isfinite(value) else None
+        elif pd.isna(value):
+            value = None
         cleaned[key] = value
     return cleaned
 
