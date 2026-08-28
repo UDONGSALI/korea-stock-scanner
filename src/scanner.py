@@ -116,6 +116,7 @@ def buildMarketMaps(config: dict, market_indices: dict[str, pd.DataFrame]) -> tu
 def addIndicators(history: pd.DataFrame, market_indices: dict[str, pd.DataFrame], config: dict) -> pd.DataFrame:
     market_ok_map, benchmark_return_maps = buildMarketMaps(config, market_indices)
     output = []
+    base_config = config["base"]
 
     for _, frame in history.groupby("ticker", sort=False):
         frame = frame.copy().sort_values("date")
@@ -131,21 +132,39 @@ def addIndicators(history: pd.DataFrame, market_indices: dict[str, pd.DataFrame]
         frame["sma200_rising"] = frame["sma200"] > frame["sma200"].shift(config["mtt"]["sma200_rising_lookback"])
         frame["high52"] = high.rolling(config["high52_days"]).max()
         frame["low52"] = low.rolling(config["high52_days"]).min()
-        frame["prev_high52"] = high.shift(1).rolling(config["high52_days"]).max()
         frame["distance_from_high52_pct"] = (close / frame["high52"] - 1) * 100
         frame["rise_from_low52_pct"] = (close / frame["low52"] - 1) * 100
-
-        base_days = config["base"]["days"]
-        frame["base_high"] = high.shift(1).rolling(base_days).max()
-        frame["base_low"] = low.shift(1).rolling(base_days).min()
-        frame["base_depth_pct"] = (frame["base_high"] / frame["base_low"] - 1) * 100
         frame["avg_volume20"] = volume.shift(1).rolling(20).mean()
-        frame["avg_volume5_base"] = volume.shift(1).rolling(5).mean()
+        contraction_days = base_config["volume_contraction_days"]
+        frame["avg_volume_base"] = volume.shift(1).rolling(contraction_days).mean()
         frame["volume_ratio"] = volume / frame["avg_volume20"]
-        frame["base_volume_contracted"] = frame["avg_volume5_base"] <= frame["avg_volume20"]
-        frame["breakout"] = close > frame["base_high"]
-        frame["weekly_trend_proxy"] = (close > frame["sma50"]) & (frame["sma50"] > frame["sma150"])
+        frame["base_volume_contracted"] = frame["avg_volume_base"] <= frame["avg_volume20"] * base_config["volume_contraction_ratio_max"]
         frame["market_ok"] = frame["date"].map(market_ok_map[market]).fillna(False).astype(bool)
+
+        frame["base_days"] = np.nan
+        frame["base_high"] = np.nan
+        frame["base_low"] = np.nan
+        frame["base_depth_pct"] = np.nan
+        for base_days in sorted(base_config["candidate_days"]):
+            base_high = high.shift(1).rolling(base_days).max()
+            base_low = low.shift(1).rolling(base_days).min()
+            base_depth_pct = (base_high - base_low) / base_high * 100
+            valid_base = base_depth_pct <= base_config["max_depth_pct"]
+            frame.loc[valid_base, "base_days"] = base_days
+            frame.loc[valid_base, "base_high"] = base_high[valid_base]
+            frame.loc[valid_base, "base_low"] = base_low[valid_base]
+            frame.loc[valid_base, "base_depth_pct"] = base_depth_pct[valid_base]
+
+        frame["base_valid"] = frame["base_days"].notna()
+        frame["distance_to_base_high_pct"] = (close / frame["base_high"] - 1) * 100
+        frame["breakout"] = frame["base_valid"] & (close > frame["base_high"])
+        frame["breakout_extension_pct"] = np.where(frame["breakout"], frame["distance_to_base_high_pct"], np.nan)
+        frame["near_breakout"] = (
+            frame["base_valid"]
+            & (close <= frame["base_high"])
+            & (close >= frame["base_high"] * (1 - config["setup"]["max_below_breakout_pct"] / 100))
+        )
+        frame["trend_recovery"] = close > frame["sma50"]
 
         rs_raw = pd.Series(0.0, index=frame.index)
         rs_valid = pd.Series(True, index=frame.index)
@@ -162,7 +181,15 @@ def addIndicators(history: pd.DataFrame, market_indices: dict[str, pd.DataFrame]
         output.append(frame)
 
     indicators = pd.concat(output, ignore_index=True)
+
+    for period_text in config["rs_periods"]:
+        period = int(period_text)
+        indicators[f"rs_{period}_score"] = indicators.groupby("date")[f"rs_{period}d_relative"].rank(pct=True, method="average") * 99
+
     indicators["rs_score"] = indicators.groupby("date")["rs_raw"].rank(pct=True, method="average") * 99
+    acceleration_lookback = config["early_leader"]["rs_acceleration_lookback"]
+    indicators = indicators.sort_values(["ticker", "date"]).reset_index(drop=True)
+    indicators["rs_acceleration"] = indicators["rs_score"] - indicators.groupby("ticker")["rs_score"].shift(acceleration_lookback)
 
     mtt = config["mtt"]
     indicators["mtt"] = (
@@ -177,18 +204,42 @@ def addIndicators(history: pd.DataFrame, market_indices: dict[str, pd.DataFrame]
         & (indicators["close"] >= indicators["high52"] * (1 - mtt["max_below_52w_high_pct"] / 100))
     )
 
-    base = config["base"]
-    indicators["stock_setup"] = (
-        (indicators["rs_score"] >= config["rs_min_score"])
-        & indicators["mtt"]
-        & indicators["weekly_trend_proxy"]
-        & (indicators["base_depth_pct"] <= base["max_depth_pct"])
+    leader = config["leader"]
+    early = config["early_leader"]
+    indicators["near_52w_high"] = indicators["close"] >= indicators["high52"] * (1 - leader["max_below_52w_high_pct"] / 100)
+    indicators["early_near_52w_high"] = indicators["close"] >= indicators["high52"] * (1 - early["max_below_52w_high_pct"] / 100)
+    indicators["short_rs_strong"] = (
+        (indicators["rs_20_score"] >= early["short_rs_min_score"])
+        | (indicators["rs_60_score"] >= early["medium_rs_min_score"])
+        | (indicators["rs_acceleration"] >= early["rs_acceleration_min"])
+    )
+    indicators["leader_pre_cap"] = (
+        indicators["near_52w_high"]
+        & indicators["trend_recovery"]
+        & (indicators["rs_score"] >= config["rs_min_score"])
+    )
+    indicators["early_leader_pre_cap"] = (
+        indicators["early_near_52w_high"]
+        & indicators["trend_recovery"]
+        & indicators["short_rs_strong"]
+        & ~indicators["leader_pre_cap"]
+    )
+    indicators["stage_pre_cap"] = indicators["leader_pre_cap"] | indicators["early_leader_pre_cap"]
+    indicators["setup_pre_cap"] = (
+        indicators["stage_pre_cap"]
+        & indicators["base_valid"]
+        & indicators["base_volume_contracted"]
+        & indicators["near_breakout"]
+    )
+    indicators["buy_pre_cap"] = (
+        indicators["stage_pre_cap"]
+        & indicators["base_valid"]
         & indicators["base_volume_contracted"]
         & indicators["breakout"]
-        & (indicators["volume_ratio"] >= config["breakout_volume_ratio_min"])
+        & (indicators["volume_ratio"] >= config["breakout"]["volume_ratio_min"])
+        & (indicators["breakout_extension_pct"] <= config["breakout"]["max_extension_pct"])
     )
-    indicators["technical_signal"] = indicators["stock_setup"] & indicators["market_ok"]
-    return indicators
+    return indicators.sort_values(["date", "market", "ticker"]).reset_index(drop=True)
 
 
 def fetchMarketCaps(date: pd.Timestamp, markets: list[str]) -> pd.DataFrame:
@@ -214,23 +265,28 @@ def finalizeSignals(indicators: pd.DataFrame, config: dict, dates: list[pd.Times
 
     for date in target_dates:
         day_mask = selected["date"] == date
-        if not selected.loc[day_mask, "stock_setup"].any():
+        if not selected.loc[day_mask, "stage_pre_cap"].any():
             continue
         caps = fetchMarketCaps(date, config["markets"])
         if caps.empty:
             continue
         cap_map = caps.set_index(["ticker", "market"])["market_cap"]
-        candidate_index = selected.index[day_mask & selected["stock_setup"]]
+        candidate_index = selected.index[day_mask & selected["stage_pre_cap"]]
         for row_index in candidate_index:
             key = (str(selected.at[row_index, "ticker"]), str(selected.at[row_index, "market"]))
             selected.at[row_index, "market_cap"] = cap_map.get(key, np.nan)
 
-    selected["eligible_setup"] = selected["stock_setup"] & (selected["market_cap"] >= config["min_market_cap"])
-    selected["signal"] = selected["eligible_setup"] & selected["market_ok"]
-    selected["countertrend_candidate"] = selected["eligible_setup"] & ~selected["market_ok"]
+    cap_ok = selected["market_cap"] >= config["min_market_cap"]
+    selected["early_leader"] = selected["early_leader_pre_cap"] & cap_ok
+    selected["leader"] = selected["leader_pre_cap"] & cap_ok
+    selected["setup"] = selected["setup_pre_cap"] & cap_ok
+    selected["signal"] = selected["buy_pre_cap"] & cap_ok
+    selected["market_alignment"] = np.where(selected["market_ok"], "WITH_MARKET", "COUNTERTREND")
+
     selected = selected.sort_values(["ticker", "date"])
-    selected["new_signal"] = selected["signal"] & ~selected.groupby("ticker")["signal"].shift(1, fill_value=False)
-    selected["new_countertrend_candidate"] = selected["countertrend_candidate"] & ~selected.groupby("ticker")["countertrend_candidate"].shift(1, fill_value=False)
+    for column in ["early_leader", "leader", "setup", "signal"]:
+        selected[f"new_{column}"] = selected[column] & ~selected.groupby("ticker")[column].shift(1, fill_value=False)
+
     return selected.sort_values(["date", "market", "ticker"]).reset_index(drop=True)
 
 
@@ -240,7 +296,11 @@ def calculateRiskFields(selected: pd.DataFrame, config: dict) -> pd.DataFrame:
     selected["risk_per_share"] = selected["close"] - selected["stop_price"]
     selected["stop_distance_pct"] = selected["risk_per_share"] / selected["close"] * 100
     selected["three_r_target"] = selected["close"] + selected["risk_per_share"] * config["risk"]["reward_multiple"]
-    selected["max_position_pct_for_risk"] = np.where(selected["stop_distance_pct"] > 0, np.minimum(100.0, config["risk"]["max_account_risk_pct"] / selected["stop_distance_pct"] * 100), np.nan)
+    selected["max_position_pct_for_risk"] = np.where(
+        selected["stop_distance_pct"] > 0,
+        np.minimum(100.0, config["risk"]["max_account_risk_pct"] / selected["stop_distance_pct"] * 100),
+        np.nan,
+    )
     return selected
 
 
@@ -257,26 +317,41 @@ def cleanRecord(row: dict) -> dict:
     return cleaned
 
 
-def buildCandidateRecords(selected: pd.DataFrame, config: dict, signal_type: str) -> list[dict]:
+def getTickerNames(tickers: list[str]) -> dict[str, str]:
+    return {ticker: stock.get_market_ticker_name(ticker) for ticker in tickers}
+
+
+def buildStageRecords(selected: pd.DataFrame, stage: str, include_risk: bool = False) -> list[dict]:
     if selected.empty:
         return []
 
-    selected = calculateRiskFields(selected, config)
-    ticker_names = {ticker: stock.get_market_ticker_name(ticker) for ticker in selected["ticker"].unique()}
+    selected = selected.copy()
+    ticker_names = getTickerNames(selected["ticker"].unique().tolist())
     selected["name"] = selected["ticker"].map(ticker_names)
-    selected["signal_type"] = signal_type
-    columns = ["ticker", "name", "market", "signal_type", "market_ok", "close", "market_cap", "rs_score", "sma50", "sma150", "sma200", "high52", "low52", "base_high", "base_low", "base_depth_pct", "volume", "avg_volume20", "volume_ratio", "stop_price", "stop_distance_pct", "three_r_target", "max_position_pct_for_risk"]
-    if signal_type == "COUNTERTREND":
-        selected["is_new"] = selected["new_countertrend_candidate"]
-        columns.insert(4, "is_new")
+    selected["stage"] = stage
+
+    columns = [
+        "date", "ticker", "name", "market", "stage", "market_alignment", "market_ok", "close", "market_cap",
+        "rs_score", "rs_20_score", "rs_60_score", "rs_acceleration", "mtt", "near_52w_high",
+        "sma50", "sma150", "sma200", "high52", "distance_from_high52_pct", "base_days",
+        "base_high", "base_low", "base_depth_pct", "distance_to_base_high_pct", "base_volume_contracted",
+        "volume", "avg_volume20", "volume_ratio"
+    ]
+    if include_risk:
+        columns += ["stop_price", "stop_distance_pct", "three_r_target", "max_position_pct_for_risk"]
+
     return [cleanRecord(row) for row in selected[columns].to_dict(orient="records")]
 
 
 def buildResult(finalized: pd.DataFrame, config: dict) -> dict:
     target_date = finalized["date"].max()
     latest = finalized[finalized["date"] == target_date].copy()
-    buy_records = buildCandidateRecords(latest[latest["new_signal"]].copy(), config, "BUY")
-    countertrend_records = buildCandidateRecords(latest[latest["countertrend_candidate"]].copy(), config, "COUNTERTREND")
+
+    buy_rows = calculateRiskFields(latest[latest["new_signal"]].copy(), config)
+    buy_records = buildStageRecords(buy_rows, "BUY", include_risk=True)
+    early_records = buildStageRecords(latest[latest["early_leader"]].copy(), "EARLY_LEADER")
+    leader_records = buildStageRecords(latest[latest["leader"]].copy(), "LEADER")
+    setup_records = buildStageRecords(latest[latest["setup"]].copy(), "SETUP")
 
     market_status = {}
     for market in config["markets"]:
@@ -289,17 +364,27 @@ def buildResult(finalized: pd.DataFrame, config: dict) -> dict:
         "generated_at": datetime.now().astimezone().isoformat(timespec="seconds"),
         "market_status": market_status,
         "signal_count": len(buy_records),
+        "countertrend_buy_count": sum(1 for row in buy_records if row["market_alignment"] == "COUNTERTREND"),
         "signals": buy_records,
-        "countertrend_count": len(countertrend_records),
-        "countertrend_candidates": countertrend_records,
+        "stage_counts": {
+            "early_leader": len(early_records),
+            "leader": len(leader_records),
+            "setup": len(setup_records)
+        },
+        "early_leaders": early_records,
+        "leaders": leader_records,
+        "setups": setup_records,
         "rules": {
-            "market_filter": config["market_ma_days"],
+            "market_filter": "BUY 차단 조건이 아니라 WITH_MARKET / COUNTERTREND 표시용",
             "min_market_cap": config["min_market_cap"],
             "rs_min_score": config["rs_min_score"],
             "rs_periods": config["rs_periods"],
-            "trend": "MTT + weekly trend proxy (SMA50 > SMA150)",
+            "early_leader": config["early_leader"],
+            "leader": config["leader"],
+            "mtt": "품질 표시용이며 후보 탈락 조건이 아님",
             "base": config["base"],
-            "breakout_volume_ratio_min": config["breakout_volume_ratio_min"],
+            "setup": config["setup"],
+            "breakout": config["breakout"],
             "risk": config["risk"]
         },
         "manual_checks": ["주도 섹터/섹터 RS", "인더스트리 액션", "기관 수급", "EPS 성장 및 실적"]
@@ -309,16 +394,30 @@ def buildResult(finalized: pd.DataFrame, config: dict) -> dict:
 def appendCaptures(result: dict) -> None:
     if not result["signals"]:
         return
+
     if CAPTURE_PATH.exists():
         captures = pd.read_csv(CAPTURE_PATH, dtype={"ticker": str})
     else:
-        captures = pd.DataFrame(columns=["capture_date", "ticker", "name", "capture_close", "source", "rule_version"])
+        captures = pd.DataFrame(columns=["capture_date", "ticker", "name", "capture_close", "source", "rule_version", "market_alignment"])
+
     rows = []
-    existing = set(zip(captures.get("capture_date", pd.Series(dtype=str)).astype(str), captures.get("ticker", pd.Series(dtype=str)).astype(str)))
+    existing = set(zip(
+        captures.get("capture_date", pd.Series(dtype=str)).astype(str),
+        captures.get("ticker", pd.Series(dtype=str)).astype(str)
+    ))
     for signal in result["signals"]:
         key = (result["scan_date"], signal["ticker"])
         if key not in existing:
-            rows.append({"capture_date": result["scan_date"], "ticker": signal["ticker"], "name": signal["name"], "capture_close": signal["close"], "source": "kangto_core", "rule_version": result["rule_version"]})
+            rows.append({
+                "capture_date": result["scan_date"],
+                "ticker": signal["ticker"],
+                "name": signal["name"],
+                "capture_close": signal["close"],
+                "source": "kangto_core",
+                "rule_version": result["rule_version"],
+                "market_alignment": signal["market_alignment"]
+            })
+
     if rows:
         captures = pd.concat([captures, pd.DataFrame(rows)], ignore_index=True)
         captures.to_csv(CAPTURE_PATH, index=False, encoding="utf-8-sig")
@@ -327,11 +426,14 @@ def appendCaptures(result: dict) -> None:
 def updateTracking(indicators: pd.DataFrame, market_indices: dict[str, pd.DataFrame]) -> list[dict]:
     if not CAPTURE_PATH.exists():
         return []
+
     captures = pd.read_csv(CAPTURE_PATH, dtype={"ticker": str})
     if captures.empty:
         return []
+
     history = indicators[["date", "ticker", "market", "close", "sma50", "sma150", "sma200", "rs_score", "mtt", "market_ok"]].copy()
     rows = []
+
     for capture in captures.to_dict(orient="records"):
         ticker = capture["ticker"]
         capture_date = pd.Timestamp(capture["capture_date"])
@@ -339,13 +441,34 @@ def updateTracking(indicators: pd.DataFrame, market_indices: dict[str, pd.DataFr
         frame = history[(history["ticker"] == ticker) & (history["date"] >= capture_date)].sort_values("date")
         if frame.empty:
             continue
+
         latest = frame.iloc[-1]
         market = str(latest["market"])
         benchmark = market_indices[market]["close"]
         benchmark_frame = benchmark[benchmark.index >= capture_date]
         benchmark_return = None if benchmark_frame.empty else (benchmark_frame.iloc[-1] / benchmark_frame.iloc[0] - 1) * 100
         current_return = (latest["close"] / capture_price - 1) * 100
-        rows.append({"capture_date": str(capture["capture_date"]), "ticker": ticker, "name": capture["name"], "capture_close": capture_price, "rule_version": capture.get("rule_version", "unknown"), "latest_date": latest["date"].strftime("%Y-%m-%d"), "latest_close": float(latest["close"]), "return_pct": current_return, "max_return_pct": (frame["close"].max() / capture_price - 1) * 100, "max_drawdown_pct": (frame["close"].min() / capture_price - 1) * 100, "trading_days": int(len(frame) - 1), "market_ok": bool(latest["market_ok"]), "mtt": bool(latest["mtt"]), "rs_score": None if pd.isna(latest["rs_score"]) else float(latest["rs_score"]), "benchmark_return_pct": benchmark_return, "excess_return_pct_point": current_return - benchmark_return if benchmark_return is not None else None})
+
+        rows.append({
+            "capture_date": str(capture["capture_date"]),
+            "ticker": ticker,
+            "name": capture["name"],
+            "capture_close": capture_price,
+            "rule_version": capture.get("rule_version", "unknown"),
+            "capture_market_alignment": capture.get("market_alignment", "unknown"),
+            "latest_date": latest["date"].strftime("%Y-%m-%d"),
+            "latest_close": float(latest["close"]),
+            "return_pct": current_return,
+            "max_return_pct": (frame["close"].max() / capture_price - 1) * 100,
+            "max_drawdown_pct": (frame["close"].min() / capture_price - 1) * 100,
+            "trading_days": int(len(frame) - 1),
+            "market_ok": bool(latest["market_ok"]),
+            "mtt": bool(latest["mtt"]),
+            "rs_score": None if pd.isna(latest["rs_score"]) else float(latest["rs_score"]),
+            "benchmark_return_pct": benchmark_return,
+            "excess_return_pct_point": current_return - benchmark_return if benchmark_return is not None else None
+        })
+
     return rows
 
 
@@ -358,8 +481,10 @@ def main() -> None:
     ensureDirectories()
     config = loadConfig()
     business_days = getBusinessDays(config["history_days"])
+
     for date in business_days:
         saveSnapshot(date, config["markets"])
+
     history = loadHistory(business_days)
     market_indices = fetchMarketIndices(config, business_days)
     indicators = addIndicators(history, market_indices, config)
@@ -367,10 +492,18 @@ def main() -> None:
     result = buildResult(finalized, config)
     appendCaptures(result)
     tracking = updateTracking(indicators, market_indices)
+
     saveJson(RESULT_DIR / f"{result['scan_date']}.json", result)
     saveJson(DATA_DIR / "latest.json", result)
     saveJson(DATA_DIR / "tracking.json", tracking)
-    print(json.dumps({"rule_version": result["rule_version"], "scan_date": result["scan_date"], "signal_count": result["signal_count"], "countertrend_count": result["countertrend_count"]}, ensure_ascii=False))
+
+    print(json.dumps({
+        "rule_version": result["rule_version"],
+        "scan_date": result["scan_date"],
+        "signal_count": result["signal_count"],
+        "countertrend_buy_count": result["countertrend_buy_count"],
+        "stage_counts": result["stage_counts"]
+    }, ensure_ascii=False))
 
 
 if __name__ == "__main__":
