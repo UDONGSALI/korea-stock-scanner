@@ -18,6 +18,18 @@ def getSnapshotDays() -> list[pd.Timestamp]:
     return days
 
 
+def getStage(row: dict) -> str:
+    if bool(row.get("signal")):
+        return "BUY"
+    if bool(row.get("setup")):
+        return "SETUP"
+    if bool(row.get("leader")):
+        return "LEADER"
+    if bool(row.get("early_leader")):
+        return "EARLY_LEADER"
+    return "NONE"
+
+
 def buildDiagnostics(tickers: list[str], from_date: str, to_date: str) -> dict:
     config = scanner.loadConfig()
     business_days = getSnapshotDays()
@@ -27,28 +39,10 @@ def buildDiagnostics(tickers: list[str], from_date: str, to_date: str) -> dict:
 
     start_date = pd.Timestamp(from_date)
     end_date = pd.Timestamp(to_date)
-    selected = indicators[(indicators["ticker"].isin(tickers)) & (indicators["date"] >= start_date) & (indicators["date"] <= end_date)].copy()
-
-    cap_cache = {}
-    for date in sorted(selected["date"].drop_duplicates()):
-        for market in selected[selected["date"] == date]["market"].unique():
-            key = (date, market)
-            caps = scanner.fetchMarketCaps(date, [market])
-            cap_cache[key] = caps.set_index("ticker")["market_cap"].to_dict() if not caps.empty else {}
-
-    selected["market_cap"] = selected.apply(lambda row: cap_cache.get((row["date"], row["market"]), {}).get(str(row["ticker"])), axis=1)
-    selected["cap_ok"] = selected["market_cap"] >= config["min_market_cap"]
-    selected["rs_ok"] = selected["rs_score"] >= config["rs_min_score"]
-    selected["mtt_ok"] = selected["mtt"].astype(bool)
-    selected["weekly_trend_ok"] = selected["weekly_trend_proxy"].astype(bool)
-    selected["base_depth_ok"] = selected["base_depth_pct"] <= config["base"]["max_depth_pct"]
-    selected["base_volume_ok"] = selected["base_volume_contracted"].astype(bool)
-    selected["breakout_ok"] = selected["breakout"].astype(bool)
-    selected["breakout_volume_ok"] = selected["volume_ratio"] >= config["breakout_volume_ratio_min"]
-
-    stock_condition_columns = ["cap_ok", "rs_ok", "mtt_ok", "weekly_trend_ok", "base_depth_ok", "base_volume_ok", "breakout_ok", "breakout_volume_ok"]
-    selected["stock_pass_count"] = selected[stock_condition_columns].sum(axis=1)
-    selected["stock_all_ok"] = selected[stock_condition_columns].all(axis=1)
+    available_dates = sorted(indicators["date"].drop_duplicates())
+    target_dates = [date for date in available_dates if start_date <= date <= end_date]
+    finalized = scanner.finalizeSignals(indicators, config, target_dates)
+    selected = finalized[finalized["ticker"].isin(tickers)].copy()
 
     results = []
     for ticker in tickers:
@@ -58,23 +52,55 @@ def buildDiagnostics(tickers: list[str], from_date: str, to_date: str) -> dict:
             continue
 
         name = stock.get_market_ticker_name(ticker)
-        best = frame.sort_values(["stock_pass_count", "breakout_ok", "volume_ratio"], ascending=[False, False, False]).head(5)
-        breakout_rows = frame[frame["breakout_ok"]].sort_values("date")
-        eligible_rows = frame[frame["stock_all_ok"]].sort_values("date")
+        frame["stage_rank"] = (
+            frame["early_leader"].astype(int)
+            + frame["leader"].astype(int) * 2
+            + frame["setup"].astype(int) * 3
+            + frame["signal"].astype(int) * 4
+        )
+        best = frame.sort_values(["stage_rank", "rs_score", "volume_ratio"], ascending=[False, False, False]).head(8)
 
         rows = []
         for row in best.to_dict(orient="records"):
-            failed = [column.removesuffix("_ok") for column in stock_condition_columns if not bool(row[column])]
-            if not bool(row["market_ok"]):
-                failed.append("market")
+            failed = []
+            if not bool(row["trend_recovery"]):
+                failed.append("close_below_sma50")
+            if not bool(row["early_near_52w_high"]):
+                failed.append("far_from_52w_high")
+            if not bool(row["short_rs_strong"]) and not bool(row["leader_pre_cap"]):
+                failed.append("rs_strength")
+            if pd.isna(row["market_cap"]) or float(row["market_cap"]) < config["min_market_cap"]:
+                failed.append("market_cap")
+            if not bool(row["base_valid"]):
+                failed.append("base")
+            if bool(row["base_valid"]) and not bool(row["base_volume_contracted"]):
+                failed.append("base_volume")
+            if not bool(row["breakout"]) and not bool(row["near_breakout"]):
+                failed.append("not_near_breakout")
+            if bool(row["breakout"]) and float(row["volume_ratio"]) < config["breakout"]["volume_ratio_min"]:
+                failed.append("breakout_volume")
+            if bool(row["breakout"]) and pd.notna(row["breakout_extension_pct"]) and float(row["breakout_extension_pct"]) > config["breakout"]["max_extension_pct"]:
+                failed.append("overextended")
+
             rows.append({
-                "date": row["date"].strftime("%Y-%m-%d"), "close": float(row["close"]), "market": row["market"], "market_ok": bool(row["market_ok"]),
-                "market_cap": None if pd.isna(row["market_cap"]) else float(row["market_cap"]), "rs_score": None if pd.isna(row["rs_score"]) else float(row["rs_score"]),
-                "high52": None if pd.isna(row["high52"]) else float(row["high52"]), "distance_from_high52_pct": None if pd.isna(row["distance_from_high52_pct"]) else float(row["distance_from_high52_pct"]),
-                "sma50": None if pd.isna(row["sma50"]) else float(row["sma50"]), "sma150": None if pd.isna(row["sma150"]) else float(row["sma150"]), "sma200": None if pd.isna(row["sma200"]) else float(row["sma200"]),
-                "base_high": None if pd.isna(row["base_high"]) else float(row["base_high"]), "base_low": None if pd.isna(row["base_low"]) else float(row["base_low"]), "base_depth_pct": None if pd.isna(row["base_depth_pct"]) else float(row["base_depth_pct"]),
-                "volume_ratio": None if pd.isna(row["volume_ratio"]) else float(row["volume_ratio"]), "stock_pass_count": int(row["stock_pass_count"]), "failed": failed,
-                "flags": {column: bool(row[column]) for column in stock_condition_columns}
+                "date": row["date"].strftime("%Y-%m-%d"),
+                "stage": getStage(row),
+                "market_alignment": row["market_alignment"],
+                "close": float(row["close"]),
+                "market_cap": None if pd.isna(row["market_cap"]) else float(row["market_cap"]),
+                "rs_score": None if pd.isna(row["rs_score"]) else float(row["rs_score"]),
+                "rs_20_score": None if pd.isna(row["rs_20_score"]) else float(row["rs_20_score"]),
+                "rs_60_score": None if pd.isna(row["rs_60_score"]) else float(row["rs_60_score"]),
+                "rs_acceleration": None if pd.isna(row["rs_acceleration"]) else float(row["rs_acceleration"]),
+                "mtt": bool(row["mtt"]),
+                "distance_from_high52_pct": None if pd.isna(row["distance_from_high52_pct"]) else float(row["distance_from_high52_pct"]),
+                "base_days": None if pd.isna(row["base_days"]) else int(row["base_days"]),
+                "base_high": None if pd.isna(row["base_high"]) else float(row["base_high"]),
+                "base_low": None if pd.isna(row["base_low"]) else float(row["base_low"]),
+                "base_depth_pct": None if pd.isna(row["base_depth_pct"]) else float(row["base_depth_pct"]),
+                "distance_to_base_high_pct": None if pd.isna(row["distance_to_base_high_pct"]) else float(row["distance_to_base_high_pct"]),
+                "volume_ratio": None if pd.isna(row["volume_ratio"]) else float(row["volume_ratio"]),
+                "failed": failed
             })
 
         results.append({
@@ -82,8 +108,10 @@ def buildDiagnostics(tickers: list[str], from_date: str, to_date: str) -> dict:
             "name": name,
             "market": str(frame["market"].iloc[-1]),
             "max_rs_score": None if frame["rs_score"].isna().all() else float(frame["rs_score"].max()),
-            "breakout_dates": [date.strftime("%Y-%m-%d") for date in breakout_rows["date"].tolist()],
-            "stock_all_ok_dates": [date.strftime("%Y-%m-%d") for date in eligible_rows["date"].tolist()],
+            "early_leader_dates": [date.strftime("%Y-%m-%d") for date in frame[frame["new_early_leader"]]["date"].tolist()],
+            "leader_dates": [date.strftime("%Y-%m-%d") for date in frame[frame["new_leader"]]["date"].tolist()],
+            "setup_dates": [date.strftime("%Y-%m-%d") for date in frame[frame["new_setup"]]["date"].tolist()],
+            "buy_dates": [date.strftime("%Y-%m-%d") for date in frame[frame["new_signal"]]["date"].tolist()],
             "best_rows": rows
         })
 
@@ -110,6 +138,7 @@ def main() -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8") as file:
         json.dump(result, file, ensure_ascii=False, indent=2, allow_nan=False)
+
     print(json.dumps({"tickers": len(tickers), "output": str(output_path)}, ensure_ascii=False))
 
 
