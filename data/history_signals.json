@@ -11127,7 +11127,7 @@
       "first_early_close": 125800.0,
       "gain_since_early_pct": -0.7154213036565937,
       "trading_days_since_early": 2,
-      "early_state_reason": "EARLY 이후 +-0.7% / 2거래일"
+      "early_state_reason": "EARLY 이후 -0.7% / 2거래일"
     },
     {
       "date": "2026-08-06",
@@ -14531,7 +14531,7 @@
       "first_early_close": 91800.0,
       "gain_since_early_pct": -5.446623093681913,
       "trading_days_since_early": 5,
-      "early_state_reason": "EARLY 이후 +-5.4% / 5거래일"
+      "early_state_reason": "EARLY 이후 -5.4% / 5거래일"
     },
     {
       "date": "2026-08-12",
@@ -14679,7 +14679,7 @@
       "first_early_close": 226500.0,
       "gain_since_early_pct": -4.856512141280356,
       "trading_days_since_early": 6,
-      "early_state_reason": "EARLY 이후 +-4.9% / 6거래일"
+      "early_state_reason": "EARLY 이후 -4.9% / 6거래일"
     },
     {
       "date": "2026-08-12",
@@ -14716,7 +14716,7 @@
       "first_early_close": 801000.0,
       "gain_since_early_pct": -1.6229712858926382,
       "trading_days_since_early": 6,
-      "early_state_reason": "EARLY 이후 +-1.6% / 6거래일"
+      "early_state_reason": "EARLY 이후 -1.6% / 6거래일"
     },
     {
       "date": "2026-08-12",
@@ -14790,7 +14790,7 @@
       "first_early_close": 70500.0,
       "gain_since_early_pct": -0.5673758865248235,
       "trading_days_since_early": 4,
-      "early_state_reason": "EARLY 이후 +-0.6% / 4거래일"
+      "early_state_reason": "EARLY 이후 -0.6% / 4거래일"
     },
     {
       "date": "2026-08-12",
@@ -14938,7 +14938,7 @@
       "first_early_close": 273500.0,
       "gain_since_early_pct": -4.021937842778788,
       "trading_days_since_early": 4,
-      "early_state_reason": "EARLY 이후 +-4.0% / 4거래일"
+      "early_state_reason": "EARLY 이후 -4.0% / 4거래일"
     },
     {
       "date": "2026-08-13",
@@ -15197,7 +15197,7 @@
       "first_early_close": 36950.0,
       "gain_since_early_pct": -0.13531799729363803,
       "trading_days_since_early": 7,
-      "early_state_reason": "EARLY 이후 +-0.1% / 7거래일"
+      "early_state_reason": "EARLY 이후 -0.1% / 7거래일"
     },
     {
       "date": "2026-08-13",
@@ -15271,7 +15271,7 @@
       "first_early_close": 68500.0,
       "gain_since_early_pct": -0.29197080291970545,
       "trading_days_since_early": 7,
-      "early_state_reason": "EARLY 이후 +-0.3% / 7거래일"
+      "early_state_reason": "EARLY 이후 -0.3% / 7거래일"
     },
     {
       "date": "2026-08-13",
@@ -15419,7 +15419,7 @@
       "first_early_close": 22250.0,
       "gain_since_early_pct": -1.7977528089887618,
       "trading_days_since_early": 4,
-      "early_state_reason": "EARLY 이후 +-1.8% / 4거래일"
+      "early_state_reason": "EARLY 이후 -1.8% / 4거래일"
     },
     {
       "date": "2026-08-13",
@@ -15456,7 +15456,7 @@
       "first_early_close": 107400.0,
       "gain_since_early_pct": -0.7448789571694592,
       "trading_days_since_early": 5,
-      "early_state_reason": "EARLY 이후 +-0.7% / 5거래일"
+      "early_state_reason": "EARLY 이후 -0.7% / 5거래일"
     },
     {
       "date": "2026-08-13",
@@ -15530,7 +15530,7 @@
       "first_early_close": 7950.0,
       "gain_since_early_pct": -1.0062893081761004,
       "trading_days_since_early": 3,
-      "early_state_reason": "EARLY 이후 +-1.0% / 3거래일"
+      "early_state_reason": "EARLY 이후 -1.0% / 3거래일"
     },
     {
       "date": "2026-08-13",
@@ -15937,7 +15937,7 @@
       "first_early_close": 32800.0,
       "gain_since_early_pct": -1.3719512195121908,
       "trading_days_since_early": 3,
-      "early_state_reason": "EARLY 이후 +-1.4% / 3거래일"
+      "early_state_reason": "EARLY 이후 -1.4% / 3거래일"
     },
     {
       "date": "2026-08-14",
@@ -16455,7 +16455,7 @@
       "first_early_close": 14370.0,
       "gain_since_early_pct": -2.9227557411273475,
       "trading_days_since_early": 2,
-      "early_state_reason": "EARLY 이후 +-2.9% / 2거래일"
+      "early_state_reason": "EARLY 이후 -2.9% / 2거래일"
     },
     {
       "date": "2026-08-18",
@@ -16862,7 +16862,7 @@
       "first_early_close": 23700.0,
       "gain_since_early_pct": -2.9535864978902926,
       "trading_days_since_early": 5,
-      "early_state_reason": "EARLY 이후 +-3.0% / 5거래일"
+      "early_state_reason": "EARLY 이후 -3.0% / 5거래일"
     },
     {
       "date": "2026-08-19",
@@ -17121,7 +17121,7 @@
       "first_early_close": 1185000.0,
       "gain_since_early_pct": -0.6751054852320637,
       "trading_days_since_early": 3,
-      "early_state_reason": "EARLY 이후 +-0.7% / 3거래일"
+      "early_state_reason": "EARLY 이후 -0.7% / 3거래일"
     },
     {
       "date": "2026-08-19",
@@ -17232,7 +17232,7 @@
       "first_early_close": 107400.0,
       "gain_since_early_pct": -2.2346368715083775,
       "trading_days_since_early": 8,
-      "early_state_reason": "EARLY 이후 +-2.2% / 8거래일"
+      "early_state_reason": "EARLY 이후 -2.2% / 8거래일"
     },
     {
       "date": "2026-08-19",
@@ -17306,7 +17306,7 @@
       "first_early_close": 801000.0,
       "gain_since_early_pct": -0.6242197253433224,
       "trading_days_since_early": 10,
-      "early_state_reason": "EARLY 이후 +-0.6% / 10거래일"
+      "early_state_reason": "EARLY 이후 -0.6% / 10거래일"
     },
     {
       "date": "2026-08-19",
@@ -17491,7 +17491,7 @@
       "first_early_close": 7990.0,
       "gain_since_early_pct": -0.5006257822277815,
       "trading_days_since_early": 7,
-      "early_state_reason": "EARLY 이후 +-0.5% / 7거래일"
+      "early_state_reason": "EARLY 이후 -0.5% / 7거래일"
     },
     {
       "date": "2026-08-19",
@@ -17602,7 +17602,7 @@
       "first_early_close": 13230.0,
       "gain_since_early_pct": -4.232804232804233,
       "trading_days_since_early": 11,
-      "early_state_reason": "EARLY 이후 +-4.2% / 11거래일"
+      "early_state_reason": "EARLY 이후 -4.2% / 11거래일"
     },
     {
       "date": "2026-08-19",
@@ -18231,7 +18231,7 @@
       "first_early_close": 226500.0,
       "gain_since_early_pct": -3.0905077262693204,
       "trading_days_since_early": 11,
-      "early_state_reason": "EARLY 이후 +-3.1% / 11거래일"
+      "early_state_reason": "EARLY 이후 -3.1% / 11거래일"
     },
     {
       "date": "2026-08-20",
@@ -18897,7 +18897,7 @@
       "first_early_close": 29600.0,
       "gain_since_early_pct": -3.5472972972973027,
       "trading_days_since_early": 9,
-      "early_state_reason": "EARLY 이후 +-3.5% / 9거래일"
+      "early_state_reason": "EARLY 이후 -3.5% / 9거래일"
     },
     {
       "date": "2026-08-24",
@@ -18934,7 +18934,7 @@
       "first_early_close": 30000.0,
       "gain_since_early_pct": -7.9999999999999964,
       "trading_days_since_early": 7,
-      "early_state_reason": "EARLY 이후 +-8.0% / 7거래일"
+      "early_state_reason": "EARLY 이후 -8.0% / 7거래일"
     },
     {
       "date": "2026-08-24",
@@ -18971,7 +18971,7 @@
       "first_early_close": 23700.0,
       "gain_since_early_pct": -1.0548523206751037,
       "trading_days_since_early": 8,
-      "early_state_reason": "EARLY 이후 +-1.1% / 8거래일"
+      "early_state_reason": "EARLY 이후 -1.1% / 8거래일"
     },
     {
       "date": "2026-08-24",
@@ -19082,7 +19082,7 @@
       "first_early_close": 516000.0,
       "gain_since_early_pct": -0.19379844961240345,
       "trading_days_since_early": 5,
-      "early_state_reason": "EARLY 이후 +-0.2% / 5거래일"
+      "early_state_reason": "EARLY 이후 -0.2% / 5거래일"
     },
     {
       "date": "2026-08-24",
@@ -19156,7 +19156,7 @@
       "first_early_close": 37950.0,
       "gain_since_early_pct": -1.0540184453227908,
       "trading_days_since_early": 3,
-      "early_state_reason": "EARLY 이후 +-1.1% / 3거래일"
+      "early_state_reason": "EARLY 이후 -1.1% / 3거래일"
     },
     {
       "date": "2026-08-24",
@@ -19415,7 +19415,7 @@
       "first_early_close": 226500.0,
       "gain_since_early_pct": -1.3245033112582738,
       "trading_days_since_early": 13,
-      "early_state_reason": "EARLY 이후 +-1.3% / 13거래일"
+      "early_state_reason": "EARLY 이후 -1.3% / 13거래일"
     },
     {
       "date": "2026-08-24",
@@ -19452,7 +19452,7 @@
       "first_early_close": 107400.0,
       "gain_since_early_pct": -3.8175046554934866,
       "trading_days_since_early": 11,
-      "early_state_reason": "EARLY 이후 +-3.8% / 11거래일"
+      "early_state_reason": "EARLY 이후 -3.8% / 11거래일"
     },
     {
       "date": "2026-08-24",
@@ -19822,7 +19822,7 @@
       "first_early_close": 13230.0,
       "gain_since_early_pct": -2.7210884353741527,
       "trading_days_since_early": 14,
-      "early_state_reason": "EARLY 이후 +-2.7% / 14거래일"
+      "early_state_reason": "EARLY 이후 -2.7% / 14거래일"
     },
     {
       "date": "2026-08-24",
@@ -20562,7 +20562,7 @@
       "first_early_close": 22250.0,
       "gain_since_early_pct": -1.348314606741574,
       "trading_days_since_early": 11,
-      "early_state_reason": "EARLY 이후 +-1.3% / 11거래일"
+      "early_state_reason": "EARLY 이후 -1.3% / 11거래일"
     },
     {
       "date": "2026-08-25",
@@ -20747,7 +20747,7 @@
       "first_early_close": 5630.0,
       "gain_since_early_pct": -4.618117229129659,
       "trading_days_since_early": 6,
-      "early_state_reason": "EARLY 이후 +-4.6% / 6거래일"
+      "early_state_reason": "EARLY 이후 -4.6% / 6거래일"
     },
     {
       "date": "2026-08-25",
@@ -20895,7 +20895,7 @@
       "first_early_close": 33500.0,
       "gain_since_early_pct": -2.68656716417911,
       "trading_days_since_early": 4,
-      "early_state_reason": "EARLY 이후 +-2.7% / 4거래일"
+      "early_state_reason": "EARLY 이후 -2.7% / 4거래일"
     },
     {
       "date": "2026-08-25",
@@ -21154,7 +21154,7 @@
       "first_early_close": 23700.0,
       "gain_since_early_pct": -2.5316455696202556,
       "trading_days_since_early": 10,
-      "early_state_reason": "EARLY 이후 +-2.5% / 10거래일"
+      "early_state_reason": "EARLY 이후 -2.5% / 10거래일"
     },
     {
       "date": "2026-08-26",
@@ -21228,7 +21228,7 @@
       "first_early_close": 14930.0,
       "gain_since_early_pct": -2.813127930341597,
       "trading_days_since_early": 5,
-      "early_state_reason": "EARLY 이후 +-2.8% / 5거래일"
+      "early_state_reason": "EARLY 이후 -2.8% / 5거래일"
     },
     {
       "date": "2026-08-26",
@@ -21265,7 +21265,7 @@
       "first_early_close": 32200.0,
       "gain_since_early_pct": -3.57142857142857,
       "trading_days_since_early": 11,
-      "early_state_reason": "EARLY 이후 +-3.6% / 11거래일"
+      "early_state_reason": "EARLY 이후 -3.6% / 11거래일"
     },
     {
       "date": "2026-08-26",
@@ -21376,7 +21376,7 @@
       "first_early_close": 99800.0,
       "gain_since_early_pct": -0.2004008016032066,
       "trading_days_since_early": 6,
-      "early_state_reason": "EARLY 이후 +-0.2% / 6거래일"
+      "early_state_reason": "EARLY 이후 -0.2% / 6거래일"
     },
     {
       "date": "2026-08-26",
@@ -21450,7 +21450,7 @@
       "first_early_close": 54000.0,
       "gain_since_early_pct": -0.18518518518518823,
       "trading_days_since_early": 2,
-      "early_state_reason": "EARLY 이후 +-0.2% / 2거래일"
+      "early_state_reason": "EARLY 이후 -0.2% / 2거래일"
     },
     {
       "date": "2026-08-26",
@@ -21635,7 +21635,7 @@
       "first_early_close": 4180.0,
       "gain_since_early_pct": -2.631578947368418,
       "trading_days_since_early": 9,
-      "early_state_reason": "EARLY 이후 +-2.6% / 9거래일"
+      "early_state_reason": "EARLY 이후 -2.6% / 9거래일"
     },
     {
       "date": "2026-08-26",
@@ -22042,7 +22042,7 @@
       "first_early_close": 52000.0,
       "gain_since_early_pct": -1.3461538461538414,
       "trading_days_since_early": 16,
-      "early_state_reason": "EARLY 이후 +-1.3% / 16거래일"
+      "early_state_reason": "EARLY 이후 -1.3% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -22190,7 +22190,7 @@
       "first_early_close": 5640.0,
       "gain_since_early_pct": -0.35460992907800915,
       "trading_days_since_early": 16,
-      "early_state_reason": "EARLY 이후 +-0.4% / 16거래일"
+      "early_state_reason": "EARLY 이후 -0.4% / 16거래일"
     },
     {
       "date": "2026-08-27",
@@ -22301,7 +22301,7 @@
       "first_early_close": 169500.0,
       "gain_since_early_pct": -0.8259587020648995,
       "trading_days_since_early": 17,
-      "early_state_reason": "EARLY 이후 +-0.8% / 17거래일"
+      "early_state_reason": "EARLY 이후 -0.8% / 17거래일"
     },
     {
       "date": "2026-08-27",
@@ -23413,7 +23413,7 @@
       "first_early_close": 91800.0,
       "gain_since_early_pct": -1.1982570806100212,
       "trading_days_since_early": 1,
-      "early_state_reason": "EARLY 이후 +-1.2% / 1거래일"
+      "early_state_reason": "EARLY 이후 -1.2% / 1거래일"
     },
     {
       "date": "2026-08-06",
@@ -28262,7 +28262,7 @@
       "first_early_close": 39000.0,
       "gain_since_early_pct": -0.8974358974358942,
       "trading_days_since_early": 1,
-      "early_state_reason": "EARLY 이후 +-0.9% / 1거래일"
+      "early_state_reason": "EARLY 이후 -0.9% / 1거래일"
     },
     {
       "date": "2026-08-05",
@@ -29742,7 +29742,7 @@
       "first_early_close": 96600.0,
       "gain_since_early_pct": -0.9316770186335366,
       "trading_days_since_early": 1,
-      "early_state_reason": "EARLY 이후 +-0.9% / 1거래일"
+      "early_state_reason": "EARLY 이후 -0.9% / 1거래일"
     },
     {
       "date": "2026-08-07",
@@ -29816,7 +29816,7 @@
       "first_early_close": 31850.0,
       "gain_since_early_pct": -1.4128728414442682,
       "trading_days_since_early": 2,
-      "early_state_reason": "EARLY 이후 +-1.4% / 2거래일"
+      "early_state_reason": "EARLY 이후 -1.4% / 2거래일"
     },
     {
       "date": "2026-08-07",
@@ -32258,7 +32258,7 @@
       "first_early_close": 7950.0,
       "gain_since_early_pct": -1.0062893081761004,
       "trading_days_since_early": 3,
-      "early_state_reason": "EARLY 이후 +-1.0% / 3거래일"
+      "early_state_reason": "EARLY 이후 -1.0% / 3거래일"
     },
     {
       "date": "2026-08-13",
@@ -32443,7 +32443,7 @@
       "first_early_close": 32800.0,
       "gain_since_early_pct": -1.3719512195121908,
       "trading_days_since_early": 3,
-      "early_state_reason": "EARLY 이후 +-1.4% / 3거래일"
+      "early_state_reason": "EARLY 이후 -1.4% / 3거래일"
     },
     {
       "date": "2026-08-14",
@@ -32850,7 +32850,7 @@
       "first_early_close": 235500.0,
       "gain_since_early_pct": -0.424628450106157,
       "trading_days_since_early": 1,
-      "early_state_reason": "EARLY 이후 +-0.4% / 1거래일"
+      "early_state_reason": "EARLY 이후 -0.4% / 1거래일"
     },
     {
       "date": "2026-08-18",
@@ -32998,7 +32998,7 @@
       "first_early_close": 1185000.0,
       "gain_since_early_pct": -0.6751054852320637,
       "trading_days_since_early": 3,
-      "early_state_reason": "EARLY 이후 +-0.7% / 3거래일"
+      "early_state_reason": "EARLY 이후 -0.7% / 3거래일"
     },
     {
       "date": "2026-08-19",
@@ -33072,7 +33072,7 @@
       "first_early_close": 7990.0,
       "gain_since_early_pct": -0.5006257822277815,
       "trading_days_since_early": 7,
-      "early_state_reason": "EARLY 이후 +-0.5% / 7거래일"
+      "early_state_reason": "EARLY 이후 -0.5% / 7거래일"
     },
     {
       "date": "2026-08-19",
@@ -33997,7 +33997,7 @@
       "first_early_close": 516000.0,
       "gain_since_early_pct": -0.19379844961240345,
       "trading_days_since_early": 5,
-      "early_state_reason": "EARLY 이후 +-0.2% / 5거래일"
+      "early_state_reason": "EARLY 이후 -0.2% / 5거래일"
     },
     {
       "date": "2026-08-24",
@@ -34996,7 +34996,7 @@
       "first_early_close": 54000.0,
       "gain_since_early_pct": -0.18518518518518823,
       "trading_days_since_early": 2,
-      "early_state_reason": "EARLY 이후 +-0.2% / 2거래일"
+      "early_state_reason": "EARLY 이후 -0.2% / 2거래일"
     },
     {
       "date": "2026-08-26",
@@ -35107,7 +35107,7 @@
       "first_early_close": 5630.0,
       "gain_since_early_pct": -0.8880994671403242,
       "trading_days_since_early": 7,
-      "early_state_reason": "EARLY 이후 +-0.9% / 7거래일"
+      "early_state_reason": "EARLY 이후 -0.9% / 7거래일"
     },
     {
       "date": "2026-08-26",
