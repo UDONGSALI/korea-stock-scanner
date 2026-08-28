@@ -15,6 +15,13 @@
     "rs_acceleration_min": 10,
     "max_below_52w_high_pct": 30
   },
+  "early_state": {
+    "normal_min_gain_pct": 15,
+    "late_min_gain_pct": 30,
+    "climax_gain_pct": 45,
+    "climax_acceleration_min_gain_pct": 15,
+    "climax_rs_acceleration_min": 25
+  },
   "leader": {"max_below_52w_high_pct": 25},
   "mtt": {"sma200_rising_lookback": 20, "min_above_52w_low_pct": 30, "max_below_52w_high_pct": 25},
   "base": {
