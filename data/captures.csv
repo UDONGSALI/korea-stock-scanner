@@ -1,4 +1,4 @@
-capture_date,ticker,name,capture_close,source,rule_version,market_alignment,early_state,first_early_date,first_early_close,gain_since_early_pct,trading_days_since_early
+﻿capture_date,ticker,name,capture_close,source,rule_version,market_alignment,early_state,first_early_date,first_early_close,gain_since_early_pct,trading_days_since_early
 2026-08-24,002840,미원상사,131800,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-24,131800.0,0.0,0
 2026-08-24,028670,팬오션,6320,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-04,5640.0,12.056737588652489,13
 2026-08-24,058650,세아홀딩스,132600,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-24,132600.0,0.0,0
@@ -23,3 +23,16 @@ capture_date,ticker,name,capture_close,source,rule_version,market_alignment,earl
 2026-08-27,029460,케이씨,38650,kangto_core,kangto_core_v3,COUNTERTREND,NORMAL,2026-08-05,31850.0,21.350078492935644,15
 2026-08-27,183190,아세아시멘트,10550,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-27,10550.0,0.0,0
 2026-08-27,222800,심텍,126900,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-10,115900.0,9.490940465918897,12
+2026-08-28,035600,KG이니시스,10640,kangto_core,kangto_core_v3,COUNTERTREND,NO_EARLY,,,,
+2026-08-28,096530,씨젠,35650,kangto_core,kangto_core_v3,COUNTERTREND,NO_EARLY,,,,
+2026-08-28,204620,글로벌텍스프리,5960,kangto_core,kangto_core_v3,COUNTERTREND,NORMAL,2026-08-25,5150.0,15.728155339805827,3
+2026-08-28,002790,아모레퍼시픽홀딩스,28000,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-21,26000.0,7.692307692307687,5
+2026-08-28,025000,KPX케미칼,55800,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-24,54000.0,3.3333333333333437,4
+2026-08-28,044820,코스맥스비티아이,26800,kangto_core,kangto_core_v3,COUNTERTREND,CLIMAX_RISK,2026-08-04,21050.0,27.315914489311165,17
+2026-08-28,088350,한화생명,5950,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-14,5630.0,5.683836589698044,9
+2026-08-28,090430,아모레퍼시픽,150600,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-19,133100.0,13.148009015777617,7
+2026-08-28,104700,한국철강,10120,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-10,9770.0,3.5823950870010224,13
+2026-08-28,161890,한국콜마,161700,kangto_core,kangto_core_v3,COUNTERTREND,CLIMAX_RISK,2026-08-04,101300.0,59.6248766041461,17
+2026-08-28,192820,코스맥스,303000,kangto_core,kangto_core_v3,COUNTERTREND,CLIMAX_RISK,2026-08-04,195200.0,55.225409836065566,17
+2026-08-28,278470,에이피알,461500,kangto_core,kangto_core_v3,COUNTERTREND,CLIMAX_RISK,2026-08-12,397000.0,16.246851385390435,11
+2026-08-28,300720,한일시멘트,16950,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-19,15190.0,11.586570111915728,7
