@@ -1,5 +1,6 @@
 name: Validate Kangto Core V3
 
+# validation retry: 2
 on:
   push:
     branches: ["main"]
