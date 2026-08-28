@@ -37,7 +37,29 @@ KOSPI/KOSDAQ 전 종목을 대상으로 깡토의 공개 추세추종 원칙과 
 
 종합 RS가 아직 70을 넘지 않았더라도 최근 시장 대비 강도가 빠르게 올라오는 종목을 먼저 보여줍니다.
 
-### 4. LEADER
+### 4. EARLY 이후 상태
+
+최초 `EARLY_LEADER` 포착 이후 종목이 얼마나 진행됐는지를 별도 상태로 표시합니다.
+
+- `FRESH`: EARLY 이후 상승률 15% 미만
+- `NORMAL`: 15% 이상 30% 미만
+- `LATE`: 30% 이상 45% 미만
+- `CLIMAX_RISK`: 45% 이상 상승했거나, 15% 이상 오른 상태에서 RS 가속이 매우 강한 경우
+- `NO_EARLY`: 저장된 EARLY 기록 없음
+- `PRE_EARLY`: 과거 재스캔에서 최초 EARLY 이전 시점
+
+각 EARLY LEADER / LEADER / SETUP / BUY 결과에 다음 값을 함께 저장합니다.
+
+- `first_early_date`
+- `first_early_close`
+- `gain_since_early_pct`
+- `trading_days_since_early`
+- `early_state`
+- `early_state_reason`
+
+이 값은 종목의 좋고 나쁨 자체보다는 `신선한 진입인지`, `이미 많이 진행된 진입인지`를 구분하기 위한 성숙도 표시입니다.
+
+### 5. LEADER
 
 - 종가 > SMA50
 - 52주 고점에서 25% 이내
@@ -47,13 +69,13 @@ KOSPI/KOSDAQ 전 종목을 대상으로 깡토의 공개 추세추종 원칙과 
 
 StockEasy의 실제 종합 RS 가중치는 공개되지 않았기 때문에 동일 가중 방식은 공개 데이터로 재현하기 위한 프록시입니다.
 
-### 5. MTT
+### 6. MTT
 
 Mark Minervini Trend Template은 더 이상 필수 탈락 조건이 아닙니다.
 
 결과에 `mtt: true/false`로 표시해 장기 추세 품질을 확인하는 참고값으로 사용합니다.
 
-### 6. 동적 Base / SETUP
+### 7. 동적 Base / SETUP
 
 고정 15거래일 전체를 Base로 취급하지 않습니다.
 
@@ -65,7 +87,7 @@ Mark Minervini Trend Template은 더 이상 필수 탈락 조건이 아닙니다
 
 이 방식은 이전 상승 전 저점까지 Base에 포함돼 강한 종목이 과도하게 탈락하는 문제를 줄이기 위한 공개 재현용 방식입니다.
 
-### 7. BUY
+### 8. BUY
 
 EARLY LEADER 또는 LEADER가 다음을 만족하면 BUY입니다.
 
@@ -77,7 +99,7 @@ EARLY LEADER 또는 LEADER가 다음을 만족하면 BUY입니다.
 
 시장 상태는 BUY 여부에 영향을 주지 않고 `WITH_MARKET` / `COUNTERTREND` 라벨만 붙습니다.
 
-### 8. 리스크 관리 출력
+### 9. 리스크 관리 출력
 
 BUY가 발생하면 Base 저점을 구조적 손절선으로 두고 다음 값을 함께 계산합니다.
 
@@ -101,9 +123,10 @@ BUY가 발생하면 Base 저점을 구조적 손절선으로 두고 다음 값�
 ## 데이터
 
 - `data/snapshots/`: KOSPI/KOSDAQ 전 종목 일별 OHLCV 원본
-- `data/latest.json`: 최신 EARLY LEADER / LEADER / SETUP / BUY
+- `data/latest.json`: 최신 EARLY LEADER / LEADER / SETUP / BUY 및 EARLY 이후 상태
 - `data/results/`: 날짜별 결과
 - `data/history_signals.json`: 과거 BUY 및 단계 진입 이벤트
+- `data/early_registry.csv`: 종목별 최초 EARLY 포착 날짜/가격
 - `data/captures.csv`: 현재 규칙의 모든 BUY 자동 누적
 - `data/tracking.json`: BUY 포착 이후 성과
 
@@ -112,6 +135,7 @@ BUY가 발생하면 Base 저점을 구조적 손절선으로 두고 다음 값�
 ```bash
 pip install -r requirements.txt
 python src/scanner.py
+python src/early_state.py
 ```
 
 과거 재스캔:
