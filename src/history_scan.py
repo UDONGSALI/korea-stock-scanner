@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pandas as pd
 
+import early_state
 import scanner
 
 
@@ -89,6 +90,9 @@ def main() -> None:
 
     with output_path.open("w", encoding="utf-8") as file:
         json.dump(result, file, ensure_ascii=False, indent=2, allow_nan=False)
+
+    early_state.enrich_history_file(output_path)
+    result = early_state.load_json(output_path, result)
 
     print(json.dumps({
         "rule_version": result["rule_version"],
