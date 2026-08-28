@@ -3,7 +3,7 @@ name: Daily KRX Scan
 on:
   workflow_dispatch:
   schedule:
-    - cron: "37 18 * * 1-5"
+    - cron: "40 15 * * 1-5"
       timezone: "Asia/Seoul"
 
 permissions:
