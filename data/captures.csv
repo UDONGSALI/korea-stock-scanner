@@ -1,6 +1,6 @@
-﻿capture_date,ticker,name,capture_close,source,rule_version,market_alignment
-2026-08-27,222800,심텍,126900,kangto_core,kangto_core_v3,COUNTERTREND
-2026-08-27,006400,삼성SDI,569000,kangto_core,kangto_core_v3,COUNTERTREND
-2026-08-27,012750,에스원,85500,kangto_core,kangto_core_v3,COUNTERTREND
-2026-08-27,029460,케이씨,38650,kangto_core,kangto_core_v3,COUNTERTREND
-2026-08-27,183190,아세아시멘트,10550,kangto_core,kangto_core_v3,COUNTERTREND
+﻿capture_date,ticker,name,capture_close,source,rule_version,market_alignment,early_state,first_early_date,first_early_close,gain_since_early_pct,trading_days_since_early
+2026-08-27,222800,심텍,126900,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-10,115900.0,9.490940465918897,12
+2026-08-27,006400,삼성SDI,569000,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-14,516000.0,10.27131782945736,8
+2026-08-27,012750,에스원,85500,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-06,75000.0,13.99999999999999,14
+2026-08-27,029460,케이씨,38650,kangto_core,kangto_core_v3,COUNTERTREND,NORMAL,2026-08-05,31850.0,21.350078492935644,15
+2026-08-27,183190,아세아시멘트,10550,kangto_core,kangto_core_v3,COUNTERTREND,FRESH,2026-08-27,10550.0,0.0,0
