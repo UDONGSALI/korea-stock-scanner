@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import gzip
 import json
 from pathlib import Path
 
@@ -13,6 +14,7 @@ HISTORY_PATH = DATA_DIR / "history_signals.json"
 CAPTURE_PATH = DATA_DIR / "captures.csv"
 TRACKING_PATH = DATA_DIR / "tracking.json"
 EARLY_REGISTRY_PATH = DATA_DIR / "early_registry.csv"
+EARLY_TRACKING_PATH = DATA_DIR / "early_tracking.json"
 
 REGISTRY_COLUMNS = ["ticker", "name", "market", "first_early_date", "first_early_close"]
 
@@ -268,6 +270,144 @@ def enrich_tracking(registry: dict[str, dict]) -> None:
     save_json(TRACKING_PATH, enriched)
 
 
+def get_current_stage_map(latest: dict) -> dict[str, dict]:
+    stage_map = {}
+    stage_sources = [
+        ("EARLY_LEADER", latest.get("early_leaders", [])),
+        ("LEADER", latest.get("leaders", [])),
+        ("SETUP", latest.get("setups", [])),
+        ("BUY", latest.get("signals", [])),
+    ]
+    priority = {"EARLY_LEADER": 1, "LEADER": 2, "SETUP": 3, "BUY": 4}
+
+    for stage, records in stage_sources:
+        for row in records:
+            ticker = str(row.get("ticker", ""))
+            if not ticker:
+                continue
+            existing = stage_map.get(ticker)
+            if existing is None or priority[stage] >= priority.get(existing.get("current_stage", ""), 0):
+                stage_map[ticker] = {
+                    "current_stage": stage,
+                    "market_alignment": row.get("market_alignment"),
+                    "rs_score": row.get("rs_score"),
+                    "rs_acceleration": row.get("rs_acceleration"),
+                    "mtt": row.get("mtt"),
+                }
+    return stage_map
+
+
+def get_first_event_map(history: dict, key: str) -> dict[str, dict]:
+    event_map = {}
+    for row in sorted(history.get(key, []), key=lambda item: str(item.get("date", ""))):
+        ticker = str(row.get("ticker", ""))
+        if ticker and ticker not in event_map:
+            event_map[ticker] = row
+    return event_map
+
+
+def load_snapshot_prices(tickers: set[str], first_dates: dict[str, str]) -> dict[str, list[tuple[str, float]]]:
+    prices = {ticker: [] for ticker in tickers}
+    if not tickers:
+        return prices
+
+    min_date = min(first_dates.values())
+    for path in sorted(SNAPSHOT_DIR.glob("*.csv.gz")):
+        date = path.name.removesuffix(".csv.gz")
+        if date < min_date:
+            continue
+        with gzip.open(path, "rt", encoding="utf-8-sig", newline="") as file:
+            for row in csv.DictReader(file):
+                ticker = str(row.get("ticker", ""))
+                if ticker not in tickers or date < first_dates[ticker]:
+                    continue
+                close = row.get("close")
+                if close not in (None, ""):
+                    prices[ticker].append((date, float(close)))
+    return prices
+
+
+def build_early_tracking(registry: dict[str, dict], latest: dict, history: dict) -> list[dict]:
+    if not registry:
+        return []
+
+    config = load_config()
+    previous = {str(row.get("ticker")): row for row in load_json(EARLY_TRACKING_PATH, []) or []}
+    current_stage_map = get_current_stage_map(latest)
+    first_leader_map = get_first_event_map(history, "leader_events")
+    first_setup_map = get_first_event_map(history, "setup_events")
+    first_buy_map = get_first_event_map(history, "signals")
+
+    first_dates = {ticker: str(row["first_early_date"]) for ticker, row in registry.items()}
+    prices = load_snapshot_prices(set(registry.keys()), first_dates)
+    latest_scan_date = str(latest.get("scan_date") or "")
+    rows = []
+
+    for ticker, anchor in registry.items():
+        series = prices.get(ticker, [])
+        if not series:
+            continue
+
+        first_close = float(anchor["first_early_close"])
+        latest_date, latest_close = series[-1]
+        max_close = max(close for _, close in series)
+        min_close = min(close for _, close in series)
+        gain_pct = (latest_close / first_close - 1) * 100
+        max_gain_pct = (max_close / first_close - 1) * 100
+        max_drawdown_pct = (min_close / first_close - 1) * 100
+
+        current_info = current_stage_map.get(ticker, {})
+        current_stage = current_info.get("current_stage", "INACTIVE")
+        rs_acceleration = current_info.get("rs_acceleration")
+        early_state, early_state_reason = classify_state(gain_pct, rs_acceleration, config)
+
+        old = previous.get(ticker, {})
+        first_leader = first_leader_map.get(ticker)
+        first_setup = first_setup_map.get(ticker)
+        first_buy = first_buy_map.get(ticker)
+
+        first_leader_date = old.get("first_leader_date") or (first_leader or {}).get("date")
+        first_setup_date = old.get("first_setup_date") or (first_setup or {}).get("date")
+        first_buy_date = old.get("first_buy_date") or (first_buy or {}).get("date")
+        first_buy_close = old.get("first_buy_close") or (first_buy or {}).get("close")
+
+        if latest_scan_date and current_stage == "LEADER" and not first_leader_date:
+            first_leader_date = latest_scan_date
+        if latest_scan_date and current_stage == "SETUP" and not first_setup_date:
+            first_setup_date = latest_scan_date
+        if latest_scan_date and current_stage == "BUY" and not first_buy_date:
+            first_buy_date = latest_scan_date
+            first_buy_close = latest_close
+
+        rows.append({
+            "ticker": ticker,
+            "name": anchor.get("name", ""),
+            "market": anchor.get("market", ""),
+            "first_early_date": anchor["first_early_date"],
+            "first_early_close": first_close,
+            "latest_date": latest_date,
+            "latest_close": latest_close,
+            "return_since_early_pct": gain_pct,
+            "max_return_since_early_pct": max_gain_pct,
+            "max_drawdown_since_early_pct": max_drawdown_pct,
+            "trading_days_since_early": max(0, len(series) - 1),
+            "early_state": early_state,
+            "early_state_reason": early_state_reason,
+            "current_stage": current_stage,
+            "market_alignment": current_info.get("market_alignment"),
+            "rs_score": current_info.get("rs_score"),
+            "rs_acceleration": rs_acceleration,
+            "mtt": current_info.get("mtt"),
+            "first_leader_date": first_leader_date,
+            "first_setup_date": first_setup_date,
+            "first_buy_date": first_buy_date,
+            "first_buy_close": first_buy_close,
+            "buy_promoted": bool(first_buy_date),
+        })
+
+    return sorted(rows, key=lambda row: (row["first_early_date"], row["ticker"]), reverse=True)
+
+
 def main() -> None:
     latest = load_json(LATEST_PATH, {})
     history = load_json(HISTORY_PATH, {})
@@ -288,9 +428,12 @@ def main() -> None:
 
     enrich_captures(latest, history)
     enrich_tracking(registry)
+    early_tracking = build_early_tracking(registry, latest, history)
+    save_json(EARLY_TRACKING_PATH, early_tracking)
 
     print(json.dumps({
         "early_registry_count": len(registry),
+        "early_tracking_count": len(early_tracking),
         "latest_signal_count": len(latest.get("signals", [])) if latest else 0,
     }, ensure_ascii=False))
 
