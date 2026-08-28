@@ -115,7 +115,7 @@ def classify_state(gain_pct: float, rs_acceleration: float | None, config: dict)
     if gain_pct >= state_config["normal_min_gain_pct"]:
         return "NORMAL", f"EARLY 이후 +{gain_pct:.1f}%"
 
-    return "FRESH", f"EARLY 이후 +{gain_pct:.1f}%"
+    return "FRESH", f"EARLY 이후 {gain_pct:+.1f}%"
 
 
 def enrich_record(row: dict, registry: dict[str, dict], snapshot_dates: list[str], config: dict) -> dict:
@@ -297,13 +297,20 @@ def get_current_stage_map(latest: dict) -> dict[str, dict]:
     return stage_map
 
 
-def get_first_event_map(history: dict, key: str) -> dict[str, dict]:
-    event_map = {}
+def get_events_by_ticker(history: dict, key: str) -> dict[str, list[dict]]:
+    grouped = {}
     for row in sorted(history.get(key, []), key=lambda item: str(item.get("date", ""))):
         ticker = str(row.get("ticker", ""))
-        if ticker and ticker not in event_map:
-            event_map[ticker] = row
-    return event_map
+        if ticker:
+            grouped.setdefault(ticker, []).append(row)
+    return grouped
+
+
+def first_event_after(events: dict[str, list[dict]], ticker: str, first_date: str) -> dict | None:
+    for row in events.get(ticker, []):
+        if str(row.get("date", "")) >= first_date:
+            return row
+    return None
 
 
 def load_snapshot_prices(tickers: set[str], first_dates: dict[str, str]) -> dict[str, list[tuple[str, float]]]:
@@ -334,9 +341,9 @@ def build_early_tracking(registry: dict[str, dict], latest: dict, history: dict)
     config = load_config()
     previous = {str(row.get("ticker")): row for row in load_json(EARLY_TRACKING_PATH, []) or []}
     current_stage_map = get_current_stage_map(latest)
-    first_leader_map = get_first_event_map(history, "leader_events")
-    first_setup_map = get_first_event_map(history, "setup_events")
-    first_buy_map = get_first_event_map(history, "signals")
+    leader_events = get_events_by_ticker(history, "leader_events")
+    setup_events = get_events_by_ticker(history, "setup_events")
+    buy_events = get_events_by_ticker(history, "signals")
 
     first_dates = {ticker: str(row["first_early_date"]) for ticker, row in registry.items()}
     prices = load_snapshot_prices(set(registry.keys()), first_dates)
@@ -348,6 +355,7 @@ def build_early_tracking(registry: dict[str, dict], latest: dict, history: dict)
         if not series:
             continue
 
+        first_date = str(anchor["first_early_date"])
         first_close = float(anchor["first_early_close"])
         latest_date, latest_close = series[-1]
         max_close = max(close for _, close in series)
@@ -362,20 +370,32 @@ def build_early_tracking(registry: dict[str, dict], latest: dict, history: dict)
         early_state, early_state_reason = classify_state(gain_pct, rs_acceleration, config)
 
         old = previous.get(ticker, {})
-        first_leader = first_leader_map.get(ticker)
-        first_setup = first_setup_map.get(ticker)
-        first_buy = first_buy_map.get(ticker)
+        first_leader = first_event_after(leader_events, ticker, first_date)
+        first_setup = first_event_after(setup_events, ticker, first_date)
+        first_buy = first_event_after(buy_events, ticker, first_date)
 
-        first_leader_date = old.get("first_leader_date") or (first_leader or {}).get("date")
-        first_setup_date = old.get("first_setup_date") or (first_setup or {}).get("date")
-        first_buy_date = old.get("first_buy_date") or (first_buy or {}).get("date")
-        first_buy_close = old.get("first_buy_close") or (first_buy or {}).get("close")
+        old_leader_date = old.get("first_leader_date")
+        old_setup_date = old.get("first_setup_date")
+        old_buy_date = old.get("first_buy_date")
+        if old_leader_date and old_leader_date < first_date:
+            old_leader_date = None
+        if old_setup_date and old_setup_date < first_date:
+            old_setup_date = None
+        if old_buy_date and old_buy_date < first_date:
+            old_buy_date = None
 
-        if latest_scan_date and current_stage == "LEADER" and not first_leader_date:
+        first_leader_date = old_leader_date or (first_leader or {}).get("date")
+        first_setup_date = old_setup_date or (first_setup or {}).get("date")
+        first_buy_date = old_buy_date or (first_buy or {}).get("date")
+        first_buy_close = old.get("first_buy_close") if old_buy_date else None
+        if first_buy_close is None:
+            first_buy_close = (first_buy or {}).get("close")
+
+        if latest_scan_date and current_stage == "LEADER" and not first_leader_date and latest_scan_date >= first_date:
             first_leader_date = latest_scan_date
-        if latest_scan_date and current_stage == "SETUP" and not first_setup_date:
+        if latest_scan_date and current_stage == "SETUP" and not first_setup_date and latest_scan_date >= first_date:
             first_setup_date = latest_scan_date
-        if latest_scan_date and current_stage == "BUY" and not first_buy_date:
+        if latest_scan_date and current_stage == "BUY" and not first_buy_date and latest_scan_date >= first_date:
             first_buy_date = latest_scan_date
             first_buy_close = latest_close
 
@@ -383,7 +403,7 @@ def build_early_tracking(registry: dict[str, dict], latest: dict, history: dict)
             "ticker": ticker,
             "name": anchor.get("name", ""),
             "market": anchor.get("market", ""),
-            "first_early_date": anchor["first_early_date"],
+            "first_early_date": first_date,
             "first_early_close": first_close,
             "latest_date": latest_date,
             "latest_close": latest_close,
