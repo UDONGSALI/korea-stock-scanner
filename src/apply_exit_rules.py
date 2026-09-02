@@ -58,7 +58,6 @@ def add_exit_indicators(history: pd.DataFrame, config: dict) -> pd.DataFrame:
         return history
 
     output = []
-    base_config = config["base"]
     for _, frame in history.groupby("ticker", sort=False):
         frame = frame.copy().sort_values("date")
         open_price = frame["open"].astype(float)
@@ -77,15 +76,6 @@ def add_exit_indicators(history: pd.DataFrame, config: dict) -> pd.DataFrame:
         candle_range = (high - low).replace(0, float("nan"))
         frame["upper_wick_ratio_exit"] = (high - pd.concat([open_price, close], axis=1).max(axis=1)) / candle_range
         frame["upper_wick_ratio_exit"] = frame["upper_wick_ratio_exit"].fillna(0.0)
-
-        frame["base_low_exit"] = float("nan")
-        for base_days in sorted(base_config["candidate_days"]):
-            base_high = high.shift(1).rolling(base_days).max()
-            base_low = low.shift(1).rolling(base_days).min()
-            base_depth_pct = (base_high - base_low) / base_high * 100
-            valid_base = base_depth_pct <= base_config["max_depth_pct"]
-            frame.loc[valid_base, "base_low_exit"] = base_low[valid_base]
-
         output.append(frame)
 
     return pd.concat(output, ignore_index=True).sort_values(["ticker", "date"]).reset_index(drop=True)
@@ -98,18 +88,10 @@ def is_number(value) -> bool:
         return False
 
 
-def get_initial_stop(capture: dict, frame: pd.DataFrame, exit_config: dict) -> float:
-    if is_number(capture.get("stop_price")):
-        return float(capture["stop_price"])
-
-    capture_date = pd.Timestamp(capture["capture_date"])
-    day = frame[frame["date"] == capture_date]
-    if not day.empty and is_number(day.iloc[-1].get("base_low_exit")):
-        return float(day.iloc[-1]["base_low_exit"])
-
+def get_initial_stop(capture: dict, exit_config: dict) -> float:
     capture_price = float(capture["capture_close"])
-    fallback_stop_pct = float(exit_config.get("fallback_stop_pct", 8.0))
-    return capture_price * (1 - fallback_stop_pct / 100)
+    initial_stop_pct = float(exit_config.get("initial_stop_pct", 8.0))
+    return capture_price * (1 - initial_stop_pct / 100)
 
 
 def get_trend_pace(highest_close: float, capture_price: float, risk_per_share: float, exit_config: dict) -> tuple[str, int]:
@@ -143,11 +125,9 @@ def is_climax_exit(row: pd.Series, peak_r: float, exit_config: dict) -> bool:
 def simulate_trade(capture: dict, frame: pd.DataFrame, config: dict) -> dict:
     exit_config = config["exit"]
     capture_price = float(capture["capture_close"])
-    initial_stop = get_initial_stop(capture, frame, exit_config)
+    capture_date = pd.Timestamp(capture["capture_date"])
+    initial_stop = get_initial_stop(capture, exit_config)
     risk_per_share = capture_price - initial_stop
-    if risk_per_share <= 0:
-        initial_stop = capture_price * (1 - float(exit_config.get("fallback_stop_pct", 8.0)) / 100)
-        risk_per_share = capture_price - initial_stop
 
     reward_multiple = float(exit_config.get("partial_reward_multiple", config["risk"]["reward_multiple"]))
     three_r_target = capture_price + risk_per_share * reward_multiple
@@ -162,13 +142,24 @@ def simulate_trade(capture: dict, frame: pd.DataFrame, config: dict) -> dict:
     trailing_basis = "INITIAL"
     highest_close = capture_price
 
-    trade_frame = frame[frame["date"] >= pd.Timestamp(capture["capture_date"])].sort_values("date")
+    latest_frame = frame[frame["date"] >= capture_date].sort_values("date")
+    trade_frame = frame[frame["date"] > capture_date].sort_values("date")
+
     for _, row in trade_frame.iterrows():
+        open_price = float(row["open"])
         close = float(row["close"])
         high = float(row["high"])
         highest_close = max(highest_close, close)
 
         if partial_exit_date is None:
+            # 일반 손절은 종가 확인. 단, 손절선 아래로 갭하락하면 시초가에 즉시 손절한다.
+            if open_price < initial_stop:
+                exit_date = row["date"].strftime("%Y-%m-%d")
+                exit_price = open_price
+                exit_reason = "STOP_LOSS_GAP"
+                remaining_pct = 0.0
+                break
+
             if high >= three_r_target:
                 partial_exit_date = row["date"].strftime("%Y-%m-%d")
                 partial_exit_price = three_r_target
@@ -191,6 +182,14 @@ def simulate_trade(capture: dict, frame: pd.DataFrame, config: dict) -> dict:
                 remaining_pct = 0.0
                 break
             continue
+
+        # 3R 이후에도 전일 확정된 스톱 아래로 갭하락하면 시초가 체결로 본다.
+        if open_price < current_stop:
+            exit_date = row["date"].strftime("%Y-%m-%d")
+            exit_price = open_price
+            exit_reason = f"TREND_EXIT_GAP_{trailing_basis}" if trailing_basis != "BE" else "BREAKEVEN_GAP_EXIT"
+            remaining_pct = 0.0
+            break
 
         peak_r = (highest_close - capture_price) / risk_per_share if risk_per_share > 0 else 0.0
         if is_climax_exit(row, peak_r, exit_config):
@@ -228,13 +227,13 @@ def simulate_trade(capture: dict, frame: pd.DataFrame, config: dict) -> dict:
         strategy_return_pct = realized_return_pct
     elif partial_exit_date is not None:
         trade_status = "PARTIAL"
-        latest_close = float(trade_frame.iloc[-1]["close"])
+        latest_close = float(latest_frame.iloc[-1]["close"])
         open_return_pct = (latest_close / capture_price - 1) * 100
         realized_return_pct = partial_return_pct * (partial_sell_pct / 100)
         strategy_return_pct = realized_return_pct + open_return_pct * (remaining_pct / 100)
     else:
         trade_status = "OPEN"
-        latest_close = float(trade_frame.iloc[-1]["close"])
+        latest_close = float(latest_frame.iloc[-1]["close"])
         realized_return_pct = 0.0
         strategy_return_pct = (latest_close / capture_price - 1) * 100
 
