@@ -34,8 +34,9 @@
   "breakout": {"volume_ratio_min": 1.0, "max_extension_pct": 10},
   "risk": {"max_account_risk_pct": 2.0, "reward_multiple": 3.0},
   "exit": {
-    "rule_version": "kangto_exit_v1",
-    "fallback_stop_pct": 8.0,
+    "rule_version": "kangto_exit_v2",
+    "initial_stop_pct": 8.0,
+    "initial_stop_execution": "CLOSE_CONFIRM_GAP_OPEN",
     "partial_reward_multiple": 3.0,
     "partial_sell_pct": 50.0,
     "normal_trend_r_multiple": 3.0,
