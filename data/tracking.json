@@ -24,9 +24,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 118200.0,
-    "current_stop_price": 118200.0,
-    "three_r_target": 172600.0,
+    "initial_stop_price": 121256.0,
+    "current_stop_price": 121256.0,
+    "three_r_target": 163432.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -35,7 +35,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -2.5796661608497695,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-24",
@@ -62,18 +62,18 @@
     "latest_early_state": "FRESH",
     "trade_status": "CLOSED",
     "remaining_position_pct": 0.0,
-    "initial_stop_price": 5600.0,
-    "current_stop_price": 5600.0,
-    "three_r_target": 8480.0,
+    "initial_stop_price": 5814.400000000001,
+    "current_stop_price": 5814.400000000001,
+    "three_r_target": 7836.799999999998,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
-    "exit_date": "2026-09-01",
-    "exit_price": 5600.0,
+    "exit_date": "2026-08-26",
+    "exit_price": 5610.0,
     "exit_reason": "STOP_LOSS",
-    "realized_return_pct": -11.392405063291145,
-    "strategy_return_pct": -11.392405063291145,
-    "exit_rule_version": "kangto_exit_v1"
+    "realized_return_pct": -11.234177215189877,
+    "strategy_return_pct": -11.234177215189877,
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-24",
@@ -100,9 +100,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 111200.0,
-    "current_stop_price": 111200.0,
-    "three_r_target": 196800.0,
+    "initial_stop_price": 121992.0,
+    "current_stop_price": 121992.0,
+    "three_r_target": 164424.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -111,7 +111,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 3.242835595776783,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-25",
@@ -138,9 +138,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 6800.0,
-    "current_stop_price": 6800.0,
-    "three_r_target": 13840.0,
+    "initial_stop_price": 7875.200000000001,
+    "current_stop_price": 7875.200000000001,
+    "three_r_target": 10614.399999999998,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -149,7 +149,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -1.2850467289719614,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-25",
@@ -173,9 +173,9 @@
     "latest_gain_since_early_pct": null,
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 99800.0,
-    "current_stop_price": 99800.0,
-    "three_r_target": 187800.0,
+    "initial_stop_price": 112056.0,
+    "current_stop_price": 112056.0,
+    "three_r_target": 151032.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -184,7 +184,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -1.4778325123152691,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-25",
@@ -211,9 +211,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 15350.0,
-    "current_stop_price": 15350.0,
-    "three_r_target": 31550.0,
+    "initial_stop_price": 17848.0,
+    "current_stop_price": 17848.0,
+    "three_r_target": 24056.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -222,7 +222,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 0.3092783505154628,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-25",
@@ -249,9 +249,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 117500.0,
-    "current_stop_price": 117500.0,
-    "three_r_target": 220700.0,
+    "initial_stop_price": 131836.0,
+    "current_stop_price": 131836.0,
+    "three_r_target": 177692.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -260,7 +260,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -0.6978367062107416,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-25",
@@ -287,9 +287,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 6890.0,
-    "current_stop_price": 6890.0,
-    "three_r_target": 12730.0,
+    "initial_stop_price": 7682.0,
+    "current_stop_price": 7682.0,
+    "three_r_target": 10354.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -298,7 +298,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -2.9940119760479056,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-25",
@@ -325,9 +325,9 @@
     "latest_early_state": "NORMAL",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 25900.0,
-    "current_stop_price": 25900.0,
-    "three_r_target": 51100.0,
+    "initial_stop_price": 29624.0,
+    "current_stop_price": 29624.0,
+    "three_r_target": 39928.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -336,7 +336,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 8.074534161490687,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-25",
@@ -363,9 +363,9 @@
     "latest_early_state": "CLIMAX_RISK",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 125400.0,
-    "current_stop_price": 125400.0,
-    "three_r_target": 223800.0,
+    "initial_stop_price": 138000.0,
+    "current_stop_price": 138000.0,
+    "three_r_target": 186000.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -374,7 +374,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 3.3333333333333437,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-25",
@@ -401,9 +401,9 @@
     "latest_early_state": "NORMAL",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 40950.0,
-    "current_stop_price": 40950.0,
-    "three_r_target": 84750.0,
+    "initial_stop_price": 47748.0,
+    "current_stop_price": 47748.0,
+    "three_r_target": 64356.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -412,7 +412,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -1.9267822736030782,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-25",
@@ -439,9 +439,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 367500.0,
-    "current_stop_price": 367500.0,
-    "three_r_target": 659500.0,
+    "initial_stop_price": 405260.0,
+    "current_stop_price": 405260.0,
+    "three_r_target": 546220.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -450,7 +450,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -4.8808172531214495,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-25",
@@ -477,9 +477,9 @@
     "latest_early_state": "NORMAL",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 118900.0,
-    "current_stop_price": 118900.0,
-    "three_r_target": 184100.0,
+    "initial_stop_price": 124384.0,
+    "current_stop_price": 124384.0,
+    "three_r_target": 167648.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -488,7 +488,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 9.911242603550296,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-26",
@@ -515,9 +515,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 374000.0,
-    "current_stop_price": 374000.0,
-    "three_r_target": 578000.0,
+    "initial_stop_price": 391000.0,
+    "current_stop_price": 391000.0,
+    "three_r_target": 527000.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -526,7 +526,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 2.117647058823535,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-26",
@@ -553,9 +553,9 @@
     "latest_early_state": "NORMAL",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 1194000.0,
-    "current_stop_price": 1194000.0,
-    "three_r_target": 2446000.0,
+    "initial_stop_price": 1386440.0,
+    "current_stop_price": 1386440.0,
+    "three_r_target": 1868680.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -564,7 +564,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -2.1234240212342437,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-26",
@@ -591,9 +591,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 16630.0,
-    "current_stop_price": 16630.0,
-    "three_r_target": 23510.0,
+    "initial_stop_price": 16882.0,
+    "current_stop_price": 16882.0,
+    "three_r_target": 22754.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -602,7 +602,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 2.50681198910081,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-26",
@@ -629,9 +629,9 @@
     "latest_early_state": "NORMAL",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 46900.0,
-    "current_stop_price": 46900.0,
-    "three_r_target": 98500.0,
+    "initial_stop_price": 55016.0,
+    "current_stop_price": 55016.0,
+    "three_r_target": 74152.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -640,7 +640,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 9.53177257525084,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-26",
@@ -665,20 +665,20 @@
     "latest_gain_since_early_pct": -1.0736196319018454,
     "latest_trading_days_since_early": 18,
     "latest_early_state": "FRESH",
-    "trade_status": "OPEN",
-    "remaining_position_pct": 100.0,
-    "initial_stop_price": 32100.0,
-    "current_stop_price": 32100.0,
-    "three_r_target": 54900.0,
+    "trade_status": "CLOSED",
+    "remaining_position_pct": 0.0,
+    "initial_stop_price": 34776.0,
+    "current_stop_price": 34776.0,
+    "three_r_target": 46872.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
-    "exit_date": null,
-    "exit_price": null,
-    "exit_reason": null,
-    "realized_return_pct": 0.0,
-    "strategy_return_pct": -14.682539682539685,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_date": "2026-09-01",
+    "exit_price": 33300.0,
+    "exit_reason": "STOP_LOSS",
+    "realized_return_pct": -11.904761904761907,
+    "strategy_return_pct": -11.904761904761907,
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-26",
@@ -705,9 +705,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 81400.0,
-    "current_stop_price": 81400.0,
-    "three_r_target": 146600.0,
+    "initial_stop_price": 89884.0,
+    "current_stop_price": 89884.0,
+    "three_r_target": 121148.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -716,7 +716,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 0.9211873080859689,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-27",
@@ -743,9 +743,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 459500.0,
-    "current_stop_price": 459500.0,
-    "three_r_target": 897500.0,
+    "initial_stop_price": 523480.0,
+    "current_stop_price": 523480.0,
+    "three_r_target": 705560.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -754,7 +754,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -5.448154657293502,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-27",
@@ -781,9 +781,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 70200.0,
-    "current_stop_price": 70200.0,
-    "three_r_target": 131400.0,
+    "initial_stop_price": 78660.0,
+    "current_stop_price": 78660.0,
+    "three_r_target": 106020.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -792,7 +792,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -6.1988304093567255,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-27",
@@ -819,9 +819,9 @@
     "latest_early_state": "NORMAL",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 29750.0,
-    "current_stop_price": 29750.0,
-    "three_r_target": 65350.0,
+    "initial_stop_price": 35558.0,
+    "current_stop_price": 35558.0,
+    "three_r_target": 47926.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -830,7 +830,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -3.2341526520051733,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-27",
@@ -857,9 +857,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 8310.0,
-    "current_stop_price": 8310.0,
-    "three_r_target": 17270.0,
+    "initial_stop_price": 9706.0,
+    "current_stop_price": 9706.0,
+    "three_r_target": 13082.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -868,7 +868,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -1.0426540284360186,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-27",
@@ -895,9 +895,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 98100.0,
-    "current_stop_price": 98100.0,
-    "three_r_target": 213300.0,
+    "initial_stop_price": 116748.0,
+    "current_stop_price": 116748.0,
+    "three_r_target": 157356.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -906,7 +906,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -2.7580772261623365,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -930,9 +930,9 @@
     "latest_gain_since_early_pct": null,
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 8920.0,
-    "current_stop_price": 8920.0,
-    "three_r_target": 15800.0,
+    "initial_stop_price": 9788.800000000001,
+    "current_stop_price": 9788.800000000001,
+    "three_r_target": 13193.599999999997,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -941,7 +941,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -2.725563909774431,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -963,20 +963,20 @@
     "excess_return_pct_point": -5.851341565472068,
     "latest_early_state": "NO_EARLY",
     "latest_gain_since_early_pct": null,
-    "trade_status": "OPEN",
-    "remaining_position_pct": 100.0,
-    "initial_stop_price": 27800.0,
-    "current_stop_price": 27800.0,
-    "three_r_target": 59200.0,
+    "trade_status": "CLOSED",
+    "remaining_position_pct": 0.0,
+    "initial_stop_price": 32798.0,
+    "current_stop_price": 32798.0,
+    "three_r_target": 44206.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
-    "exit_date": null,
-    "exit_price": null,
-    "exit_reason": null,
-    "realized_return_pct": 0.0,
+    "exit_date": "2026-09-02",
+    "exit_price": 32100.0,
+    "exit_reason": "STOP_LOSS",
+    "realized_return_pct": -9.957924263674611,
     "strategy_return_pct": -9.957924263674611,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -1003,9 +1003,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 4760.0,
-    "current_stop_price": 4760.0,
-    "three_r_target": 9560.0,
+    "initial_stop_price": 5483.2,
+    "current_stop_price": 5483.2,
+    "three_r_target": 7390.400000000001,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1014,7 +1014,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -2.684563758389258,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -1041,9 +1041,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 24300.0,
-    "current_stop_price": 24300.0,
-    "three_r_target": 39100.0,
+    "initial_stop_price": 25760.0,
+    "current_stop_price": 25760.0,
+    "three_r_target": 34720.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1052,7 +1052,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -5.714285714285716,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -1079,9 +1079,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 47800.0,
-    "current_stop_price": 47800.0,
-    "three_r_target": 79800.0,
+    "initial_stop_price": 51336.0,
+    "current_stop_price": 51336.0,
+    "three_r_target": 69192.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1090,7 +1090,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -1.971326164874554,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -1117,9 +1117,9 @@
     "latest_early_state": "NORMAL",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 21650.0,
-    "current_stop_price": 21650.0,
-    "three_r_target": 42250.0,
+    "initial_stop_price": 24656.0,
+    "current_stop_price": 24656.0,
+    "three_r_target": 33232.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1128,7 +1128,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -7.462686567164178,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -1155,9 +1155,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 4925.0,
-    "current_stop_price": 4925.0,
-    "three_r_target": 9025.0,
+    "initial_stop_price": 5474.0,
+    "current_stop_price": 5474.0,
+    "three_r_target": 7378.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1166,7 +1166,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -3.025210084033614,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -1193,9 +1193,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 120800.0,
-    "current_stop_price": 120800.0,
-    "three_r_target": 240000.0,
+    "initial_stop_price": 138552.0,
+    "current_stop_price": 138552.0,
+    "three_r_target": 186744.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1204,7 +1204,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -5.511288180610885,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -1231,9 +1231,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 9290.0,
-    "current_stop_price": 9290.0,
-    "three_r_target": 12610.0,
+    "initial_stop_price": 9310.4,
+    "current_stop_price": 9310.4,
+    "three_r_target": 12548.800000000001,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1242,7 +1242,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -2.2727272727272707,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -1269,9 +1269,9 @@
     "latest_early_state": "CLIMAX_RISK",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 125400.0,
-    "current_stop_price": 125400.0,
-    "three_r_target": 270600.0,
+    "initial_stop_price": 148764.0,
+    "current_stop_price": 148764.0,
+    "three_r_target": 200508.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1280,7 +1280,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -4.143475572046995,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -1305,20 +1305,20 @@
     "latest_gain_since_early_pct": 46.26024590163935,
     "latest_trading_days_since_early": 20,
     "latest_early_state": "CLIMAX_RISK",
-    "trade_status": "OPEN",
-    "remaining_position_pct": 100.0,
-    "initial_stop_price": 257000.0,
-    "current_stop_price": 257000.0,
-    "three_r_target": 441000.0,
+    "trade_status": "CLOSED",
+    "remaining_position_pct": 0.0,
+    "initial_stop_price": 278760.0,
+    "current_stop_price": 278760.0,
+    "three_r_target": 375720.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
-    "exit_date": null,
-    "exit_price": null,
-    "exit_reason": null,
-    "realized_return_pct": 0.0,
-    "strategy_return_pct": -5.775577557755773,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_date": "2026-09-02",
+    "exit_price": 278500.0,
+    "exit_reason": "STOP_LOSS_GAP",
+    "realized_return_pct": -8.085808580858089,
+    "strategy_return_pct": -8.085808580858089,
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -1343,20 +1343,20 @@
     "latest_gain_since_early_pct": 5.5415617128463435,
     "latest_trading_days_since_early": 14,
     "latest_early_state": "FRESH",
-    "trade_status": "OPEN",
-    "remaining_position_pct": 100.0,
-    "initial_stop_price": 367500.0,
-    "current_stop_price": 367500.0,
-    "three_r_target": 743500.0,
+    "trade_status": "CLOSED",
+    "remaining_position_pct": 0.0,
+    "initial_stop_price": 424580.0,
+    "current_stop_price": 424580.0,
+    "three_r_target": 572260.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
-    "exit_date": null,
-    "exit_price": null,
-    "exit_reason": null,
-    "realized_return_pct": 0.0,
+    "exit_date": "2026-09-02",
+    "exit_price": 419000.0,
+    "exit_reason": "STOP_LOSS",
+    "realized_return_pct": -9.209100758396538,
     "strategy_return_pct": -9.209100758396538,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-28",
@@ -1383,9 +1383,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 13450.0,
-    "current_stop_price": 13450.0,
-    "three_r_target": 27450.0,
+    "initial_stop_price": 15594.0,
+    "current_stop_price": 15594.0,
+    "three_r_target": 21018.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1394,7 +1394,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -3.303834808259587,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-31",
@@ -1418,9 +1418,9 @@
     "latest_gain_since_early_pct": null,
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 7540.0,
-    "current_stop_price": 7540.0,
-    "three_r_target": 12020.0,
+    "initial_stop_price": 7967.200000000001,
+    "current_stop_price": 7967.200000000001,
+    "three_r_target": 10738.399999999998,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1429,7 +1429,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -0.6928406466512715,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-31",
@@ -1453,9 +1453,9 @@
     "latest_gain_since_early_pct": null,
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 5910.0,
-    "current_stop_price": 5910.0,
-    "three_r_target": 9590.0,
+    "initial_stop_price": 6283.6,
+    "current_stop_price": 6283.6,
+    "three_r_target": 8469.199999999999,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1464,7 +1464,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -5.710102489019031,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-31",
@@ -1491,9 +1491,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 19570.0,
-    "current_stop_price": 19570.0,
-    "three_r_target": 34090.0,
+    "initial_stop_price": 21344.0,
+    "current_stop_price": 21344.0,
+    "three_r_target": 28768.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1502,7 +1502,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -7.3275862068965525,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-31",
@@ -1529,9 +1529,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 122000.0,
-    "current_stop_price": 122000.0,
-    "three_r_target": 179200.0,
+    "initial_stop_price": 125396.0,
+    "current_stop_price": 125396.0,
+    "three_r_target": 169012.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1540,7 +1540,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -1.0271460014673495,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-31",
@@ -1567,9 +1567,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 2235.0,
-    "current_stop_price": 2235.0,
-    "three_r_target": 3855.0,
+    "initial_stop_price": 2428.8,
+    "current_stop_price": 2428.8,
+    "three_r_target": 3273.5999999999995,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1578,7 +1578,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -1.3257575757575801,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-08-31",
@@ -1603,20 +1603,20 @@
     "latest_gain_since_early_pct": -8.06878306878307,
     "latest_trading_days_since_early": 2,
     "latest_early_state": "FRESH",
-    "trade_status": "OPEN",
-    "remaining_position_pct": 100.0,
-    "initial_stop_price": 309000.0,
-    "current_stop_price": 309000.0,
-    "three_r_target": 585000.0,
+    "trade_status": "CLOSED",
+    "remaining_position_pct": 0.0,
+    "initial_stop_price": 347760.0,
+    "current_stop_price": 347760.0,
+    "three_r_target": 468720.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
-    "exit_date": null,
-    "exit_price": null,
-    "exit_reason": null,
-    "realized_return_pct": 0.0,
+    "exit_date": "2026-09-02",
+    "exit_price": 347500.0,
+    "exit_reason": "STOP_LOSS",
+    "realized_return_pct": -8.06878306878307,
     "strategy_return_pct": -8.06878306878307,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-09-01",
@@ -1643,9 +1643,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 26100.0,
-    "current_stop_price": 26100.0,
-    "three_r_target": 37700.0,
+    "initial_stop_price": 26680.0,
+    "current_stop_price": 26680.0,
+    "three_r_target": 35960.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1654,7 +1654,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -4.31034482758621,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-09-01",
@@ -1681,9 +1681,9 @@
     "latest_early_state": "NORMAL",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 40600.0,
-    "current_stop_price": 40600.0,
-    "three_r_target": 83800.0,
+    "initial_stop_price": 47288.0,
+    "current_stop_price": 47288.0,
+    "three_r_target": 63736.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1692,7 +1692,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -1.7509727626459193,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-09-01",
@@ -1719,9 +1719,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 2880.0,
-    "current_stop_price": 2880.0,
-    "three_r_target": 5060.0,
+    "initial_stop_price": 3151.0,
+    "current_stop_price": 3151.0,
+    "three_r_target": 4247.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1730,7 +1730,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": -1.3138686131386912,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-09-02",
@@ -1754,9 +1754,9 @@
     "latest_gain_since_early_pct": null,
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 18830.0,
-    "current_stop_price": 18830.0,
-    "three_r_target": 39910.0,
+    "initial_stop_price": 22172.0,
+    "current_stop_price": 22172.0,
+    "three_r_target": 29884.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1765,7 +1765,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 0.0,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-09-02",
@@ -1792,9 +1792,9 @@
     "latest_early_state": "NORMAL",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 15950.0,
-    "current_stop_price": 15950.0,
-    "three_r_target": 19350.0,
+    "initial_stop_price": 15456.0,
+    "current_stop_price": 15456.0,
+    "three_r_target": 20832.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1803,7 +1803,7 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 0.0,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   },
   {
     "capture_date": "2026-09-02",
@@ -1830,9 +1830,9 @@
     "latest_early_state": "FRESH",
     "trade_status": "OPEN",
     "remaining_position_pct": 100.0,
-    "initial_stop_price": 112100.0,
-    "current_stop_price": 112100.0,
-    "three_r_target": 220100.0,
+    "initial_stop_price": 127972.0,
+    "current_stop_price": 127972.0,
+    "three_r_target": 172484.0,
     "partial_exit_date": null,
     "partial_exit_price": null,
     "trailing_basis": "INITIAL",
@@ -1841,6 +1841,6 @@
     "exit_reason": null,
     "realized_return_pct": 0.0,
     "strategy_return_pct": 0.0,
-    "exit_rule_version": "kangto_exit_v1"
+    "exit_rule_version": "kangto_exit_v2"
   }
 ]

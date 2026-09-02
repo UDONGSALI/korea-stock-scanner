@@ -292,7 +292,8 @@ def finalizeSignals(indicators: pd.DataFrame, config: dict, dates: list[pd.Times
 
 def calculateRiskFields(selected: pd.DataFrame, config: dict) -> pd.DataFrame:
     selected = selected.copy()
-    selected["stop_price"] = selected["base_low"]
+    initial_stop_pct = float(config["exit"].get("initial_stop_pct", 8.0))
+    selected["stop_price"] = selected["close"] * (1 - initial_stop_pct / 100)
     selected["risk_per_share"] = selected["close"] - selected["stop_price"]
     selected["stop_distance_pct"] = selected["risk_per_share"] / selected["close"] * 100
     selected["three_r_target"] = selected["close"] + selected["risk_per_share"] * config["risk"]["reward_multiple"]
