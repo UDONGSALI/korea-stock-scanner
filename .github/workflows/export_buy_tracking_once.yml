@@ -23,14 +23,20 @@ jobs:
       - name: Export BUY tracking CSV
         run: python src/export_buy_tracking_csv.py
 
-      - name: Commit BUY tracking CSV
+      - name: Export EARLY tracking CSV
+        run: python src/export_early_tracking_csv.py
+
+      - name: Export confirmed EOD sheet snapshots
+        run: python src/export_sheet_snapshot.py
+
+      - name: Commit sheet snapshot CSV files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/buy_tracking.csv
+          git add data/buy_tracking.csv data/early_tracking.csv data/sheet_buy_tracking.csv data/sheet_early_tracking.csv
           if git diff --cached --quiet; then
             echo "No changes"
             exit 0
           fi
-          git commit -m "data: export current BUY tracking CSV"
+          git commit -m "data: export confirmed sheet snapshots"
           git push
