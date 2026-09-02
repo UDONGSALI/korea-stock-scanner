@@ -22594,12 +22594,12 @@
       "volume": 1752297,
       "avg_volume20": 867563.65,
       "volume_ratio": 2.019790709304153,
-      "early_state": "NO_EARLY",
-      "first_early_date": null,
-      "first_early_close": null,
+      "early_state": "PRE_EARLY",
+      "first_early_date": "2026-09-02",
+      "first_early_close": 41850.0,
       "gain_since_early_pct": null,
       "trading_days_since_early": null,
-      "early_state_reason": "EARLY 기록 없음"
+      "early_state_reason": "최초 EARLY 이전"
     },
     {
       "date": "2026-08-03",
