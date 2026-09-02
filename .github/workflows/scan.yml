@@ -32,6 +32,9 @@ jobs:
           TZ: Asia/Seoul
         run: python src/scanner.py
 
+      - name: Apply Kangto exit rules
+        run: python src/apply_exit_rules.py
+
       - name: Enrich post-EARLY state
         run: python src/early_state.py
 
