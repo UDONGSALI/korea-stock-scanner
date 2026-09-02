@@ -29,6 +29,20 @@ COLUMNS = [
     ("latest_gain_since_early_pct", "EARLY후 상승률 %"),
     ("latest_trading_days_since_early", "EARLY후 거래일"),
     ("rule_version", "룰 버전"),
+    ("trade_status", "매매상태"),
+    ("remaining_position_pct", "잔여비중 %"),
+    ("initial_stop_price", "최초손절가"),
+    ("current_stop_price", "현재손절가"),
+    ("three_r_target", "3R 목표가"),
+    ("partial_exit_date", "3R 달성일"),
+    ("partial_exit_price", "1차매도가"),
+    ("trailing_basis", "트레일링 기준"),
+    ("exit_date", "종결일"),
+    ("exit_price", "종결가"),
+    ("exit_reason", "종결사유"),
+    ("realized_return_pct", "실현수익률 %"),
+    ("strategy_return_pct", "전략수익률 %"),
+    ("exit_rule_version", "매도룰 버전"),
 ]
 
 
