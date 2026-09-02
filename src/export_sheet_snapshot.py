@@ -17,7 +17,7 @@ SEOUL_TZ = ZoneInfo("Asia/Seoul")
 EOD_CONFIRM_TIME = time(15, 35)
 
 
-def isConfirmedEodSnapshot(latest: dict) -> bool:
+def is_confirmed_eod_snapshot(latest: dict) -> bool:
     scan_date = date.fromisoformat(str(latest["scan_date"]))
     generated_at = datetime.fromisoformat(str(latest["generated_at"]))
 
@@ -35,7 +35,7 @@ def main() -> None:
     with LATEST_PATH.open("r", encoding="utf-8-sig") as file:
         latest = json.load(file)
 
-    if not isConfirmedEodSnapshot(latest):
+    if not is_confirmed_eod_snapshot(latest):
         print(json.dumps({"updated": False, "reason": "not_confirmed_eod", "scan_date": latest.get("scan_date"), "generated_at": latest.get("generated_at")}, ensure_ascii=False))
         return
 
