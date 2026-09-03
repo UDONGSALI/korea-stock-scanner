@@ -34,6 +34,10 @@ def to_float(value, default: float | None = None) -> float | None:
         return default
 
 
+def get_priority_label(value) -> str:
+    return "우선검토" if bool(value) else "대기"
+
+
 def load_active_candidates(captures: pd.DataFrame, tracking: list[dict]) -> list[tuple[dict, dict]]:
     capture_map = {
         (str(row.get("capture_date")), str(row.get("ticker", "")).zfill(6)): row
@@ -126,8 +130,8 @@ def export_priority_csv(rows: list[dict]) -> None:
         ("evaluation_date", "평가기준일"),
         ("capture_date", "포착일"),
         ("priority_selected", "매수검토"),
-        ("buy_grade", "현재등급"),
-        ("buy_score", "현재점수"),
+        ("buy_grade", "매수품질"),
+        ("buy_score", "종합점수"),
         ("name", "종목명"),
         ("ticker", "티커"),
         ("current_return_pct", "현재수익률 %"),
@@ -148,7 +152,13 @@ def export_priority_csv(rows: list[dict]) -> None:
         writer = csv.DictWriter(file, fieldnames=[label for _, label in columns])
         writer.writeheader()
         for row in rows:
-            writer.writerow({label: row.get(key) for key, label in columns})
+            output_row = {}
+            for key, label in columns:
+                value = row.get(key)
+                if key == "priority_selected":
+                    value = get_priority_label(value)
+                output_row[label] = value
+            writer.writerow(output_row)
 
 
 def main() -> None:
