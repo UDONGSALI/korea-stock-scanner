@@ -1,0 +1,50 @@
+name: Refresh Priority Labels Once
+
+on:
+  push:
+    paths:
+      - ".github/workflows/refresh_priority_labels_once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - run: pip install -r requirements.txt
+
+      - name: Export BUY tracking labels
+        run: python src/export_buy_tracking_csv.py
+
+      - name: Refresh current BUY priority labels
+        env:
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
+          TZ: Asia/Seoul
+        run: python src/export_current_buy_priority.py
+
+      - name: Refresh confirmed EOD sheet snapshot
+        run: python src/export_sheet_snapshot.py
+
+      - name: Commit refreshed labels
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/buy_tracking.csv data/buy_priority.csv data/sheet_buy_tracking.csv
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "data: refresh priority labels"
+          git push
