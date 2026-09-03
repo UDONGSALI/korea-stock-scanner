@@ -25,6 +25,10 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Backfill BUY ranking
+        env:
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
+          TZ: Asia/Seoul
         run: python src/apply_buy_ranking.py
 
       - name: Reapply exit rules
