@@ -48,7 +48,21 @@
       "first_early_close": 115900.0,
       "gain_since_early_pct": 9.490940465918897,
       "trading_days_since_early": 12,
-      "early_state_reason": "EARLY 이후 +9.5% / 12거래일"
+      "early_state_reason": "EARLY 이후 +9.5% / 12거래일",
+      "buy_grade": "B",
+      "buy_score": 57.17,
+      "priority_selected": false,
+      "sector": "UNKNOWN",
+      "sector_score": null,
+      "sector_leader_rank": 90.0,
+      "sector_member_count": 0,
+      "weekly_state": "GOOD",
+      "atr20_pct": 9.178486997635932,
+      "institutional_fit": true,
+      "avg_trading_value20": 106311104952.5,
+      "capture_rs_score": 95.1923076923077,
+      "ranking_reason": "섹터 ? / 대장 90위 / 주봉 GOOD / ATR 9.2%",
+      "ranking_rule_version": "kangto_rank_v1"
     },
     {
       "date": "2026-08-27",
@@ -89,7 +103,21 @@
       "first_early_close": 516000.0,
       "gain_since_early_pct": 10.27131782945736,
       "trading_days_since_early": 8,
-      "early_state_reason": "EARLY 이후 +10.3% / 8거래일"
+      "early_state_reason": "EARLY 이후 +10.3% / 8거래일",
+      "buy_grade": "C",
+      "buy_score": 54.42,
+      "priority_selected": false,
+      "sector": "UNKNOWN",
+      "sector_score": null,
+      "sector_leader_rank": 387.0,
+      "sector_member_count": 0,
+      "weekly_state": "RECOVERING",
+      "atr20_pct": 5.588752196836555,
+      "institutional_fit": true,
+      "avg_trading_value20": 217377375219.0,
+      "capture_rs_score": 85.10007468259894,
+      "ranking_reason": "섹터 ? / 대장 387위 / 주봉 RECOVERING / ATR 5.6%",
+      "ranking_rule_version": "kangto_rank_v1"
     },
     {
       "date": "2026-08-27",
@@ -130,7 +158,21 @@
       "first_early_close": 75000.0,
       "gain_since_early_pct": 13.99999999999999,
       "trading_days_since_early": 14,
-      "early_state_reason": "EARLY 이후 +14.0% / 14거래일"
+      "early_state_reason": "EARLY 이후 +14.0% / 14거래일",
+      "buy_grade": "B",
+      "buy_score": 55.98,
+      "priority_selected": false,
+      "sector": "UNKNOWN",
+      "sector_score": null,
+      "sector_leader_rank": 230.0,
+      "sector_member_count": 0,
+      "weekly_state": "RECOVERING",
+      "atr20_pct": 3.385964912280702,
+      "institutional_fit": false,
+      "avg_trading_value20": 4427328302.5,
+      "capture_rs_score": 32.199029126213595,
+      "ranking_reason": "섹터 ? / 대장 230위 / 주봉 RECOVERING / ATR 3.4%",
+      "ranking_rule_version": "kangto_rank_v1"
     },
     {
       "date": "2026-08-27",
@@ -171,7 +213,21 @@
       "first_early_close": 31850.0,
       "gain_since_early_pct": 21.350078492935644,
       "trading_days_since_early": 15,
-      "early_state_reason": "EARLY 이후 +21.4% / 15거래일"
+      "early_state_reason": "EARLY 이후 +21.4% / 15거래일",
+      "buy_grade": "B",
+      "buy_score": 62.03,
+      "priority_selected": false,
+      "sector": "UNKNOWN",
+      "sector_score": null,
+      "sector_leader_rank": 42.0,
+      "sector_member_count": 0,
+      "weekly_state": "RECOVERING",
+      "atr20_pct": 5.051746442432083,
+      "institutional_fit": false,
+      "avg_trading_value20": 1085808361.25,
+      "capture_rs_score": 76.30171769977595,
+      "ranking_reason": "섹터 ? / 대장 42위 / 주봉 RECOVERING / ATR 5.1%",
+      "ranking_rule_version": "kangto_rank_v1"
     },
     {
       "date": "2026-08-27",
@@ -212,7 +268,21 @@
       "first_early_close": 10550.0,
       "gain_since_early_pct": 0.0,
       "trading_days_since_early": 0,
-      "early_state_reason": "EARLY 이후 +0.0% / 0거래일"
+      "early_state_reason": "EARLY 이후 +0.0% / 0거래일",
+      "buy_grade": "C",
+      "buy_score": 49.22,
+      "priority_selected": false,
+      "sector": "UNKNOWN",
+      "sector_score": null,
+      "sector_leader_rank": 373.0,
+      "sector_member_count": 0,
+      "weekly_state": "RECOVERING",
+      "atr20_pct": 2.976303317535545,
+      "institutional_fit": false,
+      "avg_trading_value20": 360289069.25,
+      "capture_rs_score": 19.519044062733386,
+      "ranking_reason": "섹터 ? / 대장 373위 / 주봉 RECOVERING / ATR 3.0%",
+      "ranking_rule_version": "kangto_rank_v1"
     }
   ],
   "stage_counts": {
@@ -6647,5 +6717,6 @@
     "인더스트리 액션",
     "기관 수급",
     "EPS 성장 및 실적"
-  ]
+  ],
+  "priority_signals": []
 }

@@ -48,7 +48,21 @@
       "first_early_close": 39200.0,
       "gain_since_early_pct": 31.377551020408156,
       "trading_days_since_early": 21,
-      "early_state_reason": "EARLY 이후 +31.4% / RS 가속 +39.4 / 21거래일"
+      "early_state_reason": "EARLY 이후 +31.4% / RS 가속 +39.4 / 21거래일",
+      "buy_grade": "B",
+      "buy_score": 65.87,
+      "priority_selected": false,
+      "sector": "UNKNOWN",
+      "sector_score": null,
+      "sector_leader_rank": 54.0,
+      "sector_member_count": 0,
+      "weekly_state": "STRONG",
+      "atr20_pct": 7.699029126213593,
+      "institutional_fit": true,
+      "avg_trading_value20": 27099958415.0,
+      "capture_rs_score": 76.83140186915888,
+      "ranking_reason": "섹터 ? / 대장 54위 / 주봉 STRONG / ATR 7.7%",
+      "ranking_rule_version": "kangto_rank_v1"
     },
     {
       "date": "2026-09-03",
@@ -89,7 +103,21 @@
       "first_early_close": 5630.0,
       "gain_since_early_pct": 8.525754884547077,
       "trading_days_since_early": 13,
-      "early_state_reason": "EARLY 이후 +8.5% / 13거래일"
+      "early_state_reason": "EARLY 이후 +8.5% / 13거래일",
+      "buy_grade": "B",
+      "buy_score": 63.36,
+      "priority_selected": false,
+      "sector": "UNKNOWN",
+      "sector_score": null,
+      "sector_leader_rank": 130.0,
+      "sector_member_count": 0,
+      "weekly_state": "STRONG",
+      "atr20_pct": 5.703764320785598,
+      "institutional_fit": true,
+      "avg_trading_value20": 33194196562.5,
+      "capture_rs_score": 78.42280373831775,
+      "ranking_reason": "섹터 ? / 대장 130위 / 주봉 STRONG / ATR 5.7%",
+      "ranking_rule_version": "kangto_rank_v1"
     },
     {
       "date": "2026-09-03",
@@ -130,7 +158,21 @@
       "first_early_close": 45800.0,
       "gain_since_early_pct": 3.493449781659397,
       "trading_days_since_early": 6,
-      "early_state_reason": "EARLY 이후 +3.5% / 6거래일"
+      "early_state_reason": "EARLY 이후 +3.5% / 6거래일",
+      "buy_grade": "B",
+      "buy_score": 57.17,
+      "priority_selected": false,
+      "sector": "UNKNOWN",
+      "sector_score": null,
+      "sector_leader_rank": 304.0,
+      "sector_member_count": 0,
+      "weekly_state": "RECOVERING",
+      "atr20_pct": 2.109704641350211,
+      "institutional_fit": false,
+      "avg_trading_value20": 383578982.5,
+      "capture_rs_score": 27.608971962616824,
+      "ranking_reason": "섹터 ? / 대장 304위 / 주봉 RECOVERING / ATR 2.1%",
+      "ranking_rule_version": "kangto_rank_v1"
     },
     {
       "date": "2026-09-03",
@@ -171,7 +213,21 @@
       "first_early_close": 136300.0,
       "gain_since_early_pct": 8.217168011738817,
       "trading_days_since_early": 17,
-      "early_state_reason": "EARLY 이후 +8.2% / 17거래일"
+      "early_state_reason": "EARLY 이후 +8.2% / 17거래일",
+      "buy_grade": "C",
+      "buy_score": 52.05,
+      "priority_selected": false,
+      "sector": "UNKNOWN",
+      "sector_score": null,
+      "sector_leader_rank": 365.0,
+      "sector_member_count": 0,
+      "weekly_state": "RECOVERING",
+      "atr20_pct": 3.9864406779661015,
+      "institutional_fit": false,
+      "avg_trading_value20": 1022282467.5,
+      "capture_rs_score": 35.52897196261682,
+      "ranking_reason": "섹터 ? / 대장 365위 / 주봉 RECOVERING / ATR 4.0%",
+      "ranking_rule_version": "kangto_rank_v1"
     }
   ],
   "stage_counts": {
@@ -6162,5 +6218,6 @@
     "인더스트리 액션",
     "기관 수급",
     "EPS 성장 및 실적"
-  ]
+  ],
+  "priority_signals": []
 }
