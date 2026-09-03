@@ -48,7 +48,8 @@
     "a_max_sector_rank": 5,
     "a_min_weekly_score": 55,
     "max_daily_candidates": 2,
-    "max_per_sector": 1
+    "max_per_sector": 1,
+    "current_max_chase_pct": 12.0
   },
   "exit": {
     "rule_version": "kangto_exit_v2",
