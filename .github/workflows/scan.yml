@@ -42,6 +42,13 @@ jobs:
       - name: Apply Kangto exit rules
         run: python src/apply_exit_rules.py
 
+      - name: Rank all active BUY candidates now
+        env:
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
+          TZ: Asia/Seoul
+        run: python src/export_current_buy_priority.py
+
       - name: Enrich post-EARLY state
         run: python src/early_state.py
 
