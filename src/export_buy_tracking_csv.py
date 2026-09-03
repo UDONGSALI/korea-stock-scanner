@@ -9,7 +9,8 @@ DATA_DIR = ROOT_DIR / "data"
 INPUT_PATH = DATA_DIR / "tracking.json"
 OUTPUT_PATH = DATA_DIR / "buy_tracking.csv"
 
-# 매일 확인하는 포지션 관리 정보 → 성과 → 종결 → 보조지표 → 이력/기술정보 순서로 배치한다.
+# 매일 확인하는 포지션 관리 정보 → 성과 → 종결 → 보조지표 → 이력/기술정보 → 매수등급 순서로 배치한다.
+# 기존 앞쪽 컬럼 순서는 유지해 포트폴리오 시뮬레이션의 참조 위치가 바뀌지 않도록 한다.
 COLUMNS = [
     ("name", "종목명"),
     ("ticker", "티커"),
@@ -42,6 +43,18 @@ COLUMNS = [
     ("latest_trading_days_since_early", "EARLY후 거래일"),
     ("initial_stop_price", "최초손절가"),
     ("excess_return_pct_point", "초과수익 %p"),
+    ("priority_selected", "매수검토"),
+    ("buy_grade", "매수등급"),
+    ("buy_score", "매수점수"),
+    ("sector", "섹터"),
+    ("sector_score", "섹터점수"),
+    ("sector_leader_rank", "섹터내순위"),
+    ("weekly_state", "주봉상태"),
+    ("atr20_pct", "ATR20 %"),
+    ("institutional_fit", "기관적합"),
+    ("capture_rs_score", "포착RS"),
+    ("ranking_reason", "등급근거"),
+    ("ranking_rule_version", "등급룰 버전"),
     ("rule_version", "룰 버전"),
     ("exit_rule_version", "매도룰 버전"),
 ]
