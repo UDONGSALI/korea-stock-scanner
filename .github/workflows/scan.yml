@@ -33,6 +33,10 @@ jobs:
         run: python src/scanner.py
 
       - name: Rank BUY candidates
+        env:
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
+          TZ: Asia/Seoul
         run: python src/apply_buy_ranking.py
 
       - name: Apply Kangto exit rules
