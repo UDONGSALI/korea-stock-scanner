@@ -32,6 +32,9 @@ jobs:
           TZ: Asia/Seoul
         run: python src/scanner.py
 
+      - name: Rank BUY candidates
+        run: python src/apply_buy_ranking.py
+
       - name: Apply Kangto exit rules
         run: python src/apply_exit_rules.py
 
