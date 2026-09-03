@@ -33,6 +33,23 @@
   "setup": {"max_below_breakout_pct": 3},
   "breakout": {"volume_ratio_min": 1.0, "max_extension_pct": 10},
   "risk": {"max_account_risk_pct": 2.0, "reward_multiple": 3.0},
+  "ranking": {
+    "rule_version": "kangto_rank_v1",
+    "min_sector_members": 3,
+    "institutional_min_market_cap": 500000000000,
+    "institutional_min_avg_trading_value": 5000000000,
+    "grade_s_min": 80,
+    "grade_a_min": 68,
+    "grade_b_min": 55,
+    "s_min_sector_score": 70,
+    "s_max_sector_rank": 3,
+    "s_min_weekly_score": 75,
+    "a_min_sector_score": 55,
+    "a_max_sector_rank": 5,
+    "a_min_weekly_score": 55,
+    "max_daily_candidates": 2,
+    "max_per_sector": 1
+  },
   "exit": {
     "rule_version": "kangto_exit_v2",
     "initial_stop_pct": 8.0,
