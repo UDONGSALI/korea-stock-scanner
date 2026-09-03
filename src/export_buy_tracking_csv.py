@@ -9,7 +9,7 @@ DATA_DIR = ROOT_DIR / "data"
 INPUT_PATH = DATA_DIR / "tracking.json"
 OUTPUT_PATH = DATA_DIR / "buy_tracking.csv"
 
-# 매일 확인하는 포지션 관리 정보 → 성과 → 종결 → 보조지표 → 이력/기술정보 → 매수등급 순서로 배치한다.
+# 매일 확인하는 포지션 관리 정보 → 성과 → 종결 → 보조지표 → 이력/기술정보 → 매수품질 순서로 배치한다.
 # 기존 앞쪽 컬럼 순서는 유지해 포트폴리오 시뮬레이션의 참조 위치가 바뀌지 않도록 한다.
 COLUMNS = [
     ("name", "종목명"),
@@ -44,8 +44,8 @@ COLUMNS = [
     ("initial_stop_price", "최초손절가"),
     ("excess_return_pct_point", "초과수익 %p"),
     ("priority_selected", "매수검토"),
-    ("buy_grade", "매수등급"),
-    ("buy_score", "매수점수"),
+    ("buy_grade", "매수품질"),
+    ("buy_score", "종합점수"),
     ("sector", "섹터"),
     ("sector_score", "섹터점수"),
     ("sector_leader_rank", "섹터내순위"),
@@ -60,6 +60,10 @@ COLUMNS = [
 ]
 
 
+def get_priority_label(value) -> str:
+    return "우선검토" if bool(value) else "대기"
+
+
 def main() -> None:
     if not INPUT_PATH.exists():
         raise RuntimeError("data/tracking.json 파일이 없습니다.")
@@ -71,7 +75,13 @@ def main() -> None:
         writer = csv.DictWriter(file, fieldnames=[label for _, label in COLUMNS])
         writer.writeheader()
         for row in rows:
-            writer.writerow({label: row.get(key) for key, label in COLUMNS})
+            output_row = {}
+            for key, label in COLUMNS:
+                value = row.get(key)
+                if key == "priority_selected":
+                    value = get_priority_label(value)
+                output_row[label] = value
+            writer.writerow(output_row)
 
     print(json.dumps({"rows": len(rows), "output": str(OUTPUT_PATH)}, ensure_ascii=False))
 
