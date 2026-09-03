@@ -1,0 +1,55 @@
+name: Backfill Buy Ranking Once
+
+on:
+  push:
+    paths:
+      - ".github/workflows/backfill_buy_ranking_once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - run: pip install -r requirements.txt
+
+      - name: Backfill BUY ranking
+        run: python src/apply_buy_ranking.py
+
+      - name: Reapply exit rules
+        run: python src/apply_exit_rules.py
+
+      - name: Refresh EARLY state
+        run: python src/early_state.py
+
+      - name: Export BUY tracking CSV
+        run: python src/export_buy_tracking_csv.py
+
+      - name: Export EARLY tracking CSV
+        run: python src/export_early_tracking_csv.py
+
+      - name: Export confirmed EOD sheet snapshots
+        run: python src/export_sheet_snapshot.py
+
+      - name: Commit ranking backfill
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "data: backfill Kangto buy ranking"
+          git push
