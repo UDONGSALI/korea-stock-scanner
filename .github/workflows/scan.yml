@@ -3,8 +3,10 @@ name: Daily KRX Scan
 on:
   workflow_dispatch:
   schedule:
-    - cron: "40 15 * * 1-5"
-      timezone: "Asia/Seoul"
+    # KST 15:40 - primary EOD scan
+    - cron: "40 6 * * 1-5"
+    # KST 16:20 - fallback when the primary schedule was missed or failed before commit
+    - cron: "20 7 * * 1-5"
 
 permissions:
   contents: write
@@ -18,14 +20,65 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Decide whether scan is needed
+        id: guard
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            echo "Manual dispatch: force scan"
+            exit 0
+          fi
+
+          python3 - <<'PY'
+          import json
+          import os
+          from datetime import datetime, time
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          latest_path = Path("data/latest.json")
+          now = datetime.now(ZoneInfo("Asia/Seoul"))
+          today = now.date().isoformat()
+          confirmed = False
+
+          if latest_path.exists():
+              try:
+                  latest = json.loads(latest_path.read_text(encoding="utf-8-sig"))
+                  generated_at = datetime.fromisoformat(str(latest.get("generated_at", "")))
+                  if generated_at.tzinfo is not None:
+                      generated_at = generated_at.astimezone(ZoneInfo("Asia/Seoul"))
+                      confirmed = (
+                          str(latest.get("scan_date")) == today
+                          and generated_at.date() == now.date()
+                          and generated_at.time() >= time(15, 35)
+                      )
+              except (ValueError, TypeError, json.JSONDecodeError):
+                  confirmed = False
+
+          should_run = not confirmed
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as file:
+              file.write(f"should_run={'true' if should_run else 'false'}\n")
+
+          print(json.dumps({
+              "today": today,
+              "confirmed_eod_already_exists": confirmed,
+              "should_run": should_run,
+          }, ensure_ascii=False))
+          PY
+
       - uses: actions/setup-python@v5
+        if: steps.guard.outputs.should_run == 'true'
         with:
           python-version: "3.12"
           cache: "pip"
 
-      - run: pip install -r requirements.txt
+      - if: steps.guard.outputs.should_run == 'true'
+        run: pip install -r requirements.txt
 
       - name: Run scanner
+        if: steps.guard.outputs.should_run == 'true'
         env:
           KRX_ID: ${{ secrets.KRX_ID }}
           KRX_PW: ${{ secrets.KRX_PW }}
@@ -33,6 +86,7 @@ jobs:
         run: python src/scanner.py
 
       - name: Rank BUY candidates
+        if: steps.guard.outputs.should_run == 'true'
         env:
           KRX_ID: ${{ secrets.KRX_ID }}
           KRX_PW: ${{ secrets.KRX_PW }}
@@ -40,9 +94,11 @@ jobs:
         run: python src/apply_buy_ranking.py
 
       - name: Apply Kangto exit rules
+        if: steps.guard.outputs.should_run == 'true'
         run: python src/apply_exit_rules.py
 
       - name: Rank all active BUY candidates now
+        if: steps.guard.outputs.should_run == 'true'
         env:
           KRX_ID: ${{ secrets.KRX_ID }}
           KRX_PW: ${{ secrets.KRX_PW }}
@@ -50,18 +106,23 @@ jobs:
         run: python src/export_current_buy_priority.py
 
       - name: Enrich post-EARLY state
+        if: steps.guard.outputs.should_run == 'true'
         run: python src/early_state.py
 
       - name: Export BUY tracking CSV
+        if: steps.guard.outputs.should_run == 'true'
         run: python src/export_buy_tracking_csv.py
 
       - name: Export EARLY tracking CSV
+        if: steps.guard.outputs.should_run == 'true'
         run: python src/export_early_tracking_csv.py
 
       - name: Export confirmed EOD sheet snapshots
+        if: steps.guard.outputs.should_run == 'true'
         run: python src/export_sheet_snapshot.py
 
       - name: Commit updated data
+        if: steps.guard.outputs.should_run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -70,5 +131,5 @@ jobs:
             echo "No changes"
             exit 0
           fi
-          git commit -m "data: update KRX scan $(date +'%Y-%m-%d')"
+          git commit -m "data: update KRX scan $(TZ=Asia/Seoul date +'%Y-%m-%d')"
           git push
