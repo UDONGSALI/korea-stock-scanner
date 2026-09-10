@@ -5,8 +5,12 @@ on:
   schedule:
     # KST 15:40 - primary EOD scan
     - cron: "40 6 * * 1-5"
-    # KST 16:20 - fallback when the primary schedule was missed or failed before commit
+    # KST 16:20 - first fallback
     - cron: "20 7 * * 1-5"
+    # KST 17:10 - second fallback
+    - cron: "10 8 * * 1-5"
+    # KST 18:10 - last fallback
+    - cron: "10 9 * * 1-5"
 
 permissions:
   contents: write
