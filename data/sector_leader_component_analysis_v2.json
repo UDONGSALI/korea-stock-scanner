@@ -1,0 +1,717 @@
+{
+  "formula": "leader_raw = 45% sector 20d percentile + 35% sector 60d percentile + 20% 52w-high proximity",
+  "cohort_count": 57,
+  "groups": {
+    "1-5": {
+      "performance": {
+        "count": 17,
+        "avg_return": -3.2167,
+        "median_return": -2.0649,
+        "avg_excess": -4.2898,
+        "win_rate": 23.53,
+        "stop_rate": 23.53,
+        "large_winners": 0
+      },
+      "components": {
+        "return5": {
+          "mean": 9.0514,
+          "median": 9.1537
+        },
+        "return10": {
+          "mean": 13.5612,
+          "median": 10.8893
+        },
+        "return20": {
+          "mean": 30.3371,
+          "median": 24.0849
+        },
+        "return60": {
+          "mean": 31.4062,
+          "median": 21.8137
+        },
+        "ret20_pctile": {
+          "mean": 90.3186,
+          "median": 91.9786
+        },
+        "ret60_pctile": {
+          "mean": 88.6385,
+          "median": 91.4286
+        },
+        "high52_distance": {
+          "mean": -11.6737,
+          "median": -8.6667
+        },
+        "high_proximity": {
+          "mean": 55.4677,
+          "median": 65.3333
+        },
+        "contrib_20": {
+          "mean": 40.6434,
+          "median": 41.3904
+        },
+        "contrib_60": {
+          "mean": 31.0235,
+          "median": 32.0
+        },
+        "contrib_high": {
+          "mean": 11.0935,
+          "median": 13.0667
+        },
+        "leader_raw": {
+          "mean": 82.7604,
+          "median": 83.0479
+        },
+        "gain_since_early_pct": {
+          "mean": 8.6236,
+          "median": 8.7838
+        },
+        "buy_score": {
+          "mean": 66.0582,
+          "median": 66.12
+        }
+      }
+    },
+    "6-20": {
+      "performance": {
+        "count": 25,
+        "avg_return": 0.659,
+        "median_return": 0.2309,
+        "avg_excess": -0.2901,
+        "win_rate": 52.0,
+        "stop_rate": 12.0,
+        "large_winners": 4
+      },
+      "components": {
+        "return5": {
+          "mean": 8.6634,
+          "median": 7.8732
+        },
+        "return10": {
+          "mean": 12.2984,
+          "median": 9.3275
+        },
+        "return20": {
+          "mean": 22.7877,
+          "median": 14.1641
+        },
+        "return60": {
+          "mean": 13.0463,
+          "median": 12.0805
+        },
+        "ret20_pctile": {
+          "mean": 79.0865,
+          "median": 84.8
+        },
+        "ret60_pctile": {
+          "mean": 82.5567,
+          "median": 86.2275
+        },
+        "high52_distance": {
+          "mean": -18.7783,
+          "median": -20.2103
+        },
+        "high_proximity": {
+          "mean": 26.3024,
+          "median": 19.1589
+        },
+        "contrib_20": {
+          "mean": 35.5889,
+          "median": 38.16
+        },
+        "contrib_60": {
+          "mean": 28.8948,
+          "median": 30.1796
+        },
+        "contrib_high": {
+          "mean": 5.2605,
+          "median": 3.8318
+        },
+        "leader_raw": {
+          "mean": 69.7442,
+          "median": 71.1497
+        },
+        "gain_since_early_pct": {
+          "mean": 5.9574,
+          "median": 6.2374
+        },
+        "buy_score": {
+          "mean": 59.99,
+          "median": 59.41
+        }
+      }
+    },
+    ">20": {
+      "performance": {
+        "count": 15,
+        "avg_return": -3.5975,
+        "median_return": -4.9812,
+        "avg_excess": -4.3076,
+        "win_rate": 33.33,
+        "stop_rate": 26.67,
+        "large_winners": 0
+      },
+      "components": {
+        "return5": {
+          "mean": 7.8241,
+          "median": 7.3609
+        },
+        "return10": {
+          "mean": 9.1757,
+          "median": 6.5954
+        },
+        "return20": {
+          "mean": 21.1572,
+          "median": 13.9973
+        },
+        "return60": {
+          "mean": 9.5363,
+          "median": 7.8755
+        },
+        "ret20_pctile": {
+          "mean": 65.9872,
+          "median": 62.8
+        },
+        "ret60_pctile": {
+          "mean": 79.2683,
+          "median": 80.4
+        },
+        "high52_distance": {
+          "mean": -19.0911,
+          "median": -21.3001
+        },
+        "high_proximity": {
+          "mean": 25.6009,
+          "median": 14.7994
+        },
+        "contrib_20": {
+          "mean": 29.6943,
+          "median": 28.26
+        },
+        "contrib_60": {
+          "mean": 27.7439,
+          "median": 28.14
+        },
+        "contrib_high": {
+          "mean": 5.1202,
+          "median": 2.9599
+        },
+        "leader_raw": {
+          "mean": 62.5583,
+          "median": 63.7238
+        },
+        "gain_since_early_pct": {
+          "mean": 5.6898,
+          "median": 5.0475
+        },
+        "buy_score": {
+          "mean": 56.334,
+          "median": 56.81
+        }
+      }
+    }
+  },
+  "spearman_vs_future_return": {
+    "return5": -0.0666,
+    "return10": 0.0937,
+    "return20": -0.091,
+    "return60": -0.1205,
+    "ret20_pctile": -0.0414,
+    "ret60_pctile": -0.1084,
+    "high52_distance": -0.1133,
+    "high_proximity": -0.1136,
+    "contrib_20": -0.0414,
+    "contrib_60": -0.1084,
+    "contrib_high": -0.1136,
+    "leader_raw": -0.006,
+    "gain_since_early_pct": -0.2134,
+    "buy_score": -0.1422,
+    "sector_leader_rank": -0.0251
+  },
+  "top_1_5": [
+    {
+      "date": "2026-08-24",
+      "name": "팬오션",
+      "ticker": "028670",
+      "sector": "운송·창고",
+      "rank": 1.0,
+      "future_return": -11.234177215189876,
+      "exit_reason": "STOP_LOSS",
+      "ret5": 9.153713298791022,
+      "ret10": 4.635761589403975,
+      "ret20": 19.696969696969703,
+      "ret60": 12.455516014234869,
+      "ret20_pctile": 100.0,
+      "ret60_pctile": 96.66666666666667,
+      "high52_distance": -4.2424242424242475,
+      "high_proximity": 83.030303030303,
+      "contrib_20": 45.0,
+      "contrib_60": 33.833333333333336,
+      "contrib_high": 16.606060606060602,
+      "leader_raw": 95.43939393939394,
+      "gain_since_early": 12.056737588652489,
+      "buy_score": 72.7
+    },
+    {
+      "date": "2026-08-25",
+      "name": "GS",
+      "ticker": "078930",
+      "sector": "기타금융",
+      "rank": 1.0,
+      "future_return": -2.298850574712641,
+      "exit_reason": null,
+      "ret5": 2.095557418273253,
+      "ret10": 25.179856115107913,
+      "ret20": 32.969432314410476,
+      "ret60": 64.37246963562752,
+      "ret20_pctile": 98.94736842105263,
+      "ret60_pctile": 100.0,
+      "high52_distance": -1.5359741309620034,
+      "high_proximity": 93.85610347615199,
+      "contrib_20": 44.526315789473685,
+      "contrib_60": 35.0,
+      "contrib_high": 18.771220695230397,
+      "leader_raw": 98.29753648470408,
+      "gain_since_early": null,
+      "buy_score": 72.69
+    },
+    {
+      "date": "2026-08-25",
+      "name": "제닉",
+      "ticker": "123330",
+      "sector": "화학",
+      "rank": 4.0,
+      "future_return": -11.956521739130432,
+      "exit_reason": "STOP_LOSS",
+      "ret5": 12.982456140350873,
+      "ret10": 8.783783783783793,
+      "ret20": 30.101010101010097,
+      "ret60": 40.305010893246184,
+      "ret20_pctile": 95.19999999999999,
+      "ret60_pctile": 94.8,
+      "high52_distance": -6.395348837209303,
+      "high_proximity": 74.41860465116278,
+      "contrib_20": 42.839999999999996,
+      "contrib_60": 33.18,
+      "contrib_high": 14.883720930232556,
+      "leader_raw": 90.90372093023255,
+      "gain_since_early": 8.783783783783793,
+      "buy_score": 71.89
+    },
+    {
+      "date": "2026-08-28",
+      "name": "씨젠",
+      "ticker": "096530",
+      "sector": "제약",
+      "rank": 2.0,
+      "future_return": -9.957924263674611,
+      "exit_reason": "STOP_LOSS",
+      "ret5": 16.885245901639333,
+      "ret10": 11.755485893416928,
+      "ret20": 41.74950298210736,
+      "ret60": 11.930926216640492,
+      "ret20_pctile": 91.97860962566845,
+      "ret60_pctile": 90.9090909090909,
+      "high52_distance": -0.2797202797202747,
+      "high_proximity": 98.88111888111891,
+      "contrib_20": 41.3903743315508,
+      "contrib_60": 31.818181818181817,
+      "contrib_high": 19.776223776223784,
+      "leader_raw": 92.9847799259564,
+      "gain_since_early": null,
+      "buy_score": 75.79
+    },
+    {
+      "date": "2026-08-28",
+      "name": "한일시멘트",
+      "ticker": "300720",
+      "sector": "비금속",
+      "rank": 3.0,
+      "future_return": -2.0648967551622377,
+      "exit_reason": null,
+      "ret5": 9.213917525773185,
+      "ret10": 16.574965612104542,
+      "ret20": 24.084919472913626,
+      "ret60": 17.13890808569454,
+      "ret20_pctile": 82.05128205128204,
+      "ret60_pctile": 79.48717948717949,
+      "high52_distance": -19.85815602836879,
+      "high_proximity": 20.567375886524843,
+      "contrib_20": 36.92307692307692,
+      "contrib_60": 27.82051282051282,
+      "contrib_high": 4.113475177304969,
+      "leader_raw": 68.8570649208947,
+      "gain_since_early": 11.586570111915728,
+      "buy_score": 58.78
+    },
+    {
+      "date": "2026-08-28",
+      "name": "한화생명",
+      "ticker": "088350",
+      "sector": "보험",
+      "rank": 4.0,
+      "future_return": 0.6722689075630228,
+      "exit_reason": null,
+      "ret5": 8.775137111517362,
+      "ret10": 18.290258449304165,
+      "ret20": 41.49821640903686,
+      "ret60": 22.55406797116375,
+      "ret20_pctile": 85.71428571428571,
+      "ret60_pctile": 71.42857142857143,
+      "high52_distance": -21.29629629629629,
+      "high_proximity": 14.814814814814838,
+      "contrib_20": 38.57142857142857,
+      "contrib_60": 25.0,
+      "contrib_high": 2.9629629629629677,
+      "leader_raw": 66.53439153439153,
+      "gain_since_early": 5.683836589698044,
+      "buy_score": 63.81
+    },
+    {
+      "date": "2026-09-01",
+      "name": "현대퓨처넷",
+      "ticker": "126560",
+      "sector": "통신",
+      "rank": 1.0,
+      "future_return": -2.1897810218978075,
+      "exit_reason": null,
+      "ret5": 5.873261205564151,
+      "ret10": 4.740061162079501,
+      "ret20": 7.535321821036112,
+      "ret60": 18.923611111111114,
+      "ret20_pctile": 78.57142857142857,
+      "ret60_pctile": 85.71428571428571,
+      "high52_distance": -8.666666666666668,
+      "high_proximity": 65.33333333333333,
+      "contrib_20": 35.357142857142854,
+      "contrib_60": 29.999999999999996,
+      "contrib_high": 13.066666666666666,
+      "leader_raw": 78.42380952380951,
+      "gain_since_early": 7.535321821036112,
+      "buy_score": 61.19
+    },
+    {
+      "date": "2026-09-02",
+      "name": "아스플로",
+      "ticker": "159010",
+      "sector": "기계·장비",
+      "rank": 1.0,
+      "future_return": -3.112033195020747,
+      "exit_reason": null,
+      "ret5": 16.425120772946865,
+      "ret10": 6.4017660044150215,
+      "ret20": 61.41995981245814,
+      "ret60": 59.602649006622514,
+      "ret20_pctile": 97.67441860465115,
+      "ret60_pctile": 98.6046511627907,
+      "high52_distance": -6.5891472868217065,
+      "high_proximity": 73.64341085271317,
+      "contrib_20": 43.95348837209302,
+      "contrib_60": 34.51162790697674,
+      "contrib_high": 14.728682170542635,
+      "leader_raw": 93.1937984496124,
+      "gain_since_early": null,
+      "buy_score": 63.27
+    },
+    {
+      "date": "2026-09-03",
+      "name": "한화생명",
+      "ticker": "088350",
+      "sector": "보험",
+      "rank": 4.0,
+      "future_return": -1.9639934533551504,
+      "exit_reason": null,
+      "ret5": 11.496350364963504,
+      "ret10": 10.88929219600725,
+      "ret20": 40.29850746268657,
+      "ret60": 21.9560878243513,
+      "ret20_pctile": 84.61538461538461,
+      "ret60_pctile": 76.92307692307693,
+      "high52_distance": -19.179894179894173,
+      "high_proximity": 23.280423280423307,
+      "contrib_20": 38.07692307692308,
+      "contrib_60": 26.923076923076927,
+      "contrib_high": 4.656084656084661,
+      "leader_raw": 69.65608465608466,
+      "gain_since_early": 8.525754884547077,
+      "buy_score": 76.55
+    },
+    {
+      "date": "2026-09-04",
+      "name": "삼천리",
+      "ticker": "004690",
+      "sector": "전기·가스",
+      "rank": 1.0,
+      "future_return": 0.1463057790782818,
+      "exit_reason": null,
+      "ret5": 3.247734138972813,
+      "ret10": 5.234795996920716,
+      "ret20": 14.106844741235403,
+      "ret60": 16.73783091374894,
+      "ret20_pctile": 90.0,
+      "ret60_pctile": 100.0,
+      "high52_distance": -15.565163681284744,
+      "high_proximity": 37.73934527486102,
+      "contrib_20": 40.5,
+      "contrib_60": 35.0,
+      "contrib_high": 7.547869054972205,
+      "leader_raw": 83.04786905497221,
+      "gain_since_early": 14.970563498738445,
+      "buy_score": 69.68
+    },
+    {
+      "date": "2026-09-04",
+      "name": "코메론",
+      "ticker": "049430",
+      "sector": "의료·정밀기기",
+      "rank": 3.0,
+      "future_return": 1.1135857461024523,
+      "exit_reason": null,
+      "ret5": 8.71670702179177,
+      "ret10": 12.75740833751884,
+      "ret20": 8.71670702179177,
+      "ret60": 24.72222222222222,
+      "ret20_pctile": 78.0952380952381,
+      "ret60_pctile": 91.42857142857143,
+      "high52_distance": -5.073995771670193,
+      "high_proximity": 79.70401691331924,
+      "contrib_20": 35.142857142857146,
+      "contrib_60": 32.0,
+      "contrib_high": 15.940803382663848,
+      "leader_raw": 83.08366052552098,
+      "gain_since_early": null,
+      "buy_score": 60.46
+    },
+    {
+      "date": "2026-09-04",
+      "name": "한진칼",
+      "ticker": "180640",
+      "sector": "기타금융",
+      "rank": 5.0,
+      "future_return": -9.794520547945208,
+      "exit_reason": "STOP_LOSS_GAP",
+      "ret5": 11.195734958111192,
+      "ret10": 23.833757421543677,
+      "ret20": 14.779874213836486,
+      "ret60": 26.29757785467128,
+      "ret20_pctile": 92.63157894736842,
+      "ret60_pctile": 94.73684210526315,
+      "high52_distance": -16.99829448550313,
+      "high_proximity": 32.00682205798748,
+      "contrib_20": 41.684210526315795,
+      "contrib_60": 33.1578947368421,
+      "contrib_high": 6.401364411597496,
+      "leader_raw": 81.24346967475539,
+      "gain_since_early": 14.779874213836486,
+      "buy_score": 69.49
+    },
+    {
+      "date": "2026-09-04",
+      "name": "진에어",
+      "ticker": "272450",
+      "sector": "운송·창고",
+      "rank": 5.0,
+      "future_return": -3.420195439739415,
+      "exit_reason": null,
+      "ret5": 3.891708967851093,
+      "ret10": 18.76208897485494,
+      "ret20": 12.043795620437958,
+      "ret60": 15.413533834586456,
+      "ret20_pctile": 93.33333333333333,
+      "ret60_pctile": 80.0,
+      "high52_distance": -29.748283752860416,
+      "high_proximity": 0.0,
+      "contrib_20": 42.0,
+      "contrib_60": 28.0,
+      "contrib_high": 0.0,
+      "leader_raw": 70.0,
+      "gain_since_early": 0.0,
+      "buy_score": 58.88
+    },
+    {
+      "date": "2026-09-07",
+      "name": "티에스이",
+      "ticker": "131290",
+      "sector": "의료·정밀기기",
+      "rank": 4.0,
+      "future_return": -0.3824091778202643,
+      "exit_reason": null,
+      "ret5": 10.33755274261603,
+      "ret10": 6.517311608961296,
+      "ret20": 26.328502415458942,
+      "ret60": 0.5769230769230749,
+      "ret20_pctile": 92.38095238095238,
+      "ret60_pctile": 72.38095238095238,
+      "high52_distance": -11.054421768707478,
+      "high_proximity": 55.78231292517009,
+      "contrib_20": 41.57142857142857,
+      "contrib_60": 25.333333333333332,
+      "contrib_high": 11.156462585034019,
+      "leader_raw": 78.06122448979592,
+      "gain_since_early": null,
+      "buy_score": 53.11
+    },
+    {
+      "date": "2026-09-09",
+      "name": "키다리스튜디오",
+      "ticker": "020120",
+      "sector": "IT 서비스",
+      "rank": 1.0,
+      "future_return": 1.7587939698492372,
+      "exit_reason": null,
+      "ret5": 13.876967095851223,
+      "ret10": 44.72727272727273,
+      "ret20": 120.80443828016642,
+      "ret60": 148.74999999999997,
+      "ret20_pctile": 98.4126984126984,
+      "ret60_pctile": 97.22222222222221,
+      "high52_distance": -1.7283950617283939,
+      "high_proximity": 93.08641975308643,
+      "contrib_20": 44.285714285714285,
+      "contrib_60": 34.02777777777777,
+      "contrib_high": 18.61728395061729,
+      "leader_raw": 96.93077601410934,
+      "gain_since_early": null,
+      "buy_score": 66.12
+    },
+    {
+      "date": "2026-09-11",
+      "name": "다올투자증권",
+      "ticker": "030210",
+      "sector": "증권",
+      "rank": 2.0,
+      "future_return": 0.0,
+      "exit_reason": null,
+      "ret5": 3.053435114503822,
+      "ret10": 4.113110539845755,
+      "ret20": 5.606258148631027,
+      "ret60": 10.354223433242504,
+      "ret20_pctile": 89.65517241379311,
+      "ret60_pctile": 96.55172413793103,
+      "high52_distance": -29.442508710801395,
+      "high_proximity": 0.0,
+      "contrib_20": 40.344827586206904,
+      "contrib_60": 33.79310344827586,
+      "contrib_high": 0.0,
+      "leader_raw": 74.13793103448276,
+      "gain_since_early": 0.0,
+      "buy_score": 49.94
+    },
+    {
+      "date": "2026-09-11",
+      "name": "IPARK현대산업개발",
+      "ticker": "294870",
+      "sector": "건설",
+      "rank": 3.0,
+      "future_return": 0.0,
+      "exit_reason": null,
+      "ret5": 6.652360515021449,
+      "ret10": 7.343412526997839,
+      "ret20": 13.990825688073393,
+      "ret60": 21.813725490196067,
+      "ret20_pctile": 86.15384615384616,
+      "ret60_pctile": 80.0,
+      "high52_distance": -0.7984031936127733,
+      "high_proximity": 96.8063872255489,
+      "contrib_20": 38.769230769230774,
+      "contrib_60": 28.0,
+      "contrib_high": 19.36127744510978,
+      "leader_raw": 86.13050821434055,
+      "gain_since_early": 10.9375,
+      "buy_score": 78.64
+    }
+  ],
+  "large_winners": [
+    {
+      "date": "2026-09-04",
+      "name": "인텍플러스",
+      "ticker": "064290",
+      "sector": "기계·장비",
+      "rank": 19.0,
+      "future_return": 22.83437110834371,
+      "exit_reason": null,
+      "ret5": 23.53846153846153,
+      "ret10": 25.077881619937692,
+      "ret20": 41.622574955908284,
+      "ret60": 3.612903225806452,
+      "ret20_pctile": 96.29629629629629,
+      "ret60_pctile": 76.85185185185185,
+      "high52_distance": -25.785582255083185,
+      "high_proximity": 0.0,
+      "contrib_20": 43.33333333333333,
+      "contrib_60": 26.898148148148145,
+      "contrib_high": 0.0,
+      "leader_raw": 70.23148148148147,
+      "gain_since_early": 0.0,
+      "buy_score": 50.04
+    },
+    {
+      "date": "2026-09-09",
+      "name": "HDC",
+      "ticker": "012630",
+      "sector": "기타금융",
+      "rank": 12.0,
+      "future_return": 15.182186234817818,
+      "exit_reason": null,
+      "ret5": 12.27272727272728,
+      "ret10": 7.391304347826089,
+      "ret20": 7.625272331154687,
+      "ret60": 15.15151515151516,
+      "ret20_pctile": 81.05263157894737,
+      "ret60_pctile": 92.63157894736842,
+      "high52_distance": -19.41272430668842,
+      "high_proximity": 22.349102773246315,
+      "contrib_20": 36.473684210526315,
+      "contrib_60": 32.421052631578945,
+      "contrib_high": 4.469820554649263,
+      "leader_raw": 73.36455739675452,
+      "gain_since_early": 11.261261261261255,
+      "buy_score": 61.4
+    },
+    {
+      "date": "2026-09-04",
+      "name": "피에스케이홀딩스",
+      "ticker": "031980",
+      "sector": "기계·장비",
+      "rank": 7.0,
+      "future_return": 9.027777777777768,
+      "exit_reason": null,
+      "ret5": 19.900083263946723,
+      "ret10": 33.95348837209302,
+      "ret20": 41.73228346456692,
+      "ret60": 3.8211968276856467,
+      "ret20_pctile": 96.75925925925925,
+      "ret60_pctile": 77.31481481481481,
+      "high52_distance": -16.763005780346816,
+      "high_proximity": 32.947976878612735,
+      "contrib_20": 43.541666666666664,
+      "contrib_60": 27.060185185185183,
+      "contrib_high": 6.589595375722547,
+      "leader_raw": 77.1914472275744,
+      "gain_since_early": 13.38582677165354,
+      "buy_score": 56.24
+    },
+    {
+      "date": "2026-08-25",
+      "name": "오킨스전자",
+      "ticker": "080580",
+      "sector": "전기·전자",
+      "rank": 18.0,
+      "future_return": 8.762886597938135,
+      "exit_reason": null,
+      "ret5": 11.494252873563227,
+      "ret10": 39.06810035842294,
+      "ret20": 65.52901023890784,
+      "ret60": 5.549510337323182,
+      "ret20_pctile": 97.98488664987406,
+      "ret60_pctile": 90.93198992443325,
+      "high52_distance": -29.454545454545457,
+      "high_proximity": 0.0,
+      "contrib_20": 44.09319899244333,
+      "contrib_60": 31.826196473551637,
+      "contrib_high": 0.0,
+      "leader_raw": 75.91939546599497,
+      "gain_since_early": 0.0,
+      "buy_score": 47.61
+    }
+  ]
+}
