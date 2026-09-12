@@ -20,19 +20,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: "pip"
 
-      - run: pip install -r requirements.txt
+      - name: Build compact comparison
+        run: python src/compact_0828_0904.py
 
-      - name: Compare cohorts
-        run: python src/analyze_0828_vs_0904.py
-
-      - name: Commit comparison
+      - name: Commit compact comparison
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/compare_2026-08-28_vs_2026-09-04.json
-          git commit -m "analysis: compare 0828 and 0904 BUY cohorts" || exit 0
+          git add data/compare_2026-08-28_vs_2026-09-04_summary.json
+          git commit -m "analysis: add compact 0828 vs 0904 comparison" || exit 0
           git push
-
-# rerun after NaN normalization
