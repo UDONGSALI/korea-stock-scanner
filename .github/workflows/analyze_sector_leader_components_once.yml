@@ -23,6 +23,7 @@ jobs:
           cache: "pip"
 
       - run: pip install -r requirements.txt
+      - run: pip install scipy
 
       - name: Analyze leader components
         env:
