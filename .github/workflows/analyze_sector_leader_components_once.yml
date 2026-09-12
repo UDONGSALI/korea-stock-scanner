@@ -1,0 +1,40 @@
+name: Analyze Sector Leader Components Once
+
+on:
+  push:
+    paths:
+      - ".github/workflows/analyze_sector_leader_components_once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - run: pip install -r requirements.txt
+
+      - name: Analyze leader components
+        env:
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
+          TZ: Asia/Seoul
+        run: python src/analyze_sector_leader_components.py
+
+      - name: Commit analysis output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/sector_leader_component_analysis.json
+          git commit -m "analysis: inspect sector leader rank components" || exit 0
+          git push
