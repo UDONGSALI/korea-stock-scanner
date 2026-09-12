@@ -1,0 +1,113 @@
+{
+  "기본_전체BUY": {
+    "kept": 75,
+    "excluded": 0,
+    "avg_return": -2.4248,
+    "median_return": -2.0649,
+    "avg_excess": -3.075,
+    "win_rate": 33.33,
+    "beat_rate": 20.0,
+    "stop_rate": 26.67,
+    "missed_large_winners": []
+  },
+  "CLIMAX제외": {
+    "kept": 69,
+    "excluded": 6,
+    "avg_return": -1.9661,
+    "median_return": -1.7439,
+    "avg_excess": -2.7216,
+    "win_rate": 36.23,
+    "beat_rate": 21.74,
+    "stop_rate": 21.74,
+    "missed_large_winners": []
+  },
+  "EARLY15미만": {
+    "kept": 57,
+    "excluded": 18,
+    "avg_return": -1.617,
+    "median_return": -1.7439,
+    "avg_excess": -2.5402,
+    "win_rate": 38.6,
+    "beat_rate": 21.05,
+    "stop_rate": 19.3,
+    "missed_large_winners": []
+  },
+  "EARLY20미만": {
+    "kept": 62,
+    "excluded": 13,
+    "avg_return": -1.9078,
+    "median_return": -1.8489,
+    "avg_excess": -2.6282,
+    "win_rate": 37.1,
+    "beat_rate": 22.58,
+    "stop_rate": 22.58,
+    "missed_large_winners": []
+  },
+  "섹터TOP10": {
+    "kept": 44,
+    "excluded": 31,
+    "avg_return": -3.1953,
+    "median_return": -2.1273,
+    "avg_excess": -3.8832,
+    "win_rate": 27.27,
+    "beat_rate": 15.91,
+    "stop_rate": 29.55,
+    "missed_large_winners": [
+      "인텍플러스 +22.83%",
+      "HDC +15.18%",
+      "오킨스전자 +8.76%"
+    ]
+  },
+  "CLIMAX제외_EARLY15미만": {
+    "kept": 57,
+    "excluded": 18,
+    "avg_return": -1.617,
+    "median_return": -1.7439,
+    "avg_excess": -2.5402,
+    "win_rate": 38.6,
+    "beat_rate": 21.05,
+    "stop_rate": 19.3,
+    "missed_large_winners": []
+  },
+  "CLIMAX제외_EARLY20미만": {
+    "kept": 61,
+    "excluded": 14,
+    "avg_return": -1.7881,
+    "median_return": -1.7439,
+    "avg_excess": -2.5749,
+    "win_rate": 37.7,
+    "beat_rate": 22.95,
+    "stop_rate": 21.31,
+    "missed_large_winners": []
+  },
+  "전체조합_15": {
+    "kept": 26,
+    "excluded": 49,
+    "avg_return": -1.9579,
+    "median_return": -0.9729,
+    "avg_excess": -3.2704,
+    "win_rate": 34.62,
+    "beat_rate": 15.38,
+    "stop_rate": 15.38,
+    "missed_large_winners": [
+      "인텍플러스 +22.83%",
+      "HDC +15.18%",
+      "오킨스전자 +8.76%"
+    ]
+  },
+  "전체조합_20": {
+    "kept": 30,
+    "excluded": 45,
+    "avg_return": -2.2604,
+    "median_return": -1.0773,
+    "avg_excess": -3.2436,
+    "win_rate": 33.33,
+    "beat_rate": 20.0,
+    "stop_rate": 20.0,
+    "missed_large_winners": [
+      "인텍플러스 +22.83%",
+      "HDC +15.18%",
+      "오킨스전자 +8.76%"
+    ]
+  }
+}
