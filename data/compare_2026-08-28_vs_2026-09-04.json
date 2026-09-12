@@ -1,0 +1,1333 @@
+{
+  "comparison": {
+    "2026-08-28": {
+      "count": 13,
+      "performance": {
+        "avg_strategy_return_pct": -6.4734,
+        "median_strategy_return_pct": -8.1673,
+        "avg_excess_pct_point": -5.9826,
+        "win_rate_pct": 15.38,
+        "beat_benchmark_rate_pct": 0.0,
+        "stop_loss_rate_pct": 61.54,
+        "winners": 2,
+        "losers": 11,
+        "stop_losses": 8
+      },
+      "numeric": {
+        "rs_score": {
+          "count": 13,
+          "mean": 64.4464,
+          "median": 76.7084,
+          "min": 28.9459,
+          "max": 90.1647
+        },
+        "rs_20_score": {
+          "count": 13,
+          "mean": 73.7718,
+          "median": 84.4676,
+          "min": 41.0138,
+          "max": 95.627
+        },
+        "rs_60_score": {
+          "count": 13,
+          "mean": 89.5743,
+          "median": 90.6028,
+          "min": 76.4754,
+          "max": 96.0087
+        },
+        "rs_acceleration": {
+          "count": 13,
+          "mean": 10.0329,
+          "median": 7.069,
+          "min": 0.2495,
+          "max": 26.601
+        },
+        "distance_from_high52_pct": {
+          "count": 13,
+          "mean": -10.2085,
+          "median": -10.8876,
+          "min": -22.114,
+          "max": -0.1235
+        },
+        "base_days": {
+          "count": 13,
+          "mean": 14.7692,
+          "median": 15.0,
+          "min": 5.0,
+          "max": 20.0
+        },
+        "base_depth_pct": {
+          "count": 13,
+          "mean": 15.0615,
+          "median": 14.8855,
+          "min": 7.1,
+          "max": 18.8742
+        },
+        "distance_to_base_high_pct": {
+          "count": 13,
+          "mean": 3.1499,
+          "median": 2.4788,
+          "min": 1.083,
+          "max": 7.4148
+        },
+        "volume_ratio": {
+          "count": 13,
+          "mean": 2.1502,
+          "median": 1.8682,
+          "min": 1.0474,
+          "max": 6.0137
+        },
+        "buy_score": {
+          "count": 13,
+          "mean": 68.2462,
+          "median": 67.42,
+          "min": 57.31,
+          "max": 82.97
+        },
+        "sector_score": {
+          "count": 13,
+          "mean": 65.3538,
+          "median": 71.4,
+          "min": 42.2,
+          "max": 80.6
+        },
+        "sector_leader_rank": {
+          "count": 13,
+          "mean": 18.2308,
+          "median": 8.0,
+          "min": 2.0,
+          "max": 70.0
+        },
+        "atr20_pct": {
+          "count": 13,
+          "mean": 4.4606,
+          "median": 5.1192,
+          "min": 2.1461,
+          "max": 6.9422
+        },
+        "market_cap": {
+          "count": 13,
+          "mean": 3487865354154.615,
+          "median": 1861856686100.0,
+          "min": 244331962200.0,
+          "max": 17277708532500.0
+        },
+        "gain_since_early_pct": {
+          "count": 11,
+          "mean": 19.9243,
+          "median": 13.148,
+          "min": 3.3333,
+          "max": 59.6249
+        },
+        "trading_days_since_early": {
+          "count": 11,
+          "mean": 10.0,
+          "median": 9.0,
+          "min": 3.0,
+          "max": 17.0
+        }
+      },
+      "categorical": {
+        "market": {
+          "KOSPI": {
+            "count": 10,
+            "pct": 76.92
+          },
+          "KOSDAQ": {
+            "count": 3,
+            "pct": 23.08
+          }
+        },
+        "buy_grade": {
+          "B": {
+            "count": 11,
+            "pct": 84.62
+          },
+          "S": {
+            "count": 2,
+            "pct": 15.38
+          }
+        },
+        "weekly_state": {
+          "RECOVERING": {
+            "count": 8,
+            "pct": 61.54
+          },
+          "STRONG": {
+            "count": 5,
+            "pct": 38.46
+          }
+        },
+        "early_state": {
+          "FRESH": {
+            "count": 6,
+            "pct": 46.15
+          },
+          "CLIMAX_RISK": {
+            "count": 4,
+            "pct": 30.77
+          },
+          "NO_EARLY": {
+            "count": 2,
+            "pct": 15.38
+          },
+          "NORMAL": {
+            "count": 1,
+            "pct": 7.69
+          }
+        },
+        "mtt": {
+          "False": {
+            "count": 7,
+            "pct": 53.85
+          },
+          "True": {
+            "count": 6,
+            "pct": 46.15
+          }
+        },
+        "institutional_fit": {
+          "False": {
+            "count": 7,
+            "pct": 53.85
+          },
+          "True": {
+            "count": 6,
+            "pct": 46.15
+          }
+        },
+        "sector": {
+          "화학": {
+            "count": 6,
+            "pct": 46.15
+          },
+          "IT 서비스": {
+            "count": 1,
+            "pct": 7.69
+          },
+          "제약": {
+            "count": 1,
+            "pct": 7.69
+          },
+          "금융": {
+            "count": 1,
+            "pct": 7.69
+          },
+          "기타금융": {
+            "count": 1,
+            "pct": 7.69
+          },
+          "보험": {
+            "count": 1,
+            "pct": 7.69
+          },
+          "금속": {
+            "count": 1,
+            "pct": 7.69
+          },
+          "비금속": {
+            "count": 1,
+            "pct": 7.69
+          }
+        }
+      },
+      "thresholds": {
+        "leader_rank_le_5_pct": 46.15,
+        "leader_rank_le_10_pct": 61.54,
+        "sector_score_ge_55_pct": 76.92,
+        "sector_score_ge_70_pct": 61.54,
+        "weekly_strong_good_pct": 38.46,
+        "mtt_true_pct": 46.15,
+        "institutional_fit_pct": 46.15,
+        "rs_ge_70_pct": 61.54,
+        "rs_ge_80_pct": 46.15,
+        "breakout_extension_le_3_pct": 61.54,
+        "breakout_extension_gt_5_pct": 23.08,
+        "base_depth_le_15_pct": 53.85,
+        "volume_ratio_ge_2_pct": 46.15,
+        "early_no_early_pct": 15.38,
+        "early_late_climax_pct": 0.0
+      },
+      "rows": [
+        {
+          "name": "한화생명",
+          "ticker": "088350",
+          "market": "KOSPI",
+          "strategy_return_pct": 0.6722689075630228,
+          "strategy_excess_pct_point": -1.110499384113961,
+          "trade_status": "OPEN",
+          "exit_reason": null,
+          "buy_grade": "B",
+          "buy_score": 63.81,
+          "sector": "보험",
+          "sector_score": 76.6,
+          "sector_leader_rank": 4.0,
+          "weekly_state": "RECOVERING",
+          "rs_score": 76.70836445108289,
+          "rs_20_score": 89.31170714026821,
+          "rs_60_score": 90.49472151437932,
+          "rs_acceleration": 19.65125358882085,
+          "mtt": true,
+          "distance_from_high52_pct": -21.29629629629629,
+          "base_days": 10.0,
+          "base_depth_pct": 14.048865619546246,
+          "breakout_extension_pct": 3.839441535776622,
+          "volume_ratio": 2.042820936527303,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 5.683836589698044,
+          "atr20_pct": 5.239495798319328,
+          "institutional_fit": true
+        },
+        {
+          "name": "KPX케미칼",
+          "ticker": "025000",
+          "market": "KOSPI",
+          "strategy_return_pct": 0.5376344086021501,
+          "strategy_excess_pct_point": -1.2451338830748335,
+          "trade_status": "OPEN",
+          "exit_reason": null,
+          "buy_grade": "B",
+          "buy_score": 67.82,
+          "sector": "화학",
+          "sector_score": 71.4,
+          "sector_leader_rank": 21.0,
+          "weekly_state": "RECOVERING",
+          "rs_score": 33.603808812546674,
+          "rs_20_score": 62.830373323668,
+          "rs_60_score": 85.88168911539861,
+          "rs_acceleration": 4.55789615857131,
+          "mtt": false,
+          "distance_from_high52_pct": -2.1052631578947323,
+          "base_days": 20.0,
+          "base_depth_pct": 12.614259597806216,
+          "breakout_extension_pct": 2.010968921389389,
+          "volume_ratio": 1.8682218359221667,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 3.3333333333333437,
+          "atr20_pct": 2.1460573476702507,
+          "institutional_fit": false
+        },
+        {
+          "name": "한일시멘트",
+          "ticker": "300720",
+          "market": "KOSPI",
+          "strategy_return_pct": -2.0648967551622377,
+          "strategy_excess_pct_point": -3.8476650468392215,
+          "trade_status": "OPEN",
+          "exit_reason": null,
+          "buy_grade": "B",
+          "buy_score": 58.78,
+          "sector": "비금속",
+          "sector_score": 59.2,
+          "sector_leader_rank": 3.0,
+          "weekly_state": "RECOVERING",
+          "rs_score": 28.94585511575803,
+          "rs_20_score": 77.32693004711852,
+          "rs_60_score": 88.47651983982526,
+          "rs_acceleration": 7.069035406911443,
+          "mtt": false,
+          "distance_from_high52_pct": -19.85815602836879,
+          "base_days": 20.0,
+          "base_depth_pct": 18.681983071342202,
+          "breakout_extension_pct": 2.4788391777509133,
+          "volume_ratio": 2.9566607794797592,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 11.586570111915728,
+          "atr20_pct": 2.8790560471976403,
+          "institutional_fit": false
+        },
+        {
+          "name": "KG이니시스",
+          "ticker": "035600",
+          "market": "KOSDAQ",
+          "strategy_return_pct": -4.981203007518797,
+          "strategy_excess_pct_point": -2.861714928893788,
+          "trade_status": "OPEN",
+          "exit_reason": null,
+          "buy_grade": "B",
+          "buy_score": 57.6,
+          "sector": "IT 서비스",
+          "sector_score": 42.199999999999996,
+          "sector_leader_rank": 49.0,
+          "weekly_state": "RECOVERING",
+          "rs_score": 74.52725914861837,
+          "rs_20_score": 41.659659296846684,
+          "rs_60_score": 76.47542773935201,
+          "rs_acceleration": 0.24954358310885993,
+          "mtt": false,
+          "distance_from_high52_pct": -13.355048859934849,
+          "base_days": 20.0,
+          "base_depth_pct": 14.885496183206106,
+          "breakout_extension_pct": 1.526717557251911,
+          "volume_ratio": 2.440324618097531,
+          "early_state": "NO_EARLY",
+          "gain_since_early_pct": null,
+          "atr20_pct": 2.617481203007519,
+          "institutional_fit": false
+        },
+        {
+          "name": "한국철강",
+          "ticker": "104700",
+          "market": "KOSPI",
+          "strategy_return_pct": -6.027667984189722,
+          "strategy_excess_pct_point": -7.810436275866706,
+          "trade_status": "OPEN",
+          "exit_reason": null,
+          "buy_grade": "B",
+          "buy_score": 59.01,
+          "sector": "금속",
+          "sector_score": 67.4,
+          "sector_leader_rank": 33.0,
+          "weekly_state": "RECOVERING",
+          "rs_score": 30.64637789395071,
+          "rs_20_score": 41.0137731061979,
+          "rs_60_score": 90.60283946123043,
+          "rs_acceleration": 2.635179685664035,
+          "mtt": false,
+          "distance_from_high52_pct": -13.651877133105806,
+          "base_days": 20.0,
+          "base_depth_pct": 7.1,
+          "breakout_extension_pct": 1.200000000000001,
+          "volume_ratio": 1.3009646110522366,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 3.5823950870010224,
+          "atr20_pct": 2.816205533596838,
+          "institutional_fit": false
+        },
+        {
+          "name": "코스맥스",
+          "ticker": "192820",
+          "market": "KOSPI",
+          "strategy_return_pct": -8.085808580858089,
+          "strategy_excess_pct_point": -5.678784152675531,
+          "trade_status": "CLOSED",
+          "exit_reason": "STOP_LOSS_GAP",
+          "buy_grade": "S",
+          "buy_score": 82.04,
+          "sector": "화학",
+          "sector_score": 71.4,
+          "sector_leader_rank": 3.0,
+          "weekly_state": "STRONG",
+          "rs_score": 85.2109783420463,
+          "rs_20_score": 94.47879666545849,
+          "rs_60_score": 95.68438296323262,
+          "rs_acceleration": 9.82464015615605,
+          "mtt": true,
+          "distance_from_high52_pct": -0.9803921568627416,
+          "base_days": 5.0,
+          "base_depth_pct": 13.468013468013467,
+          "breakout_extension_pct": 2.020202020202011,
+          "volume_ratio": 2.110037006852376,
+          "early_state": "CLIMAX_RISK",
+          "gain_since_early_pct": 55.225409836065566,
+          "atr20_pct": 5.628712871287129,
+          "institutional_fit": true
+        },
+        {
+          "name": "아모레퍼시픽",
+          "ticker": "090430",
+          "market": "KOSPI",
+          "strategy_return_pct": -8.16733067729084,
+          "strategy_excess_pct_point": -12.037777643506184,
+          "trade_status": "CLOSED",
+          "exit_reason": "STOP_LOSS",
+          "buy_grade": "B",
+          "buy_score": 66.06,
+          "sector": "화학",
+          "sector_score": 71.4,
+          "sector_leader_rank": 32.0,
+          "weekly_state": "RECOVERING",
+          "rs_score": 48.50186706497386,
+          "rs_20_score": 57.555636100036246,
+          "rs_60_score": 93.37786676374226,
+          "rs_acceleration": 13.506346348288524,
+          "mtt": false,
+          "distance_from_high52_pct": -10.887573964497044,
+          "base_days": 20.0,
+          "base_depth_pct": 17.76718856364874,
+          "breakout_extension_pct": 2.5187202178352575,
+          "volume_ratio": 1.159157936061962,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 13.148009015777617,
+          "atr20_pct": 4.077025232403718,
+          "institutional_fit": true
+        },
+        {
+          "name": "코스맥스비티아이",
+          "ticker": "044820",
+          "market": "KOSPI",
+          "strategy_return_pct": -8.208955223880599,
+          "strategy_excess_pct_point": -6.168117854535427,
+          "trade_status": "CLOSED",
+          "exit_reason": "STOP_LOSS_GAP",
+          "buy_grade": "B",
+          "buy_score": 68.54,
+          "sector": "기타금융",
+          "sector_score": 48.99999999999999,
+          "sector_leader_rank": 2.0,
+          "weekly_state": "STRONG",
+          "rs_score": 81.80993278566093,
+          "rs_20_score": 87.87640449438202,
+          "rs_60_score": 94.3869676010193,
+          "rs_acceleration": 26.489664028662048,
+          "mtt": true,
+          "distance_from_high52_pct": -8.06174957118353,
+          "base_days": 7.0,
+          "base_depth_pct": 13.226452905811623,
+          "breakout_extension_pct": 7.414829659318634,
+          "volume_ratio": 1.047383928766622,
+          "early_state": "CLIMAX_RISK",
+          "gain_since_early_pct": 27.315914489311165,
+          "atr20_pct": 6.942164179104478,
+          "institutional_fit": false
+        },
+        {
+          "name": "아모레퍼시픽홀딩스",
+          "ticker": "002790",
+          "market": "KOSPI",
+          "strategy_return_pct": -8.92857142857143,
+          "strategy_excess_pct_point": -12.799018394786778,
+          "trade_status": "CLOSED",
+          "exit_reason": "STOP_LOSS",
+          "buy_grade": "B",
+          "buy_score": 57.31,
+          "sector": "화학",
+          "sector_score": 71.4,
+          "sector_leader_rank": 70.0,
+          "weekly_state": "RECOVERING",
+          "rs_score": 32.67961165048544,
+          "rs_20_score": 50.666183399782525,
+          "rs_60_score": 91.68401892974153,
+          "rs_acceleration": 7.181291381728439,
+          "mtt": false,
+          "distance_from_high52_pct": -22.11404728789986,
+          "base_days": 20.0,
+          "base_depth_pct": 12.274368231046932,
+          "breakout_extension_pct": 1.0830324909747224,
+          "volume_ratio": 1.6982622235315832,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 7.692307692307687,
+          "atr20_pct": 3.767857142857143,
+          "institutional_fit": false
+        },
+        {
+          "name": "에이피알",
+          "ticker": "278470",
+          "market": "KOSPI",
+          "strategy_return_pct": -9.209100758396538,
+          "strategy_excess_pct_point": -5.877770701008577,
+          "trade_status": "CLOSED",
+          "exit_reason": "STOP_LOSS",
+          "buy_grade": "B",
+          "buy_score": 80.05,
+          "sector": "화학",
+          "sector_score": 71.4,
+          "sector_leader_rank": 8.0,
+          "weekly_state": "STRONG",
+          "rs_score": 82.99290515309933,
+          "rs_20_score": 91.46466110909749,
+          "rs_60_score": 87.28722242446305,
+          "rs_acceleration": 26.600967863065733,
+          "mtt": true,
+          "distance_from_high52_pct": -2.4312896405919715,
+          "base_days": 10.0,
+          "base_depth_pct": 18.874172185430464,
+          "breakout_extension_pct": 1.8763796909492259,
+          "volume_ratio": 1.0983940439070792,
+          "early_state": "CLIMAX_RISK",
+          "gain_since_early_pct": 16.246851385390435,
+          "atr20_pct": 5.64192849404117,
+          "institutional_fit": true
+        },
+        {
+          "name": "한국콜마",
+          "ticker": "161890",
+          "market": "KOSPI",
+          "strategy_return_pct": -9.83302411873841,
+          "strategy_excess_pct_point": -8.335428049872851,
+          "trade_status": "CLOSED",
+          "exit_reason": "STOP_LOSS",
+          "buy_grade": "S",
+          "buy_score": 82.97,
+          "sector": "화학",
+          "sector_score": 71.4,
+          "sector_leader_rank": 2.0,
+          "weekly_state": "STRONG",
+          "rs_score": 90.16467513069455,
+          "rs_20_score": 95.62703878216745,
+          "rs_60_score": 96.00873680378595,
+          "rs_acceleration": 3.7290648283429135,
+          "mtt": true,
+          "distance_from_high52_pct": -0.12353304508956331,
+          "base_days": 10.0,
+          "base_depth_pct": 18.252933507170795,
+          "breakout_extension_pct": 5.410691003911339,
+          "volume_ratio": 1.0598081269741142,
+          "early_state": "CLIMAX_RISK",
+          "gain_since_early_pct": 59.6248766041461,
+          "atr20_pct": 5.667903525046382,
+          "institutional_fit": true
+        },
+        {
+          "name": "글로벌텍스프리",
+          "ticker": "204620",
+          "market": "KOSDAQ",
+          "strategy_return_pct": -9.899328859060407,
+          "strategy_excess_pct_point": -4.150351628349902,
+          "trade_status": "CLOSED",
+          "exit_reason": "STOP_LOSS",
+          "buy_grade": "B",
+          "buy_score": 67.42,
+          "sector": "금융",
+          "sector_score": 80.6,
+          "sector_leader_rank": 8.0,
+          "weekly_state": "RECOVERING",
+          "rs_score": 85.8024645257655,
+          "rs_20_score": 84.75462123957956,
+          "rs_60_score": 92.15253003276301,
+          "rs_acceleration": 6.462038993850598,
+          "mtt": false,
+          "distance_from_high52_pct": -17.565698478561554,
+          "base_days": 15.0,
+          "base_depth_pct": 16.49122807017544,
+          "breakout_extension_pct": 4.561403508771922,
+          "volume_ratio": 6.0137445438028445,
+          "early_state": "NORMAL",
+          "gain_since_early_pct": 15.728155339805827,
+          "atr20_pct": 5.444630872483222,
+          "institutional_fit": false
+        },
+        {
+          "name": "씨젠",
+          "ticker": "096530",
+          "market": "KOSDAQ",
+          "strategy_return_pct": -9.957924263674611,
+          "strategy_excess_pct_point": -5.851341565472068,
+          "trade_status": "CLOSED",
+          "exit_reason": "STOP_LOSS",
+          "buy_grade": "B",
+          "buy_score": 75.79,
+          "sector": "제약",
+          "sector_score": 46.2,
+          "sector_leader_rank": 2.0,
+          "weekly_state": "STRONG",
+          "rs_score": 86.20911127707244,
+          "rs_20_score": 84.46756071040232,
+          "rs_60_score": 81.95340371314161,
+          "rs_acceleration": 2.4711493509806104,
+          "mtt": true,
+          "distance_from_high52_pct": -0.2797202797202747,
+          "base_days": 15.0,
+          "base_depth_pct": 18.114874815905743,
+          "breakout_extension_pct": 5.007363770250373,
+          "volume_ratio": 3.156406819275452,
+          "early_state": "NO_EARLY",
+          "gain_since_early_pct": null,
+          "atr20_pct": 5.119214586255259,
+          "institutional_fit": true
+        }
+      ]
+    },
+    "2026-09-04": {
+      "count": 8,
+      "performance": {
+        "avg_strategy_return_pct": 2.3114,
+        "median_strategy_return_pct": 0.0437,
+        "avg_excess_pct_point": 0.4082,
+        "win_rate_pct": 50.0,
+        "beat_benchmark_rate_pct": 37.5,
+        "stop_loss_rate_pct": 12.5,
+        "winners": 4,
+        "losers": 4,
+        "stop_losses": 1
+      },
+      "numeric": {
+        "rs_score": {
+          "count": 8,
+          "mean": 61.5004,
+          "median": 67.8498,
+          "min": 20.9025,
+          "max": 92.3038
+        },
+        "rs_20_score": {
+          "count": 8,
+          "mean": 84.0858,
+          "median": 79.9256,
+          "min": 75.7587,
+          "max": 95.2103
+        },
+        "rs_60_score": {
+          "count": 8,
+          "mean": 83.0706,
+          "median": 85.215,
+          "min": 68.5828,
+          "max": 95.36
+        },
+        "rs_acceleration": {
+          "count": 8,
+          "mean": 3.4608,
+          "median": 2.3755,
+          "min": 0.6231,
+          "max": 9.4257
+        },
+        "distance_from_high52_pct": {
+          "count": 8,
+          "mean": -17.3513,
+          "median": -16.8807,
+          "min": -29.7483,
+          "max": -5.074
+        },
+        "base_days": {
+          "count": 8,
+          "mean": 14.25,
+          "median": 15.0,
+          "min": 7.0,
+          "max": 20.0
+        },
+        "base_depth_pct": {
+          "count": 8,
+          "mean": 13.589,
+          "median": 13.6367,
+          "min": 4.8071,
+          "max": 18.4679
+        },
+        "distance_to_base_high_pct": {
+          "count": 8,
+          "mean": 3.2002,
+          "median": 1.9713,
+          "min": 0.0732,
+          "max": 9.8495
+        },
+        "volume_ratio": {
+          "count": 8,
+          "mean": 1.8598,
+          "median": 1.3688,
+          "min": 1.1286,
+          "max": 4.1835
+        },
+        "buy_score": {
+          "count": 8,
+          "mean": 62.15,
+          "median": 61.705,
+          "min": 50.04,
+          "max": 69.68
+        },
+        "sector_score": {
+          "count": 8,
+          "mean": 51.25,
+          "median": 47.1,
+          "min": 7.6,
+          "max": 88.0
+        },
+        "sector_leader_rank": {
+          "count": 8,
+          "mean": 6.375,
+          "median": 5.0,
+          "min": 1.0,
+          "max": 19.0
+        },
+        "atr20_pct": {
+          "count": 8,
+          "mean": 4.8612,
+          "median": 3.9254,
+          "min": 2.5347,
+          "max": 9.5704
+        },
+        "market_cap": {
+          "count": 8,
+          "mean": 1879323856875.0,
+          "median": 422257042150.0,
+          "min": 203127600000.0,
+          "max": 9747292734000.0
+        },
+        "gain_since_early_pct": {
+          "count": 7,
+          "mean": 10.7267,
+          "median": 13.3858,
+          "min": 0.0,
+          "max": 28.6798
+        },
+        "trading_days_since_early": {
+          "count": 7,
+          "mean": 11.0,
+          "median": 8.0,
+          "min": 0.0,
+          "max": 22.0
+        }
+      },
+      "categorical": {
+        "market": {
+          "KOSDAQ": {
+            "count": 4,
+            "pct": 50.0
+          },
+          "KOSPI": {
+            "count": 4,
+            "pct": 50.0
+          }
+        },
+        "buy_grade": {
+          "B": {
+            "count": 5,
+            "pct": 62.5
+          },
+          "A": {
+            "count": 2,
+            "pct": 25.0
+          },
+          "C": {
+            "count": 1,
+            "pct": 12.5
+          }
+        },
+        "weekly_state": {
+          "STRONG": {
+            "count": 3,
+            "pct": 37.5
+          },
+          "RECOVERING": {
+            "count": 3,
+            "pct": 37.5
+          },
+          "GOOD": {
+            "count": 2,
+            "pct": 25.0
+          }
+        },
+        "early_state": {
+          "FRESH": {
+            "count": 6,
+            "pct": 75.0
+          },
+          "NO_EARLY": {
+            "count": 1,
+            "pct": 12.5
+          },
+          "NORMAL": {
+            "count": 1,
+            "pct": 12.5
+          }
+        },
+        "mtt": {
+          "False": {
+            "count": 5,
+            "pct": 62.5
+          },
+          "True": {
+            "count": 3,
+            "pct": 37.5
+          }
+        },
+        "institutional_fit": {
+          "False": {
+            "count": 5,
+            "pct": 62.5
+          },
+          "True": {
+            "count": 3,
+            "pct": 37.5
+          }
+        },
+        "sector": {
+          "기계·장비": {
+            "count": 2,
+            "pct": 25.0
+          },
+          "의료·정밀기기": {
+            "count": 1,
+            "pct": 12.5
+          },
+          "IT 서비스": {
+            "count": 1,
+            "pct": 12.5
+          },
+          "종이·목재": {
+            "count": 1,
+            "pct": 12.5
+          },
+          "전기·가스": {
+            "count": 1,
+            "pct": 12.5
+          },
+          "기타금융": {
+            "count": 1,
+            "pct": 12.5
+          },
+          "운송·창고": {
+            "count": 1,
+            "pct": 12.5
+          }
+        }
+      },
+      "thresholds": {
+        "leader_rank_le_5_pct": 62.5,
+        "leader_rank_le_10_pct": 87.5,
+        "sector_score_ge_55_pct": 50.0,
+        "sector_score_ge_70_pct": 37.5,
+        "weekly_strong_good_pct": 62.5,
+        "mtt_true_pct": 37.5,
+        "institutional_fit_pct": 37.5,
+        "rs_ge_70_pct": 50.0,
+        "rs_ge_80_pct": 50.0,
+        "breakout_extension_le_3_pct": 75.0,
+        "breakout_extension_gt_5_pct": 25.0,
+        "base_depth_le_15_pct": 62.5,
+        "volume_ratio_ge_2_pct": 37.5,
+        "early_no_early_pct": 12.5,
+        "early_late_climax_pct": 0.0
+      },
+      "rows": [
+        {
+          "name": "인텍플러스",
+          "ticker": "064290",
+          "market": "KOSDAQ",
+          "strategy_return_pct": 22.83437110834371,
+          "strategy_excess_pct_point": 21.956682110187582,
+          "trade_status": "PARTIAL",
+          "exit_reason": null,
+          "buy_grade": "C",
+          "buy_score": 50.04,
+          "sector": "기계·장비",
+          "sector_score": 28.199999999999996,
+          "sector_leader_rank": 19.0,
+          "weekly_state": "GOOD",
+          "rs_score": 92.30381165919283,
+          "rs_20_score": 95.12046444121916,
+          "rs_60_score": 68.58281761922098,
+          "rs_acceleration": 1.9542970960860373,
+          "mtt": false,
+          "distance_from_high52_pct": -25.785582255083185,
+          "base_days": 10.0,
+          "base_depth_pct": 18.467852257181942,
+          "breakout_extension_pct": 9.849521203830381,
+          "volume_ratio": 2.279764150434942,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "atr20_pct": 9.570361145703611,
+          "institutional_fit": true
+        },
+        {
+          "name": "피에스케이홀딩스",
+          "ticker": "031980",
+          "market": "KOSDAQ",
+          "strategy_return_pct": 9.027777777777768,
+          "strategy_excess_pct_point": 8.150088779621644,
+          "trade_status": "OPEN",
+          "exit_reason": null,
+          "buy_grade": "B",
+          "buy_score": 56.24,
+          "sector": "기계·장비",
+          "sector_score": 28.199999999999996,
+          "sector_leader_rank": 7.0,
+          "weekly_state": "GOOD",
+          "rs_score": 91.85986547085201,
+          "rs_20_score": 95.21026850507982,
+          "rs_60_score": 69.12340735347652,
+          "rs_acceleration": 0.6231216321664306,
+          "mtt": true,
+          "distance_from_high52_pct": -16.763005780346816,
+          "base_days": 7.0,
+          "base_depth_pct": 16.232315711094564,
+          "breakout_extension_pct": 7.222635889798967,
+          "volume_ratio": 1.5280166232617391,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 13.38582677165354,
+          "atr20_pct": 7.75,
+          "institutional_fit": true
+        },
+        {
+          "name": "코메론",
+          "ticker": "049430",
+          "market": "KOSDAQ",
+          "strategy_return_pct": 1.1135857461024523,
+          "strategy_excess_pct_point": 0.2358967479463292,
+          "trade_status": "OPEN",
+          "exit_reason": null,
+          "buy_grade": "B",
+          "buy_score": 60.46,
+          "sector": "의료·정밀기기",
+          "sector_score": 7.6,
+          "sector_leader_rank": 3.0,
+          "weekly_state": "STRONG",
+          "rs_score": 87.9383408071749,
+          "rs_20_score": 78.30914368650217,
+          "rs_60_score": 88.80087368037859,
+          "rs_acceleration": 1.7661974165849017,
+          "mtt": true,
+          "distance_from_high52_pct": -5.073995771670193,
+          "base_days": 20.0,
+          "base_depth_pct": 12.359550561797752,
+          "breakout_extension_pct": 0.8988764044943753,
+          "volume_ratio": 4.18347093006335,
+          "early_state": "NO_EARLY",
+          "gain_since_early_pct": null,
+          "atr20_pct": 4.463251670378619,
+          "institutional_fit": false
+        },
+        {
+          "name": "삼천리",
+          "ticker": "004690",
+          "market": "KOSPI",
+          "strategy_return_pct": 0.1463057790782818,
+          "strategy_excess_pct_point": -3.1839320929191617,
+          "trade_status": "OPEN",
+          "exit_reason": null,
+          "buy_grade": "A",
+          "buy_score": 69.68,
+          "sector": "전기·가스",
+          "sector_score": 86.8,
+          "sector_leader_rank": 1.0,
+          "weekly_state": "RECOVERING",
+          "rs_score": 31.076233183856505,
+          "rs_20_score": 79.45863570391873,
+          "rs_60_score": 84.07972333454677,
+          "rs_acceleration": 4.052708165185855,
+          "mtt": false,
+          "distance_from_high52_pct": -15.565163681284744,
+          "base_days": 20.0,
+          "base_depth_pct": 13.250366032210833,
+          "breakout_extension_pct": 0.07320644216690653,
+          "volume_ratio": 1.1368421052631579,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 14.970563498738443,
+          "atr20_pct": 2.53474762253109,
+          "institutional_fit": false
+        },
+        {
+          "name": "리파인",
+          "ticker": "377450",
+          "market": "KOSDAQ",
+          "strategy_return_pct": -0.0589622641509413,
+          "strategy_excess_pct_point": -0.9366512623070644,
+          "trade_status": "OPEN",
+          "exit_reason": null,
+          "buy_grade": "B",
+          "buy_score": 69.46,
+          "sector": "IT 서비스",
+          "sector_score": 26.8,
+          "sector_leader_rank": 5.0,
+          "weekly_state": "STRONG",
+          "rs_score": 87.75336322869956,
+          "rs_20_score": 91.67198838896952,
+          "rs_60_score": 95.3600291226793,
+          "rs_acceleration": 1.7290913840393642,
+          "mtt": false,
+          "distance_from_high52_pct": -6.556473829201104,
+          "base_days": 10.0,
+          "base_depth_pct": 4.807121661721069,
+          "breakout_extension_pct": 0.6528189910979254,
+          "volume_ratio": 1.1651987748532684,
+          "early_state": "NORMAL",
+          "gain_since_early_pct": 28.67981790591805,
+          "atr20_pct": 3.0689858490566038,
+          "institutional_fit": false
+        },
+        {
+          "name": "아세아제지",
+          "ticker": "002310",
+          "market": "KOSPI",
+          "strategy_return_pct": -1.3574660633484117,
+          "strategy_excess_pct_point": -4.687703935345855,
+          "trade_status": "OPEN",
+          "exit_reason": null,
+          "buy_grade": "B",
+          "buy_score": 62.95,
+          "sector": "종이·목재",
+          "sector_score": 88.0,
+          "sector_leader_rank": 6.0,
+          "weekly_state": "RECOVERING",
+          "rs_score": 32.22309417040359,
+          "rs_20_score": 76.76451378809868,
+          "rs_60_score": 86.35020021842008,
+          "rs_acceleration": 2.796656530373717,
+          "mtt": false,
+          "distance_from_high52_pct": -22.319859402460462,
+          "base_days": 20.0,
+          "base_depth_pct": 14.022988505747128,
+          "breakout_extension_pct": 1.6091954022988464,
+          "volume_ratio": 1.12856202200278,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 3.2710280373831724,
+          "atr20_pct": 3.30316742081448,
+          "institutional_fit": false
+        },
+        {
+          "name": "진에어",
+          "ticker": "272450",
+          "market": "KOSPI",
+          "strategy_return_pct": -3.420195439739415,
+          "strategy_excess_pct_point": -6.750433311736859,
+          "trade_status": "OPEN",
+          "exit_reason": null,
+          "buy_grade": "B",
+          "buy_score": 58.88,
+          "sector": "운송·창고",
+          "sector_score": 78.4,
+          "sector_leader_rank": 5.0,
+          "weekly_state": "RECOVERING",
+          "rs_score": 20.902466367713004,
+          "rs_20_score": 75.75870827285921,
+          "rs_60_score": 83.2147797597379,
+          "rs_acceleration": 5.338986158601726,
+          "mtt": false,
+          "distance_from_high52_pct": -29.748283752860416,
+          "base_days": 20.0,
+          "base_depth_pct": 16.666666666666664,
+          "breakout_extension_pct": 2.333333333333343,
+          "volume_ratio": 2.2469522059587455,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "atr20_pct": 3.3876221498371337,
+          "institutional_fit": false
+        },
+        {
+          "name": "한진칼",
+          "ticker": "180640",
+          "market": "KOSPI",
+          "strategy_return_pct": -9.794520547945208,
+          "strategy_excess_pct_point": -11.518557926762377,
+          "trade_status": "CLOSED",
+          "exit_reason": "STOP_LOSS_GAP",
+          "buy_grade": "A",
+          "buy_score": 69.49,
+          "sector": "기타금융",
+          "sector_score": 66.0,
+          "sector_leader_rank": 5.0,
+          "weekly_state": "STRONG",
+          "rs_score": 47.946188340807176,
+          "rs_20_score": 80.39259796806967,
+          "rs_60_score": 89.05314888969785,
+          "rs_acceleration": 9.4256506260947,
+          "mtt": true,
+          "distance_from_high52_pct": -16.99829448550313,
+          "base_days": 7.0,
+          "base_depth_pct": 12.905500705218618,
+          "breakout_extension_pct": 2.961918194640334,
+          "volume_ratio": 1.2095723898415456,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 14.779874213836486,
+          "atr20_pct": 4.811643835616438,
+          "institutional_fit": true
+        }
+      ]
+    }
+  },
+  "combined_winner_loser": {
+    "winner": {
+      "count": 6,
+      "numeric": {
+        "rs_score": {
+          "count": 6,
+          "mean": 68.9151,
+          "median": 82.3234,
+          "min": 31.0762,
+          "max": 92.3038
+        },
+        "rs_20_score": {
+          "count": 6,
+          "mean": 83.3734,
+          "median": 84.3852,
+          "min": 62.8304,
+          "max": 95.2103
+        },
+        "rs_60_score": {
+          "count": 6,
+          "mean": 81.1605,
+          "median": 84.9807,
+          "min": 68.5828,
+          "max": 90.4947
+        },
+        "rs_acceleration": {
+          "count": 6,
+          "mean": 5.4342,
+          "median": 3.0035,
+          "min": 0.6231,
+          "max": 19.6513
+        },
+        "sector_score": {
+          "count": 6,
+          "mean": 49.8,
+          "median": 49.8,
+          "min": 7.6,
+          "max": 86.8
+        },
+        "sector_leader_rank": {
+          "count": 6,
+          "mean": 9.1667,
+          "median": 5.5,
+          "min": 1.0,
+          "max": 21.0
+        },
+        "base_depth_pct": {
+          "count": 6,
+          "mean": 14.4955,
+          "median": 13.6496,
+          "min": 12.3596,
+          "max": 18.4679
+        },
+        "distance_to_base_high_pct": {
+          "count": 6,
+          "mean": 3.9824,
+          "median": 2.9252,
+          "min": 0.0732,
+          "max": 9.8495
+        },
+        "volume_ratio": {
+          "count": 6,
+          "mean": 2.1732,
+          "median": 1.9555,
+          "min": 1.1368,
+          "max": 4.1835
+        },
+        "atr20_pct": {
+          "count": 6,
+          "mean": 5.284,
+          "median": 4.8514,
+          "min": 2.1461,
+          "max": 9.5704
+        },
+        "distance_from_high52_pct": {
+          "count": 6,
+          "mean": -14.4316,
+          "median": -16.1641,
+          "min": -25.7856,
+          "max": -2.1053
+        }
+      },
+      "weekly_state": {
+        "RECOVERING": {
+          "count": 3,
+          "pct": 50.0
+        },
+        "GOOD": {
+          "count": 2,
+          "pct": 33.33
+        },
+        "STRONG": {
+          "count": 1,
+          "pct": 16.67
+        }
+      },
+      "early_state": {
+        "FRESH": {
+          "count": 5,
+          "pct": 83.33
+        },
+        "NO_EARLY": {
+          "count": 1,
+          "pct": 16.67
+        }
+      }
+    },
+    "loser": {
+      "count": 15,
+      "numeric": {
+        "rs_score": {
+          "count": 15,
+          "mean": 61.0877,
+          "median": 74.5273,
+          "min": 20.9025,
+          "max": 90.1647
+        },
+        "rs_20_score": {
+          "count": 15,
+          "mean": 75.4319,
+          "median": 80.3926,
+          "min": 41.0138,
+          "max": 95.627
+        },
+        "rs_60_score": {
+          "count": 15,
+          "mean": 89.4712,
+          "median": 90.6028,
+          "min": 76.4754,
+          "max": 96.0087
+        },
+        "rs_acceleration": {
+          "count": 15,
+          "mean": 8.3673,
+          "median": 6.462,
+          "min": 0.2495,
+          "max": 26.601
+        },
+        "sector_score": {
+          "count": 15,
+          "mean": 64.0533,
+          "median": 71.4,
+          "min": 26.8,
+          "max": 88.0
+        },
+        "sector_leader_rank": {
+          "count": 15,
+          "mean": 15.5333,
+          "median": 5.0,
+          "min": 2.0,
+          "max": 70.0
+        },
+        "base_depth_pct": {
+          "count": 15,
+          "mean": 14.5026,
+          "median": 14.8855,
+          "min": 4.8071,
+          "max": 18.8742
+        },
+        "distance_to_base_high_pct": {
+          "count": 15,
+          "mean": 2.8437,
+          "median": 2.3333,
+          "min": 0.6528,
+          "max": 7.4148
+        },
+        "volume_ratio": {
+          "count": 15,
+          "mean": 1.9861,
+          "median": 1.301,
+          "min": 1.0474,
+          "max": 6.0137
+        },
+        "atr20_pct": {
+          "count": 15,
+          "mean": 4.3449,
+          "median": 4.077,
+          "min": 2.6175,
+          "max": 6.9422
+        },
+        "distance_from_high52_pct": {
+          "count": 15,
+          "mean": -12.3288,
+          "median": -13.355,
+          "min": -29.7483,
+          "max": -0.1235
+        }
+      },
+      "weekly_state": {
+        "RECOVERING": {
+          "count": 8,
+          "pct": 53.33
+        },
+        "STRONG": {
+          "count": 7,
+          "pct": 46.67
+        }
+      },
+      "early_state": {
+        "FRESH": {
+          "count": 7,
+          "pct": 46.67
+        },
+        "CLIMAX_RISK": {
+          "count": 4,
+          "pct": 26.67
+        },
+        "NO_EARLY": {
+          "count": 2,
+          "pct": 13.33
+        },
+        "NORMAL": {
+          "count": 2,
+          "pct": 13.33
+        }
+      }
+    }
+  }
+}
