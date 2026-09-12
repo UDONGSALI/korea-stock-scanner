@@ -23,15 +23,13 @@ jobs:
 
       - run: pip install pandas
 
-      - name: Analyze second filter
-        run: python src/analyze_second_filter_after_early15.py
+      - name: Analyze second filter combos
+        run: python src/analyze_second_filter_combos.py
 
       - name: Commit analysis output
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/second_filter_after_early15.json
-          git commit -m "analysis: evaluate second BUY filter after EARLY15" || exit 0
+          git add data/second_filter_combo_summary.json
+          git commit -m "analysis: evaluate second BUY filter combos" || exit 0
           git push
-
-# exact cohort rerun after merge fix
