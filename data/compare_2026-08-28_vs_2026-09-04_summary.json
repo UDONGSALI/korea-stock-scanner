@@ -1,0 +1,530 @@
+{
+  "comparison": {
+    "2026-08-28": {
+      "count": 13,
+      "performance": {
+        "avg_strategy_return_pct": -6.4734,
+        "median_strategy_return_pct": -8.1673,
+        "avg_excess_pct_point": -5.9826,
+        "win_rate_pct": 15.38,
+        "beat_benchmark_rate_pct": 0.0,
+        "stop_loss_rate_pct": 61.54,
+        "winners": 2,
+        "losers": 11,
+        "stop_losses": 8
+      },
+      "numeric": {
+        "rs_score": {
+          "mean": 64.4464,
+          "median": 76.7084
+        },
+        "rs_20_score": {
+          "mean": 73.7718,
+          "median": 84.4676
+        },
+        "rs_60_score": {
+          "mean": 89.5743,
+          "median": 90.6028
+        },
+        "rs_acceleration": {
+          "mean": 10.0329,
+          "median": 7.069
+        },
+        "sector_score": {
+          "mean": 65.3538,
+          "median": 71.4
+        },
+        "sector_leader_rank": {
+          "mean": 18.2308,
+          "median": 8.0
+        },
+        "distance_from_high52_pct": {
+          "mean": -10.2085,
+          "median": -10.8876
+        },
+        "base_days": {
+          "mean": 14.7692,
+          "median": 15.0
+        },
+        "base_depth_pct": {
+          "mean": 15.0615,
+          "median": 14.8855
+        },
+        "distance_to_base_high_pct": {
+          "mean": 3.1499,
+          "median": 2.4788
+        },
+        "volume_ratio": {
+          "mean": 2.1502,
+          "median": 1.8682
+        },
+        "atr20_pct": {
+          "mean": 4.4606,
+          "median": 5.1192
+        },
+        "gain_since_early_pct": {
+          "mean": 19.9243,
+          "median": 13.148
+        }
+      },
+      "thresholds": {
+        "leader_rank_le_5_pct": 46.15,
+        "leader_rank_le_10_pct": 61.54,
+        "sector_score_ge_55_pct": 76.92,
+        "sector_score_ge_70_pct": 61.54,
+        "weekly_strong_good_pct": 38.46,
+        "mtt_true_pct": 46.15,
+        "institutional_fit_pct": 46.15,
+        "rs_ge_70_pct": 61.54,
+        "rs_ge_80_pct": 46.15,
+        "breakout_extension_le_3_pct": 61.54,
+        "breakout_extension_gt_5_pct": 23.08,
+        "base_depth_le_15_pct": 53.85,
+        "volume_ratio_ge_2_pct": 46.15,
+        "early_no_early_pct": 15.38,
+        "early_late_climax_pct": 0.0
+      },
+      "market": {
+        "KOSPI": {
+          "count": 10,
+          "pct": 76.92
+        },
+        "KOSDAQ": {
+          "count": 3,
+          "pct": 23.08
+        }
+      },
+      "buy_grade": {
+        "B": {
+          "count": 11,
+          "pct": 84.62
+        },
+        "S": {
+          "count": 2,
+          "pct": 15.38
+        }
+      },
+      "weekly_state": {
+        "RECOVERING": {
+          "count": 8,
+          "pct": 61.54
+        },
+        "STRONG": {
+          "count": 5,
+          "pct": 38.46
+        }
+      },
+      "early_state": {
+        "FRESH": {
+          "count": 6,
+          "pct": 46.15
+        },
+        "CLIMAX_RISK": {
+          "count": 4,
+          "pct": 30.77
+        },
+        "NO_EARLY": {
+          "count": 2,
+          "pct": 15.38
+        },
+        "NORMAL": {
+          "count": 1,
+          "pct": 7.69
+        }
+      },
+      "sector": {
+        "화학": {
+          "count": 6,
+          "pct": 46.15
+        },
+        "IT 서비스": {
+          "count": 1,
+          "pct": 7.69
+        },
+        "제약": {
+          "count": 1,
+          "pct": 7.69
+        },
+        "금융": {
+          "count": 1,
+          "pct": 7.69
+        },
+        "기타금융": {
+          "count": 1,
+          "pct": 7.69
+        },
+        "보험": {
+          "count": 1,
+          "pct": 7.69
+        },
+        "금속": {
+          "count": 1,
+          "pct": 7.69
+        },
+        "비금속": {
+          "count": 1,
+          "pct": 7.69
+        }
+      },
+      "mtt": {
+        "False": {
+          "count": 7,
+          "pct": 53.85
+        },
+        "True": {
+          "count": 6,
+          "pct": 46.15
+        }
+      },
+      "institutional_fit": {
+        "False": {
+          "count": 7,
+          "pct": 53.85
+        },
+        "True": {
+          "count": 6,
+          "pct": 46.15
+        }
+      }
+    },
+    "2026-09-04": {
+      "count": 8,
+      "performance": {
+        "avg_strategy_return_pct": 2.3114,
+        "median_strategy_return_pct": 0.0437,
+        "avg_excess_pct_point": 0.4082,
+        "win_rate_pct": 50.0,
+        "beat_benchmark_rate_pct": 37.5,
+        "stop_loss_rate_pct": 12.5,
+        "winners": 4,
+        "losers": 4,
+        "stop_losses": 1
+      },
+      "numeric": {
+        "rs_score": {
+          "mean": 61.5004,
+          "median": 67.8498
+        },
+        "rs_20_score": {
+          "mean": 84.0858,
+          "median": 79.9256
+        },
+        "rs_60_score": {
+          "mean": 83.0706,
+          "median": 85.215
+        },
+        "rs_acceleration": {
+          "mean": 3.4608,
+          "median": 2.3755
+        },
+        "sector_score": {
+          "mean": 51.25,
+          "median": 47.1
+        },
+        "sector_leader_rank": {
+          "mean": 6.375,
+          "median": 5.0
+        },
+        "distance_from_high52_pct": {
+          "mean": -17.3513,
+          "median": -16.8807
+        },
+        "base_days": {
+          "mean": 14.25,
+          "median": 15.0
+        },
+        "base_depth_pct": {
+          "mean": 13.589,
+          "median": 13.6367
+        },
+        "distance_to_base_high_pct": {
+          "mean": 3.2002,
+          "median": 1.9713
+        },
+        "volume_ratio": {
+          "mean": 1.8598,
+          "median": 1.3688
+        },
+        "atr20_pct": {
+          "mean": 4.8612,
+          "median": 3.9254
+        },
+        "gain_since_early_pct": {
+          "mean": 10.7267,
+          "median": 13.3858
+        }
+      },
+      "thresholds": {
+        "leader_rank_le_5_pct": 62.5,
+        "leader_rank_le_10_pct": 87.5,
+        "sector_score_ge_55_pct": 50.0,
+        "sector_score_ge_70_pct": 37.5,
+        "weekly_strong_good_pct": 62.5,
+        "mtt_true_pct": 37.5,
+        "institutional_fit_pct": 37.5,
+        "rs_ge_70_pct": 50.0,
+        "rs_ge_80_pct": 50.0,
+        "breakout_extension_le_3_pct": 75.0,
+        "breakout_extension_gt_5_pct": 25.0,
+        "base_depth_le_15_pct": 62.5,
+        "volume_ratio_ge_2_pct": 37.5,
+        "early_no_early_pct": 12.5,
+        "early_late_climax_pct": 0.0
+      },
+      "market": {
+        "KOSDAQ": {
+          "count": 4,
+          "pct": 50.0
+        },
+        "KOSPI": {
+          "count": 4,
+          "pct": 50.0
+        }
+      },
+      "buy_grade": {
+        "B": {
+          "count": 5,
+          "pct": 62.5
+        },
+        "A": {
+          "count": 2,
+          "pct": 25.0
+        },
+        "C": {
+          "count": 1,
+          "pct": 12.5
+        }
+      },
+      "weekly_state": {
+        "STRONG": {
+          "count": 3,
+          "pct": 37.5
+        },
+        "RECOVERING": {
+          "count": 3,
+          "pct": 37.5
+        },
+        "GOOD": {
+          "count": 2,
+          "pct": 25.0
+        }
+      },
+      "early_state": {
+        "FRESH": {
+          "count": 6,
+          "pct": 75.0
+        },
+        "NO_EARLY": {
+          "count": 1,
+          "pct": 12.5
+        },
+        "NORMAL": {
+          "count": 1,
+          "pct": 12.5
+        }
+      },
+      "sector": {
+        "기계·장비": {
+          "count": 2,
+          "pct": 25.0
+        },
+        "의료·정밀기기": {
+          "count": 1,
+          "pct": 12.5
+        },
+        "IT 서비스": {
+          "count": 1,
+          "pct": 12.5
+        },
+        "종이·목재": {
+          "count": 1,
+          "pct": 12.5
+        },
+        "전기·가스": {
+          "count": 1,
+          "pct": 12.5
+        },
+        "기타금융": {
+          "count": 1,
+          "pct": 12.5
+        },
+        "운송·창고": {
+          "count": 1,
+          "pct": 12.5
+        }
+      },
+      "mtt": {
+        "False": {
+          "count": 5,
+          "pct": 62.5
+        },
+        "True": {
+          "count": 3,
+          "pct": 37.5
+        }
+      },
+      "institutional_fit": {
+        "False": {
+          "count": 5,
+          "pct": 62.5
+        },
+        "True": {
+          "count": 3,
+          "pct": 37.5
+        }
+      }
+    }
+  },
+  "combined_winner_loser": {
+    "winner": {
+      "count": 6,
+      "numeric": {
+        "rs_score": {
+          "mean": 68.9151,
+          "median": 82.3234
+        },
+        "rs_20_score": {
+          "mean": 83.3734,
+          "median": 84.3852
+        },
+        "rs_60_score": {
+          "mean": 81.1605,
+          "median": 84.9807
+        },
+        "rs_acceleration": {
+          "mean": 5.4342,
+          "median": 3.0035
+        },
+        "sector_score": {
+          "mean": 49.8,
+          "median": 49.8
+        },
+        "sector_leader_rank": {
+          "mean": 9.1667,
+          "median": 5.5
+        },
+        "base_depth_pct": {
+          "mean": 14.4955,
+          "median": 13.6496
+        },
+        "distance_to_base_high_pct": {
+          "mean": 3.9824,
+          "median": 2.9252
+        },
+        "volume_ratio": {
+          "mean": 2.1732,
+          "median": 1.9555
+        },
+        "atr20_pct": {
+          "mean": 5.284,
+          "median": 4.8514
+        },
+        "distance_from_high52_pct": {
+          "mean": -14.4316,
+          "median": -16.1641
+        }
+      },
+      "weekly_state": {
+        "RECOVERING": {
+          "count": 3,
+          "pct": 50.0
+        },
+        "GOOD": {
+          "count": 2,
+          "pct": 33.33
+        },
+        "STRONG": {
+          "count": 1,
+          "pct": 16.67
+        }
+      },
+      "early_state": {
+        "FRESH": {
+          "count": 5,
+          "pct": 83.33
+        },
+        "NO_EARLY": {
+          "count": 1,
+          "pct": 16.67
+        }
+      }
+    },
+    "loser": {
+      "count": 15,
+      "numeric": {
+        "rs_score": {
+          "mean": 61.0877,
+          "median": 74.5273
+        },
+        "rs_20_score": {
+          "mean": 75.4319,
+          "median": 80.3926
+        },
+        "rs_60_score": {
+          "mean": 89.4712,
+          "median": 90.6028
+        },
+        "rs_acceleration": {
+          "mean": 8.3673,
+          "median": 6.462
+        },
+        "sector_score": {
+          "mean": 64.0533,
+          "median": 71.4
+        },
+        "sector_leader_rank": {
+          "mean": 15.5333,
+          "median": 5.0
+        },
+        "base_depth_pct": {
+          "mean": 14.5026,
+          "median": 14.8855
+        },
+        "distance_to_base_high_pct": {
+          "mean": 2.8437,
+          "median": 2.3333
+        },
+        "volume_ratio": {
+          "mean": 1.9861,
+          "median": 1.301
+        },
+        "atr20_pct": {
+          "mean": 4.3449,
+          "median": 4.077
+        },
+        "distance_from_high52_pct": {
+          "mean": -12.3288,
+          "median": -13.355
+        }
+      },
+      "weekly_state": {
+        "RECOVERING": {
+          "count": 8,
+          "pct": 53.33
+        },
+        "STRONG": {
+          "count": 7,
+          "pct": 46.67
+        }
+      },
+      "early_state": {
+        "FRESH": {
+          "count": 7,
+          "pct": 46.67
+        },
+        "CLIMAX_RISK": {
+          "count": 4,
+          "pct": 26.67
+        },
+        "NO_EARLY": {
+          "count": 2,
+          "pct": 13.33
+        },
+        "NORMAL": {
+          "count": 2,
+          "pct": 13.33
+        }
+      }
+    }
+  }
+}
