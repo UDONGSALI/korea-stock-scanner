@@ -1,0 +1,1390 @@
+{
+  "subset_rule": "gain_since_early_pct is null OR < 15%",
+  "baseline": {
+    "count": 62,
+    "avg_return": -2.0615,
+    "median_return": -1.959,
+    "avg_excess": -3.0057,
+    "win_rate": 37.1,
+    "beat_rate": 20.97,
+    "stop_rate": 24.19,
+    "large_winner_count": 4
+  },
+  "large_winners": [
+    {
+      "capture_date": "2026-09-04",
+      "ticker": "064290",
+      "name": "인텍플러스",
+      "return": 22.8344
+    },
+    {
+      "capture_date": "2026-09-09",
+      "ticker": "012630",
+      "name": "HDC",
+      "return": 15.1822
+    },
+    {
+      "capture_date": "2026-09-04",
+      "ticker": "031980",
+      "name": "피에스케이홀딩스",
+      "return": 9.0278
+    },
+    {
+      "capture_date": "2026-08-25",
+      "ticker": "080580",
+      "name": "오킨스전자",
+      "return": 8.7629
+    }
+  ],
+  "winner_vs_loser": {
+    "winner_count": 23,
+    "loser_count": 37,
+    "winner_numeric": {
+      "rs_score": {
+        "count": 16,
+        "mean": 61.0166,
+        "median": 66.3123
+      },
+      "rs_20_score": {
+        "count": 16,
+        "mean": 77.9,
+        "median": 80.4856
+      },
+      "rs_60_score": {
+        "count": 16,
+        "mean": 84.7089,
+        "median": 85.7711
+      },
+      "rs_acceleration": {
+        "count": 16,
+        "mean": 4.9097,
+        "median": 3.8761
+      },
+      "sector_score": {
+        "count": 16,
+        "mean": 52.075,
+        "median": 55.9
+      },
+      "sector_leader_rank": {
+        "count": 16,
+        "mean": 10.9375,
+        "median": 10.5
+      },
+      "distance_from_high52_pct": {
+        "count": 16,
+        "mean": -15.0295,
+        "median": -17.09
+      },
+      "base_days": {
+        "count": 16,
+        "mean": 15.5625,
+        "median": 20.0
+      },
+      "base_depth_pct": {
+        "count": 16,
+        "mean": 14.3134,
+        "median": 13.6496
+      },
+      "breakout_extension_pct": {
+        "count": 16,
+        "mean": 3.3297,
+        "median": 2.5712
+      },
+      "volume_ratio": {
+        "count": 16,
+        "mean": 2.0225,
+        "median": 1.8641
+      },
+      "atr20_pct": {
+        "count": 16,
+        "mean": 5.0005,
+        "median": 4.3875
+      },
+      "market_cap": {
+        "count": 16,
+        "mean": 4059787063583.125,
+        "median": 492318949250.0
+      },
+      "buy_score_capture": {
+        "count": 16,
+        "mean": 61.7987,
+        "median": 61.805
+      }
+    },
+    "loser_numeric": {
+      "rs_score": {
+        "count": 25,
+        "mean": 53.8651,
+        "median": 36.7365
+      },
+      "rs_20_score": {
+        "count": 25,
+        "mean": 75.9234,
+        "median": 80.3926
+      },
+      "rs_60_score": {
+        "count": 25,
+        "mean": 79.4978,
+        "median": 84.0797
+      },
+      "rs_acceleration": {
+        "count": 25,
+        "mean": 4.7622,
+        "median": 3.7593
+      },
+      "sector_score": {
+        "count": 25,
+        "mean": 54.816,
+        "median": 53.6
+      },
+      "sector_leader_rank": {
+        "count": 25,
+        "mean": 24.76,
+        "median": 16.0
+      },
+      "distance_from_high52_pct": {
+        "count": 25,
+        "mean": -18.2908,
+        "median": -19.8582
+      },
+      "base_days": {
+        "count": 25,
+        "mean": 15.96,
+        "median": 20.0
+      },
+      "base_depth_pct": {
+        "count": 25,
+        "mean": 14.6801,
+        "median": 14.8855
+      },
+      "breakout_extension_pct": {
+        "count": 25,
+        "mean": 2.734,
+        "median": 2.2026
+      },
+      "volume_ratio": {
+        "count": 25,
+        "mean": 2.3841,
+        "median": 1.9719
+      },
+      "atr20_pct": {
+        "count": 25,
+        "mean": 5.7095,
+        "median": 4.077
+      },
+      "market_cap": {
+        "count": 25,
+        "mean": 7224754792598.0,
+        "median": 727248960900.0
+      },
+      "buy_score_capture": {
+        "count": 25,
+        "mean": 58.8388,
+        "median": 58.65
+      }
+    },
+    "winner_weekly": {
+      "RECOVERING": {
+        "count": 8,
+        "pct": 34.78
+      },
+      "UNKNOWN": {
+        "count": 7,
+        "pct": 30.43
+      },
+      "STRONG": {
+        "count": 5,
+        "pct": 21.74
+      },
+      "GOOD": {
+        "count": 3,
+        "pct": 13.04
+      }
+    },
+    "loser_weekly": {
+      "RECOVERING": {
+        "count": 20,
+        "pct": 54.05
+      },
+      "UNKNOWN": {
+        "count": 12,
+        "pct": 32.43
+      },
+      "STRONG": {
+        "count": 4,
+        "pct": 10.81
+      },
+      "GOOD": {
+        "count": 1,
+        "pct": 2.7
+      }
+    },
+    "winner_market": {
+      "KOSPI": {
+        "count": 16,
+        "pct": 69.57
+      },
+      "KOSDAQ": {
+        "count": 7,
+        "pct": 30.43
+      }
+    },
+    "loser_market": {
+      "KOSPI": {
+        "count": 27,
+        "pct": 72.97
+      },
+      "KOSDAQ": {
+        "count": 10,
+        "pct": 27.03
+      }
+    },
+    "winner_mtt": {
+      "False": {
+        "count": 17,
+        "pct": 73.91
+      },
+      "True": {
+        "count": 6,
+        "pct": 26.09
+      }
+    },
+    "loser_mtt": {
+      "False": {
+        "count": 31,
+        "pct": 83.78
+      },
+      "True": {
+        "count": 6,
+        "pct": 16.22
+      }
+    },
+    "winner_institutional": {
+      "False": {
+        "count": 17,
+        "pct": 73.91
+      },
+      "True": {
+        "count": 6,
+        "pct": 26.09
+      }
+    },
+    "loser_institutional": {
+      "False": {
+        "count": 28,
+        "pct": 75.68
+      },
+      "True": {
+        "count": 9,
+        "pct": 24.32
+      }
+    }
+  },
+  "robust_second_filter_candidates": [],
+  "top_all_single_filters": [
+    {
+      "name": "sector_score <= 40",
+      "count": 10,
+      "avg_return": 2.6933,
+      "median_return": 0.2152,
+      "avg_excess": 2.5481,
+      "win_rate": 50.0,
+      "beat_rate": 50.0,
+      "stop_rate": 0.0,
+      "large_winner_count": 2,
+      "kept_pct": 16.13,
+      "delta_return": 4.7548,
+      "delta_excess": 5.5538,
+      "delta_stop_rate": -24.19,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "atr20_pct >= 6",
+      "count": 10,
+      "avg_return": 1.8006,
+      "median_return": 0.024,
+      "avg_excess": 2.4496,
+      "win_rate": 50.0,
+      "beat_rate": 50.0,
+      "stop_rate": 0.0,
+      "large_winner_count": 2,
+      "kept_pct": 16.13,
+      "delta_return": 3.8621,
+      "delta_excess": 5.4553,
+      "delta_stop_rate": -24.19,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "breakout_extension_pct >= 3",
+      "count": 15,
+      "avg_return": 1.5997,
+      "median_return": 0.2876,
+      "avg_excess": 1.3624,
+      "win_rate": 53.33,
+      "beat_rate": 33.33,
+      "stop_rate": 6.67,
+      "large_winner_count": 3,
+      "kept_pct": 24.19,
+      "delta_return": 3.6612,
+      "delta_excess": 4.3681,
+      "delta_stop_rate": -17.52,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "2026-08-25:080580"
+      ]
+    },
+    {
+      "name": "주봉_STRONG_GOOD",
+      "count": 13,
+      "avg_return": 1.1331,
+      "median_return": 0.4304,
+      "avg_excess": 0.5347,
+      "win_rate": 61.54,
+      "beat_rate": 46.15,
+      "stop_rate": 15.38,
+      "large_winner_count": 2,
+      "kept_pct": 20.97,
+      "delta_return": 3.1946,
+      "delta_excess": 3.5404,
+      "delta_stop_rate": -8.81,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "rs_20_score >= 90",
+      "count": 11,
+      "avg_return": 1.0357,
+      "median_return": -1.964,
+      "avg_excess": 0.9956,
+      "win_rate": 36.36,
+      "beat_rate": 36.36,
+      "stop_rate": 0.0,
+      "large_winner_count": 2,
+      "kept_pct": 17.74,
+      "delta_return": 3.0972,
+      "delta_excess": 4.0013,
+      "delta_stop_rate": -24.19,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "rs_score >= 80",
+      "count": 13,
+      "avg_return": 0.8371,
+      "median_return": -0.3824,
+      "avg_excess": 1.3499,
+      "win_rate": 46.15,
+      "beat_rate": 46.15,
+      "stop_rate": 7.69,
+      "large_winner_count": 2,
+      "kept_pct": 20.97,
+      "delta_return": 2.8986,
+      "delta_excess": 4.3556,
+      "delta_stop_rate": -16.5,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "rs_60_score <= 80",
+      "count": 10,
+      "avg_return": 0.481,
+      "median_return": -2.3685,
+      "avg_excess": 0.5269,
+      "win_rate": 30.0,
+      "beat_rate": 20.0,
+      "stop_rate": 10.0,
+      "large_winner_count": 2,
+      "kept_pct": 16.13,
+      "delta_return": 2.5425,
+      "delta_excess": 3.5326,
+      "delta_stop_rate": -14.19,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "base_depth_pct >= 17.5",
+      "count": 10,
+      "avg_return": 0.1333,
+      "median_return": -0.6044,
+      "avg_excess": 0.4104,
+      "win_rate": 40.0,
+      "beat_rate": 40.0,
+      "stop_rate": 20.0,
+      "large_winner_count": 1,
+      "kept_pct": 16.13,
+      "delta_return": 2.1948,
+      "delta_excess": 3.4161,
+      "delta_stop_rate": -4.19,
+      "missed_large_winner_count": 3,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-04:031980",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "atr20_pct >= 5",
+      "count": 15,
+      "avg_return": 0.1141,
+      "median_return": -0.8264,
+      "avg_excess": 0.2973,
+      "win_rate": 40.0,
+      "beat_rate": 33.33,
+      "stop_rate": 6.67,
+      "large_winner_count": 2,
+      "kept_pct": 24.19,
+      "delta_return": 2.1756,
+      "delta_excess": 3.303,
+      "delta_stop_rate": -17.52,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "base_days <= 10",
+      "count": 14,
+      "avg_return": -0.1681,
+      "median_return": -1.1732,
+      "avg_excess": -0.2898,
+      "win_rate": 42.86,
+      "beat_rate": 35.71,
+      "stop_rate": 14.29,
+      "large_winner_count": 2,
+      "kept_pct": 22.58,
+      "delta_return": 1.8934,
+      "delta_excess": 2.7159,
+      "delta_stop_rate": -9.9,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "rs_score >= 50",
+      "count": 19,
+      "avg_return": -0.2036,
+      "median_return": -0.3824,
+      "avg_excess": -0.0063,
+      "win_rate": 47.37,
+      "beat_rate": 36.84,
+      "stop_rate": 10.53,
+      "large_winner_count": 2,
+      "kept_pct": 30.65,
+      "delta_return": 1.8579,
+      "delta_excess": 2.9994,
+      "delta_stop_rate": -13.66,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "sector_leader_rank <= 20",
+      "count": 31,
+      "avg_return": -0.2572,
+      "median_return": 0.0,
+      "avg_excess": -1.1643,
+      "win_rate": 45.16,
+      "beat_rate": 25.81,
+      "stop_rate": 12.9,
+      "large_winner_count": 3,
+      "kept_pct": 50.0,
+      "delta_return": 1.8043,
+      "delta_excess": 1.8414,
+      "delta_stop_rate": -11.29,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "2026-08-25:080580"
+      ]
+    },
+    {
+      "name": "rs_score >= 60",
+      "count": 18,
+      "avg_return": -0.276,
+      "median_return": -0.6044,
+      "avg_excess": 0.0055,
+      "win_rate": 44.44,
+      "beat_rate": 38.89,
+      "stop_rate": 11.11,
+      "large_winner_count": 2,
+      "kept_pct": 29.03,
+      "delta_return": 1.7855,
+      "delta_excess": 3.0112,
+      "delta_stop_rate": -13.08,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "rs_score >= 70",
+      "count": 18,
+      "avg_return": -0.276,
+      "median_return": -0.6044,
+      "avg_excess": 0.0055,
+      "win_rate": 44.44,
+      "beat_rate": 38.89,
+      "stop_rate": 11.11,
+      "large_winner_count": 2,
+      "kept_pct": 29.03,
+      "delta_return": 1.7855,
+      "delta_excess": 3.0112,
+      "delta_stop_rate": -13.08,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "volume_ratio >= 2",
+      "count": 20,
+      "avg_return": -0.4004,
+      "median_return": -2.0144,
+      "avg_excess": -1.1846,
+      "win_rate": 35.0,
+      "beat_rate": 15.0,
+      "stop_rate": 10.0,
+      "large_winner_count": 2,
+      "kept_pct": 32.26,
+      "delta_return": 1.6611,
+      "delta_excess": 1.8211,
+      "delta_stop_rate": -14.19,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-04:031980"
+      ]
+    },
+    {
+      "name": "breakout_extension_pct <= 1",
+      "count": 10,
+      "avg_return": -0.401,
+      "median_return": 0.0732,
+      "avg_excess": -2.0152,
+      "win_rate": 50.0,
+      "beat_rate": 20.0,
+      "stop_rate": 0.0,
+      "large_winner_count": 0,
+      "kept_pct": 16.13,
+      "delta_return": 1.6605,
+      "delta_excess": 0.9905,
+      "delta_stop_rate": -24.19,
+      "missed_large_winner_count": 4,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-04:031980",
+        "2026-09-04:064290",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "sector_leader_rank <= 30",
+      "count": 35,
+      "avg_return": -0.5439,
+      "median_return": 0.0,
+      "avg_excess": -1.2297,
+      "win_rate": 45.71,
+      "beat_rate": 25.71,
+      "stop_rate": 11.43,
+      "large_winner_count": 3,
+      "kept_pct": 56.45,
+      "delta_return": 1.5176,
+      "delta_excess": 1.776,
+      "delta_stop_rate": -12.76,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "2026-08-25:080580"
+      ]
+    },
+    {
+      "name": "buy_score_capture >= 60",
+      "count": 19,
+      "avg_return": -0.5993,
+      "median_return": 0.2309,
+      "avg_excess": -1.9,
+      "win_rate": 57.89,
+      "beat_rate": 26.32,
+      "stop_rate": 15.79,
+      "large_winner_count": 1,
+      "kept_pct": 30.65,
+      "delta_return": 1.4622,
+      "delta_excess": 1.1057,
+      "delta_stop_rate": -8.4,
+      "missed_large_winner_count": 3,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-04:031980",
+        "2026-09-04:064290"
+      ]
+    },
+    {
+      "name": "rs_acceleration <= 3",
+      "count": 19,
+      "avg_return": -0.6031,
+      "median_return": -1.3575,
+      "avg_excess": -0.2535,
+      "win_rate": 36.84,
+      "beat_rate": 36.84,
+      "stop_rate": 10.53,
+      "large_winner_count": 2,
+      "kept_pct": 30.65,
+      "delta_return": 1.4584,
+      "delta_excess": 2.7522,
+      "delta_stop_rate": -13.66,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "sector_leader_rank <= 15",
+      "count": 26,
+      "avg_return": -0.6201,
+      "median_return": 0.0,
+      "avg_excess": -1.5997,
+      "win_rate": 46.15,
+      "beat_rate": 26.92,
+      "stop_rate": 11.54,
+      "large_winner_count": 2,
+      "kept_pct": 41.94,
+      "delta_return": 1.4414,
+      "delta_excess": 1.406,
+      "delta_stop_rate": -12.65,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-04:064290"
+      ]
+    },
+    {
+      "name": "rs_acceleration <= 5",
+      "count": 25,
+      "avg_return": -0.6621,
+      "median_return": -1.3575,
+      "avg_excess": -0.3724,
+      "win_rate": 40.0,
+      "beat_rate": 32.0,
+      "stop_rate": 16.0,
+      "large_winner_count": 3,
+      "kept_pct": 40.32,
+      "delta_return": 1.3994,
+      "delta_excess": 2.6333,
+      "delta_stop_rate": -8.19,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "2026-08-25:080580"
+      ]
+    },
+    {
+      "name": "volume_ratio >= 1.5",
+      "count": 31,
+      "avg_return": -0.7086,
+      "median_return": -0.8264,
+      "avg_excess": -1.2399,
+      "win_rate": 41.94,
+      "beat_rate": 25.81,
+      "stop_rate": 16.13,
+      "large_winner_count": 3,
+      "kept_pct": 50.0,
+      "delta_return": 1.3529,
+      "delta_excess": 1.7658,
+      "delta_stop_rate": -8.06,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "2026-08-25:080580"
+      ]
+    },
+    {
+      "name": "MTT_true",
+      "count": 12,
+      "avg_return": -0.748,
+      "median_return": 0.1449,
+      "avg_excess": -1.2828,
+      "win_rate": 50.0,
+      "beat_rate": 33.33,
+      "stop_rate": 16.67,
+      "large_winner_count": 1,
+      "kept_pct": 19.35,
+      "delta_return": 1.3135,
+      "delta_excess": 1.7229,
+      "delta_stop_rate": -7.52,
+      "missed_large_winner_count": 3,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-04:064290",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "atr20_pct >= 4",
+      "count": 22,
+      "avg_return": -0.7591,
+      "median_return": -1.3952,
+      "avg_excess": -0.8839,
+      "win_rate": 40.91,
+      "beat_rate": 31.82,
+      "stop_rate": 22.73,
+      "large_winner_count": 3,
+      "kept_pct": 35.48,
+      "delta_return": 1.3024,
+      "delta_excess": 2.1218,
+      "delta_stop_rate": -1.46,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "2026-08-25:080580"
+      ]
+    },
+    {
+      "name": "base_depth_pct >= 15",
+      "count": 18,
+      "avg_return": -0.7774,
+      "median_return": -2.0144,
+      "avg_excess": -1.3984,
+      "win_rate": 33.33,
+      "beat_rate": 27.78,
+      "stop_rate": 16.67,
+      "large_winner_count": 2,
+      "kept_pct": 29.03,
+      "delta_return": 1.2841,
+      "delta_excess": 1.6073,
+      "delta_stop_rate": -7.52,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "KOSDAQ만",
+      "count": 17,
+      "avg_return": -0.7979,
+      "median_return": -0.8264,
+      "avg_excess": -0.103,
+      "win_rate": 41.18,
+      "beat_rate": 41.18,
+      "stop_rate": 23.53,
+      "large_winner_count": 3,
+      "kept_pct": 27.42,
+      "delta_return": 1.2636,
+      "delta_excess": 2.9027,
+      "delta_stop_rate": -0.66,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "sector_score <= 50",
+      "count": 20,
+      "avg_return": -0.8755,
+      "median_return": -1.5045,
+      "avg_excess": -0.3426,
+      "win_rate": 35.0,
+      "beat_rate": 30.0,
+      "stop_rate": 15.0,
+      "large_winner_count": 2,
+      "kept_pct": 32.26,
+      "delta_return": 1.186,
+      "delta_excess": 2.6631,
+      "delta_stop_rate": -9.19,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "rs_score >= 40",
+      "count": 23,
+      "avg_return": -0.9366,
+      "median_return": -0.3824,
+      "avg_excess": -1.2469,
+      "win_rate": 43.48,
+      "beat_rate": 30.43,
+      "stop_rate": 17.39,
+      "large_winner_count": 2,
+      "kept_pct": 37.1,
+      "delta_return": 1.1249,
+      "delta_excess": 1.7588,
+      "delta_stop_rate": -6.8,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "기관적합_true",
+      "count": 15,
+      "avg_return": -0.961,
+      "median_return": -1.964,
+      "avg_excess": -1.5274,
+      "win_rate": 40.0,
+      "beat_rate": 20.0,
+      "stop_rate": 26.67,
+      "large_winner_count": 2,
+      "kept_pct": 24.19,
+      "delta_return": 1.1005,
+      "delta_excess": 1.4783,
+      "delta_stop_rate": 2.48,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    },
+    {
+      "name": "base_days <= 15",
+      "count": 16,
+      "avg_return": -1.0139,
+      "median_return": -2.538,
+      "avg_excess": -0.852,
+      "win_rate": 37.5,
+      "beat_rate": 31.25,
+      "stop_rate": 18.75,
+      "large_winner_count": 2,
+      "kept_pct": 25.81,
+      "delta_return": 1.0476,
+      "delta_excess": 2.1537,
+      "delta_stop_rate": -5.44,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "2026-08-25:080580",
+        "2026-09-09:012630"
+      ]
+    }
+  ],
+  "feature_bins": {
+    "rs_score": [
+      {
+        "bucket": "<40",
+        "count": 20,
+        "avg_return": -2.3558,
+        "median_return": -2.1862,
+        "avg_excess": -3.545,
+        "win_rate": 30.0,
+        "beat_rate": 10.0,
+        "stop_rate": 20.0,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "40-60",
+        "count": 5,
+        "avg_return": -3.3148,
+        "median_return": 0.0,
+        "avg_excess": -5.7553,
+        "win_rate": 40.0,
+        "beat_rate": 0.0,
+        "stop_rate": 40.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "60-80",
+        "count": 5,
+        "avg_return": -3.1703,
+        "median_return": -1.964,
+        "avg_excess": -3.4901,
+        "win_rate": 40.0,
+        "beat_rate": 20.0,
+        "stop_rate": 20.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": ">=80",
+        "count": 13,
+        "avg_return": 0.8371,
+        "median_return": -0.3824,
+        "avg_excess": 1.3499,
+        "win_rate": 46.15,
+        "beat_rate": 46.15,
+        "stop_rate": 7.69,
+        "large_winner_count": 2
+      }
+    ],
+    "rs_20_score": [
+      {
+        "bucket": "<60",
+        "count": 8,
+        "avg_return": -3.0864,
+        "median_return": -5.5044,
+        "avg_excess": -3.5104,
+        "win_rate": 25.0,
+        "beat_rate": 25.0,
+        "stop_rate": 37.5,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "60-80",
+        "count": 13,
+        "avg_return": -1.3133,
+        "median_return": 0.0,
+        "avg_excess": -2.9426,
+        "win_rate": 46.15,
+        "beat_rate": 15.38,
+        "stop_rate": 7.69,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "80-90",
+        "count": 11,
+        "avg_return": -3.4807,
+        "median_return": -0.8264,
+        "avg_excess": -4.0175,
+        "win_rate": 36.36,
+        "beat_rate": 9.09,
+        "stop_rate": 36.36,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": ">=90",
+        "count": 11,
+        "avg_return": 1.0357,
+        "median_return": -1.964,
+        "avg_excess": 0.9956,
+        "win_rate": 36.36,
+        "beat_rate": 36.36,
+        "stop_rate": 0.0,
+        "large_winner_count": 2
+      }
+    ],
+    "rs_60_score": [
+      {
+        "bucket": "<80",
+        "count": 10,
+        "avg_return": 0.481,
+        "median_return": -2.3685,
+        "avg_excess": 0.5269,
+        "win_rate": 30.0,
+        "beat_rate": 20.0,
+        "stop_rate": 10.0,
+        "large_winner_count": 2
+      },
+      {
+        "bucket": "80-90",
+        "count": 22,
+        "avg_return": -2.2262,
+        "median_return": -2.0144,
+        "avg_excess": -3.0775,
+        "win_rate": 36.36,
+        "beat_rate": 18.18,
+        "stop_rate": 22.73,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "90-95",
+        "count": 10,
+        "avg_return": -2.6252,
+        "median_return": -1.556,
+        "avg_excess": -4.091,
+        "win_rate": 40.0,
+        "beat_rate": 20.0,
+        "stop_rate": 20.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": ">=95",
+        "count": 1,
+        "avg_return": 1.7588,
+        "median_return": 1.7588,
+        "avg_excess": 3.7687,
+        "win_rate": 100.0,
+        "beat_rate": 100.0,
+        "stop_rate": 0.0,
+        "large_winner_count": 0
+      }
+    ],
+    "rs_acceleration": [
+      {
+        "bucket": "<0",
+        "count": 4,
+        "avg_return": -1.627,
+        "median_return": -1.2861,
+        "avg_excess": -1.7714,
+        "win_rate": 25.0,
+        "beat_rate": 25.0,
+        "stop_rate": 0.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "0-5",
+        "count": 21,
+        "avg_return": -0.4783,
+        "median_return": -1.3575,
+        "avg_excess": -0.106,
+        "win_rate": 42.86,
+        "beat_rate": 33.33,
+        "stop_rate": 19.05,
+        "large_winner_count": 3
+      },
+      {
+        "bucket": "5-10",
+        "count": 12,
+        "avg_return": -3.2265,
+        "median_return": -2.7425,
+        "avg_excess": -5.079,
+        "win_rate": 33.33,
+        "beat_rate": 8.33,
+        "stop_rate": 25.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": ">=10",
+        "count": 6,
+        "avg_return": -2.2316,
+        "median_return": -0.982,
+        "avg_excess": -4.8866,
+        "win_rate": 33.33,
+        "beat_rate": 0.0,
+        "stop_rate": 16.67,
+        "large_winner_count": 0
+      }
+    ],
+    "sector_score": [
+      {
+        "bucket": "<40",
+        "count": 10,
+        "avg_return": 2.6933,
+        "median_return": 0.2152,
+        "avg_excess": 2.5481,
+        "win_rate": 50.0,
+        "beat_rate": 50.0,
+        "stop_rate": 0.0,
+        "large_winner_count": 2
+      },
+      {
+        "bucket": "40-55",
+        "count": 13,
+        "avg_return": -3.8515,
+        "median_return": -4.2179,
+        "avg_excess": -2.7582,
+        "win_rate": 23.08,
+        "beat_rate": 15.38,
+        "stop_rate": 23.08,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "55-70",
+        "count": 8,
+        "avg_return": -3.8196,
+        "median_return": -4.0463,
+        "avg_excess": -5.3329,
+        "win_rate": 37.5,
+        "beat_rate": 12.5,
+        "stop_rate": 25.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": ">=70",
+        "count": 12,
+        "avg_return": -1.2472,
+        "median_return": -0.6787,
+        "avg_excess": -3.8782,
+        "win_rate": 41.67,
+        "beat_rate": 8.33,
+        "stop_rate": 25.0,
+        "large_winner_count": 1
+      }
+    ],
+    "distance_from_high52_pct": [
+      {
+        "bucket": "<-20",
+        "count": 19,
+        "avg_return": -2.2357,
+        "median_return": -3.9106,
+        "avg_excess": -3.0309,
+        "win_rate": 31.58,
+        "beat_rate": 15.79,
+        "stop_rate": 26.32,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "-20~-15",
+        "count": 9,
+        "avg_return": 0.4428,
+        "median_return": -1.964,
+        "avg_excess": -0.3331,
+        "win_rate": 44.44,
+        "beat_rate": 33.33,
+        "stop_rate": 11.11,
+        "large_winner_count": 2
+      },
+      {
+        "bucket": "-15~-10",
+        "count": 6,
+        "avg_return": -3.2744,
+        "median_return": -2.9038,
+        "avg_excess": -4.8488,
+        "win_rate": 16.67,
+        "beat_rate": 0.0,
+        "stop_rate": 16.67,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "-10~-5",
+        "count": 4,
+        "avg_return": -0.9893,
+        "median_return": -0.9794,
+        "avg_excess": -1.5888,
+        "win_rate": 50.0,
+        "beat_rate": 50.0,
+        "stop_rate": 0.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": ">=-5",
+        "count": 5,
+        "avg_return": -1.3122,
+        "median_return": 0.5376,
+        "avg_excess": -0.7091,
+        "win_rate": 60.0,
+        "beat_rate": 20.0,
+        "stop_rate": 20.0,
+        "large_winner_count": 0
+      }
+    ],
+    "base_depth_pct": [
+      {
+        "bucket": "<10",
+        "count": 4,
+        "avg_return": -3.5637,
+        "median_return": -3.0138,
+        "avg_excess": -5.1431,
+        "win_rate": 25.0,
+        "beat_rate": 0.0,
+        "stop_rate": 25.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "10-15",
+        "count": 21,
+        "avg_return": -1.9243,
+        "median_return": -1.3575,
+        "avg_excess": -2.5635,
+        "win_rate": 42.86,
+        "beat_rate": 19.05,
+        "stop_rate": 19.05,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "15-17.5",
+        "count": 8,
+        "avg_return": -1.9159,
+        "median_return": -3.2661,
+        "avg_excess": -3.6595,
+        "win_rate": 25.0,
+        "beat_rate": 12.5,
+        "stop_rate": 12.5,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": ">=17.5",
+        "count": 10,
+        "avg_return": 0.1333,
+        "median_return": -0.6044,
+        "avg_excess": 0.4104,
+        "win_rate": 40.0,
+        "beat_rate": 40.0,
+        "stop_rate": 20.0,
+        "large_winner_count": 1
+      }
+    ],
+    "breakout_extension_pct": [
+      {
+        "bucket": "<1",
+        "count": 10,
+        "avg_return": -0.401,
+        "median_return": 0.0732,
+        "avg_excess": -2.0152,
+        "win_rate": 50.0,
+        "beat_rate": 20.0,
+        "stop_rate": 0.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "1-2",
+        "count": 10,
+        "avg_return": -4.0755,
+        "median_return": -3.5855,
+        "avg_excess": -4.0699,
+        "win_rate": 20.0,
+        "beat_rate": 20.0,
+        "stop_rate": 30.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "2-3",
+        "count": 8,
+        "avg_return": -5.9863,
+        "median_return": -7.4667,
+        "avg_excess": -7.3952,
+        "win_rate": 12.5,
+        "beat_rate": 0.0,
+        "stop_rate": 50.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "3-5",
+        "count": 6,
+        "avg_return": 2.3888,
+        "median_return": 0.4799,
+        "avg_excess": 0.7394,
+        "win_rate": 66.67,
+        "beat_rate": 16.67,
+        "stop_rate": 0.0,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": ">=5",
+        "count": 9,
+        "avg_return": 1.0737,
+        "median_return": -3.112,
+        "avg_excess": 1.7777,
+        "win_rate": 44.44,
+        "beat_rate": 44.44,
+        "stop_rate": 11.11,
+        "large_winner_count": 2
+      }
+    ],
+    "volume_ratio": [
+      {
+        "bucket": "<1.2",
+        "count": 5,
+        "avg_return": -2.6515,
+        "median_return": -1.3575,
+        "avg_excess": -6.0794,
+        "win_rate": 40.0,
+        "beat_rate": 0.0,
+        "stop_rate": 20.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "1.2-1.5",
+        "count": 7,
+        "avg_return": -4.7762,
+        "median_return": -6.0277,
+        "avg_excess": -4.3921,
+        "win_rate": 14.29,
+        "beat_rate": 14.29,
+        "stop_rate": 28.57,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "1.5-2",
+        "count": 11,
+        "avg_return": -1.269,
+        "median_return": 0.2309,
+        "avg_excess": -1.3403,
+        "win_rate": 54.55,
+        "beat_rate": 45.45,
+        "stop_rate": 27.27,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "2-3",
+        "count": 13,
+        "avg_return": 1.0463,
+        "median_return": -2.0649,
+        "avg_excess": 0.5691,
+        "win_rate": 38.46,
+        "beat_rate": 15.38,
+        "stop_rate": 0.0,
+        "large_winner_count": 2
+      },
+      {
+        "bucket": ">=3",
+        "count": 7,
+        "avg_return": -3.0872,
+        "median_return": -1.964,
+        "avg_excess": -4.4414,
+        "win_rate": 28.57,
+        "beat_rate": 14.29,
+        "stop_rate": 28.57,
+        "large_winner_count": 0
+      }
+    ],
+    "atr20_pct": [
+      {
+        "bucket": "<3",
+        "count": 12,
+        "avg_return": -1.355,
+        "median_return": 0.0,
+        "avg_excess": -2.381,
+        "win_rate": 41.67,
+        "beat_rate": 16.67,
+        "stop_rate": 0.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "3-4",
+        "count": 9,
+        "avg_return": -3.9663,
+        "median_return": -3.4202,
+        "avg_excess": -5.7289,
+        "win_rate": 22.22,
+        "beat_rate": 0.0,
+        "stop_rate": 33.33,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "4-5",
+        "count": 7,
+        "avg_return": -2.6304,
+        "median_return": -8.0688,
+        "avg_excess": -3.4151,
+        "win_rate": 42.86,
+        "beat_rate": 28.57,
+        "stop_rate": 57.14,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "5-6",
+        "count": 5,
+        "avg_return": -3.2588,
+        "median_return": -1.964,
+        "avg_excess": -4.0071,
+        "win_rate": 20.0,
+        "beat_rate": 0.0,
+        "stop_rate": 20.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": ">=6",
+        "count": 10,
+        "avg_return": 1.8006,
+        "median_return": 0.024,
+        "avg_excess": 2.4496,
+        "win_rate": 50.0,
+        "beat_rate": 50.0,
+        "stop_rate": 0.0,
+        "large_winner_count": 2
+      }
+    ]
+  }
+}
