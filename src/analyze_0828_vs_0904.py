@@ -43,14 +43,25 @@ def to_number(value):
     try:
         if value is None or value == "":
             return None
-        return float(value)
+        number = float(value)
+        return number if pd.notna(number) else None
     except (TypeError, ValueError):
         return None
 
 
+def clean_json(value):
+    if isinstance(value, dict):
+        return {key: clean_json(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [clean_json(item) for item in value]
+    if isinstance(value, float) and pd.isna(value):
+        return None
+    return value
+
+
 def summarize_numeric(rows: list[dict], field: str) -> dict:
     values = [to_number(row.get(field)) for row in rows]
-    values = [value for value in values if value is not None and pd.notna(value)]
+    values = [value for value in values if value is not None]
     if not values:
         return {"count": 0, "mean": None, "median": None, "min": None, "max": None}
     series = pd.Series(values, dtype=float)
@@ -153,30 +164,30 @@ def cohort_summary(rows: list[dict]) -> dict:
                 "name": row.get("name"),
                 "ticker": str(row.get("ticker", "")).zfill(6),
                 "market": row.get("market"),
-                "strategy_return_pct": row.get("strategy_return_pct"),
-                "strategy_excess_pct_point": row.get("strategy_excess_pct_point"),
+                "strategy_return_pct": to_number(row.get("strategy_return_pct")),
+                "strategy_excess_pct_point": to_number(row.get("strategy_excess_pct_point")),
                 "trade_status": row.get("trade_status"),
                 "exit_reason": row.get("exit_reason"),
                 "buy_grade": row.get("buy_grade"),
-                "buy_score": row.get("buy_score"),
+                "buy_score": to_number(row.get("buy_score")),
                 "sector": row.get("sector"),
-                "sector_score": row.get("sector_score"),
-                "sector_leader_rank": row.get("sector_leader_rank"),
+                "sector_score": to_number(row.get("sector_score")),
+                "sector_leader_rank": to_number(row.get("sector_leader_rank")),
                 "weekly_state": row.get("weekly_state"),
-                "rs_score": row.get("rs_score"),
-                "rs_20_score": row.get("rs_20_score"),
-                "rs_60_score": row.get("rs_60_score"),
-                "rs_acceleration": row.get("rs_acceleration"),
-                "mtt": row.get("mtt"),
-                "distance_from_high52_pct": row.get("distance_from_high52_pct"),
-                "base_days": row.get("base_days"),
-                "base_depth_pct": row.get("base_depth_pct"),
-                "breakout_extension_pct": row.get("distance_to_base_high_pct"),
-                "volume_ratio": row.get("volume_ratio"),
+                "rs_score": to_number(row.get("rs_score")),
+                "rs_20_score": to_number(row.get("rs_20_score")),
+                "rs_60_score": to_number(row.get("rs_60_score")),
+                "rs_acceleration": to_number(row.get("rs_acceleration")),
+                "mtt": bool(row.get("mtt")),
+                "distance_from_high52_pct": to_number(row.get("distance_from_high52_pct")),
+                "base_days": to_number(row.get("base_days")),
+                "base_depth_pct": to_number(row.get("base_depth_pct")),
+                "breakout_extension_pct": to_number(row.get("distance_to_base_high_pct")),
+                "volume_ratio": to_number(row.get("volume_ratio")),
                 "early_state": row.get("early_state"),
-                "gain_since_early_pct": row.get("gain_since_early_pct"),
-                "atr20_pct": row.get("atr20_pct"),
-                "institutional_fit": row.get("institutional_fit"),
+                "gain_since_early_pct": to_number(row.get("gain_since_early_pct")),
+                "atr20_pct": to_number(row.get("atr20_pct")),
+                "institutional_fit": bool(row.get("institutional_fit")),
             }
             for row in sorted(rows, key=lambda value: value.get("strategy_return_pct") if value.get("strategy_return_pct") is not None else -999, reverse=True)
         ],
@@ -220,9 +231,10 @@ def main() -> None:
         "comparison": {date_text: cohort_summary(rows) for date_text, rows in cohorts.items()},
         "combined_winner_loser": winner_loser_feature_summary(cohorts[DATES[0]] + cohorts[DATES[1]]),
     }
+    output = clean_json(output)
 
     OUTPUT_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
-    print(json.dumps(output, ensure_ascii=False))
+    print(json.dumps(output, ensure_ascii=False, allow_nan=False))
 
 
 if __name__ == "__main__":
