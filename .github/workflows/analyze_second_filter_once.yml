@@ -34,4 +34,4 @@ jobs:
           git commit -m "analysis: evaluate second BUY filter after EARLY15" || exit 0
           git push
 
-# exact cohort rerun
+# exact cohort rerun after merge fix
