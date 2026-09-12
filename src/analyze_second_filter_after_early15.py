@@ -7,33 +7,11 @@ import pandas as pd
 
 root_dir = Path(__file__).resolve().parents[1]
 data_dir = root_dir / "data"
-result_dir = data_dir / "results"
+capture_path = data_dir / "captures.csv"
 trade_path = data_dir / "buy_vs_benchmark_trades.csv"
 output_path = data_dir / "second_filter_after_early15.json"
 
 large_winner_threshold = 8.0
-
-
-def to_float(value):
-    try:
-        if value is None or value == "":
-            return None
-        number = float(value)
-        return number if pd.notna(number) else None
-    except (TypeError, ValueError):
-        return None
-
-
-def load_signal_map():
-    signal_map = {}
-    for path in sorted(result_dir.glob("*.json")):
-        with path.open("r", encoding="utf-8-sig") as file:
-            data = json.load(file)
-        capture_date = str(data.get("scan_date") or path.stem)
-        for signal in data.get("signals", []):
-            ticker = str(signal.get("ticker", "")).zfill(6)
-            signal_map[(capture_date, ticker)] = signal
-    return signal_map
 
 
 def metrics(frame: pd.DataFrame) -> dict:
@@ -80,12 +58,42 @@ def categorical_summary(frame: pd.DataFrame, column: str) -> dict:
     counts = frame[column].fillna("UNKNOWN").astype(str).value_counts()
     total = len(frame)
     return {
-        str(key): {"count": int(value), "pct": round(float(value / total * 100), 2) if total else 0.0}
+        str(key): {
+            "count": int(value),
+            "pct": round(float(value / total * 100), 2) if total else 0.0,
+        }
         for key, value in counts.items()
     }
 
 
-def apply_numeric_filter(frame: pd.DataFrame, column: str, operator: str, threshold: float):
+def evaluate_filter(name: str, kept: pd.DataFrame, baseline_frame: pd.DataFrame, baseline: dict, large_winner_keys: set[tuple[str, str]]) -> dict:
+    kept_keys = set(zip(kept["capture_date"].astype(str), kept["ticker"].astype(str)))
+    missed_keys = sorted(large_winner_keys - kept_keys)
+    current = metrics(kept)
+
+    missed_rows = baseline_frame[
+        baseline_frame.apply(
+            lambda row: (str(row["capture_date"]), str(row["ticker"])) in missed_keys,
+            axis=1,
+        )
+    ].sort_values("strategy_return_pct", ascending=False)
+
+    return {
+        "name": name,
+        **current,
+        "kept_pct": round(len(kept) / len(baseline_frame) * 100, 2) if len(baseline_frame) else 0.0,
+        "delta_return": round(current["avg_return"] - baseline["avg_return"], 4),
+        "delta_excess": round(current["avg_excess"] - baseline["avg_excess"], 4),
+        "delta_stop_rate": round(current["stop_rate"] - baseline["stop_rate"], 2),
+        "missed_large_winner_count": len(missed_keys),
+        "missed_large_winners": [
+            f"{row['name']} {float(row['strategy_return_pct']):+.2f}%"
+            for _, row in missed_rows.iterrows()
+        ],
+    }
+
+
+def numeric_filter(frame: pd.DataFrame, column: str, operator: str, threshold: float) -> pd.DataFrame:
     values = pd.to_numeric(frame[column], errors="coerce")
     if operator == ">=":
         return frame[values.notna() & (values >= threshold)]
@@ -94,187 +102,159 @@ def apply_numeric_filter(frame: pd.DataFrame, column: str, operator: str, thresh
     raise ValueError(operator)
 
 
-def evaluate_filter(name: str, kept: pd.DataFrame, baseline: dict, large_winners: set[tuple[str, str]]) -> dict:
-    kept_keys = set(zip(kept["capture_date"].astype(str), kept["ticker"].astype(str)))
-    missed = sorted(large_winners - kept_keys)
-    current = metrics(kept)
-    return {
-        "name": name,
-        **current,
-        "kept_pct": round(len(kept) / baseline["count"] * 100, 2) if baseline["count"] else 0.0,
-        "delta_return": round(current["avg_return"] - baseline["avg_return"], 4) if current["avg_return"] is not None else None,
-        "delta_excess": round(current["avg_excess"] - baseline["avg_excess"], 4) if current["avg_excess"] is not None else None,
-        "delta_stop_rate": round(current["stop_rate"] - baseline["stop_rate"], 2) if current["stop_rate"] is not None else None,
-        "missed_large_winner_count": len(missed),
-        "missed_large_winners": [f"{date}:{ticker}" for date, ticker in missed],
-    }
-
-
 def build_bin_summary(frame: pd.DataFrame, column: str, bins: list[float], labels: list[str]) -> list[dict]:
     values = pd.to_numeric(frame[column], errors="coerce")
-    bucket = pd.cut(values, bins=bins, labels=labels, include_lowest=True, right=False)
+    buckets = pd.cut(values, bins=bins, labels=labels, include_lowest=True, right=False)
     output = []
     for label in labels:
-        group = frame[bucket == label]
-        if group.empty:
-            continue
-        output.append({"bucket": label, **metrics(group)})
+        group = frame[buckets == label]
+        if len(group):
+            output.append({"bucket": label, **metrics(group)})
+    missing = frame[values.isna()]
+    if len(missing):
+        output.append({"bucket": "MISSING", **metrics(missing)})
     return output
 
 
-def main():
+def main() -> None:
+    captures = pd.read_csv(capture_path, dtype={"ticker": str})
     trades = pd.read_csv(trade_path, dtype={"ticker": str})
+    captures["ticker"] = captures["ticker"].astype(str).str.zfill(6)
     trades["ticker"] = trades["ticker"].astype(str).str.zfill(6)
-    signal_map = load_signal_map()
 
-    rows = []
-    for _, trade in trades.iterrows():
-        capture_date = str(trade["capture_date"])
-        ticker = str(trade["ticker"]).zfill(6)
-        signal = signal_map.get((capture_date, ticker), {})
-        gain_since_early = to_float(signal.get("gain_since_early_pct"))
+    capture_columns = [
+        "capture_date", "ticker", "name", "early_state", "gain_since_early_pct",
+        "trading_days_since_early", "buy_grade", "buy_score", "priority_selected",
+        "sector", "sector_score", "sector_leader_rank", "sector_member_count",
+        "weekly_state", "atr20_pct", "institutional_fit", "avg_trading_value20",
+        "capture_rs_score", "market_alignment",
+    ]
+    base = trades.merge(captures[capture_columns], on=["capture_date", "ticker", "name"], how="left")
 
-        # EARLY 기록이 없으면 과열로 볼 근거가 없으므로 유지한다.
-        if gain_since_early is not None and gain_since_early >= 15.0:
-            continue
+    gain = pd.to_numeric(base["gain_since_early_pct"], errors="coerce")
+    frame = base[gain.isna() | (gain < 15.0)].copy()
 
-        row = trade.to_dict()
-        row.update({
-            "ticker": ticker,
-            "gain_since_early_pct": gain_since_early,
-            "early_state": signal.get("early_state"),
-            "rs_score": to_float(signal.get("rs_score")),
-            "rs_20_score": to_float(signal.get("rs_20_score")),
-            "rs_60_score": to_float(signal.get("rs_60_score")),
-            "rs_acceleration": to_float(signal.get("rs_acceleration")),
-            "sector_score": to_float(signal.get("sector_score")),
-            "sector_leader_rank": to_float(signal.get("sector_leader_rank")),
-            "weekly_state": signal.get("weekly_state"),
-            "mtt": bool(signal.get("mtt")),
-            "institutional_fit": bool(signal.get("institutional_fit")),
-            "distance_from_high52_pct": to_float(signal.get("distance_from_high52_pct")),
-            "base_days": to_float(signal.get("base_days")),
-            "base_depth_pct": to_float(signal.get("base_depth_pct")),
-            "breakout_extension_pct": to_float(signal.get("distance_to_base_high_pct")),
-            "volume_ratio": to_float(signal.get("volume_ratio")),
-            "atr20_pct": to_float(signal.get("atr20_pct")),
-            "market_cap": to_float(signal.get("market_cap")),
-            "buy_score_capture": to_float(signal.get("buy_score")),
-        })
-        rows.append(row)
-
-    frame = pd.DataFrame(rows)
     baseline = metrics(frame)
     returns = pd.to_numeric(frame["strategy_return_pct"], errors="coerce")
-    winner_frame = frame[returns > 0]
-    loser_frame = frame[returns < 0]
+    winners = frame[returns > 0].copy()
+    losers = frame[returns < 0].copy()
 
-    large_winner_frame = frame[returns >= large_winner_threshold]
-    large_winners = set(zip(large_winner_frame["capture_date"].astype(str), large_winner_frame["ticker"].astype(str)))
-    large_winner_names = [
+    large_winner_frame = frame[returns >= large_winner_threshold].sort_values("strategy_return_pct", ascending=False)
+    large_winner_keys = set(zip(large_winner_frame["capture_date"].astype(str), large_winner_frame["ticker"].astype(str)))
+    large_winners = [
         {
             "capture_date": str(row["capture_date"]),
             "ticker": str(row["ticker"]),
             "name": str(row["name"]),
             "return": round(float(row["strategy_return_pct"]), 4),
+            "sector_leader_rank": None if pd.isna(row["sector_leader_rank"]) else float(row["sector_leader_rank"]),
+            "weekly_state": None if pd.isna(row["weekly_state"]) else str(row["weekly_state"]),
         }
-        for _, row in large_winner_frame.sort_values("strategy_return_pct", ascending=False).iterrows()
+        for _, row in large_winner_frame.iterrows()
     ]
 
     numeric_columns = [
-        "rs_score", "rs_20_score", "rs_60_score", "rs_acceleration",
-        "sector_score", "sector_leader_rank", "distance_from_high52_pct",
-        "base_days", "base_depth_pct", "breakout_extension_pct",
-        "volume_ratio", "atr20_pct", "market_cap", "buy_score_capture",
+        "gain_since_early_pct", "trading_days_since_early", "buy_score",
+        "sector_score", "sector_leader_rank", "sector_member_count", "atr20_pct",
+        "avg_trading_value20", "capture_rs_score",
     ]
 
-    filters = []
-    threshold_map = {
-        "rs_score": [40, 50, 60, 70, 80],
-        "rs_20_score": [60, 70, 80, 90],
-        "rs_60_score": [75, 80, 85, 90, 95],
-        "rs_acceleration": [0, 3, 5, 10, 15],
-        "sector_score": [40, 50, 60, 70],
+    filter_results = []
+    thresholds = {
+        "gain_since_early_pct": [0, 3, 5, 8, 10, 12],
+        "trading_days_since_early": [0, 3, 5, 8, 10],
+        "buy_score": [50, 55, 60, 65, 70, 75],
+        "sector_score": [40, 50, 55, 60, 70, 80],
         "sector_leader_rank": [5, 10, 15, 20, 30],
-        "distance_from_high52_pct": [-20, -15, -10, -5],
-        "base_days": [7, 10, 15, 20],
-        "base_depth_pct": [10, 12.5, 15, 17.5],
-        "breakout_extension_pct": [1, 2, 3, 5],
-        "volume_ratio": [1.2, 1.5, 2, 3],
-        "atr20_pct": [3, 4, 5, 6],
-        "market_cap": [500_000_000_000, 1_000_000_000_000, 5_000_000_000_000],
-        "buy_score_capture": [55, 60, 65, 70, 75],
+        "atr20_pct": [3, 4, 5, 6, 8],
+        "avg_trading_value20": [1_000_000_000, 5_000_000_000, 10_000_000_000, 30_000_000_000, 50_000_000_000],
+        "capture_rs_score": [40, 50, 60, 70, 80],
     }
 
-    for column, thresholds in threshold_map.items():
-        for threshold in thresholds:
+    for column, values in thresholds.items():
+        for threshold in values:
             for operator in [">=", "<="]:
-                kept = apply_numeric_filter(frame, column, operator, threshold)
+                kept = numeric_filter(frame, column, operator, threshold)
                 if len(kept) < 10 or len(kept) == len(frame):
                     continue
-                filters.append(evaluate_filter(f"{column} {operator} {threshold}", kept, baseline, large_winners))
+                filter_results.append(evaluate_filter(
+                    f"{column} {operator} {threshold}", kept, frame, baseline, large_winner_keys
+                ))
 
     categorical_filters = {
         "KOSPI만": frame[frame["market"] == "KOSPI"],
         "KOSDAQ만": frame[frame["market"] == "KOSDAQ"],
         "주봉_STRONG_GOOD": frame[frame["weekly_state"].isin(["STRONG", "GOOD"])],
-        "주봉_RECOVERING제외": frame[frame["weekly_state"] != "RECOVERING"],
-        "MTT_true": frame[frame["mtt"] == True],
-        "MTT_false": frame[frame["mtt"] == False],
-        "기관적합_true": frame[frame["institutional_fit"] == True],
-        "기관적합_false": frame[frame["institutional_fit"] == False],
+        "주봉_STRONG": frame[frame["weekly_state"] == "STRONG"],
+        "주봉_RECOVERING": frame[frame["weekly_state"] == "RECOVERING"],
+        "기관적합_true": frame[frame["institutional_fit"].astype(str).str.lower() == "true"],
+        "기관적합_false": frame[frame["institutional_fit"].astype(str).str.lower() != "true"],
         "EARLY_FRESH": frame[frame["early_state"] == "FRESH"],
         "EARLY_FRESH_NOEARLY": frame[frame["early_state"].isin(["FRESH", "NO_EARLY"])],
+        "품질_SA": frame[frame["buy_grade"].isin(["S", "A"])],
+        "품질_AB": frame[frame["buy_grade"].isin(["A", "B"])],
+        "품질_BC": frame[frame["buy_grade"].isin(["B", "C"])],
     }
     for name, kept in categorical_filters.items():
-        if len(kept) >= 10 and len(kept) < len(frame):
-            filters.append(evaluate_filter(name, kept, baseline, large_winners))
+        if 10 <= len(kept) < len(frame):
+            filter_results.append(evaluate_filter(name, kept, frame, baseline, large_winner_keys))
 
-    # 최소 절반 이상 유지 + 큰 승자 보존 + 수익/초과수익/손절률이 모두 개선되는 후보를 우선한다.
     robust = [
-        row for row in filters
+        row for row in filter_results
         if row["count"] >= len(frame) / 2
         and row["missed_large_winner_count"] == 0
         and row["delta_return"] > 0
         and row["delta_excess"] > 0
         and row["delta_stop_rate"] <= 0
     ]
-    robust = sorted(robust, key=lambda row: (row["avg_return"], row["avg_excess"], -row["stop_rate"]), reverse=True)
+    robust.sort(key=lambda row: (row["avg_return"], row["avg_excess"], -row["stop_rate"]), reverse=True)
 
-    all_ranked = sorted(filters, key=lambda row: (row["avg_return"], row["avg_excess"]), reverse=True)
+    relaxed = [
+        row for row in filter_results
+        if row["count"] >= len(frame) * 0.4
+        and row["missed_large_winner_count"] <= 1
+        and row["delta_return"] > 0
+        and row["delta_excess"] > 0
+    ]
+    relaxed.sort(key=lambda row: (row["avg_return"], row["avg_excess"], -row["stop_rate"]), reverse=True)
+
+    all_ranked = sorted(
+        filter_results,
+        key=lambda row: (row["avg_return"], row["avg_excess"], -row["stop_rate"]),
+        reverse=True,
+    )
 
     bin_specs = {
-        "rs_score": ([-float("inf"), 40, 60, 80, float("inf")], ["<40", "40-60", "60-80", ">=80"]),
-        "rs_20_score": ([-float("inf"), 60, 80, 90, float("inf")], ["<60", "60-80", "80-90", ">=90"]),
-        "rs_60_score": ([-float("inf"), 80, 90, 95, float("inf")], ["<80", "80-90", "90-95", ">=95"]),
-        "rs_acceleration": ([-float("inf"), 0, 5, 10, float("inf")], ["<0", "0-5", "5-10", ">=10"]),
+        "gain_since_early_pct": ([-float("inf"), 0, 3, 5, 8, 10, 15], ["<0", "0-3", "3-5", "5-8", "8-10", "10-15"]),
+        "trading_days_since_early": ([-float("inf"), 1, 4, 7, 11, float("inf")], ["0", "1-3", "4-6", "7-10", ">=11"]),
+        "buy_score": ([-float("inf"), 55, 60, 65, 70, float("inf")], ["<55", "55-60", "60-65", "65-70", ">=70"]),
         "sector_score": ([-float("inf"), 40, 55, 70, float("inf")], ["<40", "40-55", "55-70", ">=70"]),
-        "distance_from_high52_pct": ([-float("inf"), -20, -15, -10, -5, float("inf")], ["<-20", "-20~-15", "-15~-10", "-10~-5", ">=-5"]),
-        "base_depth_pct": ([-float("inf"), 10, 15, 17.5, float("inf")], ["<10", "10-15", "15-17.5", ">=17.5"]),
-        "breakout_extension_pct": ([-float("inf"), 1, 2, 3, 5, float("inf")], ["<1", "1-2", "2-3", "3-5", ">=5"]),
-        "volume_ratio": ([-float("inf"), 1.2, 1.5, 2, 3, float("inf")], ["<1.2", "1.2-1.5", "1.5-2", "2-3", ">=3"]),
-        "atr20_pct": ([-float("inf"), 3, 4, 5, 6, float("inf")], ["<3", "3-4", "4-5", "5-6", ">=6"]),
+        "sector_leader_rank": ([-float("inf"), 6, 11, 21, 31, float("inf")], ["1-5", "6-10", "11-20", "21-30", ">30"]),
+        "atr20_pct": ([-float("inf"), 3, 4, 5, 6, 8, float("inf")], ["<3", "3-4", "4-5", "5-6", "6-8", ">=8"]),
+        "avg_trading_value20": ([-float("inf"), 1e9, 5e9, 1e10, 3e10, float("inf")], ["<1B", "1-5B", "5-10B", "10-30B", ">=30B"]),
+        "capture_rs_score": ([-float("inf"), 50, 60, 70, 80, float("inf")], ["<50", "50-60", "60-70", "70-80", ">=80"]),
     }
 
     output = {
-        "subset_rule": "gain_since_early_pct is null OR < 15%",
+        "subset_rule": "captures.csv gain_since_early_pct is null OR < 15%",
         "baseline": baseline,
-        "large_winners": large_winner_names,
+        "large_winners": large_winners,
         "winner_vs_loser": {
-            "winner_count": int(len(winner_frame)),
-            "loser_count": int(len(loser_frame)),
-            "winner_numeric": numeric_summary(winner_frame, numeric_columns),
-            "loser_numeric": numeric_summary(loser_frame, numeric_columns),
-            "winner_weekly": categorical_summary(winner_frame, "weekly_state"),
-            "loser_weekly": categorical_summary(loser_frame, "weekly_state"),
-            "winner_market": categorical_summary(winner_frame, "market"),
-            "loser_market": categorical_summary(loser_frame, "market"),
-            "winner_mtt": categorical_summary(winner_frame, "mtt"),
-            "loser_mtt": categorical_summary(loser_frame, "mtt"),
-            "winner_institutional": categorical_summary(winner_frame, "institutional_fit"),
-            "loser_institutional": categorical_summary(loser_frame, "institutional_fit"),
+            "winner_count": int(len(winners)),
+            "loser_count": int(len(losers)),
+            "winner_numeric": numeric_summary(winners, numeric_columns),
+            "loser_numeric": numeric_summary(losers, numeric_columns),
+            "winner_weekly": categorical_summary(winners, "weekly_state"),
+            "loser_weekly": categorical_summary(losers, "weekly_state"),
+            "winner_grade": categorical_summary(winners, "buy_grade"),
+            "loser_grade": categorical_summary(losers, "buy_grade"),
+            "winner_market": categorical_summary(winners, "market"),
+            "loser_market": categorical_summary(losers, "market"),
+            "winner_institutional": categorical_summary(winners, "institutional_fit"),
+            "loser_institutional": categorical_summary(losers, "institutional_fit"),
         },
-        "robust_second_filter_candidates": robust[:20],
+        "robust_candidates": robust[:20],
+        "relaxed_candidates": relaxed[:20],
         "top_all_single_filters": all_ranked[:30],
         "feature_bins": {
             column: build_bin_summary(frame, column, bins, labels)
@@ -286,9 +266,9 @@ def main():
     print(json.dumps({
         "subset_count": len(frame),
         "baseline": baseline,
-        "large_winners": large_winner_names,
-        "robust_top5": robust[:5],
-        "all_top5": all_ranked[:5],
+        "large_winners": large_winners,
+        "robust_top10": robust[:10],
+        "relaxed_top10": relaxed[:10],
     }, ensure_ascii=False))
 
 
