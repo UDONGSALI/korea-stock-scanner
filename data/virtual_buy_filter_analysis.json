@@ -1,0 +1,562 @@
+{
+  "analysis_period": {
+    "start": "2026-08-24",
+    "end": "2026-09-11",
+    "trade_outcome_through": "2026-09-11",
+    "total_buy_signals": 75
+  },
+  "large_winner_definition": "strategy_return_pct >= 8.0%",
+  "filters": {
+    "baseline_all_buy": {
+      "kept_count": 75,
+      "excluded_count": 0,
+      "kept_pct": 100.0,
+      "avg_strategy_return_pct": -2.4248,
+      "median_strategy_return_pct": -2.0649,
+      "avg_benchmark_return_pct": 0.6502,
+      "avg_excess_pct_point": -3.075,
+      "win_rate_pct": 33.33,
+      "beat_benchmark_rate_pct": 20.0,
+      "stop_loss_rate_pct": 26.67,
+      "avg_winner_pct": 3.5994,
+      "avg_loser_pct": -5.7839,
+      "excluded_positive_count": 0,
+      "excluded_large_winner_count": 0,
+      "excluded_large_winners": [],
+      "top_excluded_positive": [],
+      "delta_vs_baseline_avg_return_pct_point": 0.0,
+      "delta_vs_baseline_excess_pct_point": 0.0,
+      "delta_vs_baseline_stop_rate_pct_point": 0.0
+    },
+    "no_climax_risk": {
+      "kept_count": 69,
+      "excluded_count": 6,
+      "kept_pct": 92.0,
+      "avg_strategy_return_pct": -1.9661,
+      "median_strategy_return_pct": -1.7439,
+      "avg_benchmark_return_pct": 0.7555,
+      "avg_excess_pct_point": -2.7216,
+      "win_rate_pct": 36.23,
+      "beat_benchmark_rate_pct": 21.74,
+      "stop_loss_rate_pct": 21.74,
+      "avg_winner_pct": 3.5994,
+      "avg_loser_pct": -5.5035,
+      "excluded_positive_count": 0,
+      "excluded_large_winner_count": 0,
+      "excluded_large_winners": [],
+      "top_excluded_positive": [],
+      "delta_vs_baseline_avg_return_pct_point": 0.4587,
+      "delta_vs_baseline_excess_pct_point": 0.3534,
+      "delta_vs_baseline_stop_rate_pct_point": -4.93
+    },
+    "early_gain_under_15": {
+      "kept_count": 57,
+      "excluded_count": 18,
+      "kept_pct": 76.0,
+      "avg_strategy_return_pct": -1.617,
+      "median_strategy_return_pct": -1.7439,
+      "avg_benchmark_return_pct": 0.9232,
+      "avg_excess_pct_point": -2.5402,
+      "win_rate_pct": 38.6,
+      "beat_benchmark_rate_pct": 21.05,
+      "stop_loss_rate_pct": 19.3,
+      "avg_winner_pct": 3.6437,
+      "avg_loser_pct": -5.2222,
+      "excluded_positive_count": 3,
+      "excluded_large_winner_count": 0,
+      "excluded_large_winners": [],
+      "top_excluded_positive": [
+        {
+          "capture_date": "2026-08-25",
+          "name": "롯데웰푸드",
+          "ticker": "280360",
+          "strategy_return_pct": 5.6953,
+          "early_state": "NORMAL",
+          "gain_since_early_pct": 15.654405474764754,
+          "sector_leader_rank": 1.0
+        },
+        {
+          "capture_date": "2026-08-27",
+          "name": "케이씨",
+          "ticker": "029460",
+          "strategy_return_pct": 3.2342,
+          "early_state": "NORMAL",
+          "gain_since_early_pct": 21.350078492935644,
+          "sector_leader_rank": 2.0
+        },
+        {
+          "capture_date": "2026-09-02",
+          "name": "리파인",
+          "ticker": "377450",
+          "strategy_return_pct": 0.8929,
+          "early_state": "NORMAL",
+          "gain_since_early_pct": 27.465857359635805,
+          "sector_leader_rank": 5.0
+        }
+      ],
+      "delta_vs_baseline_avg_return_pct_point": 0.8078,
+      "delta_vs_baseline_excess_pct_point": 0.5348,
+      "delta_vs_baseline_stop_rate_pct_point": -7.37
+    },
+    "early_gain_under_20": {
+      "kept_count": 62,
+      "excluded_count": 13,
+      "kept_pct": 82.67,
+      "avg_strategy_return_pct": -1.9078,
+      "median_strategy_return_pct": -1.8489,
+      "avg_benchmark_return_pct": 0.7204,
+      "avg_excess_pct_point": -2.6282,
+      "win_rate_pct": 37.1,
+      "beat_benchmark_rate_pct": 22.58,
+      "stop_loss_rate_pct": 22.58,
+      "avg_winner_pct": 3.7329,
+      "avg_loser_pct": -5.5174,
+      "excluded_positive_count": 2,
+      "excluded_large_winner_count": 0,
+      "excluded_large_winners": [],
+      "top_excluded_positive": [
+        {
+          "capture_date": "2026-08-27",
+          "name": "케이씨",
+          "ticker": "029460",
+          "strategy_return_pct": 3.2342,
+          "early_state": "NORMAL",
+          "gain_since_early_pct": 21.350078492935644,
+          "sector_leader_rank": 2.0
+        },
+        {
+          "capture_date": "2026-09-02",
+          "name": "리파인",
+          "ticker": "377450",
+          "strategy_return_pct": 0.8929,
+          "early_state": "NORMAL",
+          "gain_since_early_pct": 27.465857359635805,
+          "sector_leader_rank": 5.0
+        }
+      ],
+      "delta_vs_baseline_avg_return_pct_point": 0.517,
+      "delta_vs_baseline_excess_pct_point": 0.4468,
+      "delta_vs_baseline_stop_rate_pct_point": -4.09
+    },
+    "sector_leader_top10": {
+      "kept_count": 44,
+      "excluded_count": 31,
+      "kept_pct": 58.67,
+      "avg_strategy_return_pct": -3.1953,
+      "median_strategy_return_pct": -2.1273,
+      "avg_benchmark_return_pct": 0.6879,
+      "avg_excess_pct_point": -3.8832,
+      "win_rate_pct": 27.27,
+      "beat_benchmark_rate_pct": 15.91,
+      "stop_loss_rate_pct": 29.55,
+      "avg_winner_pct": 2.2762,
+      "avg_loser_pct": -5.79,
+      "excluded_positive_count": 13,
+      "excluded_large_winner_count": 3,
+      "excluded_large_winners": [
+        {
+          "capture_date": "2026-09-04",
+          "name": "인텍플러스",
+          "ticker": "064290",
+          "strategy_return_pct": 22.8344,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 19.0
+        },
+        {
+          "capture_date": "2026-09-09",
+          "name": "HDC",
+          "ticker": "012630",
+          "strategy_return_pct": 15.1822,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 11.261261261261255,
+          "sector_leader_rank": 12.0
+        },
+        {
+          "capture_date": "2026-08-25",
+          "name": "오킨스전자",
+          "ticker": "080580",
+          "strategy_return_pct": 8.7629,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 18.0
+        }
+      ],
+      "top_excluded_positive": [
+        {
+          "capture_date": "2026-09-04",
+          "name": "인텍플러스",
+          "ticker": "064290",
+          "strategy_return_pct": 22.8344,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 19.0
+        },
+        {
+          "capture_date": "2026-09-09",
+          "name": "HDC",
+          "ticker": "012630",
+          "strategy_return_pct": 15.1822,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 11.261261261261255,
+          "sector_leader_rank": 12.0
+        },
+        {
+          "capture_date": "2026-08-25",
+          "name": "오킨스전자",
+          "ticker": "080580",
+          "strategy_return_pct": 8.7629,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 18.0
+        },
+        {
+          "capture_date": "2026-08-27",
+          "name": "심텍",
+          "ticker": "222800",
+          "strategy_return_pct": 3.3885,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 9.490940465918897,
+          "sector_leader_rank": 14.0
+        },
+        {
+          "capture_date": "2026-08-26",
+          "name": "세방전지",
+          "ticker": "004490",
+          "strategy_return_pct": 3.01,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 7.5539568345323715,
+          "sector_leader_rank": 47.0
+        },
+        {
+          "capture_date": "2026-08-24",
+          "name": "미원상사",
+          "ticker": "002840",
+          "strategy_return_pct": 2.8073,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 41.0
+        },
+        {
+          "capture_date": "2026-09-03",
+          "name": "세아제강",
+          "ticker": "306200",
+          "strategy_return_pct": 2.1017,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 8.217168011738817,
+          "sector_leader_rank": 20.0
+        },
+        {
+          "capture_date": "2026-08-26",
+          "name": "E1",
+          "ticker": "017940",
+          "strategy_return_pct": 1.74,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 5.053763440860215,
+          "sector_leader_rank": 18.0
+        },
+        {
+          "capture_date": "2026-08-24",
+          "name": "세아홀딩스",
+          "ticker": "058650",
+          "strategy_return_pct": 0.905,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 29.0
+        },
+        {
+          "capture_date": "2026-09-03",
+          "name": "삼양사",
+          "ticker": "145990",
+          "strategy_return_pct": 0.7384,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 3.493449781659397,
+          "sector_leader_rank": 14.0
+        }
+      ],
+      "delta_vs_baseline_avg_return_pct_point": -0.7705,
+      "delta_vs_baseline_excess_pct_point": -0.8082,
+      "delta_vs_baseline_stop_rate_pct_point": 2.88
+    },
+    "combo_climax_early15_top10": {
+      "kept_count": 26,
+      "excluded_count": 49,
+      "kept_pct": 34.67,
+      "avg_strategy_return_pct": -1.9579,
+      "median_strategy_return_pct": -0.9729,
+      "avg_benchmark_return_pct": 1.3125,
+      "avg_excess_pct_point": -3.2704,
+      "win_rate_pct": 34.62,
+      "beat_benchmark_rate_pct": 15.38,
+      "stop_loss_rate_pct": 15.38,
+      "avg_winner_pct": 1.9436,
+      "avg_loser_pct": -4.5599,
+      "excluded_positive_count": 16,
+      "excluded_large_winner_count": 3,
+      "excluded_large_winners": [
+        {
+          "capture_date": "2026-09-04",
+          "name": "인텍플러스",
+          "ticker": "064290",
+          "strategy_return_pct": 22.8344,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 19.0
+        },
+        {
+          "capture_date": "2026-09-09",
+          "name": "HDC",
+          "ticker": "012630",
+          "strategy_return_pct": 15.1822,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 11.261261261261255,
+          "sector_leader_rank": 12.0
+        },
+        {
+          "capture_date": "2026-08-25",
+          "name": "오킨스전자",
+          "ticker": "080580",
+          "strategy_return_pct": 8.7629,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 18.0
+        }
+      ],
+      "top_excluded_positive": [
+        {
+          "capture_date": "2026-09-04",
+          "name": "인텍플러스",
+          "ticker": "064290",
+          "strategy_return_pct": 22.8344,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 19.0
+        },
+        {
+          "capture_date": "2026-09-09",
+          "name": "HDC",
+          "ticker": "012630",
+          "strategy_return_pct": 15.1822,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 11.261261261261255,
+          "sector_leader_rank": 12.0
+        },
+        {
+          "capture_date": "2026-08-25",
+          "name": "오킨스전자",
+          "ticker": "080580",
+          "strategy_return_pct": 8.7629,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 18.0
+        },
+        {
+          "capture_date": "2026-08-25",
+          "name": "롯데웰푸드",
+          "ticker": "280360",
+          "strategy_return_pct": 5.6953,
+          "early_state": "NORMAL",
+          "gain_since_early_pct": 15.654405474764754,
+          "sector_leader_rank": 1.0
+        },
+        {
+          "capture_date": "2026-08-27",
+          "name": "심텍",
+          "ticker": "222800",
+          "strategy_return_pct": 3.3885,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 9.490940465918897,
+          "sector_leader_rank": 14.0
+        },
+        {
+          "capture_date": "2026-08-27",
+          "name": "케이씨",
+          "ticker": "029460",
+          "strategy_return_pct": 3.2342,
+          "early_state": "NORMAL",
+          "gain_since_early_pct": 21.350078492935644,
+          "sector_leader_rank": 2.0
+        },
+        {
+          "capture_date": "2026-08-26",
+          "name": "세방전지",
+          "ticker": "004490",
+          "strategy_return_pct": 3.01,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 7.5539568345323715,
+          "sector_leader_rank": 47.0
+        },
+        {
+          "capture_date": "2026-08-24",
+          "name": "미원상사",
+          "ticker": "002840",
+          "strategy_return_pct": 2.8073,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 41.0
+        },
+        {
+          "capture_date": "2026-09-03",
+          "name": "세아제강",
+          "ticker": "306200",
+          "strategy_return_pct": 2.1017,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 8.217168011738817,
+          "sector_leader_rank": 20.0
+        },
+        {
+          "capture_date": "2026-08-26",
+          "name": "E1",
+          "ticker": "017940",
+          "strategy_return_pct": 1.74,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 5.053763440860215,
+          "sector_leader_rank": 18.0
+        }
+      ],
+      "delta_vs_baseline_avg_return_pct_point": 0.4669,
+      "delta_vs_baseline_excess_pct_point": -0.1954,
+      "delta_vs_baseline_stop_rate_pct_point": -11.29
+    },
+    "combo_climax_early20_top10": {
+      "kept_count": 30,
+      "excluded_count": 45,
+      "kept_pct": 40.0,
+      "avg_strategy_return_pct": -2.2604,
+      "median_strategy_return_pct": -1.0773,
+      "avg_benchmark_return_pct": 0.9833,
+      "avg_excess_pct_point": -3.2436,
+      "win_rate_pct": 33.33,
+      "beat_benchmark_rate_pct": 20.0,
+      "stop_loss_rate_pct": 20.0,
+      "avg_winner_pct": 2.3188,
+      "avg_loser_pct": -5.0555,
+      "excluded_positive_count": 15,
+      "excluded_large_winner_count": 3,
+      "excluded_large_winners": [
+        {
+          "capture_date": "2026-09-04",
+          "name": "인텍플러스",
+          "ticker": "064290",
+          "strategy_return_pct": 22.8344,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 19.0
+        },
+        {
+          "capture_date": "2026-09-09",
+          "name": "HDC",
+          "ticker": "012630",
+          "strategy_return_pct": 15.1822,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 11.261261261261255,
+          "sector_leader_rank": 12.0
+        },
+        {
+          "capture_date": "2026-08-25",
+          "name": "오킨스전자",
+          "ticker": "080580",
+          "strategy_return_pct": 8.7629,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 18.0
+        }
+      ],
+      "top_excluded_positive": [
+        {
+          "capture_date": "2026-09-04",
+          "name": "인텍플러스",
+          "ticker": "064290",
+          "strategy_return_pct": 22.8344,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 19.0
+        },
+        {
+          "capture_date": "2026-09-09",
+          "name": "HDC",
+          "ticker": "012630",
+          "strategy_return_pct": 15.1822,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 11.261261261261255,
+          "sector_leader_rank": 12.0
+        },
+        {
+          "capture_date": "2026-08-25",
+          "name": "오킨스전자",
+          "ticker": "080580",
+          "strategy_return_pct": 8.7629,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 18.0
+        },
+        {
+          "capture_date": "2026-08-27",
+          "name": "심텍",
+          "ticker": "222800",
+          "strategy_return_pct": 3.3885,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 9.490940465918897,
+          "sector_leader_rank": 14.0
+        },
+        {
+          "capture_date": "2026-08-27",
+          "name": "케이씨",
+          "ticker": "029460",
+          "strategy_return_pct": 3.2342,
+          "early_state": "NORMAL",
+          "gain_since_early_pct": 21.350078492935644,
+          "sector_leader_rank": 2.0
+        },
+        {
+          "capture_date": "2026-08-26",
+          "name": "세방전지",
+          "ticker": "004490",
+          "strategy_return_pct": 3.01,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 7.5539568345323715,
+          "sector_leader_rank": 47.0
+        },
+        {
+          "capture_date": "2026-08-24",
+          "name": "미원상사",
+          "ticker": "002840",
+          "strategy_return_pct": 2.8073,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 41.0
+        },
+        {
+          "capture_date": "2026-09-03",
+          "name": "세아제강",
+          "ticker": "306200",
+          "strategy_return_pct": 2.1017,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 8.217168011738817,
+          "sector_leader_rank": 20.0
+        },
+        {
+          "capture_date": "2026-08-26",
+          "name": "E1",
+          "ticker": "017940",
+          "strategy_return_pct": 1.74,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 5.053763440860215,
+          "sector_leader_rank": 18.0
+        },
+        {
+          "capture_date": "2026-08-24",
+          "name": "세아홀딩스",
+          "ticker": "058650",
+          "strategy_return_pct": 0.905,
+          "early_state": "FRESH",
+          "gain_since_early_pct": 0.0,
+          "sector_leader_rank": 29.0
+        }
+      ],
+      "delta_vs_baseline_avg_return_pct_point": 0.1644,
+      "delta_vs_baseline_excess_pct_point": -0.1686,
+      "delta_vs_baseline_stop_rate_pct_point": -6.67
+    }
+  }
+}
