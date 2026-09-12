@@ -124,10 +124,9 @@ def main() -> None:
 
     capture_columns = [
         "capture_date", "ticker", "name", "early_state", "gain_since_early_pct",
-        "trading_days_since_early", "buy_grade", "buy_score", "priority_selected",
-        "sector", "sector_score", "sector_leader_rank", "sector_member_count",
-        "weekly_state", "atr20_pct", "institutional_fit", "avg_trading_value20",
-        "capture_rs_score", "market_alignment",
+        "trading_days_since_early", "buy_score", "sector", "sector_score",
+        "sector_leader_rank", "sector_member_count", "weekly_state", "atr20_pct",
+        "institutional_fit", "avg_trading_value20", "capture_rs_score", "market_alignment",
     ]
     base = trades.merge(captures[capture_columns], on=["capture_date", "ticker", "name"], how="left")
 
