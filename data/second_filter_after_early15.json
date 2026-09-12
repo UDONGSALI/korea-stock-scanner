@@ -1,13 +1,13 @@
 {
-  "subset_rule": "gain_since_early_pct is null OR < 15%",
+  "subset_rule": "captures.csv gain_since_early_pct is null OR < 15%",
   "baseline": {
-    "count": 62,
-    "avg_return": -2.0615,
-    "median_return": -1.959,
-    "avg_excess": -3.0057,
-    "win_rate": 37.1,
-    "beat_rate": 20.97,
-    "stop_rate": 24.19,
+    "count": 57,
+    "avg_return": -1.617,
+    "median_return": -1.7439,
+    "avg_excess": -2.5402,
+    "win_rate": 38.6,
+    "beat_rate": 21.05,
+    "stop_rate": 19.3,
     "large_winner_count": 4
   },
   "large_winners": [
@@ -15,374 +15,845 @@
       "capture_date": "2026-09-04",
       "ticker": "064290",
       "name": "인텍플러스",
-      "return": 22.8344
+      "return": 22.8344,
+      "sector_leader_rank": 19.0,
+      "weekly_state": "GOOD"
     },
     {
       "capture_date": "2026-09-09",
       "ticker": "012630",
       "name": "HDC",
-      "return": 15.1822
+      "return": 15.1822,
+      "sector_leader_rank": 12.0,
+      "weekly_state": "RECOVERING"
     },
     {
       "capture_date": "2026-09-04",
       "ticker": "031980",
       "name": "피에스케이홀딩스",
-      "return": 9.0278
+      "return": 9.0278,
+      "sector_leader_rank": 7.0,
+      "weekly_state": "GOOD"
     },
     {
       "capture_date": "2026-08-25",
       "ticker": "080580",
       "name": "오킨스전자",
-      "return": 8.7629
+      "return": 8.7629,
+      "sector_leader_rank": 18.0,
+      "weekly_state": "RECOVERING"
     }
   ],
   "winner_vs_loser": {
-    "winner_count": 23,
-    "loser_count": 37,
+    "winner_count": 22,
+    "loser_count": 33,
     "winner_numeric": {
-      "rs_score": {
-        "count": 16,
-        "mean": 61.0166,
-        "median": 66.3123
+      "gain_since_early_pct": {
+        "count": 19,
+        "mean": 5.8846,
+        "median": 5.6838
       },
-      "rs_20_score": {
-        "count": 16,
-        "mean": 77.9,
-        "median": 80.4856
+      "trading_days_since_early": {
+        "count": 19,
+        "mean": 9.4211,
+        "median": 6.0
       },
-      "rs_60_score": {
-        "count": 16,
-        "mean": 84.7089,
-        "median": 85.7711
-      },
-      "rs_acceleration": {
-        "count": 16,
-        "mean": 4.9097,
-        "median": 3.8761
+      "buy_score": {
+        "count": 22,
+        "mean": 59.7432,
+        "median": 60.355
       },
       "sector_score": {
-        "count": 16,
-        "mean": 52.075,
-        "median": 55.9
+        "count": 22,
+        "mean": 51.7273,
+        "median": 51.7
       },
       "sector_leader_rank": {
-        "count": 16,
-        "mean": 10.9375,
-        "median": 10.5
+        "count": 22,
+        "mean": 15.2273,
+        "median": 13.0
       },
-      "distance_from_high52_pct": {
-        "count": 16,
-        "mean": -15.0295,
-        "median": -17.09
-      },
-      "base_days": {
-        "count": 16,
-        "mean": 15.5625,
-        "median": 20.0
-      },
-      "base_depth_pct": {
-        "count": 16,
-        "mean": 14.3134,
-        "median": 13.6496
-      },
-      "breakout_extension_pct": {
-        "count": 16,
-        "mean": 3.3297,
-        "median": 2.5712
-      },
-      "volume_ratio": {
-        "count": 16,
-        "mean": 2.0225,
-        "median": 1.8641
+      "sector_member_count": {
+        "count": 22,
+        "mean": 62.0,
+        "median": 59.5
       },
       "atr20_pct": {
-        "count": 16,
-        "mean": 5.0005,
-        "median": 4.3875
+        "count": 22,
+        "mean": 4.9515,
+        "median": 4.2692
       },
-      "market_cap": {
-        "count": 16,
-        "mean": 4059787063583.125,
-        "median": 492318949250.0
+      "avg_trading_value20": {
+        "count": 22,
+        "mean": 13336145786.0068,
+        "median": 1235083846.875
       },
-      "buy_score_capture": {
-        "count": 16,
-        "mean": 61.7987,
-        "median": 61.805
+      "capture_rs_score": {
+        "count": 22,
+        "mean": 58.012,
+        "median": 50.0
       }
     },
     "loser_numeric": {
-      "rs_score": {
+      "gain_since_early_pct": {
         "count": 25,
-        "mean": 53.8651,
-        "median": 36.7365
+        "mean": 7.0965,
+        "median": 7.6634
       },
-      "rs_20_score": {
+      "trading_days_since_early": {
         "count": 25,
-        "mean": 75.9234,
-        "median": 80.3926
+        "mean": 9.96,
+        "median": 10.0
       },
-      "rs_60_score": {
-        "count": 25,
-        "mean": 79.4978,
-        "median": 84.0797
-      },
-      "rs_acceleration": {
-        "count": 25,
-        "mean": 4.7622,
-        "median": 3.7593
+      "buy_score": {
+        "count": 33,
+        "mean": 61.3582,
+        "median": 59.01
       },
       "sector_score": {
-        "count": 25,
-        "mean": 54.816,
-        "median": 53.6
+        "count": 33,
+        "mean": 56.6909,
+        "median": 54.6
       },
       "sector_leader_rank": {
-        "count": 25,
-        "mean": 24.76,
-        "median": 16.0
+        "count": 33,
+        "mean": 20.8182,
+        "median": 12.0
       },
-      "distance_from_high52_pct": {
-        "count": 25,
-        "mean": -18.2908,
-        "median": -19.8582
-      },
-      "base_days": {
-        "count": 25,
-        "mean": 15.96,
-        "median": 20.0
-      },
-      "base_depth_pct": {
-        "count": 25,
-        "mean": 14.6801,
-        "median": 14.8855
-      },
-      "breakout_extension_pct": {
-        "count": 25,
-        "mean": 2.734,
-        "median": 2.2026
-      },
-      "volume_ratio": {
-        "count": 25,
-        "mean": 2.3841,
-        "median": 1.9719
+      "sector_member_count": {
+        "count": 33,
+        "mean": 64.1515,
+        "median": 66.0
       },
       "atr20_pct": {
-        "count": 25,
-        "mean": 5.7095,
-        "median": 4.077
+        "count": 33,
+        "mean": 5.5854,
+        "median": 4.2394
       },
-      "market_cap": {
-        "count": 25,
-        "mean": 7224754792598.0,
-        "median": 727248960900.0
+      "avg_trading_value20": {
+        "count": 33,
+        "mean": 23676542471.0894,
+        "median": 4427328302.5
       },
-      "buy_score_capture": {
-        "count": 25,
-        "mean": 58.8388,
-        "median": 58.65
+      "capture_rs_score": {
+        "count": 33,
+        "mean": 52.9281,
+        "median": 50.0
       }
     },
     "winner_weekly": {
       "RECOVERING": {
-        "count": 8,
-        "pct": 34.78
-      },
-      "UNKNOWN": {
-        "count": 7,
-        "pct": 30.43
+        "count": 14,
+        "pct": 63.64
       },
       "STRONG": {
         "count": 5,
-        "pct": 21.74
+        "pct": 22.73
       },
       "GOOD": {
         "count": 3,
-        "pct": 13.04
+        "pct": 13.64
       }
     },
     "loser_weekly": {
       "RECOVERING": {
-        "count": 20,
-        "pct": 54.05
-      },
-      "UNKNOWN": {
-        "count": 12,
-        "pct": 32.43
+        "count": 22,
+        "pct": 66.67
       },
       "STRONG": {
-        "count": 4,
-        "pct": 10.81
+        "count": 10,
+        "pct": 30.3
       },
       "GOOD": {
         "count": 1,
-        "pct": 2.7
+        "pct": 3.03
+      }
+    },
+    "winner_grade": {
+      "B": {
+        "count": 16,
+        "pct": 72.73
+      },
+      "C": {
+        "count": 5,
+        "pct": 22.73
+      },
+      "A": {
+        "count": 1,
+        "pct": 4.55
+      }
+    },
+    "loser_grade": {
+      "B": {
+        "count": 22,
+        "pct": 66.67
+      },
+      "C": {
+        "count": 8,
+        "pct": 24.24
+      },
+      "A": {
+        "count": 3,
+        "pct": 9.09
       }
     },
     "winner_market": {
       "KOSPI": {
-        "count": 16,
-        "pct": 69.57
+        "count": 15,
+        "pct": 68.18
       },
       "KOSDAQ": {
         "count": 7,
-        "pct": 30.43
+        "pct": 31.82
       }
     },
     "loser_market": {
       "KOSPI": {
-        "count": 27,
-        "pct": 72.97
+        "count": 24,
+        "pct": 72.73
       },
       "KOSDAQ": {
-        "count": 10,
-        "pct": 27.03
-      }
-    },
-    "winner_mtt": {
-      "False": {
-        "count": 17,
-        "pct": 73.91
-      },
-      "True": {
-        "count": 6,
-        "pct": 26.09
-      }
-    },
-    "loser_mtt": {
-      "False": {
-        "count": 31,
-        "pct": 83.78
-      },
-      "True": {
-        "count": 6,
-        "pct": 16.22
+        "count": 9,
+        "pct": 27.27
       }
     },
     "winner_institutional": {
       "False": {
-        "count": 17,
-        "pct": 73.91
+        "count": 16,
+        "pct": 72.73
       },
       "True": {
         "count": 6,
-        "pct": 26.09
+        "pct": 27.27
       }
     },
     "loser_institutional": {
       "False": {
-        "count": 28,
-        "pct": 75.68
+        "count": 20,
+        "pct": 60.61
       },
       "True": {
-        "count": 9,
-        "pct": 24.32
+        "count": 13,
+        "pct": 39.39
       }
     }
   },
-  "robust_second_filter_candidates": [],
+  "robust_candidates": [
+    {
+      "name": "buy_score <= 65",
+      "count": 40,
+      "avg_return": -0.7067,
+      "median_return": -1.5507,
+      "avg_excess": -1.3239,
+      "win_rate": 40.0,
+      "beat_rate": 27.5,
+      "stop_rate": 12.5,
+      "large_winner_count": 4,
+      "kept_pct": 70.18,
+      "delta_return": 0.9103,
+      "delta_excess": 1.2163,
+      "delta_stop_rate": -6.8,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "sector_leader_rank <= 20",
+      "count": 42,
+      "avg_return": -0.9097,
+      "median_return": -0.9729,
+      "avg_excess": -1.909,
+      "win_rate": 40.48,
+      "beat_rate": 23.81,
+      "stop_rate": 16.67,
+      "large_winner_count": 4,
+      "kept_pct": 73.68,
+      "delta_return": 0.7073,
+      "delta_excess": 0.6312,
+      "delta_stop_rate": -2.63,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "buy_score <= 70",
+      "count": 48,
+      "avg_return": -0.9316,
+      "median_return": -1.092,
+      "avg_excess": -1.8936,
+      "win_rate": 43.75,
+      "beat_rate": 25.0,
+      "stop_rate": 14.58,
+      "large_winner_count": 4,
+      "kept_pct": 84.21,
+      "delta_return": 0.6854,
+      "delta_excess": 0.6466,
+      "delta_stop_rate": -4.72,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "sector_leader_rank <= 30",
+      "count": 47,
+      "avg_return": -1.0291,
+      "median_return": -0.5882,
+      "avg_excess": -1.9021,
+      "win_rate": 42.55,
+      "beat_rate": 23.4,
+      "stop_rate": 14.89,
+      "large_winner_count": 4,
+      "kept_pct": 82.46,
+      "delta_return": 0.5879,
+      "delta_excess": 0.6381,
+      "delta_stop_rate": -4.41,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "gain_since_early_pct >= 0",
+      "count": 45,
+      "avg_return": -1.1039,
+      "median_return": -1.3575,
+      "avg_excess": -2.4385,
+      "win_rate": 42.22,
+      "beat_rate": 20.0,
+      "stop_rate": 17.78,
+      "large_winner_count": 4,
+      "kept_pct": 78.95,
+      "delta_return": 0.5131,
+      "delta_excess": 0.1017,
+      "delta_stop_rate": -1.52,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "sector_leader_rank >= 5",
+      "count": 42,
+      "avg_return": -1.2072,
+      "median_return": -1.5507,
+      "avg_excess": -2.1461,
+      "win_rate": 42.86,
+      "beat_rate": 23.81,
+      "stop_rate": 19.05,
+      "large_winner_count": 4,
+      "kept_pct": 73.68,
+      "delta_return": 0.4098,
+      "delta_excess": 0.3941,
+      "delta_stop_rate": -0.25,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "avg_trading_value20 <= 30000000000",
+      "count": 47,
+      "avg_return": -1.2564,
+      "median_return": -0.8264,
+      "avg_excess": -2.199,
+      "win_rate": 42.55,
+      "beat_rate": 23.4,
+      "stop_rate": 17.02,
+      "large_winner_count": 4,
+      "kept_pct": 82.46,
+      "delta_return": 0.3606,
+      "delta_excess": 0.3412,
+      "delta_stop_rate": -2.28,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "품질_BC",
+      "count": 52,
+      "avg_return": -1.3193,
+      "median_return": -1.5507,
+      "avg_excess": -2.149,
+      "win_rate": 40.38,
+      "beat_rate": 23.08,
+      "stop_rate": 17.31,
+      "large_winner_count": 4,
+      "kept_pct": 91.23,
+      "delta_return": 0.2977,
+      "delta_excess": 0.3912,
+      "delta_stop_rate": -1.99,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "buy_score <= 75",
+      "count": 52,
+      "avg_return": -1.3289,
+      "median_return": -1.5507,
+      "avg_excess": -2.3104,
+      "win_rate": 42.31,
+      "beat_rate": 23.08,
+      "stop_rate": 17.31,
+      "large_winner_count": 4,
+      "kept_pct": 91.23,
+      "delta_return": 0.2881,
+      "delta_excess": 0.2298,
+      "delta_stop_rate": -1.99,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "avg_trading_value20 <= 50000000000",
+      "count": 50,
+      "avg_return": -1.3913,
+      "median_return": -1.092,
+      "avg_excess": -2.4514,
+      "win_rate": 40.0,
+      "beat_rate": 22.0,
+      "stop_rate": 18.0,
+      "large_winner_count": 4,
+      "kept_pct": 87.72,
+      "delta_return": 0.2257,
+      "delta_excess": 0.0888,
+      "delta_stop_rate": -1.3,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    }
+  ],
+  "relaxed_candidates": [
+    {
+      "name": "trading_days_since_early <= 8",
+      "count": 23,
+      "avg_return": -0.464,
+      "median_return": -1.3575,
+      "avg_excess": -1.8946,
+      "win_rate": 43.48,
+      "beat_rate": 21.74,
+      "stop_rate": 17.39,
+      "large_winner_count": 3,
+      "kept_pct": 40.35,
+      "delta_return": 1.153,
+      "delta_excess": 0.6456,
+      "delta_stop_rate": -1.91,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "sector_score <= 50",
+      "count": 27,
+      "avg_return": -0.7,
+      "median_return": -0.8264,
+      "avg_excess": -0.7498,
+      "win_rate": 40.74,
+      "beat_rate": 33.33,
+      "stop_rate": 14.81,
+      "large_winner_count": 3,
+      "kept_pct": 47.37,
+      "delta_return": 0.917,
+      "delta_excess": 1.7904,
+      "delta_stop_rate": -4.49,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "buy_score <= 65",
+      "count": 40,
+      "avg_return": -0.7067,
+      "median_return": -1.5507,
+      "avg_excess": -1.3239,
+      "win_rate": 40.0,
+      "beat_rate": 27.5,
+      "stop_rate": 12.5,
+      "large_winner_count": 4,
+      "kept_pct": 70.18,
+      "delta_return": 0.9103,
+      "delta_excess": 1.2163,
+      "delta_stop_rate": -6.8,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "sector_score <= 55",
+      "count": 30,
+      "avg_return": -0.8175,
+      "median_return": -1.5045,
+      "avg_excess": -0.7922,
+      "win_rate": 40.0,
+      "beat_rate": 33.33,
+      "stop_rate": 13.33,
+      "large_winner_count": 3,
+      "kept_pct": 52.63,
+      "delta_return": 0.7995,
+      "delta_excess": 1.748,
+      "delta_stop_rate": -5.97,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "capture_rs_score >= 50",
+      "count": 33,
+      "avg_return": -0.8297,
+      "median_return": -0.5882,
+      "avg_excess": -1.3738,
+      "win_rate": 45.45,
+      "beat_rate": 30.3,
+      "stop_rate": 15.15,
+      "large_winner_count": 3,
+      "kept_pct": 57.89,
+      "delta_return": 0.7873,
+      "delta_excess": 1.1664,
+      "delta_stop_rate": -4.15,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "trading_days_since_early <= 10",
+      "count": 26,
+      "avg_return": -0.8671,
+      "median_return": -0.9729,
+      "avg_excess": -2.2356,
+      "win_rate": 42.31,
+      "beat_rate": 19.23,
+      "stop_rate": 19.23,
+      "large_winner_count": 3,
+      "kept_pct": 45.61,
+      "delta_return": 0.7499,
+      "delta_excess": 0.3046,
+      "delta_stop_rate": -0.07,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "gain_since_early_pct <= 12",
+      "count": 39,
+      "avg_return": -0.8784,
+      "median_return": -1.3575,
+      "avg_excess": -2.1626,
+      "win_rate": 41.03,
+      "beat_rate": 17.95,
+      "stop_rate": 15.38,
+      "large_winner_count": 3,
+      "kept_pct": 68.42,
+      "delta_return": 0.7386,
+      "delta_excess": 0.3776,
+      "delta_stop_rate": -3.92,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "피에스케이홀딩스 +9.03%"
+      ]
+    },
+    {
+      "name": "sector_leader_rank <= 20",
+      "count": 42,
+      "avg_return": -0.9097,
+      "median_return": -0.9729,
+      "avg_excess": -1.909,
+      "win_rate": 40.48,
+      "beat_rate": 23.81,
+      "stop_rate": 16.67,
+      "large_winner_count": 4,
+      "kept_pct": 73.68,
+      "delta_return": 0.7073,
+      "delta_excess": 0.6312,
+      "delta_stop_rate": -2.63,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "buy_score <= 70",
+      "count": 48,
+      "avg_return": -0.9316,
+      "median_return": -1.092,
+      "avg_excess": -1.8936,
+      "win_rate": 43.75,
+      "beat_rate": 25.0,
+      "stop_rate": 14.58,
+      "large_winner_count": 4,
+      "kept_pct": 84.21,
+      "delta_return": 0.6854,
+      "delta_excess": 0.6466,
+      "delta_stop_rate": -4.72,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "sector_leader_rank <= 30",
+      "count": 47,
+      "avg_return": -1.0291,
+      "median_return": -0.5882,
+      "avg_excess": -1.9021,
+      "win_rate": 42.55,
+      "beat_rate": 23.4,
+      "stop_rate": 14.89,
+      "large_winner_count": 4,
+      "kept_pct": 82.46,
+      "delta_return": 0.5879,
+      "delta_excess": 0.6381,
+      "delta_stop_rate": -4.41,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "gain_since_early_pct >= 0",
+      "count": 45,
+      "avg_return": -1.1039,
+      "median_return": -1.3575,
+      "avg_excess": -2.4385,
+      "win_rate": 42.22,
+      "beat_rate": 20.0,
+      "stop_rate": 17.78,
+      "large_winner_count": 4,
+      "kept_pct": 78.95,
+      "delta_return": 0.5131,
+      "delta_excess": 0.1017,
+      "delta_stop_rate": -1.52,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "sector_leader_rank >= 5",
+      "count": 42,
+      "avg_return": -1.2072,
+      "median_return": -1.5507,
+      "avg_excess": -2.1461,
+      "win_rate": 42.86,
+      "beat_rate": 23.81,
+      "stop_rate": 19.05,
+      "large_winner_count": 4,
+      "kept_pct": 73.68,
+      "delta_return": 0.4098,
+      "delta_excess": 0.3941,
+      "delta_stop_rate": -0.25,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "capture_rs_score >= 40",
+      "count": 37,
+      "avg_return": -1.2177,
+      "median_return": -0.5882,
+      "avg_excess": -1.9971,
+      "win_rate": 43.24,
+      "beat_rate": 27.03,
+      "stop_rate": 18.92,
+      "large_winner_count": 3,
+      "kept_pct": 64.91,
+      "delta_return": 0.3993,
+      "delta_excess": 0.5431,
+      "delta_stop_rate": -0.38,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "sector_score <= 60",
+      "count": 34,
+      "avg_return": -1.225,
+      "median_return": -2.1237,
+      "avg_excess": -1.1523,
+      "win_rate": 38.24,
+      "beat_rate": 32.35,
+      "stop_rate": 14.71,
+      "large_winner_count": 3,
+      "kept_pct": 59.65,
+      "delta_return": 0.392,
+      "delta_excess": 1.3879,
+      "delta_stop_rate": -4.59,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "atr20_pct >= 4",
+      "count": 31,
+      "avg_return": -1.2381,
+      "median_return": -1.9539,
+      "avg_excess": -1.6678,
+      "win_rate": 41.94,
+      "beat_rate": 32.26,
+      "stop_rate": 25.81,
+      "large_winner_count": 4,
+      "kept_pct": 54.39,
+      "delta_return": 0.3789,
+      "delta_excess": 0.8724,
+      "delta_stop_rate": 6.51,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "avg_trading_value20 <= 30000000000",
+      "count": 47,
+      "avg_return": -1.2564,
+      "median_return": -0.8264,
+      "avg_excess": -2.199,
+      "win_rate": 42.55,
+      "beat_rate": 23.4,
+      "stop_rate": 17.02,
+      "large_winner_count": 4,
+      "kept_pct": 82.46,
+      "delta_return": 0.3606,
+      "delta_excess": 0.3412,
+      "delta_stop_rate": -2.28,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "품질_BC",
+      "count": 52,
+      "avg_return": -1.3193,
+      "median_return": -1.5507,
+      "avg_excess": -2.149,
+      "win_rate": 40.38,
+      "beat_rate": 23.08,
+      "stop_rate": 17.31,
+      "large_winner_count": 4,
+      "kept_pct": 91.23,
+      "delta_return": 0.2977,
+      "delta_excess": 0.3912,
+      "delta_stop_rate": -1.99,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "sector_leader_rank >= 10",
+      "count": 33,
+      "avg_return": -1.323,
+      "median_return": -1.9539,
+      "avg_excess": -1.8767,
+      "win_rate": 42.42,
+      "beat_rate": 27.27,
+      "stop_rate": 21.21,
+      "large_winner_count": 3,
+      "kept_pct": 57.89,
+      "delta_return": 0.294,
+      "delta_excess": 0.6635,
+      "delta_stop_rate": 1.91,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "피에스케이홀딩스 +9.03%"
+      ]
+    },
+    {
+      "name": "buy_score <= 75",
+      "count": 52,
+      "avg_return": -1.3289,
+      "median_return": -1.5507,
+      "avg_excess": -2.3104,
+      "win_rate": 42.31,
+      "beat_rate": 23.08,
+      "stop_rate": 17.31,
+      "large_winner_count": 4,
+      "kept_pct": 91.23,
+      "delta_return": 0.2881,
+      "delta_excess": 0.2298,
+      "delta_stop_rate": -1.99,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "sector_score <= 70",
+      "count": 40,
+      "avg_return": -1.3505,
+      "median_return": -1.9044,
+      "avg_excess": -1.751,
+      "win_rate": 40.0,
+      "beat_rate": 27.5,
+      "stop_rate": 15.0,
+      "large_winner_count": 3,
+      "kept_pct": 70.18,
+      "delta_return": 0.2665,
+      "delta_excess": 0.7892,
+      "delta_stop_rate": -4.3,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    }
+  ],
   "top_all_single_filters": [
     {
       "name": "sector_score <= 40",
-      "count": 10,
-      "avg_return": 2.6933,
-      "median_return": 0.2152,
-      "avg_excess": 2.5481,
-      "win_rate": 50.0,
-      "beat_rate": 50.0,
+      "count": 13,
+      "avg_return": 2.6405,
+      "median_return": 0.4304,
+      "avg_excess": 2.154,
+      "win_rate": 53.85,
+      "beat_rate": 46.15,
       "stop_rate": 0.0,
-      "large_winner_count": 2,
-      "kept_pct": 16.13,
-      "delta_return": 4.7548,
-      "delta_excess": 5.5538,
-      "delta_stop_rate": -24.19,
-      "missed_large_winner_count": 2,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "atr20_pct >= 6",
-      "count": 10,
-      "avg_return": 1.8006,
-      "median_return": 0.024,
-      "avg_excess": 2.4496,
-      "win_rate": 50.0,
-      "beat_rate": 50.0,
-      "stop_rate": 0.0,
-      "large_winner_count": 2,
-      "kept_pct": 16.13,
-      "delta_return": 3.8621,
-      "delta_excess": 5.4553,
-      "delta_stop_rate": -24.19,
-      "missed_large_winner_count": 2,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "breakout_extension_pct >= 3",
-      "count": 15,
-      "avg_return": 1.5997,
-      "median_return": 0.2876,
-      "avg_excess": 1.3624,
-      "win_rate": 53.33,
-      "beat_rate": 33.33,
-      "stop_rate": 6.67,
       "large_winner_count": 3,
-      "kept_pct": 24.19,
-      "delta_return": 3.6612,
-      "delta_excess": 4.3681,
-      "delta_stop_rate": -17.52,
+      "kept_pct": 22.81,
+      "delta_return": 4.2575,
+      "delta_excess": 4.6942,
+      "delta_stop_rate": -19.3,
       "missed_large_winner_count": 1,
       "missed_large_winners": [
-        "2026-08-25:080580"
+        "HDC +15.18%"
       ]
     },
     {
-      "name": "주봉_STRONG_GOOD",
-      "count": 13,
-      "avg_return": 1.1331,
-      "median_return": 0.4304,
-      "avg_excess": 0.5347,
-      "win_rate": 61.54,
-      "beat_rate": 46.15,
-      "stop_rate": 15.38,
+      "name": "gain_since_early_pct <= 0",
+      "count": 10,
+      "avg_return": 1.8241,
+      "median_return": 1.2108,
+      "avg_excess": 1.0276,
+      "win_rate": 60.0,
+      "beat_rate": 30.0,
+      "stop_rate": 20.0,
       "large_winner_count": 2,
-      "kept_pct": 20.97,
-      "delta_return": 3.1946,
-      "delta_excess": 3.5404,
-      "delta_stop_rate": -8.81,
+      "kept_pct": 17.54,
+      "delta_return": 3.4411,
+      "delta_excess": 3.5678,
+      "delta_stop_rate": 0.7,
       "missed_large_winner_count": 2,
       "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
+        "HDC +15.18%",
+        "피에스케이홀딩스 +9.03%"
       ]
     },
     {
-      "name": "rs_20_score >= 90",
+      "name": "trading_days_since_early <= 3",
       "count": 11,
-      "avg_return": 1.0357,
-      "median_return": -1.964,
-      "avg_excess": 0.9956,
-      "win_rate": 36.36,
-      "beat_rate": 36.36,
-      "stop_rate": 0.0,
+      "avg_return": 1.6997,
+      "median_return": 0.905,
+      "avg_excess": 0.9783,
+      "win_rate": 54.55,
+      "beat_rate": 27.27,
+      "stop_rate": 9.09,
       "large_winner_count": 2,
-      "kept_pct": 17.74,
-      "delta_return": 3.0972,
-      "delta_excess": 4.0013,
-      "delta_stop_rate": -24.19,
+      "kept_pct": 19.3,
+      "delta_return": 3.3167,
+      "delta_excess": 3.5185,
+      "delta_stop_rate": -10.21,
       "missed_large_winner_count": 2,
       "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
+        "HDC +15.18%",
+        "피에스케이홀딩스 +9.03%"
       ]
     },
     {
-      "name": "rs_score >= 80",
+      "name": "gain_since_early_pct <= 3",
+      "count": 11,
+      "avg_return": 1.4997,
+      "median_return": 0.905,
+      "avg_excess": 0.6399,
+      "win_rate": 54.55,
+      "beat_rate": 27.27,
+      "stop_rate": 18.18,
+      "large_winner_count": 2,
+      "kept_pct": 19.3,
+      "delta_return": 3.1167,
+      "delta_excess": 3.1801,
+      "delta_stop_rate": -1.12,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "HDC +15.18%",
+        "피에스케이홀딩스 +9.03%"
+      ]
+    },
+    {
+      "name": "capture_rs_score >= 80",
       "count": 13,
       "avg_return": 0.8371,
       "median_return": -0.3824,
@@ -391,522 +862,944 @@
       "beat_rate": 46.15,
       "stop_rate": 7.69,
       "large_winner_count": 2,
-      "kept_pct": 20.97,
-      "delta_return": 2.8986,
-      "delta_excess": 4.3556,
-      "delta_stop_rate": -16.5,
+      "kept_pct": 22.81,
+      "delta_return": 2.4541,
+      "delta_excess": 3.8901,
+      "delta_stop_rate": -11.61,
       "missed_large_winner_count": 2,
       "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
+        "HDC +15.18%",
+        "오킨스전자 +8.76%"
       ]
     },
     {
-      "name": "rs_60_score <= 80",
-      "count": 10,
-      "avg_return": 0.481,
-      "median_return": -2.3685,
-      "avg_excess": 0.5269,
-      "win_rate": 30.0,
-      "beat_rate": 20.0,
-      "stop_rate": 10.0,
-      "large_winner_count": 2,
-      "kept_pct": 16.13,
-      "delta_return": 2.5425,
-      "delta_excess": 3.5326,
-      "delta_stop_rate": -14.19,
-      "missed_large_winner_count": 2,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "base_depth_pct >= 17.5",
-      "count": 10,
-      "avg_return": 0.1333,
-      "median_return": -0.6044,
-      "avg_excess": 0.4104,
-      "win_rate": 40.0,
-      "beat_rate": 40.0,
-      "stop_rate": 20.0,
-      "large_winner_count": 1,
-      "kept_pct": 16.13,
-      "delta_return": 2.1948,
-      "delta_excess": 3.4161,
-      "delta_stop_rate": -4.19,
-      "missed_large_winner_count": 3,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-04:031980",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "atr20_pct >= 5",
+      "name": "trading_days_since_early <= 5",
       "count": 15,
-      "avg_return": 0.1141,
-      "median_return": -0.8264,
-      "avg_excess": 0.2973,
-      "win_rate": 40.0,
-      "beat_rate": 33.33,
-      "stop_rate": 6.67,
+      "avg_return": 0.6728,
+      "median_return": 0.5376,
+      "avg_excess": -0.498,
+      "win_rate": 53.33,
+      "beat_rate": 26.67,
+      "stop_rate": 13.33,
       "large_winner_count": 2,
-      "kept_pct": 24.19,
-      "delta_return": 2.1756,
-      "delta_excess": 3.303,
-      "delta_stop_rate": -17.52,
+      "kept_pct": 26.32,
+      "delta_return": 2.2898,
+      "delta_excess": 2.0422,
+      "delta_stop_rate": -5.97,
       "missed_large_winner_count": 2,
       "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
+        "HDC +15.18%",
+        "피에스케이홀딩스 +9.03%"
       ]
     },
     {
-      "name": "base_days <= 10",
+      "name": "atr20_pct >= 6",
       "count": 14,
-      "avg_return": -0.1681,
-      "median_return": -1.1732,
-      "avg_excess": -0.2898,
+      "avg_return": 0.1398,
+      "median_return": -1.3406,
+      "avg_excess": 0.5842,
       "win_rate": 42.86,
-      "beat_rate": 35.71,
+      "beat_rate": 42.86,
+      "stop_rate": 14.29,
+      "large_winner_count": 3,
+      "kept_pct": 24.56,
+      "delta_return": 1.7568,
+      "delta_excess": 3.1244,
+      "delta_stop_rate": -5.01,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "gain_since_early_pct <= 5",
+      "count": 18,
+      "avg_return": -0.0489,
+      "median_return": -0.2941,
+      "avg_excess": -1.5817,
+      "win_rate": 44.44,
+      "beat_rate": 16.67,
+      "stop_rate": 16.67,
+      "large_winner_count": 2,
+      "kept_pct": 31.58,
+      "delta_return": 1.5681,
+      "delta_excess": 0.9585,
+      "delta_stop_rate": -2.63,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "HDC +15.18%",
+        "피에스케이홀딩스 +9.03%"
+      ]
+    },
+    {
+      "name": "buy_score <= 55",
+      "count": 14,
+      "avg_return": -0.0943,
+      "median_return": -0.6044,
+      "avg_excess": 0.0104,
+      "win_rate": 35.71,
+      "beat_rate": 28.57,
       "stop_rate": 14.29,
       "large_winner_count": 2,
-      "kept_pct": 22.58,
-      "delta_return": 1.8934,
-      "delta_excess": 2.7159,
-      "delta_stop_rate": -9.9,
+      "kept_pct": 24.56,
+      "delta_return": 1.5227,
+      "delta_excess": 2.5506,
+      "delta_stop_rate": -5.01,
       "missed_large_winner_count": 2,
       "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "rs_score >= 50",
-      "count": 19,
-      "avg_return": -0.2036,
-      "median_return": -0.3824,
-      "avg_excess": -0.0063,
-      "win_rate": 47.37,
-      "beat_rate": 36.84,
-      "stop_rate": 10.53,
-      "large_winner_count": 2,
-      "kept_pct": 30.65,
-      "delta_return": 1.8579,
-      "delta_excess": 2.9994,
-      "delta_stop_rate": -13.66,
-      "missed_large_winner_count": 2,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "sector_leader_rank <= 20",
-      "count": 31,
-      "avg_return": -0.2572,
-      "median_return": 0.0,
-      "avg_excess": -1.1643,
-      "win_rate": 45.16,
-      "beat_rate": 25.81,
-      "stop_rate": 12.9,
-      "large_winner_count": 3,
-      "kept_pct": 50.0,
-      "delta_return": 1.8043,
-      "delta_excess": 1.8414,
-      "delta_stop_rate": -11.29,
-      "missed_large_winner_count": 1,
-      "missed_large_winners": [
-        "2026-08-25:080580"
-      ]
-    },
-    {
-      "name": "rs_score >= 60",
-      "count": 18,
-      "avg_return": -0.276,
-      "median_return": -0.6044,
-      "avg_excess": 0.0055,
-      "win_rate": 44.44,
-      "beat_rate": 38.89,
-      "stop_rate": 11.11,
-      "large_winner_count": 2,
-      "kept_pct": 29.03,
-      "delta_return": 1.7855,
-      "delta_excess": 3.0112,
-      "delta_stop_rate": -13.08,
-      "missed_large_winner_count": 2,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "rs_score >= 70",
-      "count": 18,
-      "avg_return": -0.276,
-      "median_return": -0.6044,
-      "avg_excess": 0.0055,
-      "win_rate": 44.44,
-      "beat_rate": 38.89,
-      "stop_rate": 11.11,
-      "large_winner_count": 2,
-      "kept_pct": 29.03,
-      "delta_return": 1.7855,
-      "delta_excess": 3.0112,
-      "delta_stop_rate": -13.08,
-      "missed_large_winner_count": 2,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "volume_ratio >= 2",
-      "count": 20,
-      "avg_return": -0.4004,
-      "median_return": -2.0144,
-      "avg_excess": -1.1846,
-      "win_rate": 35.0,
-      "beat_rate": 15.0,
-      "stop_rate": 10.0,
-      "large_winner_count": 2,
-      "kept_pct": 32.26,
-      "delta_return": 1.6611,
-      "delta_excess": 1.8211,
-      "delta_stop_rate": -14.19,
-      "missed_large_winner_count": 2,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-04:031980"
-      ]
-    },
-    {
-      "name": "breakout_extension_pct <= 1",
-      "count": 10,
-      "avg_return": -0.401,
-      "median_return": 0.0732,
-      "avg_excess": -2.0152,
-      "win_rate": 50.0,
-      "beat_rate": 20.0,
-      "stop_rate": 0.0,
-      "large_winner_count": 0,
-      "kept_pct": 16.13,
-      "delta_return": 1.6605,
-      "delta_excess": 0.9905,
-      "delta_stop_rate": -24.19,
-      "missed_large_winner_count": 4,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-04:031980",
-        "2026-09-04:064290",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "sector_leader_rank <= 30",
-      "count": 35,
-      "avg_return": -0.5439,
-      "median_return": 0.0,
-      "avg_excess": -1.2297,
-      "win_rate": 45.71,
-      "beat_rate": 25.71,
-      "stop_rate": 11.43,
-      "large_winner_count": 3,
-      "kept_pct": 56.45,
-      "delta_return": 1.5176,
-      "delta_excess": 1.776,
-      "delta_stop_rate": -12.76,
-      "missed_large_winner_count": 1,
-      "missed_large_winners": [
-        "2026-08-25:080580"
-      ]
-    },
-    {
-      "name": "buy_score_capture >= 60",
-      "count": 19,
-      "avg_return": -0.5993,
-      "median_return": 0.2309,
-      "avg_excess": -1.9,
-      "win_rate": 57.89,
-      "beat_rate": 26.32,
-      "stop_rate": 15.79,
-      "large_winner_count": 1,
-      "kept_pct": 30.65,
-      "delta_return": 1.4622,
-      "delta_excess": 1.1057,
-      "delta_stop_rate": -8.4,
-      "missed_large_winner_count": 3,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-04:031980",
-        "2026-09-04:064290"
-      ]
-    },
-    {
-      "name": "rs_acceleration <= 3",
-      "count": 19,
-      "avg_return": -0.6031,
-      "median_return": -1.3575,
-      "avg_excess": -0.2535,
-      "win_rate": 36.84,
-      "beat_rate": 36.84,
-      "stop_rate": 10.53,
-      "large_winner_count": 2,
-      "kept_pct": 30.65,
-      "delta_return": 1.4584,
-      "delta_excess": 2.7522,
-      "delta_stop_rate": -13.66,
-      "missed_large_winner_count": 2,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "sector_leader_rank <= 15",
-      "count": 26,
-      "avg_return": -0.6201,
-      "median_return": 0.0,
-      "avg_excess": -1.5997,
-      "win_rate": 46.15,
-      "beat_rate": 26.92,
-      "stop_rate": 11.54,
-      "large_winner_count": 2,
-      "kept_pct": 41.94,
-      "delta_return": 1.4414,
-      "delta_excess": 1.406,
-      "delta_stop_rate": -12.65,
-      "missed_large_winner_count": 2,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-04:064290"
-      ]
-    },
-    {
-      "name": "rs_acceleration <= 5",
-      "count": 25,
-      "avg_return": -0.6621,
-      "median_return": -1.3575,
-      "avg_excess": -0.3724,
-      "win_rate": 40.0,
-      "beat_rate": 32.0,
-      "stop_rate": 16.0,
-      "large_winner_count": 3,
-      "kept_pct": 40.32,
-      "delta_return": 1.3994,
-      "delta_excess": 2.6333,
-      "delta_stop_rate": -8.19,
-      "missed_large_winner_count": 1,
-      "missed_large_winners": [
-        "2026-08-25:080580"
-      ]
-    },
-    {
-      "name": "volume_ratio >= 1.5",
-      "count": 31,
-      "avg_return": -0.7086,
-      "median_return": -0.8264,
-      "avg_excess": -1.2399,
-      "win_rate": 41.94,
-      "beat_rate": 25.81,
-      "stop_rate": 16.13,
-      "large_winner_count": 3,
-      "kept_pct": 50.0,
-      "delta_return": 1.3529,
-      "delta_excess": 1.7658,
-      "delta_stop_rate": -8.06,
-      "missed_large_winner_count": 1,
-      "missed_large_winners": [
-        "2026-08-25:080580"
-      ]
-    },
-    {
-      "name": "MTT_true",
-      "count": 12,
-      "avg_return": -0.748,
-      "median_return": 0.1449,
-      "avg_excess": -1.2828,
-      "win_rate": 50.0,
-      "beat_rate": 33.33,
-      "stop_rate": 16.67,
-      "large_winner_count": 1,
-      "kept_pct": 19.35,
-      "delta_return": 1.3135,
-      "delta_excess": 1.7229,
-      "delta_stop_rate": -7.52,
-      "missed_large_winner_count": 3,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-04:064290",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "atr20_pct >= 4",
-      "count": 22,
-      "avg_return": -0.7591,
-      "median_return": -1.3952,
-      "avg_excess": -0.8839,
-      "win_rate": 40.91,
-      "beat_rate": 31.82,
-      "stop_rate": 22.73,
-      "large_winner_count": 3,
-      "kept_pct": 35.48,
-      "delta_return": 1.3024,
-      "delta_excess": 2.1218,
-      "delta_stop_rate": -1.46,
-      "missed_large_winner_count": 1,
-      "missed_large_winners": [
-        "2026-08-25:080580"
-      ]
-    },
-    {
-      "name": "base_depth_pct >= 15",
-      "count": 18,
-      "avg_return": -0.7774,
-      "median_return": -2.0144,
-      "avg_excess": -1.3984,
-      "win_rate": 33.33,
-      "beat_rate": 27.78,
-      "stop_rate": 16.67,
-      "large_winner_count": 2,
-      "kept_pct": 29.03,
-      "delta_return": 1.2841,
-      "delta_excess": 1.6073,
-      "delta_stop_rate": -7.52,
-      "missed_large_winner_count": 2,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
+        "HDC +15.18%",
+        "피에스케이홀딩스 +9.03%"
       ]
     },
     {
       "name": "KOSDAQ만",
-      "count": 17,
-      "avg_return": -0.7979,
-      "median_return": -0.8264,
-      "avg_excess": -0.103,
-      "win_rate": 41.18,
-      "beat_rate": 41.18,
-      "stop_rate": 23.53,
+      "count": 16,
+      "avg_return": -0.2757,
+      "median_return": -0.6044,
+      "avg_excess": 0.4251,
+      "win_rate": 43.75,
+      "beat_rate": 43.75,
+      "stop_rate": 18.75,
       "large_winner_count": 3,
-      "kept_pct": 27.42,
-      "delta_return": 1.2636,
-      "delta_excess": 2.9027,
-      "delta_stop_rate": -0.66,
+      "kept_pct": 28.07,
+      "delta_return": 1.3413,
+      "delta_excess": 2.9653,
+      "delta_stop_rate": -0.55,
       "missed_large_winner_count": 1,
       "missed_large_winners": [
-        "2026-09-09:012630"
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "capture_rs_score >= 60",
+      "count": 18,
+      "avg_return": -0.276,
+      "median_return": -0.6044,
+      "avg_excess": 0.0055,
+      "win_rate": 44.44,
+      "beat_rate": 38.89,
+      "stop_rate": 11.11,
+      "large_winner_count": 2,
+      "kept_pct": 31.58,
+      "delta_return": 1.341,
+      "delta_excess": 2.5457,
+      "delta_stop_rate": -8.19,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "HDC +15.18%",
+        "오킨스전자 +8.76%"
+      ]
+    },
+    {
+      "name": "capture_rs_score >= 70",
+      "count": 18,
+      "avg_return": -0.276,
+      "median_return": -0.6044,
+      "avg_excess": 0.0055,
+      "win_rate": 44.44,
+      "beat_rate": 38.89,
+      "stop_rate": 11.11,
+      "large_winner_count": 2,
+      "kept_pct": 31.58,
+      "delta_return": 1.341,
+      "delta_excess": 2.5457,
+      "delta_stop_rate": -8.19,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "HDC +15.18%",
+        "오킨스전자 +8.76%"
+      ]
+    },
+    {
+      "name": "trading_days_since_early <= 8",
+      "count": 23,
+      "avg_return": -0.464,
+      "median_return": -1.3575,
+      "avg_excess": -1.8946,
+      "win_rate": 43.48,
+      "beat_rate": 21.74,
+      "stop_rate": 17.39,
+      "large_winner_count": 3,
+      "kept_pct": 40.35,
+      "delta_return": 1.153,
+      "delta_excess": 0.6456,
+      "delta_stop_rate": -1.91,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "gain_since_early_pct <= 8",
+      "count": 27,
+      "avg_return": -0.6801,
+      "median_return": -0.5882,
+      "avg_excess": -2.1772,
+      "win_rate": 44.44,
+      "beat_rate": 18.52,
+      "stop_rate": 14.81,
+      "large_winner_count": 2,
+      "kept_pct": 47.37,
+      "delta_return": 0.9369,
+      "delta_excess": 0.363,
+      "delta_stop_rate": -4.49,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "HDC +15.18%",
+        "피에스케이홀딩스 +9.03%"
       ]
     },
     {
       "name": "sector_score <= 50",
-      "count": 20,
-      "avg_return": -0.8755,
-      "median_return": -1.5045,
-      "avg_excess": -0.3426,
-      "win_rate": 35.0,
-      "beat_rate": 30.0,
-      "stop_rate": 15.0,
-      "large_winner_count": 2,
-      "kept_pct": 32.26,
-      "delta_return": 1.186,
-      "delta_excess": 2.6631,
-      "delta_stop_rate": -9.19,
-      "missed_large_winner_count": 2,
+      "count": 27,
+      "avg_return": -0.7,
+      "median_return": -0.8264,
+      "avg_excess": -0.7498,
+      "win_rate": 40.74,
+      "beat_rate": 33.33,
+      "stop_rate": 14.81,
+      "large_winner_count": 3,
+      "kept_pct": 47.37,
+      "delta_return": 0.917,
+      "delta_excess": 1.7904,
+      "delta_stop_rate": -4.49,
+      "missed_large_winner_count": 1,
       "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
+        "HDC +15.18%"
       ]
     },
     {
-      "name": "rs_score >= 40",
-      "count": 23,
-      "avg_return": -0.9366,
-      "median_return": -0.3824,
-      "avg_excess": -1.2469,
-      "win_rate": 43.48,
-      "beat_rate": 30.43,
-      "stop_rate": 17.39,
-      "large_winner_count": 2,
-      "kept_pct": 37.1,
-      "delta_return": 1.1249,
-      "delta_excess": 1.7588,
-      "delta_stop_rate": -6.8,
-      "missed_large_winner_count": 2,
-      "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
-      ]
-    },
-    {
-      "name": "기관적합_true",
-      "count": 15,
-      "avg_return": -0.961,
-      "median_return": -1.964,
-      "avg_excess": -1.5274,
+      "name": "buy_score <= 65",
+      "count": 40,
+      "avg_return": -0.7067,
+      "median_return": -1.5507,
+      "avg_excess": -1.3239,
       "win_rate": 40.0,
-      "beat_rate": 20.0,
-      "stop_rate": 26.67,
-      "large_winner_count": 2,
-      "kept_pct": 24.19,
-      "delta_return": 1.1005,
-      "delta_excess": 1.4783,
-      "delta_stop_rate": 2.48,
-      "missed_large_winner_count": 2,
+      "beat_rate": 27.5,
+      "stop_rate": 12.5,
+      "large_winner_count": 4,
+      "kept_pct": 70.18,
+      "delta_return": 0.9103,
+      "delta_excess": 1.2163,
+      "delta_stop_rate": -6.8,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "sector_score <= 55",
+      "count": 30,
+      "avg_return": -0.8175,
+      "median_return": -1.5045,
+      "avg_excess": -0.7922,
+      "win_rate": 40.0,
+      "beat_rate": 33.33,
+      "stop_rate": 13.33,
+      "large_winner_count": 3,
+      "kept_pct": 52.63,
+      "delta_return": 0.7995,
+      "delta_excess": 1.748,
+      "delta_stop_rate": -5.97,
+      "missed_large_winner_count": 1,
       "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
+        "HDC +15.18%"
       ]
     },
     {
-      "name": "base_days <= 15",
-      "count": 16,
-      "avg_return": -1.0139,
-      "median_return": -2.538,
-      "avg_excess": -0.852,
-      "win_rate": 37.5,
-      "beat_rate": 31.25,
-      "stop_rate": 18.75,
+      "name": "gain_since_early_pct <= 10",
+      "count": 32,
+      "avg_return": -0.8283,
+      "median_return": -0.2941,
+      "avg_excess": -2.4885,
+      "win_rate": 46.88,
+      "beat_rate": 18.75,
+      "stop_rate": 15.62,
       "large_winner_count": 2,
-      "kept_pct": 25.81,
-      "delta_return": 1.0476,
-      "delta_excess": 2.1537,
-      "delta_stop_rate": -5.44,
+      "kept_pct": 56.14,
+      "delta_return": 0.7887,
+      "delta_excess": 0.0517,
+      "delta_stop_rate": -3.68,
       "missed_large_winner_count": 2,
       "missed_large_winners": [
-        "2026-08-25:080580",
-        "2026-09-09:012630"
+        "HDC +15.18%",
+        "피에스케이홀딩스 +9.03%"
       ]
+    },
+    {
+      "name": "capture_rs_score >= 50",
+      "count": 33,
+      "avg_return": -0.8297,
+      "median_return": -0.5882,
+      "avg_excess": -1.3738,
+      "win_rate": 45.45,
+      "beat_rate": 30.3,
+      "stop_rate": 15.15,
+      "large_winner_count": 3,
+      "kept_pct": 57.89,
+      "delta_return": 0.7873,
+      "delta_excess": 1.1664,
+      "delta_stop_rate": -4.15,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "trading_days_since_early <= 10",
+      "count": 26,
+      "avg_return": -0.8671,
+      "median_return": -0.9729,
+      "avg_excess": -2.2356,
+      "win_rate": 42.31,
+      "beat_rate": 19.23,
+      "stop_rate": 19.23,
+      "large_winner_count": 3,
+      "kept_pct": 45.61,
+      "delta_return": 0.7499,
+      "delta_excess": 0.3046,
+      "delta_stop_rate": -0.07,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "gain_since_early_pct <= 12",
+      "count": 39,
+      "avg_return": -0.8784,
+      "median_return": -1.3575,
+      "avg_excess": -2.1626,
+      "win_rate": 41.03,
+      "beat_rate": 17.95,
+      "stop_rate": 15.38,
+      "large_winner_count": 3,
+      "kept_pct": 68.42,
+      "delta_return": 0.7386,
+      "delta_excess": 0.3776,
+      "delta_stop_rate": -3.92,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "피에스케이홀딩스 +9.03%"
+      ]
+    },
+    {
+      "name": "sector_leader_rank <= 20",
+      "count": 42,
+      "avg_return": -0.9097,
+      "median_return": -0.9729,
+      "avg_excess": -1.909,
+      "win_rate": 40.48,
+      "beat_rate": 23.81,
+      "stop_rate": 16.67,
+      "large_winner_count": 4,
+      "kept_pct": 73.68,
+      "delta_return": 0.7073,
+      "delta_excess": 0.6312,
+      "delta_stop_rate": -2.63,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "buy_score <= 70",
+      "count": 48,
+      "avg_return": -0.9316,
+      "median_return": -1.092,
+      "avg_excess": -1.8936,
+      "win_rate": 43.75,
+      "beat_rate": 25.0,
+      "stop_rate": 14.58,
+      "large_winner_count": 4,
+      "kept_pct": 84.21,
+      "delta_return": 0.6854,
+      "delta_excess": 0.6466,
+      "delta_stop_rate": -4.72,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "sector_leader_rank <= 30",
+      "count": 47,
+      "avg_return": -1.0291,
+      "median_return": -0.5882,
+      "avg_excess": -1.9021,
+      "win_rate": 42.55,
+      "beat_rate": 23.4,
+      "stop_rate": 14.89,
+      "large_winner_count": 4,
+      "kept_pct": 82.46,
+      "delta_return": 0.5879,
+      "delta_excess": 0.6381,
+      "delta_stop_rate": -4.41,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "gain_since_early_pct >= 0",
+      "count": 45,
+      "avg_return": -1.1039,
+      "median_return": -1.3575,
+      "avg_excess": -2.4385,
+      "win_rate": 42.22,
+      "beat_rate": 20.0,
+      "stop_rate": 17.78,
+      "large_winner_count": 4,
+      "kept_pct": 78.95,
+      "delta_return": 0.5131,
+      "delta_excess": 0.1017,
+      "delta_stop_rate": -1.52,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "avg_trading_value20 <= 10000000000",
+      "count": 38,
+      "avg_return": -1.1847,
+      "median_return": -0.7073,
+      "avg_excess": -2.158,
+      "win_rate": 42.11,
+      "beat_rate": 23.68,
+      "stop_rate": 10.53,
+      "large_winner_count": 2,
+      "kept_pct": 66.67,
+      "delta_return": 0.4323,
+      "delta_excess": 0.3822,
+      "delta_stop_rate": -8.77,
+      "missed_large_winner_count": 2,
+      "missed_large_winners": [
+        "인텍플러스 +22.83%",
+        "피에스케이홀딩스 +9.03%"
+      ]
+    },
+    {
+      "name": "sector_leader_rank >= 5",
+      "count": 42,
+      "avg_return": -1.2072,
+      "median_return": -1.5507,
+      "avg_excess": -2.1461,
+      "win_rate": 42.86,
+      "beat_rate": 23.81,
+      "stop_rate": 19.05,
+      "large_winner_count": 4,
+      "kept_pct": 73.68,
+      "delta_return": 0.4098,
+      "delta_excess": 0.3941,
+      "delta_stop_rate": -0.25,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
+    },
+    {
+      "name": "capture_rs_score >= 40",
+      "count": 37,
+      "avg_return": -1.2177,
+      "median_return": -0.5882,
+      "avg_excess": -1.9971,
+      "win_rate": 43.24,
+      "beat_rate": 27.03,
+      "stop_rate": 18.92,
+      "large_winner_count": 3,
+      "kept_pct": 64.91,
+      "delta_return": 0.3993,
+      "delta_excess": 0.5431,
+      "delta_stop_rate": -0.38,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "sector_score <= 60",
+      "count": 34,
+      "avg_return": -1.225,
+      "median_return": -2.1237,
+      "avg_excess": -1.1523,
+      "win_rate": 38.24,
+      "beat_rate": 32.35,
+      "stop_rate": 14.71,
+      "large_winner_count": 3,
+      "kept_pct": 59.65,
+      "delta_return": 0.392,
+      "delta_excess": 1.3879,
+      "delta_stop_rate": -4.59,
+      "missed_large_winner_count": 1,
+      "missed_large_winners": [
+        "HDC +15.18%"
+      ]
+    },
+    {
+      "name": "atr20_pct >= 4",
+      "count": 31,
+      "avg_return": -1.2381,
+      "median_return": -1.9539,
+      "avg_excess": -1.6678,
+      "win_rate": 41.94,
+      "beat_rate": 32.26,
+      "stop_rate": 25.81,
+      "large_winner_count": 4,
+      "kept_pct": 54.39,
+      "delta_return": 0.3789,
+      "delta_excess": 0.8724,
+      "delta_stop_rate": 6.51,
+      "missed_large_winner_count": 0,
+      "missed_large_winners": []
     }
   ],
   "feature_bins": {
-    "rs_score": [
+    "gain_since_early_pct": [
       {
-        "bucket": "<40",
+        "bucket": "<0",
+        "count": 1,
+        "avg_return": -8.9655,
+        "median_return": -8.9655,
+        "avg_excess": -8.4784,
+        "win_rate": 0.0,
+        "beat_rate": 0.0,
+        "stop_rate": 100.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "0-3",
+        "count": 10,
+        "avg_return": 2.5462,
+        "median_return": 1.2108,
+        "avg_excess": 1.5517,
+        "win_rate": 60.0,
+        "beat_rate": 30.0,
+        "stop_rate": 10.0,
+        "large_winner_count": 2
+      },
+      {
+        "bucket": "3-5",
+        "count": 7,
+        "avg_return": -2.4826,
+        "median_return": -1.3575,
+        "avg_excess": -5.0729,
+        "win_rate": 28.57,
+        "beat_rate": 0.0,
+        "stop_rate": 14.29,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "5-8",
+        "count": 9,
+        "avg_return": -1.9425,
+        "median_return": -1.9539,
+        "avg_excess": -3.3681,
+        "win_rate": 44.44,
+        "beat_rate": 22.22,
+        "stop_rate": 11.11,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "8-10",
+        "count": 5,
+        "avg_return": -1.6286,
+        "median_return": 0.2876,
+        "avg_excess": -4.1694,
+        "win_rate": 60.0,
+        "beat_rate": 20.0,
+        "stop_rate": 20.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "10-15",
+        "count": 14,
+        "avg_return": -2.2955,
+        "median_return": -3.0466,
+        "avg_excess": -2.7558,
+        "win_rate": 28.57,
+        "beat_rate": 21.43,
+        "stop_rate": 28.57,
+        "large_winner_count": 2
+      },
+      {
+        "bucket": "MISSING",
+        "count": 11,
+        "avg_return": -3.048,
+        "median_return": -2.2989,
+        "avg_excess": -2.4164,
+        "win_rate": 27.27,
+        "beat_rate": 27.27,
+        "stop_rate": 18.18,
+        "large_winner_count": 0
+      }
+    ],
+    "trading_days_since_early": [
+      {
+        "bucket": "0",
+        "count": 9,
+        "avg_return": 3.0229,
+        "median_return": 1.5166,
+        "avg_excess": 2.0839,
+        "win_rate": 66.67,
+        "beat_rate": 33.33,
+        "stop_rate": 11.11,
+        "large_winner_count": 2
+      },
+      {
+        "bucket": "1-3",
+        "count": 2,
+        "avg_return": -4.255,
+        "median_return": -4.255,
+        "avg_excess": -3.9969,
+        "win_rate": 0.0,
+        "beat_rate": 0.0,
+        "stop_rate": 0.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "4-6",
+        "count": 6,
+        "avg_return": 0.1936,
+        "median_return": 0.638,
+        "avg_excess": -2.3941,
+        "win_rate": 66.67,
+        "beat_rate": 33.33,
+        "stop_rate": 16.67,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "7-10",
+        "count": 9,
+        "avg_return": -4.7114,
+        "median_return": -4.1667,
+        "avg_excess": -6.058,
+        "win_rate": 11.11,
+        "beat_rate": 0.0,
+        "stop_rate": 33.33,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": ">=11",
         "count": 20,
-        "avg_return": -2.3558,
-        "median_return": -2.1862,
-        "avg_excess": -3.545,
-        "win_rate": 30.0,
-        "beat_rate": 10.0,
+        "avg_return": -1.8049,
+        "median_return": -2.0733,
+        "avg_excess": -3.0043,
+        "win_rate": 40.0,
+        "beat_rate": 20.0,
         "stop_rate": 20.0,
         "large_winner_count": 1
       },
       {
-        "bucket": "40-60",
-        "count": 5,
-        "avg_return": -3.3148,
-        "median_return": 0.0,
-        "avg_excess": -5.7553,
-        "win_rate": 40.0,
-        "beat_rate": 0.0,
-        "stop_rate": 40.0,
+        "bucket": "MISSING",
+        "count": 11,
+        "avg_return": -3.048,
+        "median_return": -2.2989,
+        "avg_excess": -2.4164,
+        "win_rate": 27.27,
+        "beat_rate": 27.27,
+        "stop_rate": 18.18,
+        "large_winner_count": 0
+      }
+    ],
+    "buy_score": [
+      {
+        "bucket": "<55",
+        "count": 14,
+        "avg_return": -0.0943,
+        "median_return": -0.6044,
+        "avg_excess": 0.0104,
+        "win_rate": 35.71,
+        "beat_rate": 28.57,
+        "stop_rate": 14.29,
+        "large_winner_count": 2
+      },
+      {
+        "bucket": "55-60",
+        "count": 16,
+        "avg_return": -2.5626,
+        "median_return": -2.8478,
+        "avg_excess": -3.732,
+        "win_rate": 31.25,
+        "beat_rate": 18.75,
+        "stop_rate": 18.75,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "60-65",
+        "count": 10,
+        "avg_return": 1.4053,
+        "median_return": 0.4516,
+        "avg_excess": 0.661,
+        "win_rate": 60.0,
+        "beat_rate": 40.0,
+        "stop_rate": 0.0,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "65-70",
+        "count": 8,
+        "avg_return": -2.0559,
+        "median_return": 0.2169,
+        "avg_excess": -4.7421,
+        "win_rate": 62.5,
+        "beat_rate": 12.5,
+        "stop_rate": 25.0,
         "large_winner_count": 0
       },
       {
-        "bucket": "60-80",
+        "bucket": ">=70",
+        "count": 9,
+        "avg_return": -5.2728,
+        "median_return": -2.2989,
+        "avg_excess": -5.9889,
+        "win_rate": 11.11,
+        "beat_rate": 0.0,
+        "stop_rate": 44.44,
+        "large_winner_count": 0
+      }
+    ],
+    "sector_score": [
+      {
+        "bucket": "<40",
+        "count": 13,
+        "avg_return": 2.6405,
+        "median_return": 0.4304,
+        "avg_excess": 2.154,
+        "win_rate": 53.85,
+        "beat_rate": 46.15,
+        "stop_rate": 0.0,
+        "large_winner_count": 3
+      },
+      {
+        "bucket": "40-55",
+        "count": 17,
+        "avg_return": -3.4619,
+        "median_return": -4.1667,
+        "avg_excess": -3.0452,
+        "win_rate": 29.41,
+        "beat_rate": 23.53,
+        "stop_rate": 23.53,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "55-70",
+        "count": 10,
+        "avg_return": -2.9494,
+        "median_return": -1.9044,
+        "avg_excess": -4.6273,
+        "win_rate": 40.0,
+        "beat_rate": 10.0,
+        "stop_rate": 20.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": ">=70",
+        "count": 17,
+        "avg_return": -2.2442,
+        "median_return": -1.3575,
+        "avg_excess": -4.3973,
+        "win_rate": 35.29,
+        "beat_rate": 5.88,
+        "stop_rate": 29.41,
+        "large_winner_count": 1
+      }
+    ],
+    "sector_leader_rank": [
+      {
+        "bucket": "1-5",
+        "count": 17,
+        "avg_return": -3.2167,
+        "median_return": -2.0649,
+        "avg_excess": -4.2898,
+        "win_rate": 23.53,
+        "beat_rate": 11.76,
+        "stop_rate": 23.53,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "6-10",
+        "count": 9,
+        "avg_return": 0.4198,
+        "median_return": 0.2876,
+        "avg_excess": -1.345,
+        "win_rate": 55.56,
+        "beat_rate": 22.22,
+        "stop_rate": 0.0,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "11-20",
+        "count": 16,
+        "avg_return": 0.7935,
+        "median_return": -0.7565,
+        "avg_excess": 0.3032,
+        "win_rate": 50.0,
+        "beat_rate": 37.5,
+        "stop_rate": 18.75,
+        "large_winner_count": 3
+      },
+      {
+        "bucket": "21-30",
+        "count": 5,
+        "avg_return": -2.0312,
+        "median_return": 0.4304,
+        "avg_excess": -1.8437,
+        "win_rate": 60.0,
+        "beat_rate": 20.0,
+        "stop_rate": 0.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": ">30",
+        "count": 10,
+        "avg_return": -4.3806,
+        "median_return": -5.5044,
+        "avg_excess": -5.5395,
+        "win_rate": 20.0,
+        "beat_rate": 10.0,
+        "stop_rate": 40.0,
+        "large_winner_count": 0
+      }
+    ],
+    "atr20_pct": [
+      {
+        "bucket": "<3",
+        "count": 14,
+        "avg_return": -1.366,
+        "median_return": -0.2941,
+        "avg_excess": -2.5292,
+        "win_rate": 35.71,
+        "beat_rate": 14.29,
+        "stop_rate": 0.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "3-4",
+        "count": 12,
+        "avg_return": -2.8889,
+        "median_return": -1.9632,
+        "avg_excess": -4.8069,
+        "win_rate": 33.33,
+        "beat_rate": 0.0,
+        "stop_rate": 25.0,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "4-5",
+        "count": 11,
+        "avg_return": -1.1645,
+        "median_return": 0.2876,
+        "avg_excess": -2.4499,
+        "win_rate": 54.55,
+        "beat_rate": 36.36,
+        "stop_rate": 36.36,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "5-6",
+        "count": 6,
+        "avg_return": -4.588,
+        "median_return": -3.091,
+        "avg_excess": -5.4885,
+        "win_rate": 16.67,
+        "beat_rate": 0.0,
+        "stop_rate": 33.33,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "6-8",
+        "count": 7,
+        "avg_return": -1.5445,
+        "median_return": -2.2989,
+        "avg_excess": -1.0366,
+        "win_rate": 42.86,
+        "beat_rate": 42.86,
+        "stop_rate": 14.29,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": ">=8",
+        "count": 7,
+        "avg_return": 1.8241,
+        "median_return": -0.3824,
+        "avg_excess": 2.2049,
+        "win_rate": 42.86,
+        "beat_rate": 42.86,
+        "stop_rate": 14.29,
+        "large_winner_count": 2
+      }
+    ],
+    "avg_trading_value20": [
+      {
+        "bucket": "<1B",
+        "count": 21,
+        "avg_return": -1.6069,
+        "median_return": -0.8264,
+        "avg_excess": -3.0789,
+        "win_rate": 42.86,
+        "beat_rate": 19.05,
+        "stop_rate": 9.52,
+        "large_winner_count": 0
+      },
+      {
+        "bucket": "1-5B",
+        "count": 12,
+        "avg_return": -1.1542,
+        "median_return": -1.3266,
+        "avg_excess": -2.0449,
+        "win_rate": 33.33,
+        "beat_rate": 16.67,
+        "stop_rate": 16.67,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "5-10B",
+        "count": 5,
+        "avg_return": 0.5154,
+        "median_return": 0.4304,
+        "avg_excess": 1.4384,
+        "win_rate": 60.0,
+        "beat_rate": 60.0,
+        "stop_rate": 0.0,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "10-30B",
+        "count": 9,
+        "avg_return": -1.5591,
+        "median_return": -3.9106,
+        "avg_excess": -2.3723,
+        "win_rate": 44.44,
+        "beat_rate": 22.22,
+        "stop_rate": 44.44,
+        "large_winner_count": 2
+      },
+      {
+        "bucket": ">=30B",
+        "count": 10,
+        "avg_return": -3.312,
+        "median_return": -2.1314,
+        "avg_excess": -4.1438,
+        "win_rate": 20.0,
+        "beat_rate": 10.0,
+        "stop_rate": 30.0,
+        "large_winner_count": 0
+      }
+    ],
+    "capture_rs_score": [
+      {
+        "bucket": "<50",
+        "count": 24,
+        "avg_return": -2.6996,
+        "median_return": -2.1862,
+        "avg_excess": -4.1441,
+        "win_rate": 29.17,
+        "beat_rate": 8.33,
+        "stop_rate": 25.0,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "50-60",
+        "count": 15,
+        "avg_return": -1.4942,
+        "median_return": -0.5882,
+        "avg_excess": -3.0289,
+        "win_rate": 46.67,
+        "beat_rate": 20.0,
+        "stop_rate": 20.0,
+        "large_winner_count": 1
+      },
+      {
+        "bucket": "70-80",
         "count": 5,
         "avg_return": -3.1703,
         "median_return": -1.964,
@@ -925,464 +1818,6 @@
         "win_rate": 46.15,
         "beat_rate": 46.15,
         "stop_rate": 7.69,
-        "large_winner_count": 2
-      }
-    ],
-    "rs_20_score": [
-      {
-        "bucket": "<60",
-        "count": 8,
-        "avg_return": -3.0864,
-        "median_return": -5.5044,
-        "avg_excess": -3.5104,
-        "win_rate": 25.0,
-        "beat_rate": 25.0,
-        "stop_rate": 37.5,
-        "large_winner_count": 1
-      },
-      {
-        "bucket": "60-80",
-        "count": 13,
-        "avg_return": -1.3133,
-        "median_return": 0.0,
-        "avg_excess": -2.9426,
-        "win_rate": 46.15,
-        "beat_rate": 15.38,
-        "stop_rate": 7.69,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "80-90",
-        "count": 11,
-        "avg_return": -3.4807,
-        "median_return": -0.8264,
-        "avg_excess": -4.0175,
-        "win_rate": 36.36,
-        "beat_rate": 9.09,
-        "stop_rate": 36.36,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": ">=90",
-        "count": 11,
-        "avg_return": 1.0357,
-        "median_return": -1.964,
-        "avg_excess": 0.9956,
-        "win_rate": 36.36,
-        "beat_rate": 36.36,
-        "stop_rate": 0.0,
-        "large_winner_count": 2
-      }
-    ],
-    "rs_60_score": [
-      {
-        "bucket": "<80",
-        "count": 10,
-        "avg_return": 0.481,
-        "median_return": -2.3685,
-        "avg_excess": 0.5269,
-        "win_rate": 30.0,
-        "beat_rate": 20.0,
-        "stop_rate": 10.0,
-        "large_winner_count": 2
-      },
-      {
-        "bucket": "80-90",
-        "count": 22,
-        "avg_return": -2.2262,
-        "median_return": -2.0144,
-        "avg_excess": -3.0775,
-        "win_rate": 36.36,
-        "beat_rate": 18.18,
-        "stop_rate": 22.73,
-        "large_winner_count": 1
-      },
-      {
-        "bucket": "90-95",
-        "count": 10,
-        "avg_return": -2.6252,
-        "median_return": -1.556,
-        "avg_excess": -4.091,
-        "win_rate": 40.0,
-        "beat_rate": 20.0,
-        "stop_rate": 20.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": ">=95",
-        "count": 1,
-        "avg_return": 1.7588,
-        "median_return": 1.7588,
-        "avg_excess": 3.7687,
-        "win_rate": 100.0,
-        "beat_rate": 100.0,
-        "stop_rate": 0.0,
-        "large_winner_count": 0
-      }
-    ],
-    "rs_acceleration": [
-      {
-        "bucket": "<0",
-        "count": 4,
-        "avg_return": -1.627,
-        "median_return": -1.2861,
-        "avg_excess": -1.7714,
-        "win_rate": 25.0,
-        "beat_rate": 25.0,
-        "stop_rate": 0.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "0-5",
-        "count": 21,
-        "avg_return": -0.4783,
-        "median_return": -1.3575,
-        "avg_excess": -0.106,
-        "win_rate": 42.86,
-        "beat_rate": 33.33,
-        "stop_rate": 19.05,
-        "large_winner_count": 3
-      },
-      {
-        "bucket": "5-10",
-        "count": 12,
-        "avg_return": -3.2265,
-        "median_return": -2.7425,
-        "avg_excess": -5.079,
-        "win_rate": 33.33,
-        "beat_rate": 8.33,
-        "stop_rate": 25.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": ">=10",
-        "count": 6,
-        "avg_return": -2.2316,
-        "median_return": -0.982,
-        "avg_excess": -4.8866,
-        "win_rate": 33.33,
-        "beat_rate": 0.0,
-        "stop_rate": 16.67,
-        "large_winner_count": 0
-      }
-    ],
-    "sector_score": [
-      {
-        "bucket": "<40",
-        "count": 10,
-        "avg_return": 2.6933,
-        "median_return": 0.2152,
-        "avg_excess": 2.5481,
-        "win_rate": 50.0,
-        "beat_rate": 50.0,
-        "stop_rate": 0.0,
-        "large_winner_count": 2
-      },
-      {
-        "bucket": "40-55",
-        "count": 13,
-        "avg_return": -3.8515,
-        "median_return": -4.2179,
-        "avg_excess": -2.7582,
-        "win_rate": 23.08,
-        "beat_rate": 15.38,
-        "stop_rate": 23.08,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "55-70",
-        "count": 8,
-        "avg_return": -3.8196,
-        "median_return": -4.0463,
-        "avg_excess": -5.3329,
-        "win_rate": 37.5,
-        "beat_rate": 12.5,
-        "stop_rate": 25.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": ">=70",
-        "count": 12,
-        "avg_return": -1.2472,
-        "median_return": -0.6787,
-        "avg_excess": -3.8782,
-        "win_rate": 41.67,
-        "beat_rate": 8.33,
-        "stop_rate": 25.0,
-        "large_winner_count": 1
-      }
-    ],
-    "distance_from_high52_pct": [
-      {
-        "bucket": "<-20",
-        "count": 19,
-        "avg_return": -2.2357,
-        "median_return": -3.9106,
-        "avg_excess": -3.0309,
-        "win_rate": 31.58,
-        "beat_rate": 15.79,
-        "stop_rate": 26.32,
-        "large_winner_count": 1
-      },
-      {
-        "bucket": "-20~-15",
-        "count": 9,
-        "avg_return": 0.4428,
-        "median_return": -1.964,
-        "avg_excess": -0.3331,
-        "win_rate": 44.44,
-        "beat_rate": 33.33,
-        "stop_rate": 11.11,
-        "large_winner_count": 2
-      },
-      {
-        "bucket": "-15~-10",
-        "count": 6,
-        "avg_return": -3.2744,
-        "median_return": -2.9038,
-        "avg_excess": -4.8488,
-        "win_rate": 16.67,
-        "beat_rate": 0.0,
-        "stop_rate": 16.67,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "-10~-5",
-        "count": 4,
-        "avg_return": -0.9893,
-        "median_return": -0.9794,
-        "avg_excess": -1.5888,
-        "win_rate": 50.0,
-        "beat_rate": 50.0,
-        "stop_rate": 0.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": ">=-5",
-        "count": 5,
-        "avg_return": -1.3122,
-        "median_return": 0.5376,
-        "avg_excess": -0.7091,
-        "win_rate": 60.0,
-        "beat_rate": 20.0,
-        "stop_rate": 20.0,
-        "large_winner_count": 0
-      }
-    ],
-    "base_depth_pct": [
-      {
-        "bucket": "<10",
-        "count": 4,
-        "avg_return": -3.5637,
-        "median_return": -3.0138,
-        "avg_excess": -5.1431,
-        "win_rate": 25.0,
-        "beat_rate": 0.0,
-        "stop_rate": 25.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "10-15",
-        "count": 21,
-        "avg_return": -1.9243,
-        "median_return": -1.3575,
-        "avg_excess": -2.5635,
-        "win_rate": 42.86,
-        "beat_rate": 19.05,
-        "stop_rate": 19.05,
-        "large_winner_count": 1
-      },
-      {
-        "bucket": "15-17.5",
-        "count": 8,
-        "avg_return": -1.9159,
-        "median_return": -3.2661,
-        "avg_excess": -3.6595,
-        "win_rate": 25.0,
-        "beat_rate": 12.5,
-        "stop_rate": 12.5,
-        "large_winner_count": 1
-      },
-      {
-        "bucket": ">=17.5",
-        "count": 10,
-        "avg_return": 0.1333,
-        "median_return": -0.6044,
-        "avg_excess": 0.4104,
-        "win_rate": 40.0,
-        "beat_rate": 40.0,
-        "stop_rate": 20.0,
-        "large_winner_count": 1
-      }
-    ],
-    "breakout_extension_pct": [
-      {
-        "bucket": "<1",
-        "count": 10,
-        "avg_return": -0.401,
-        "median_return": 0.0732,
-        "avg_excess": -2.0152,
-        "win_rate": 50.0,
-        "beat_rate": 20.0,
-        "stop_rate": 0.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "1-2",
-        "count": 10,
-        "avg_return": -4.0755,
-        "median_return": -3.5855,
-        "avg_excess": -4.0699,
-        "win_rate": 20.0,
-        "beat_rate": 20.0,
-        "stop_rate": 30.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "2-3",
-        "count": 8,
-        "avg_return": -5.9863,
-        "median_return": -7.4667,
-        "avg_excess": -7.3952,
-        "win_rate": 12.5,
-        "beat_rate": 0.0,
-        "stop_rate": 50.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "3-5",
-        "count": 6,
-        "avg_return": 2.3888,
-        "median_return": 0.4799,
-        "avg_excess": 0.7394,
-        "win_rate": 66.67,
-        "beat_rate": 16.67,
-        "stop_rate": 0.0,
-        "large_winner_count": 1
-      },
-      {
-        "bucket": ">=5",
-        "count": 9,
-        "avg_return": 1.0737,
-        "median_return": -3.112,
-        "avg_excess": 1.7777,
-        "win_rate": 44.44,
-        "beat_rate": 44.44,
-        "stop_rate": 11.11,
-        "large_winner_count": 2
-      }
-    ],
-    "volume_ratio": [
-      {
-        "bucket": "<1.2",
-        "count": 5,
-        "avg_return": -2.6515,
-        "median_return": -1.3575,
-        "avg_excess": -6.0794,
-        "win_rate": 40.0,
-        "beat_rate": 0.0,
-        "stop_rate": 20.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "1.2-1.5",
-        "count": 7,
-        "avg_return": -4.7762,
-        "median_return": -6.0277,
-        "avg_excess": -4.3921,
-        "win_rate": 14.29,
-        "beat_rate": 14.29,
-        "stop_rate": 28.57,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "1.5-2",
-        "count": 11,
-        "avg_return": -1.269,
-        "median_return": 0.2309,
-        "avg_excess": -1.3403,
-        "win_rate": 54.55,
-        "beat_rate": 45.45,
-        "stop_rate": 27.27,
-        "large_winner_count": 1
-      },
-      {
-        "bucket": "2-3",
-        "count": 13,
-        "avg_return": 1.0463,
-        "median_return": -2.0649,
-        "avg_excess": 0.5691,
-        "win_rate": 38.46,
-        "beat_rate": 15.38,
-        "stop_rate": 0.0,
-        "large_winner_count": 2
-      },
-      {
-        "bucket": ">=3",
-        "count": 7,
-        "avg_return": -3.0872,
-        "median_return": -1.964,
-        "avg_excess": -4.4414,
-        "win_rate": 28.57,
-        "beat_rate": 14.29,
-        "stop_rate": 28.57,
-        "large_winner_count": 0
-      }
-    ],
-    "atr20_pct": [
-      {
-        "bucket": "<3",
-        "count": 12,
-        "avg_return": -1.355,
-        "median_return": 0.0,
-        "avg_excess": -2.381,
-        "win_rate": 41.67,
-        "beat_rate": 16.67,
-        "stop_rate": 0.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "3-4",
-        "count": 9,
-        "avg_return": -3.9663,
-        "median_return": -3.4202,
-        "avg_excess": -5.7289,
-        "win_rate": 22.22,
-        "beat_rate": 0.0,
-        "stop_rate": 33.33,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": "4-5",
-        "count": 7,
-        "avg_return": -2.6304,
-        "median_return": -8.0688,
-        "avg_excess": -3.4151,
-        "win_rate": 42.86,
-        "beat_rate": 28.57,
-        "stop_rate": 57.14,
-        "large_winner_count": 1
-      },
-      {
-        "bucket": "5-6",
-        "count": 5,
-        "avg_return": -3.2588,
-        "median_return": -1.964,
-        "avg_excess": -4.0071,
-        "win_rate": 20.0,
-        "beat_rate": 0.0,
-        "stop_rate": 20.0,
-        "large_winner_count": 0
-      },
-      {
-        "bucket": ">=6",
-        "count": 10,
-        "avg_return": 1.8006,
-        "median_return": 0.024,
-        "avg_excess": 2.4496,
-        "win_rate": 50.0,
-        "beat_rate": 50.0,
-        "stop_rate": 0.0,
         "large_winner_count": 2
       }
     ]
