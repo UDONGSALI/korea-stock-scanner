@@ -1,0 +1,35 @@
+name: Analyze Virtual BUY Filters Once
+
+on:
+  push:
+    paths:
+      - ".github/workflows/analyze_virtual_buy_filters_once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pandas
+
+      - name: Simulate virtual BUY filters
+        run: python src/analyze_virtual_buy_filters.py
+
+      - name: Commit analysis output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/virtual_buy_filter_analysis.json
+          git commit -m "analysis: simulate BUY entry filters" || exit 0
+          git push
