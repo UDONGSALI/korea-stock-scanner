@@ -26,6 +26,8 @@ jobs:
 
       - name: Analyze BUY signals vs benchmarks
         env:
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
           TZ: Asia/Seoul
         run: python src/analyze_buy_vs_benchmark.py
 
