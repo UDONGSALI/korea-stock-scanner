@@ -6525,7 +6525,13 @@
       "avg_trading_value20": 12584244082.75,
       "capture_rs_score": 91.18226047904191,
       "ranking_reason": "섹터 76 / 대장 2위 / 주봉 STRONG / ATR 6.3%",
-      "ranking_rule_version": "kangto_rank_v1"
+      "ranking_rule_version": "kangto_rank_v1",
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     },
     {
       "date": "2026-09-29",
@@ -6574,7 +6580,13 @@
       "avg_trading_value20": 28590847322.5,
       "capture_rs_score": 91.96032934131736,
       "ranking_reason": "섹터 71 / 대장 5위 / 주봉 STRONG / ATR 7.7%",
-      "ranking_rule_version": "kangto_rank_v1"
+      "ranking_rule_version": "kangto_rank_v1",
+      "early_state": "LATE",
+      "first_early_date": "2026-08-27",
+      "first_early_close": 127000.0,
+      "gain_since_early_pct": 42.36220472440946,
+      "trading_days_since_early": 21,
+      "early_state_reason": "EARLY 이후 +42.4% / 21거래일"
     }
   ]
 }
