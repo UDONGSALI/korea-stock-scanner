@@ -39,7 +39,7 @@ def request_json(url: str):
 
 def test_wiseindex():
     out = {}
-    for sec_cd in ["G4510", "G4520", "G452010", "G452015", "G452020", "G452030", "G452040", "G4530", "G4535", "G453510", "G453520", "G4540", "G454010", "G454020", "G45"]:
+    for sec_cd in ["WI240", "WI410", "WI610", "WI620", "G4520", "G4530"]:
         url = (
             "https://www.wiseindex.com/Index/GetIndexComponets"
             f"?ceil_yn=0&dt={TEST_DATE}&sec_cd={sec_cd}"
