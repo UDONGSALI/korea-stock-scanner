@@ -4,6 +4,7 @@ import csv
 import gzip
 import json
 import math
+from functools import lru_cache
 from pathlib import Path
 
 import numpy as np
@@ -19,6 +20,7 @@ CAPTURE_PATH = DATA_DIR / "captures.csv"
 TRACKING_PATH = DATA_DIR / "tracking.json"
 LATEST_PATH = DATA_DIR / "latest.json"
 PRIORITY_OUTPUT_PATH = DATA_DIR / "buy_priority.csv"
+STRATEGIC_SECTOR_MAP_PATH = DATA_DIR / "strategic_sector_map.csv"
 
 RANKING_FIELDS = [
     "buy_grade",
@@ -101,9 +103,25 @@ def add_ranking_indicators(history: pd.DataFrame) -> pd.DataFrame:
     return pd.concat(output, ignore_index=True).sort_values(["ticker", "date"]).reset_index(drop=True)
 
 
+@lru_cache(maxsize=1)
+def load_strategic_sector_map() -> dict[str, str]:
+    if not STRATEGIC_SECTOR_MAP_PATH.exists():
+        return {}
+
+    frame = pd.read_csv(STRATEGIC_SECTOR_MAP_PATH, dtype={"ticker": str})
+    if frame.empty or "ticker" not in frame.columns or "strategic_sector" not in frame.columns:
+        return {}
+
+    frame["ticker"] = frame["ticker"].astype(str).str.zfill(6)
+    frame["strategic_sector"] = frame["strategic_sector"].fillna("").astype(str).str.strip()
+    frame = frame[frame["strategic_sector"] != ""]
+    return dict(zip(frame["ticker"], frame["strategic_sector"]))
+
+
 def fetch_sector_classifications(date: pd.Timestamp, markets: list[str]) -> pd.DataFrame:
     date_text = date.strftime("%Y%m%d")
     frames = []
+    strategic_map = load_strategic_sector_map()
 
     for market in markets:
         try:
@@ -117,17 +135,30 @@ def fetch_sector_classifications(date: pd.Timestamp, markets: list[str]) -> pd.D
 
         frame = frame.reset_index()
         ticker_column = "종목코드" if "종목코드" in frame.columns else frame.columns[0]
-        frame = frame.rename(columns={ticker_column: "ticker", "업종명": "sector", "시가총액": "market_cap_sector"})
-        if "sector" not in frame.columns:
-            continue
+        frame = frame.rename(columns={ticker_column: "ticker", "업종명": "krx_sector", "시가총액": "market_cap_sector"})
+        if "krx_sector" not in frame.columns:
+            frame["krx_sector"] = "UNKNOWN"
         if "market_cap_sector" not in frame.columns:
             frame["market_cap_sector"] = np.nan
         frame["ticker"] = frame["ticker"].astype(str).str.zfill(6)
         frame["market"] = market
-        frames.append(frame[["ticker", "market", "sector", "market_cap_sector"]])
+
+        if strategic_map:
+            # 랭킹용 섹터는 KRX 업종이 아니라 단순화한 전략 섹터를 사용한다.
+            frame["sector"] = frame["ticker"].map(strategic_map).fillna("UNKNOWN")
+        else:
+            # 맵을 아직 생성하지 않은 수동 실행은 기존 KRX 업종으로 안전하게 폴백한다.
+            frame["sector"] = frame["krx_sector"].fillna("UNKNOWN")
+            print(json.dumps({
+                "warning": "strategic_sector_map_missing_using_krx_fallback",
+                "date": date_text,
+                "market": market,
+            }, ensure_ascii=False))
+
+        frames.append(frame[["ticker", "market", "sector", "krx_sector", "market_cap_sector"]])
 
     if not frames:
-        return pd.DataFrame(columns=["ticker", "market", "sector", "market_cap_sector"])
+        return pd.DataFrame(columns=["ticker", "market", "sector", "krx_sector", "market_cap_sector"])
 
     return pd.concat(frames, ignore_index=True).drop_duplicates(["ticker", "market"], keep="last")
 
