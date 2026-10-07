@@ -1,7 +1,7 @@
 {
   "rule_version": "kangto_core_v3",
   "scan_date": "2026-10-07",
-  "generated_at": "2026-10-08T00:34:31+09:00",
+  "generated_at": "2026-10-08T01:27:21+09:00",
   "market_status": {
     "KOSPI": true,
     "KOSDAQ": false
@@ -5931,18 +5931,18 @@
       ],
       "max_depth_pct": 20,
       "volume_contraction_days": 3,
-      "volume_contraction_ratio_max": 1.0
+      "volume_contraction_ratio_max": 1
     },
     "setup": {
       "max_below_breakout_pct": 3
     },
     "breakout": {
-      "volume_ratio_min": 1.0,
+      "volume_ratio_min": 1,
       "max_extension_pct": 10
     },
     "risk": {
-      "max_account_risk_pct": 2.0,
-      "reward_multiple": 3.0
+      "max_account_risk_pct": 2,
+      "reward_multiple": 3
     },
     "early_state": {
       "normal_min_gain_pct": 15,
