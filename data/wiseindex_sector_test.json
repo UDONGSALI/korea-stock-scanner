@@ -1,8 +1,797 @@
 {
   "test_date": "20261007",
   "wiseindex": {
-    "G453010": {
-      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G453010",
+    "G4510": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G4510",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(1791298800000)\\/\",\"MKT_VAL\":27635962,\"TRD_AMT\":869772,\"CNT\":174},\"list\":[{\"IDX_CD\":\"G4510\",\"IDX_NM_KOR\":\"WICS 소프트웨어와서비스\",\"ALL_MKT_VAL\":27635962,\"CMP_CD\":\"018260\",\"CMP_KOR\":\"삼성에스디에스\",\"MKT_VAL\":7848430,\"WGT\":28.40,\"S_WGT\":28.4",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 174,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": false,
+          "row": null
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sample_fields": [
+        "IDX_CD",
+        "IDX_NM_KOR",
+        "ALL_MKT_VAL",
+        "CMP_CD",
+        "CMP_KOR",
+        "MKT_VAL",
+        "WGT",
+        "S_WGT",
+        "CAL_WGT",
+        "SEC_CD",
+        "SEC_NM_KOR",
+        "SEQ",
+        "TOP60",
+        "APT_SHR_CNT"
+      ],
+      "sample_rows": [
+        {
+          "IDX_CD": "G4510",
+          "IDX_NM_KOR": "WICS 소프트웨어와서비스",
+          "ALL_MKT_VAL": 27635962,
+          "CMP_CD": "018260",
+          "CMP_KOR": "삼성에스디에스",
+          "MKT_VAL": 7848430,
+          "WGT": 28.4,
+          "S_WGT": 28.4,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 1,
+          "TOP60": 6,
+          "APT_SHR_CNT": 37915122
+        },
+        {
+          "IDX_CD": "G4510",
+          "IDX_NM_KOR": "WICS 소프트웨어와서비스",
+          "ALL_MKT_VAL": 27635962,
+          "CMP_CD": "064400",
+          "CMP_KOR": "LG씨엔에스",
+          "MKT_VAL": 3347410,
+          "WGT": 12.11,
+          "S_WGT": 40.51,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 2,
+          "TOP60": 6,
+          "APT_SHR_CNT": 48442974
+        },
+        {
+          "IDX_CD": "G4510",
+          "IDX_NM_KOR": "WICS 소프트웨어와서비스",
+          "ALL_MKT_VAL": 27635962,
+          "CMP_CD": "307950",
+          "CMP_KOR": "현대오토에버",
+          "MKT_VAL": 2256445,
+          "WGT": 8.16,
+          "S_WGT": 48.68,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 3,
+          "TOP60": 6,
+          "APT_SHR_CNT": 6033276
+        }
+      ],
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 5.03,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 4.62,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 2.22,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 7.24,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 2.1,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 12.7,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0.61,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 1.04,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 2.88,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 61.54,
+          "IDX_RATE": 100.0
+        }
+      ]
+    },
+    "G4520": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G4520",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(1791298800000)\\/\",\"MKT_VAL\":136995342,\"TRD_AMT\":2527205,\"CNT\":207},\"list\":[{\"IDX_CD\":\"G4520\",\"IDX_NM_KOR\":\"WICS 기술하드웨어와장비\",\"ALL_MKT_VAL\":136995342,\"CMP_CD\":\"009150\",\"CMP_KOR\":\"삼성전기\",\"MKT_VAL\":87460342,\"WGT\":63.84,\"S_WGT\":63.",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 207,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": true,
+          "row": {
+            "IDX_CD": "G4520",
+            "IDX_NM_KOR": "WICS 기술하드웨어와장비",
+            "ALL_MKT_VAL": 136995342,
+            "CMP_CD": "446540",
+            "CMP_KOR": "메가터치",
+            "MKT_VAL": 108657,
+            "WGT": 0.08,
+            "S_WGT": 95.61,
+            "CAL_WGT": 1.0,
+            "SEC_CD": "G45",
+            "SEC_NM_KOR": "IT",
+            "SEQ": 59,
+            "TOP60": 0,
+            "APT_SHR_CNT": 9886897
+          }
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sample_fields": [
+        "IDX_CD",
+        "IDX_NM_KOR",
+        "ALL_MKT_VAL",
+        "CMP_CD",
+        "CMP_KOR",
+        "MKT_VAL",
+        "WGT",
+        "S_WGT",
+        "CAL_WGT",
+        "SEC_CD",
+        "SEC_NM_KOR",
+        "SEQ",
+        "TOP60",
+        "APT_SHR_CNT"
+      ],
+      "sample_rows": [
+        {
+          "IDX_CD": "G4520",
+          "IDX_NM_KOR": "WICS 기술하드웨어와장비",
+          "ALL_MKT_VAL": 136995342,
+          "CMP_CD": "009150",
+          "CMP_KOR": "삼성전기",
+          "MKT_VAL": 87460342,
+          "WGT": 63.84,
+          "S_WGT": 63.84,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 1,
+          "TOP60": 0,
+          "APT_SHR_CNT": 54526398
+        },
+        {
+          "IDX_CD": "G4520",
+          "IDX_NM_KOR": "WICS 기술하드웨어와장비",
+          "ALL_MKT_VAL": 136995342,
+          "CMP_CD": "011070",
+          "CMP_KOR": "LG이노텍",
+          "MKT_VAL": 8252483,
+          "WGT": 6.02,
+          "S_WGT": 69.87,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 2,
+          "TOP60": 0,
+          "APT_SHR_CNT": 13963593
+        },
+        {
+          "IDX_CD": "G4520",
+          "IDX_NM_KOR": "WICS 기술하드웨어와장비",
+          "ALL_MKT_VAL": 136995342,
+          "CMP_CD": "353200",
+          "CMP_KOR": "대덕전자",
+          "MKT_VAL": 5009443,
+          "WGT": 3.66,
+          "S_WGT": 73.52,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 3,
+          "TOP60": 0,
+          "APT_SHR_CNT": 33109339
+        }
+      ],
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 5.03,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 4.62,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 2.22,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 7.24,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 2.1,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 12.7,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0.61,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 1.04,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 2.88,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 61.54,
+          "IDX_RATE": 100.0
+        }
+      ]
+    },
+    "G452010": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G452010",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(-62135596800000)\\/\",\"MKT_VAL\":0,\"TRD_AMT\":null,\"CNT\":0},\"list\":[],\"sector\":[{\"SEC_CD\":\"G25\",\"SEC_NM_KOR\":\"경기관련소비재\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G35\",\"SEC_NM_KOR\":\"건강관리\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G50\",\"SE",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 0,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": false,
+          "row": null
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        }
+      ]
+    },
+    "G452015": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G452015",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(-62135596800000)\\/\",\"MKT_VAL\":0,\"TRD_AMT\":null,\"CNT\":0},\"list\":[],\"sector\":[{\"SEC_CD\":\"G25\",\"SEC_NM_KOR\":\"경기관련소비재\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G35\",\"SEC_NM_KOR\":\"건강관리\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G50\",\"SE",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 0,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": false,
+          "row": null
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        }
+      ]
+    },
+    "G452020": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G452020",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(-62135596800000)\\/\",\"MKT_VAL\":0,\"TRD_AMT\":null,\"CNT\":0},\"list\":[],\"sector\":[{\"SEC_CD\":\"G25\",\"SEC_NM_KOR\":\"경기관련소비재\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G35\",\"SEC_NM_KOR\":\"건강관리\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G50\",\"SE",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 0,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": false,
+          "row": null
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        }
+      ]
+    },
+    "G452030": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G452030",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(-62135596800000)\\/\",\"MKT_VAL\":0,\"TRD_AMT\":null,\"CNT\":0},\"list\":[],\"sector\":[{\"SEC_CD\":\"G25\",\"SEC_NM_KOR\":\"경기관련소비재\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G35\",\"SEC_NM_KOR\":\"건강관리\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G50\",\"SE",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 0,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": false,
+          "row": null
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        }
+      ]
+    },
+    "G452040": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G452040",
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(-62135596800000)\\/\",\"MKT_VAL\":0,\"TRD_AMT\":null,\"CNT\":0},\"list\":[],\"sector\":[{\"SEC_CD\":\"G25\",\"SEC_NM_KOR\":\"경기관련소비재\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G35\",\"SEC_NM_KOR\":\"건강관리\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G50\",\"SE",
@@ -353,6 +1142,780 @@
           "SEC_NM_KOR": "IT",
           "SEC_RATE": 61.54,
           "IDX_RATE": 100.0
+        }
+      ]
+    },
+    "G4535": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G4535",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(1791298800000)\\/\",\"MKT_VAL\":96901277,\"TRD_AMT\":1249696,\"CNT\":71},\"list\":[{\"IDX_CD\":\"G4535\",\"IDX_NM_KOR\":\"WICS 전자와 전기제품\",\"ALL_MKT_VAL\":96901277,\"CMP_CD\":\"006400\",\"CMP_KOR\":\"삼성SDI\",\"MKT_VAL\":33061019,\"WGT\":34.12,\"S_WGT\":34.12,",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 71,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": false,
+          "row": null
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sample_fields": [
+        "IDX_CD",
+        "IDX_NM_KOR",
+        "ALL_MKT_VAL",
+        "CMP_CD",
+        "CMP_KOR",
+        "MKT_VAL",
+        "WGT",
+        "S_WGT",
+        "CAL_WGT",
+        "SEC_CD",
+        "SEC_NM_KOR",
+        "SEQ",
+        "TOP60",
+        "APT_SHR_CNT"
+      ],
+      "sample_rows": [
+        {
+          "IDX_CD": "G4535",
+          "IDX_NM_KOR": "WICS 전자와 전기제품",
+          "ALL_MKT_VAL": 96901277,
+          "CMP_CD": "006400",
+          "CMP_KOR": "삼성SDI",
+          "MKT_VAL": 33061019,
+          "WGT": 34.12,
+          "S_WGT": 34.12,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 1,
+          "TOP60": 3,
+          "APT_SHR_CNT": 58827436
+        },
+        {
+          "IDX_CD": "G4535",
+          "IDX_NM_KOR": "WICS 전자와 전기제품",
+          "ALL_MKT_VAL": 96901277,
+          "CMP_CD": "066570",
+          "CMP_KOR": "LG전자",
+          "MKT_VAL": 22360803,
+          "WGT": 23.08,
+          "S_WGT": 57.19,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 2,
+          "TOP60": 3,
+          "APT_SHR_CNT": 107503861
+        },
+        {
+          "IDX_CD": "G4535",
+          "IDX_NM_KOR": "WICS 전자와 전기제품",
+          "ALL_MKT_VAL": 96901277,
+          "CMP_CD": "373220",
+          "CMP_KOR": "LG에너지솔루션",
+          "MKT_VAL": 18298800,
+          "WGT": 18.88,
+          "S_WGT": 76.08,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 3,
+          "TOP60": 3,
+          "APT_SHR_CNT": 46800000
+        }
+      ],
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 5.03,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 4.62,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 2.22,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 7.24,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 2.1,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 12.7,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0.61,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 1.04,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 2.88,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 61.54,
+          "IDX_RATE": 100.0
+        }
+      ]
+    },
+    "G453510": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G453510",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(-62135596800000)\\/\",\"MKT_VAL\":0,\"TRD_AMT\":null,\"CNT\":0},\"list\":[],\"sector\":[{\"SEC_CD\":\"G25\",\"SEC_NM_KOR\":\"경기관련소비재\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G35\",\"SEC_NM_KOR\":\"건강관리\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G50\",\"SE",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 0,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": false,
+          "row": null
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        }
+      ]
+    },
+    "G453520": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G453520",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(-62135596800000)\\/\",\"MKT_VAL\":0,\"TRD_AMT\":null,\"CNT\":0},\"list\":[],\"sector\":[{\"SEC_CD\":\"G25\",\"SEC_NM_KOR\":\"경기관련소비재\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G35\",\"SEC_NM_KOR\":\"건강관리\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G50\",\"SE",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 0,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": false,
+          "row": null
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        }
+      ]
+    },
+    "G4540": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G4540",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(1791298800000)\\/\",\"MKT_VAL\":7714619,\"TRD_AMT\":65994,\"CNT\":64},\"list\":[{\"IDX_CD\":\"G4540\",\"IDX_NM_KOR\":\"WICS 디스플레이\",\"ALL_MKT_VAL\":7714619,\"CMP_CD\":\"034220\",\"CMP_KOR\":\"LG디스플레이\",\"MKT_VAL\":2475000,\"WGT\":32.08,\"S_WGT\":32.08,\"CAL_W",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 64,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": false,
+          "row": null
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sample_fields": [
+        "IDX_CD",
+        "IDX_NM_KOR",
+        "ALL_MKT_VAL",
+        "CMP_CD",
+        "CMP_KOR",
+        "MKT_VAL",
+        "WGT",
+        "S_WGT",
+        "CAL_WGT",
+        "SEC_CD",
+        "SEC_NM_KOR",
+        "SEQ",
+        "TOP60",
+        "APT_SHR_CNT"
+      ],
+      "sample_rows": [
+        {
+          "IDX_CD": "G4540",
+          "IDX_NM_KOR": "WICS 디스플레이",
+          "ALL_MKT_VAL": 7714619,
+          "CMP_CD": "034220",
+          "CMP_KOR": "LG디스플레이",
+          "MKT_VAL": 2475000,
+          "WGT": 32.08,
+          "S_WGT": 32.08,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 1,
+          "TOP60": 8,
+          "APT_SHR_CNT": 300000000
+        },
+        {
+          "IDX_CD": "G4540",
+          "IDX_NM_KOR": "WICS 디스플레이",
+          "ALL_MKT_VAL": 7714619,
+          "CMP_CD": "108320",
+          "CMP_KOR": "LX세미콘",
+          "MKT_VAL": 409730,
+          "WGT": 5.31,
+          "S_WGT": 37.39,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 2,
+          "TOP60": 8,
+          "APT_SHR_CNT": 10897081
+        },
+        {
+          "IDX_CD": "G4540",
+          "IDX_NM_KOR": "WICS 디스플레이",
+          "ALL_MKT_VAL": 7714619,
+          "CMP_CD": "046890",
+          "CMP_KOR": "서울반도체",
+          "MKT_VAL": 400208,
+          "WGT": 5.19,
+          "S_WGT": 42.58,
+          "CAL_WGT": 1.0,
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEQ": 3,
+          "TOP60": 8,
+          "APT_SHR_CNT": 38481564
+        }
+      ],
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 5.03,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 4.62,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 2.22,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 7.24,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 2.1,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 12.7,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0.61,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 1.04,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 2.88,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 61.54,
+          "IDX_RATE": 100.0
+        }
+      ]
+    },
+    "G454010": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G454010",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(-62135596800000)\\/\",\"MKT_VAL\":0,\"TRD_AMT\":null,\"CNT\":0},\"list\":[],\"sector\":[{\"SEC_CD\":\"G25\",\"SEC_NM_KOR\":\"경기관련소비재\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G35\",\"SEC_NM_KOR\":\"건강관리\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G50\",\"SE",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 0,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": false,
+          "row": null
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        }
+      ]
+    },
+    "G454020": {
+      "url": "https://www.wiseindex.com/Index/GetIndexComponets?ceil_yn=0&dt=20261007&sec_cd=G454020",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "text_prefix": "{\"info\":{\"TRD_DT\":\"\\/Date(-62135596800000)\\/\",\"MKT_VAL\":0,\"TRD_AMT\":null,\"CNT\":0},\"list\":[],\"sector\":[{\"SEC_CD\":\"G25\",\"SEC_NM_KOR\":\"경기관련소비재\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G35\",\"SEC_NM_KOR\":\"건강관리\",\"SEC_RATE\":0,\"IDX_RATE\":0},{\"SEC_CD\":\"G50\",\"SE",
+      "json_keys": [
+        "info",
+        "list",
+        "sector",
+        "size"
+      ],
+      "row_count": 0,
+      "matches": {
+        "446540": {
+          "name": "메가터치",
+          "found": false,
+          "row": null
+        },
+        "031980": {
+          "name": "피에스케이홀딩스",
+          "found": false,
+          "row": null
+        },
+        "095340": {
+          "name": "ISC",
+          "found": false,
+          "row": null
+        },
+        "036930": {
+          "name": "주성엔지니어링",
+          "found": false,
+          "row": null
+        },
+        "000660": {
+          "name": "SK하이닉스",
+          "found": false,
+          "row": null
+        },
+        "005930": {
+          "name": "삼성전자",
+          "found": false,
+          "row": null
+        }
+      },
+      "sector_sample": [
+        {
+          "SEC_CD": "G25",
+          "SEC_NM_KOR": "경기관련소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G35",
+          "SEC_NM_KOR": "건강관리",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G50",
+          "SEC_NM_KOR": "커뮤니케이션서비스",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G40",
+          "SEC_NM_KOR": "금융",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G10",
+          "SEC_NM_KOR": "에너지",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G20",
+          "SEC_NM_KOR": "산업재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G55",
+          "SEC_NM_KOR": "유틸리티",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G30",
+          "SEC_NM_KOR": "필수소비재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G15",
+          "SEC_NM_KOR": "소재",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
+        },
+        {
+          "SEC_CD": "G45",
+          "SEC_NM_KOR": "IT",
+          "SEC_RATE": 0,
+          "IDX_RATE": 0
         }
       ]
     },
