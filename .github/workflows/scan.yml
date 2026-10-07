@@ -89,6 +89,10 @@ jobs:
           TZ: Asia/Seoul
         run: python src/scanner.py
 
+      - name: Refresh strategic sector map
+        if: steps.guard.outputs.should_run == 'true'
+        run: python src/update_strategic_sector_map.py
+
       - name: Rank BUY candidates
         if: steps.guard.outputs.should_run == 'true'
         env:
