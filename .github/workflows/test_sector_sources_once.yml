@@ -33,3 +33,5 @@ jobs:
           git add data/wiseindex_sector_test.json
           git commit -m "test: record sector source probe" || exit 0
           git push
+
+# rerun hierarchy
