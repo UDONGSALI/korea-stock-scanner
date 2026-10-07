@@ -1,12 +1,26 @@
 {
   "rule_version": "kangto_core_v3",
-  "markets": ["KOSPI", "KOSDAQ"],
+  "markets": [
+    "KOSPI",
+    "KOSDAQ"
+  ],
   "history_days": 320,
-  "market_indices": {"KOSPI": "1001", "KOSDAQ": "2001"},
-  "market_ma_days": {"KOSPI": 60, "KOSDAQ": 120},
+  "market_indices": {
+    "KOSPI": "1001",
+    "KOSDAQ": "2001"
+  },
+  "market_ma_days": {
+    "KOSPI": 60,
+    "KOSDAQ": 120
+  },
   "min_market_cap": 200000000000,
   "rs_min_score": 70,
-  "rs_periods": {"20": 0.25, "60": 0.25, "120": 0.25, "240": 0.25},
+  "rs_periods": {
+    "20": 0.25,
+    "60": 0.25,
+    "120": 0.25,
+    "240": 0.25
+  },
   "high52_days": 252,
   "early_leader": {
     "short_rs_min_score": 80,
@@ -22,19 +36,39 @@
     "climax_acceleration_min_gain_pct": 15,
     "climax_rs_acceleration_min": 25
   },
-  "leader": {"max_below_52w_high_pct": 25},
-  "mtt": {"sma200_rising_lookback": 20, "min_above_52w_low_pct": 30, "max_below_52w_high_pct": 25},
+  "leader": {
+    "max_below_52w_high_pct": 25
+  },
+  "mtt": {
+    "sma200_rising_lookback": 20,
+    "min_above_52w_low_pct": 30,
+    "max_below_52w_high_pct": 25
+  },
   "base": {
-    "candidate_days": [5, 7, 10, 15, 20],
+    "candidate_days": [
+      5,
+      7,
+      10,
+      15,
+      20
+    ],
     "max_depth_pct": 20,
     "volume_contraction_days": 3,
-    "volume_contraction_ratio_max": 1.0
+    "volume_contraction_ratio_max": 1
   },
-  "setup": {"max_below_breakout_pct": 3},
-  "breakout": {"volume_ratio_min": 1.0, "max_extension_pct": 10},
-  "risk": {"max_account_risk_pct": 2.0, "reward_multiple": 3.0},
+  "setup": {
+    "max_below_breakout_pct": 3
+  },
+  "breakout": {
+    "volume_ratio_min": 1,
+    "max_extension_pct": 10
+  },
+  "risk": {
+    "max_account_risk_pct": 2,
+    "reward_multiple": 3
+  },
   "ranking": {
-    "rule_version": "kangto_rank_v1",
+    "rule_version": "kangto_rank_v2",
     "min_sector_members": 3,
     "institutional_min_market_cap": 500000000000,
     "institutional_min_avg_trading_value": 5000000000,
@@ -49,22 +83,32 @@
     "a_min_weekly_score": 55,
     "max_daily_candidates": 2,
     "max_per_sector": 1,
-    "current_max_chase_pct": 12.0
+    "current_max_chase_pct": 12
   },
   "exit": {
     "rule_version": "kangto_exit_v2",
-    "initial_stop_pct": 8.0,
+    "initial_stop_pct": 8,
     "initial_stop_execution": "CLOSE_CONFIRM_GAP_OPEN",
-    "partial_reward_multiple": 3.0,
-    "partial_sell_pct": 50.0,
-    "normal_trend_r_multiple": 3.0,
-    "fast_trend_r_multiple": 6.0,
-    "fast_trend_gain_pct": 45.0,
-    "trailing_ma_days": {"fast": 5, "normal": 20, "slow": 50},
-    "climax_min_r_multiple": 3.0,
-    "climax_volume_ratio_min": 2.0,
-    "climax_drop_pct_max": -7.0,
+    "partial_reward_multiple": 3,
+    "partial_sell_pct": 50,
+    "normal_trend_r_multiple": 3,
+    "fast_trend_r_multiple": 6,
+    "fast_trend_gain_pct": 45,
+    "trailing_ma_days": {
+      "fast": 5,
+      "normal": 20,
+      "slow": 50
+    },
+    "climax_min_r_multiple": 3,
+    "climax_volume_ratio_min": 2,
+    "climax_drop_pct_max": -7,
     "climax_upper_wick_ratio_min": 0.35,
-    "climax_near_high_pct": 3.0
+    "climax_near_high_pct": 3
+  },
+  "sector_classification": {
+    "mode": "WI26_STRATEGIC",
+    "map_path": "data/strategic_sector_map.csv",
+    "override_path": "strategic_sector_overrides.csv",
+    "fallback": "KRX"
   }
 }
