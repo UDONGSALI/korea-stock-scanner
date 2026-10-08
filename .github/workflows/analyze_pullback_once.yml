@@ -1,0 +1,38 @@
+name: Pullback Entry Audit
+
+on:
+  push:
+    branches: [analysis/pullback-entry-20261008-1724]
+    paths: [src/analyze_pullback.py, .github/workflows/analyze_pullback_once.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install 'pandas==2.3.3' 'numpy>=2.0'
+      - name: Replay frozen historical cohort
+        run: python src/analyze_pullback.py
+      - name: Save report on analysis branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pullback_analysis_20261007
+          if ! git diff --cached --quiet; then
+            git commit -m 'analysis: pullback entry historical results'
+            git push origin HEAD:analysis/pullback-entry-20261008-1724
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pullback-entry-20261007
+          path: |
+            data/pullback_analysis_20261007/
+            src/analyze_pullback.py
+          retention-days: 30
