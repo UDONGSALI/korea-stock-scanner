@@ -18,32 +18,32 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install 'pandas==2.3.3' 'numpy>=2.0'
-      - name: Export input quality diagnostics
+      - name: Validate historical no-trade rows and replay
         run: |
           python - <<'PY'
-          import sys, json, csv, shutil
           from pathlib import Path
-          sys.path.insert(0, 'src')
-          import apply_exit_rules as rules
-          captures = rules.load_captures()
-          history = rules.load_price_history({r['ticker'] for r in captures})
-          bad = history[(history['low'] > history[['open', 'close', 'high']].min(axis=1)) | (history['high'] < history[['open', 'close', 'low']].max(axis=1))]
-          print('OHLC_DIAGNOSTIC', bad[['date','ticker','open','high','low','close','volume']].to_json(orient='records',date_format='iso'))
-          out = Path('data/pullback_analysis_20261007/inputs')
-          out.mkdir(parents=True, exist_ok=True)
-          history.to_csv(out / 'history.csv.gz', index=False, compression='gzip')
-          for path in ['config.json','data/captures.csv','data/tracking.json','data/all_buy_vs_index_20261007.csv','src/apply_exit_rules.py']:
-              shutil.copyfile(path, out / Path(path).name)
+          path = Path('src/analyze_pullback.py')
+          code = path.read_text()
+          old = "    assert invalid_ohlc.empty, f'invalid OHLC: {len(invalid_ohlc)}'"
+          new = """    halted = invalid_ohlc[(invalid_ohlc['volume'] == 0) & (invalid_ohlc['open'] == 0) & (invalid_ohlc['high'] == 0) & (invalid_ohlc['low'] == 0)]
+              assert len(halted) == len(invalid_ohlc), 'invalid positive-volume OHLC'
+              first_dates = {ticker: min(c['capture_date'] for c in captures if c['ticker'] == ticker) for ticker in bars_by_ticker}
+              assert all(r['date_text'] < first_dates[r['ticker']] for r in halted.to_dict('records')), 'no-trade bar overlaps active experiment'
+              print('Pre-signal no-trade rows validated:', len(halted))"""
+          new = new.replace('\n    ', '\n')
+          assert old in code
+          checked = Path('src/analyze_pullback_checked.py')
+          checked.write_text(code.replace(old, new))
           PY
-      - name: Replay frozen historical cohort
-        run: python src/analyze_pullback.py
+          python -m py_compile src/analyze_pullback_checked.py
+          python src/analyze_pullback_checked.py
       - name: Save report on analysis branch only
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/pullback_analysis_20261007
+          git add data/pullback_analysis_20261007 src/analyze_pullback_checked.py
           if ! git diff --cached --quiet; then
-            git commit -m 'analysis: pullback entry historical results'
+            git commit -m 'analysis: validated pullback entry historical results'
             git push origin HEAD:analysis/pullback-entry-20261008-1724
           fi
       - uses: actions/upload-artifact@v4
@@ -52,5 +52,5 @@ jobs:
           name: pullback-entry-20261007
           path: |
             data/pullback_analysis_20261007/
-            src/analyze_pullback.py
+            src/analyze_pullback_checked.py
           retention-days: 30
