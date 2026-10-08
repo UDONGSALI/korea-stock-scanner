@@ -1,0 +1,232 @@
+{
+  "period": {
+    "start": "2026-08-24",
+    "end": "2026-10-07"
+  },
+  "assumptions": {
+    "buy": "all 137 BUY captures at capture-day close, including repeat captures",
+    "allocation": "equal amount KRW 6,250,000 per capture, no cash limit, no fees",
+    "return": "kangto_exit_v2 marked strategy return, partial exits included",
+    "benchmark": "same-market KOSPI or KOSDAQ close at each BUY to same trade exit date, or evaluation date if still open; gap exits use index open",
+    "note": "Equal-weight trades, not a feasible 100m KRW fixed-capital portfolio due to unlimited simultaneous buys"
+  },
+  "index_full_period": {
+    "KOSPI": {
+      "start_close": 6696.96,
+      "end_close": 6803.9,
+      "full_period_return_pct": 1.5968,
+      "first_date": "2026-08-24",
+      "last_date": "2026-10-07"
+    },
+    "KOSDAQ": {
+      "start_close": 813.33,
+      "end_close": 898.43,
+      "full_period_return_pct": 10.4632,
+      "first_date": "2026-08-24",
+      "last_date": "2026-10-07"
+    }
+  },
+  "all": {
+    "count": 137,
+    "avg_strategy_return_pct": -1.1429,
+    "median_strategy_return_pct": -2.1134,
+    "avg_benchmark_return_pct": 1.4749,
+    "avg_excess_return_pct_point": -2.6178,
+    "median_excess_return_pct_point": -4.2961,
+    "win_rate_pct": 34.31,
+    "beat_rate_pct": 27.74,
+    "avg_winner_pct": 8.9871,
+    "avg_loser_pct": -7.0606,
+    "raw_hold": {
+      "count": 137,
+      "avg_strategy_return_pct": -0.2366,
+      "median_strategy_return_pct": -1.2302,
+      "avg_benchmark_return_pct": 2.2851,
+      "avg_excess_return_pct_point": -2.5217,
+      "median_excess_return_pct_point": -3.0878,
+      "win_rate_pct": 39.42,
+      "beat_rate_pct": 33.58,
+      "avg_winner_pct": 10.0452,
+      "avg_loser_pct": -7.6646
+    },
+    "total_gross_entry_krw": 856250000,
+    "strategy_pnl_krw": -9786056,
+    "index_matched_pnl_krw": 12629054,
+    "excess_pnl_krw": -22415110,
+    "strategy_open_and_closed_count": {
+      "OPEN": 83,
+      "CLOSED": 48,
+      "PARTIAL": 6
+    },
+    "up_vs_index_count": 38
+  },
+  "by_market": {
+    "KOSDAQ": {
+      "count": 53,
+      "avg_strategy_return_pct": 1.8458,
+      "median_strategy_return_pct": 0.0,
+      "avg_benchmark_return_pct": 3.9309,
+      "avg_excess_return_pct_point": -2.0852,
+      "median_excess_return_pct_point": -3.9486,
+      "win_rate_pct": 47.17,
+      "beat_rate_pct": 26.42,
+      "avg_winner_pct": 11.1383,
+      "avg_loser_pct": -7.2253,
+      "raw_hold": {
+        "count": 53,
+        "avg_strategy_return_pct": 3.9836,
+        "median_strategy_return_pct": 1.1062,
+        "avg_benchmark_return_pct": 6.4393,
+        "avg_excess_return_pct_point": -2.4557,
+        "median_excess_return_pct_point": -2.3983,
+        "win_rate_pct": 54.72,
+        "beat_rate_pct": 33.96,
+        "avg_winner_pct": 13.5375,
+        "avg_loser_pct": -8.6407
+      },
+      "total_gross_entry_krw": 331250000,
+      "strategy_pnl_krw": 6114126,
+      "index_matched_pnl_krw": 13021253,
+      "excess_pnl_krw": -6907127,
+      "strategy_open_and_closed_count": {
+        "PARTIAL": 5,
+        "CLOSED": 14,
+        "OPEN": 34
+      },
+      "up_vs_index_count": 14
+    },
+    "KOSPI": {
+      "count": 84,
+      "avg_strategy_return_pct": -3.0286,
+      "median_strategy_return_pct": -4.647,
+      "avg_benchmark_return_pct": -0.0747,
+      "avg_excess_return_pct_point": -2.9539,
+      "median_excess_return_pct_point": -4.7714,
+      "win_rate_pct": 26.19,
+      "beat_rate_pct": 28.57,
+      "avg_winner_pct": 6.5426,
+      "avg_loser_pct": -6.9884,
+      "raw_hold": {
+        "count": 84,
+        "avg_strategy_return_pct": -2.8993,
+        "median_strategy_return_pct": -2.5017,
+        "avg_benchmark_return_pct": -0.336,
+        "avg_excess_return_pct_point": -2.5633,
+        "median_excess_return_pct_point": -3.5481,
+        "win_rate_pct": 29.76,
+        "beat_rate_pct": 33.33,
+        "avg_winner_pct": 5.9941,
+        "avg_loser_pct": -7.285
+      },
+      "total_gross_entry_krw": 525000000,
+      "strategy_pnl_krw": -15900182,
+      "index_matched_pnl_krw": -392199,
+      "excess_pnl_krw": -15507983,
+      "strategy_open_and_closed_count": {
+        "OPEN": 49,
+        "CLOSED": 34,
+        "PARTIAL": 1
+      },
+      "up_vs_index_count": 24
+    }
+  },
+  "by_status": {
+    "OPEN": {
+      "count": 83,
+      "avg_strategy_return_pct": 1.6098,
+      "median_strategy_return_pct": 0.0,
+      "avg_benchmark_return_pct": 1.9519,
+      "avg_excess_return_pct_point": -0.342,
+      "median_excess_return_pct_point": -0.4191,
+      "win_rate_pct": 49.4,
+      "beat_rate_pct": 38.55,
+      "avg_winner_pct": 5.9225,
+      "avg_loser_pct": -3.212,
+      "raw_hold": {
+        "count": 83,
+        "avg_strategy_return_pct": 1.6098,
+        "median_strategy_return_pct": 0.0,
+        "avg_benchmark_return_pct": 1.9519,
+        "avg_excess_return_pct_point": -0.342,
+        "median_excess_return_pct_point": -0.4191,
+        "win_rate_pct": 49.4,
+        "beat_rate_pct": 38.55,
+        "avg_winner_pct": 5.9225,
+        "avg_loser_pct": -3.212
+      },
+      "total_gross_entry_krw": 518750000,
+      "strategy_pnl_krw": 8351018,
+      "index_matched_pnl_krw": 10125328,
+      "excess_pnl_krw": -1774310,
+      "strategy_open_and_closed_count": {
+        "OPEN": 83
+      },
+      "up_vs_index_count": 32
+    },
+    "PARTIAL": {
+      "count": 6,
+      "avg_strategy_return_pct": 29.9284,
+      "median_strategy_return_pct": 30.9864,
+      "avg_benchmark_return_pct": 7.3249,
+      "avg_excess_return_pct_point": 22.6035,
+      "median_excess_return_pct_point": 22.9941,
+      "win_rate_pct": 100.0,
+      "beat_rate_pct": 100.0,
+      "avg_winner_pct": 29.9284,
+      "avg_loser_pct": null,
+      "raw_hold": {
+        "count": 6,
+        "avg_strategy_return_pct": 35.8569,
+        "median_strategy_return_pct": 37.9728,
+        "avg_benchmark_return_pct": 7.3249,
+        "avg_excess_return_pct_point": 28.5319,
+        "median_excess_return_pct_point": 29.1248,
+        "win_rate_pct": 100.0,
+        "beat_rate_pct": 100.0,
+        "avg_winner_pct": 35.8569,
+        "avg_loser_pct": null
+      },
+      "total_gross_entry_krw": 37500000,
+      "strategy_pnl_krw": 11223164,
+      "index_matched_pnl_krw": 2746851,
+      "excess_pnl_krw": 8476313,
+      "strategy_open_and_closed_count": {
+        "PARTIAL": 6
+      },
+      "up_vs_index_count": 6
+    },
+    "CLOSED": {
+      "count": 48,
+      "avg_strategy_return_pct": -9.7867,
+      "median_strategy_return_pct": -9.1917,
+      "avg_benchmark_return_pct": -0.081,
+      "avg_excess_return_pct_point": -9.7057,
+      "median_excess_return_pct_point": -9.5637,
+      "win_rate_pct": 0.0,
+      "beat_rate_pct": 0.0,
+      "avg_winner_pct": null,
+      "avg_loser_pct": -9.7867,
+      "raw_hold": {
+        "count": 48,
+        "avg_strategy_return_pct": -7.941,
+        "median_strategy_return_pct": -9.1811,
+        "avg_benchmark_return_pct": 2.2314,
+        "avg_excess_return_pct_point": -10.1723,
+        "median_excess_return_pct_point": -9.6818,
+        "win_rate_pct": 14.58,
+        "beat_rate_pct": 16.67,
+        "avg_winner_pct": 12.0675,
+        "avg_loser_pct": -11.357
+      },
+      "total_gross_entry_krw": 300000000,
+      "strategy_pnl_krw": -29360238,
+      "index_matched_pnl_krw": -243125,
+      "excess_pnl_krw": -29117113,
+      "strategy_open_and_closed_count": {
+        "CLOSED": 48
+      },
+      "up_vs_index_count": 0
+    }
+  },
+  "capture_dates_count": 28
+}
