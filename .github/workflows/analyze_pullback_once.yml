@@ -18,6 +18,23 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install 'pandas==2.3.3' 'numpy>=2.0'
+      - name: Export input quality diagnostics
+        run: |
+          python - <<'PY'
+          import sys, json, csv, shutil
+          from pathlib import Path
+          sys.path.insert(0, 'src')
+          import apply_exit_rules as rules
+          captures = rules.load_captures()
+          history = rules.load_price_history({r['ticker'] for r in captures})
+          bad = history[(history['low'] > history[['open', 'close', 'high']].min(axis=1)) | (history['high'] < history[['open', 'close', 'low']].max(axis=1))]
+          print('OHLC_DIAGNOSTIC', bad[['date','ticker','open','high','low','close','volume']].to_json(orient='records',date_format='iso'))
+          out = Path('data/pullback_analysis_20261007/inputs')
+          out.mkdir(parents=True, exist_ok=True)
+          history.to_csv(out / 'history.csv.gz', index=False, compression='gzip')
+          for path in ['config.json','data/captures.csv','data/tracking.json','data/all_buy_vs_index_20261007.csv','src/apply_exit_rules.py']:
+              shutil.copyfile(path, out / Path(path).name)
+          PY
       - name: Replay frozen historical cohort
         run: python src/analyze_pullback.py
       - name: Save report on analysis branch only
@@ -30,6 +47,7 @@ jobs:
             git push origin HEAD:analysis/pullback-entry-20261008-1724
           fi
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: pullback-entry-20261007
           path: |
