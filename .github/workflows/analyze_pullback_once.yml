@@ -22,18 +22,11 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          path = Path('src/analyze_pullback.py')
-          code = path.read_text()
+          code = Path('src/analyze_pullback.py').read_text()
           old = "    assert invalid_ohlc.empty, f'invalid OHLC: {len(invalid_ohlc)}'"
-          new = """    halted = invalid_ohlc[(invalid_ohlc['volume'] == 0) & (invalid_ohlc['open'] == 0) & (invalid_ohlc['high'] == 0) & (invalid_ohlc['low'] == 0)]
-              assert len(halted) == len(invalid_ohlc), 'invalid positive-volume OHLC'
-              first_dates = {ticker: min(c['capture_date'] for c in captures if c['ticker'] == ticker) for ticker in bars_by_ticker}
-              assert all(r['date_text'] < first_dates[r['ticker']] for r in halted.to_dict('records')), 'no-trade bar overlaps active experiment'
-              print('Pre-signal no-trade rows validated:', len(halted))"""
-          new = new.replace('\n    ', '\n')
+          new = "    assert all(r['volume'] == 0 and r['open'] == 0 and r['high'] == 0 and r['low'] == 0 and r['date_text'] < min(c['capture_date'] for c in captures if c['ticker'] == r['ticker']) for r in invalid_ohlc.to_dict('records')), 'invalid tradable OHLC or no-trade bar inside live position'"
           assert old in code
-          checked = Path('src/analyze_pullback_checked.py')
-          checked.write_text(code.replace(old, new))
+          Path('src/analyze_pullback_checked.py').write_text(code.replace(old, new))
           PY
           python -m py_compile src/analyze_pullback_checked.py
           python src/analyze_pullback_checked.py
