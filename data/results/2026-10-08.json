@@ -1,7 +1,7 @@
 {
   "rule_version": "kangto_core_v3",
   "scan_date": "2026-10-08",
-  "generated_at": "2026-10-08T23:00:35+09:00",
+  "generated_at": "2026-10-09T00:33:55+09:00",
   "market_status": {
     "KOSPI": false,
     "KOSDAQ": false
@@ -319,7 +319,7 @@
       "three_r_target": 50902.0,
       "max_position_pct_for_risk": 25.0,
       "buy_grade": "C",
-      "buy_score": 54.81,
+      "buy_score": 54.8,
       "priority_selected": false,
       "sector": "건설",
       "sector_score": 25.52631578947368,
