@@ -44,7 +44,7 @@
       "three_r_target": 10961.599999999999,
       "max_position_pct_for_risk": 25.00000000000001,
       "buy_grade": "S",
-      "buy_score": 84.92,
+      "buy_score": 84.9,
       "priority_selected": true,
       "sector": "소비재",
       "sector_score": 78.6842105263158,
@@ -99,7 +99,7 @@
       "three_r_target": 230268.0,
       "max_position_pct_for_risk": 25.0,
       "buy_grade": "B",
-      "buy_score": 62.36,
+      "buy_score": 62.35,
       "priority_selected": false,
       "sector": "소비재",
       "sector_score": 78.6842105263158,
@@ -3296,7 +3296,7 @@
       "three_r_target": 10961.599999999999,
       "max_position_pct_for_risk": 25.00000000000001,
       "buy_grade": "S",
-      "buy_score": 84.92,
+      "buy_score": 84.9,
       "priority_selected": true,
       "sector": "소비재",
       "sector_score": 78.6842105263158,
@@ -3308,7 +3308,13 @@
       "avg_trading_value20": 304200825.75,
       "capture_rs_score": 90.82432432432432,
       "ranking_reason": "섹터 79 / 대장 1위 / 주봉 STRONG / ATR 3.4%",
-      "ranking_rule_version": "kangto_rank_v2"
+      "ranking_rule_version": "kangto_rank_v2",
+      "early_state": "NO_EARLY",
+      "first_early_date": null,
+      "first_early_close": null,
+      "gain_since_early_pct": null,
+      "trading_days_since_early": null,
+      "early_state_reason": "EARLY 기록 없음"
     }
   ]
 }
