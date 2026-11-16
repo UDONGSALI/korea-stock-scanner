@@ -3993,7 +3993,13 @@
       "avg_trading_value20": 2733162331.25,
       "capture_rs_score": 84.37457817772778,
       "ranking_reason": "섹터 74 / 대장 3위 / 주봉 STRONG / ATR 6.1%",
-      "ranking_rule_version": "kangto_rank_v2"
+      "ranking_rule_version": "kangto_rank_v2",
+      "early_state": "NORMAL",
+      "first_early_date": "2026-09-18",
+      "first_early_close": 23500.0,
+      "gain_since_early_pct": 15.319148936170212,
+      "trading_days_since_early": 36,
+      "early_state_reason": "EARLY 이후 +15.3% / 36거래일"
     }
   ]
 }
