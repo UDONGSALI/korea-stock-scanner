@@ -336,12 +336,12 @@
         "stop_distance_pct": 23.774765380604794,
         "three_r_target": 164300.0,
         "max_position_pct_for_risk": 8.412280701754387,
-        "early_state": "NO_EARLY",
-        "first_early_date": null,
-        "first_early_close": null,
+        "early_state": "PRE_EARLY",
+        "first_early_date": "2026-11-23",
+        "first_early_close": 113200.0,
         "gain_since_early_pct": null,
         "trading_days_since_early": null,
-        "early_state_reason": "EARLY 기록 없음"
+        "early_state_reason": "최초 EARLY 이전"
       },
       {
         "date": "2026-08-06",
@@ -377,12 +377,12 @@
         "stop_distance_pct": 24.40111420612813,
         "three_r_target": 31090.0,
         "max_position_pct_for_risk": 8.196347031963471,
-        "early_state": "NO_EARLY",
-        "first_early_date": null,
-        "first_early_close": null,
+        "early_state": "PRE_EARLY",
+        "first_early_date": "2026-11-23",
+        "first_early_close": 15840.0,
         "gain_since_early_pct": null,
         "trading_days_since_early": null,
-        "early_state_reason": "EARLY 기록 없음"
+        "early_state_reason": "최초 EARLY 이전"
       },
       {
         "date": "2026-08-06",
@@ -4424,12 +4424,12 @@
       "stop_distance_pct": 23.774765380604794,
       "three_r_target": 164300.0,
       "max_position_pct_for_risk": 8.412280701754387,
-      "early_state": "NO_EARLY",
-      "first_early_date": null,
-      "first_early_close": null,
+      "early_state": "PRE_EARLY",
+      "first_early_date": "2026-11-23",
+      "first_early_close": 113200.0,
       "gain_since_early_pct": null,
       "trading_days_since_early": null,
-      "early_state_reason": "EARLY 기록 없음"
+      "early_state_reason": "최초 EARLY 이전"
     },
     {
       "date": "2026-08-06",
@@ -4465,12 +4465,12 @@
       "stop_distance_pct": 24.40111420612813,
       "three_r_target": 31090.0,
       "max_position_pct_for_risk": 8.196347031963471,
-      "early_state": "NO_EARLY",
-      "first_early_date": null,
-      "first_early_close": null,
+      "early_state": "PRE_EARLY",
+      "first_early_date": "2026-11-23",
+      "first_early_close": 15840.0,
       "gain_since_early_pct": null,
       "trading_days_since_early": null,
-      "early_state_reason": "EARLY 기록 없음"
+      "early_state_reason": "최초 EARLY 이전"
     },
     {
       "date": "2026-08-06",
@@ -22927,12 +22927,12 @@
       "volume": 92892,
       "avg_volume20": 95623.65,
       "volume_ratio": 0.9714333221959213,
-      "early_state": "NO_EARLY",
-      "first_early_date": null,
-      "first_early_close": null,
+      "early_state": "PRE_EARLY",
+      "first_early_date": "2026-11-23",
+      "first_early_close": 113200.0,
       "gain_since_early_pct": null,
       "trading_days_since_early": null,
-      "early_state_reason": "EARLY 기록 없음"
+      "early_state_reason": "최초 EARLY 이전"
     },
     {
       "date": "2026-08-04",
@@ -27739,12 +27739,12 @@
       "volume": 228468,
       "avg_volume20": 478547.35,
       "volume_ratio": 0.47741984152665357,
-      "early_state": "NO_EARLY",
-      "first_early_date": null,
-      "first_early_close": null,
+      "early_state": "PRE_EARLY",
+      "first_early_date": "2026-11-23",
+      "first_early_close": 15840.0,
       "gain_since_early_pct": null,
       "trading_days_since_early": null,
-      "early_state_reason": "EARLY 기록 없음"
+      "early_state_reason": "최초 EARLY 이전"
     },
     {
       "date": "2026-08-04",
@@ -33844,12 +33844,12 @@
       "volume": 116430,
       "avg_volume20": 199264.25,
       "volume_ratio": 0.5842994917552948,
-      "early_state": "NO_EARLY",
-      "first_early_date": null,
-      "first_early_close": null,
+      "early_state": "PRE_EARLY",
+      "first_early_date": "2026-11-23",
+      "first_early_close": 113200.0,
       "gain_since_early_pct": null,
       "trading_days_since_early": null,
-      "early_state_reason": "EARLY 기록 없음"
+      "early_state_reason": "최초 EARLY 이전"
     },
     {
       "date": "2026-08-24",
